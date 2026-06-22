@@ -74,3 +74,4 @@ Sample project timeline showing delivery planning and sequencing.
 ## Note
 
 The PwC Forage documents are simulation-based learning outputs and are not claimed as professional employment experience with PwC.
+These documents are sample portfolio materials prepared for professional demonstration purposes. They should not be reused, copied, or redistributed without permission.
