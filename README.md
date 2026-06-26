@@ -1,53 +1,44 @@
 # Business Analyst Portfolio
 
-This repository contains sample Business Analyst documentation for the ABC School Web and Mobile Application project.
+* This repository contains sample Business Analyst work.
+* It covers digital product delivery, process improvement and consulting simulation projects.
+* The purpose is to show practical BA documentation and project thinking.
 
-## Project Included
+## Folders Included
 
-### ABC School Web and Mobile Application
-A sample web and mobile application project for school attendance and basic admin data management.
+### 01-ABC-School-Web-Mobile-App
 
-## What this portfolio demonstrates
+* Sample BA project for a school web and mobile application.
+* Covers attendance management, admin management and role-based access.
+* Includes project intake, stakeholder register, discovery questions, RACI, BRD, FRD, user stories, backlog, UAT and traceability.
 
-- Requirement gathering
-- Stakeholder analysis
-- Discovery question preparation
-- BRD and FRD documentation
-- Functional and non-functional requirements
-- User stories and acceptance criteria
-- Business rules
-- Agile backlog and sprint planning
-- Process flow and user journey mapping
-- Wireframe and screen flow thinking
-- UAT test cases
-- Traceability matrix
-- Change request impact analysis
-- RACI matrix
+### 02-Process-Improvement
 
-## Tools and methods represented
+* Sample BA documentation for process improvement work.
+* Covers process mapping, business requirements, standardisation and business rules.
+* Includes AOD process improvement and operational documentation samples.
 
-Jira, Confluence, Agile Scrum, Sprint 0 discovery, backlog refinement, UAT planning, documentation and stakeholder communication.
+### 03-PwC Forage Technology Consulting Simulation
 
-## Folder structure
+* Sample consulting project work from PwC Forage Technology Consulting simulation.
+* Covers client workshop preparation, user stories, project roadmap and project timeline.
+* Shows consulting-style BA documentation and stakeholder communication.
 
-```text
-01-ABC-School-Web-Mobile-App/
-├── 01-Project-Intake-Note.md
-├── 02-Stakeholder-Register.md
-├── 03-Discovery-Questions.md
-├── 04-RACI-Matrix.md
-├── 05-BRD-Business-Requirements.md
-├── 06-FRD-Functional-Requirements.md
-├── 07-User-Stories-Acceptance-Criteria.md
-├── 08-Backlog-Sprint-Plan.md
-├── 09-Process-Flow-User-Journey.md
-├── 10-Wireframe-Screen-Flow.md
-├── 11-UAT-Test-Cases.md
-├── 12-Traceability-Matrix.md
-├── 13-Change-Request-Impact-Analysis.md
-└── 14-Confidentiality-Disclaimer.md
-```
+## BA Skills Shown
 
-## Disclaimer
+* Requirement gathering
+* Stakeholder management
+* Discovery planning
+* BRD and FRD documentation
+* User stories and acceptance criteria
+* Process mapping
+* Backlog planning
+* UAT planning
+* Traceability
+* Change impact analysis
+* Consulting documentation
 
-This repository contains sample Business Analyst artefacts created for learning and portfolio purposes. No confidential employer, client or personal data is included.
+## Note
+
+* All documents are sample portfolio work.
+* No confidential client, employer or personal data is included.
