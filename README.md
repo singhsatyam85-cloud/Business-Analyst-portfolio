@@ -1,77 +1,53 @@
-# Shiv Satyam Singh - Business Analyst Portfolio
+# Business Analyst Portfolio
 
-This portfolio contains sample Business Analyst documents covering requirements gathering, process mapping, stakeholder analysis, RACI, business rules, project intake, user stories, and consulting simulation work.
+This repository contains sample Business Analyst documentation for the ABC School Web and Mobile Application project.
 
-The documents are prepared as professional portfolio samples. Confidential company data, personal details, and sensitive internal information have been removed or anonymised.
+## Project Included
 
-## Portfolio Contents
+### ABC School Web and Mobile Application
+A sample web and mobile application project for school attendance and basic admin data management.
 
-### Manufacturing and Operations Business Analysis
+## What this portfolio demonstrates
 
-#### 1. Auto Batching Business Requirements and Process Mapping Document
+- Requirement gathering
+- Stakeholder analysis
+- Discovery question preparation
+- BRD and FRD documentation
+- Functional and non-functional requirements
+- User stories and acceptance criteria
+- Business rules
+- Agile backlog and sprint planning
+- Process flow and user journey mapping
+- Wireframe and screen flow thinking
+- UAT test cases
+- Traceability matrix
+- Change request impact analysis
+- RACI matrix
 
-Sample business requirements and process mapping document based on manufacturing process improvement and operational control.
+## Tools and methods represented
 
-#### 2. Process Mapping and Business Requirements Document
+Jira, Confluence, Agile Scrum, Sprint 0 discovery, backlog refinement, UAT planning, documentation and stakeholder communication.
 
-Sample process mapping document showing business needs, current process understanding, and future process improvement view.
+## Folder structure
 
-#### 3. Process Standardisation and Business Rules Document
+```text
+01-ABC-School-Web-Mobile-App/
+├── 01-Project-Intake-Note.md
+├── 02-Stakeholder-Register.md
+├── 03-Discovery-Questions.md
+├── 04-RACI-Matrix.md
+├── 05-BRD-Business-Requirements.md
+├── 06-FRD-Functional-Requirements.md
+├── 07-User-Stories-Acceptance-Criteria.md
+├── 08-Backlog-Sprint-Plan.md
+├── 09-Process-Flow-User-Journey.md
+├── 10-Wireframe-Screen-Flow.md
+├── 11-UAT-Test-Cases.md
+├── 12-Traceability-Matrix.md
+├── 13-Change-Request-Impact-Analysis.md
+└── 14-Confidentiality-Disclaimer.md
+```
 
-Sample document covering business rules, process standardisation, operational checks, and control requirements.
+## Disclaimer
 
-#### 4. Process Mapping
-
-Supporting process mapping sample showing workflow understanding and documentation ability.
-
-### IT Business Analyst Simulation
-
-#### 5. Project Intake Note
-
-Sample project intake document for an ABC School web and mobile application simulation.
-
-#### 6. Stakeholder Register and Discovery Questions
-
-Sample stakeholder register and discovery questions prepared for requirement gathering.
-
-#### 7. RACI Matrix
-
-Sample responsibility matrix showing stakeholder involvement and delivery responsibilities.
-
-#### 8. User Stories - PwC Forage Technology Consulting Simulation
-
-Sample user stories prepared as part of a technology consulting simulation.
-
-#### 9. Client Workshop Notes - PwC Forage Technology Consulting Simulation
-
-Sample workshop notes showing client discussion capture and requirement clarification.
-
-#### 10. Project Roadmap - PwC Forage Technology Consulting Simulation
-
-Sample roadmap showing phased delivery planning.
-
-#### 11. Project Timeline - PwC Forage Technology Consulting Simulation
-
-Sample project timeline showing delivery planning and sequencing.
-
-## Key Skills Demonstrated
-
-* Requirement Gathering
-* Business Requirements Documentation
-* Stakeholder Analysis
-* Discovery Questions
-* Process Mapping
-* As-Is and To-Be Analysis
-* Business Rules Documentation
-* RACI Matrix
-* User Stories
-* Project Intake Documentation
-* Workshop Notes
-* Roadmap and Timeline Planning
-* Agile Business Analysis
-* Operations and Manufacturing Process Improvement
-
-## Note
-
-The PwC Forage documents are simulation-based learning outputs and are not claimed as professional employment experience with PwC.
-These documents are sample portfolio materials prepared for professional demonstration purposes. They should not be reused, copied, or redistributed without permission.
+This repository contains sample Business Analyst artefacts created for learning and portfolio purposes. No confidential employer, client or personal data is included.
