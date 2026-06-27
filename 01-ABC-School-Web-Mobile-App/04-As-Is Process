@@ -1,33 +1,40 @@
-# As-Is Process Flow
+As-Is Process Flow
 
-**Project Name:** ABC School Web and Mobile Application  
-**Prepared by:** Shiv Satyam Singh  
+Project Name: ABC School Web and Mobile Application
+Prepared by: Shiv Satyam Singh
 
-## Purpose
 
+Purpose
 This document shows the current manual attendance process used by ABC School before introducing the new web and mobile application.
 
-## Diagram
+Current Attendance Process
+1.	Teacher enters the classroom.
+2.	Teacher opens the attendance register or attendance sheet.
+3.	Teacher calls student names one by one.
+4.	Teacher marks each student as Present or Absent.
+5.	Teacher confirms the attendance sheet.
+6.	Teacher submits the attendance sheet to Admin Staff.
+7.	Admin Staff checks the attendance sheet.
+8.	Admin Staff stores the attendance record manually.
+9.	Admin Staff prepares an attendance report only when required.
 
-![As-Is Attendance Process Flow](ABC_School_As-Is_Attendance_Process.png)
+ 
+Diagram-1
 
-## Current Attendance Process
+Actors Involved
+Teacher: Marks student attendance manually.
+Admin Staff: Collects, checks and stores attendance records.
+Principal / Product Owner: May request attendance summary when needed.
 
-1. Teacher enters the classroom.
-2. Teacher opens the attendance register or attendance sheet.
-3. Teacher calls student names one by one.
-4. Teacher marks each student as Present or Absent.
-5. Teacher confirms the attendance sheet.
-6. Teacher submits the attendance sheet to Admin Staff.
-7. Admin Staff checks the attendance sheet.
-8. Admin Staff stores the attendance record manually.
-9. Admin Staff prepares an attendance report only when required.
+Current Problems
+•	Attendance is recorded manually.
+•	Admin Staff has to collect attendance from teachers.
+•	Attendance reports take time to prepare.
+•	Manual records can be difficult to search.
+•	Admin Staff cannot view attendance instantly.
+•	Attendance visibility depends on manual follow-up.
+•	Paper or Excel-based records may create delays or errors.
 
-## Current Problems
+Business Impact
+The current process creates manual effort for teachers and admin staff. It also delays attendance reporting and makes it difficult for the school to access attendance records quickly.
 
-- Attendance is recorded manually.
-- Admin Staff has to collect attendance from teachers.
-- Attendance reports take time to prepare.
-- Manual records can be difficult to search.
-- Admin Staff cannot view attendance instantly.
-- Attendance visibility depends on manual follow-up.
