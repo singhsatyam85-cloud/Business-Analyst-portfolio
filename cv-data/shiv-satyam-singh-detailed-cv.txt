@@ -13,7 +13,14 @@ Professional Positioning:
 Business Analyst with experience across EdTech, STEM learning platforms, web and mobile applications, operational process improvement, requirements documentation, UAT support, visual documentation, reporting, stakeholder communication and Agile delivery support.
 
 Main Portfolio Title:
-Business Analyst | EdTech | STEM Platforms | Web & Mobile Applications | Process Improvement
+Business Analyst | Digital Transformation | Technology Solutions | STEM Platforms | Web & Mobile Applications | Process Improvement
+
+
+Digital Transformation and Technology Solutions:
+Shiv's portfolio positions him for Business Analyst work supporting digital transformation, technology solution delivery, web and mobile applications, process improvement, requirements documentation, UAT support and stakeholder communication.
+
+Role Fit Accuracy Rule:
+This profile is suitable for Business Analyst, Product Analyst, Digital Business Analyst, Business Systems Analyst, Product Owner support and digital delivery support roles. It should not be treated as a match for full-stack developer, software engineer, backend developer, frontend developer, DevOps engineer, cloud engineer, advanced data engineer or machine learning engineer roles unless the job mainly needs BA-level coordination and documentation.
 
 Core Business Analysis Skills:
 Requirements gathering
@@ -217,3 +224,7 @@ When a job description asks for advanced software development, coding ownership,
 Recruiter Summary:
 Shiv Satyam Singh is suitable for Business Analyst roles that need structured requirements gathering, stakeholder communication, Agile documentation, user stories, acceptance criteria, process mapping, UAT support, reporting and business-facing documentation. His strongest fit is for digital, EdTech, web and mobile application, operational improvement and process-focused BA roles. He can support technical teams through clear documentation and structured analysis, while staying realistic about advanced technical ownership areas.
 
+Role Fit Accuracy Notes:
+For finance transformation roles, Shiv should be treated as strong in BA documentation, stakeholder communication, process mapping and process improvement, but limited or developing in direct finance transformation, R2R, P2P, O2C, month-end close, balance sheet controls, ACA, ACCA, CIMA and finance controls ownership.
+
+For software engineering or full-stack developer roles, Shiv should not be treated as a strong match. Shiv's portfolio is Business Analyst focused and does not claim hands-on React, Node.js, Python backend, Docker, Kubernetes, CI/CD, cloud platform engineering, DevOps, ETL, ML model integration or full-stack build ownership.
