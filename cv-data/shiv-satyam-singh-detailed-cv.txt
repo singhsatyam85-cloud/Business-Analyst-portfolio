@@ -228,3 +228,6 @@ Role Fit Accuracy Notes:
 For finance transformation roles, Shiv should be treated as strong in BA documentation, stakeholder communication, process mapping and process improvement, but limited or developing in direct finance transformation, R2R, P2P, O2C, month-end close, balance sheet controls, ACA, ACCA, CIMA and finance controls ownership.
 
 For software engineering or full-stack developer roles, Shiv should not be treated as a strong match. Shiv's portfolio is Business Analyst focused and does not claim hands-on React, Node.js, Python backend, Docker, Kubernetes, CI/CD, cloud platform engineering, DevOps, ETL, ML model integration or full-stack build ownership.
+
+D365 / CRM Role Fit Notes:
+For D365 / Microsoft Dynamics CE / CRM integration Business Analyst roles, Shiv should be treated as a good transferable match for process analysis, gap analysis, requirements, stakeholder communication, product roadmap and backlog support. Direct D365 CE / Microsoft Dynamics CRM implementation experience is not clearly evidenced, so these roles should not score as perfect. A fair range is normally 68% to 74%, depending on the JD.
