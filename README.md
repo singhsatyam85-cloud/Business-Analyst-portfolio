@@ -1,44 +1,35 @@
-# Business Analyst Portfolio
+# Teacher-Led STEM and Coding Learning Platform
 
-* This repository contains sample Business Analyst work.
-* It covers digital product delivery, process improvement and consulting simulation projects.
-* The purpose is to show practical BA documentation and project thinking.
+## Business Analyst Portfolio Case Study
 
-## Folders Included
+This repository contains a self-initiated Business Analyst case study for a teacher-led STEM and coding learning platform.
 
-### 01-ABC-School-Web-Mobile-App
+The project focuses on a web platform where teachers can search, filter and open learning content on a classroom screen, projector or smart board.
 
-* Sample BA project for a school web and mobile application.
-* Covers attendance management, admin management and role-based access.
-* Includes project intake, stakeholder register, discovery questions, RACI, BRD, FRD, user stories, backlog, UAT and traceability.
+## Key BA Artefacts
 
-### 02-Process-Improvement
+- Project Overview
+- Stakeholder Register
+- Business Requirements Document
+- Functional Requirements Document
+- User Stories
+- Acceptance Criteria
+- Process Flow
+- UAT Test Cases
+- Requirement Traceability Matrix
 
-* Sample BA documentation for process improvement work.
-* Covers process mapping, business requirements, standardisation and business rules.
-* Includes AOD process improvement and operational documentation samples.
+## Skills Demonstrated
 
-### 03-PwC Forage Technology Consulting Simulation
+- Requirement gathering
+- Stakeholder analysis
+- MVP scoping
+- Agile user stories
+- Acceptance criteria
+- Process mapping
+- UAT planning
+- Requirement traceability
+- Business rules documentation
 
-* Sample consulting project work from PwC Forage Technology Consulting simulation.
-* Covers client workshop preparation, user stories, project roadmap and project timeline.
-* Shows consulting-style BA documentation and stakeholder communication.
+## Disclaimer
 
-## BA Skills Shown
-
-* Requirement gathering
-* Stakeholder management
-* Discovery planning
-* BRD and FRD documentation
-* User stories and acceptance criteria
-* Process mapping
-* Backlog planning
-* UAT planning
-* Traceability
-* Change impact analysis
-* Consulting documentation
-
-## Note
-
-* All documents are sample portfolio work.
-* No confidential client, employer or personal data is included.
+This is a portfolio case study created using mock business data. No confidential company data has been used.
