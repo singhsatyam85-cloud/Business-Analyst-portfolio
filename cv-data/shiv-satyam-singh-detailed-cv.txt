@@ -1,1 +1,219 @@
+Shiv Satyam Singh - Detailed Business Analyst Profile
+
+Purpose:
+This public profile data supports the Role Fit Assistant on Shiv Satyam Singh's Business Analyst portfolio website. It is written for recruiter-facing role-fit comparison and uses public-safe, sanitised career information only.
+
+Target Role:
+Business Analyst
+
+Location:
+United Kingdom
+
+Professional Positioning:
+Business Analyst with experience across EdTech, STEM learning platforms, web and mobile applications, operational process improvement, requirements documentation, UAT support, visual documentation, reporting, stakeholder communication and Agile delivery support.
+
+Main Portfolio Title:
+Business Analyst | EdTech | STEM Platforms | Web & Mobile Applications | Process Improvement
+
+Core Business Analysis Skills:
+Requirements gathering
+Stakeholder management
+Discovery workshops
+Business process mapping
+As-Is and To-Be process analysis
+Gap analysis
+Functional requirements
+Non-functional requirements
+Business rules
+User stories
+Acceptance criteria
+Backlog support
+Change impact analysis
+UAT support
+UAT feedback tracking
+Requirement traceability
+MVP scope definition
+Risk and dependency notes
+Visual documentation
+Reporting samples
+Stakeholder presentation
+Executive summary preparation
+
+Strong Match Areas:
+Requirements gathering
+Stakeholder collaboration
+Business process mapping
+User stories and acceptance criteria
+Agile documentation
+UAT support and feedback tracking
+Business rules definition
+BRD and FRD style documentation
+Process improvement
+Operational reporting
+Visual documentation
+Stakeholder communication
+Presentation preparation
+Web and mobile application requirement support
+EdTech and STEM platform exposure
+
+Knowledgeable Areas:
+Product backlog support
+Change impact notes
+MVP scope planning
+Risk and dependency documentation
+Dashboard requirement definition
+Power BI dashboard sample preparation using mock data
+Postman basics
+API requirement understanding
+UI and UX review support
+Requirement traceability matrix
+Non-functional requirement documentation
+ERP-aligned compliance process thinking from professional simulation
+Consulting-style documentation from professional simulation
+
+Basic Exposure Areas:
+Advanced API testing
+Advanced database design
+Enterprise architecture ownership
+Full ERP implementation ownership
+Advanced cloud architecture
+DevOps pipeline configuration
+Cybersecurity implementation
+Automation testing framework design
+
+Tools and Techniques:
+Jira
+Confluence
+Microsoft Excel
+Power BI
+MS Visio
+Draw.io
+Figma
+Postman Basics
+Agile Scrum
+Kanban
+Microsoft PowerPoint
+Microsoft Office
+Process mapping
+Wireframes
+Screen flows
+User journey mapping
+UAT test scenarios
+Root cause analysis
+KPI tracking
+Gap analysis
+Stakeholder register
+RACI
+MVP roadmap
+
+Case Study 1:
+EdTech Attendance Management System
+Type:
+Web and Mobile App Business Analyst Case Study
+Organisation Context:
+FeelTech Digivation Pvt Ltd
+Summary:
+Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.
+BA Contributions:
+Teacher and admin workflow analysis
+Attendance marking and submission flow
+Records and basic reporting
+Role-based access and security thinking
+Requirement gathering
+User stories and acceptance criteria
+Process flow mapping
+UAT support and feedback tracking
+Relevant Keywords:
+EdTech, attendance, school workflow, teacher workflow, admin workflow, mobile app, web app, UAT, requirements, user stories, acceptance criteria, process flow
+
+Case Study 2:
+Digital STEM Content Delivery Platform
+Type:
+Smart Classroom Business Analyst Case Study
+Organisation Context:
+FeelTech Digivation Pvt Ltd
+Summary:
+Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors or smart boards.
+Important Business Rule:
+No student portal. No student login. No separate student mobile, tablet or laptop access. Teacher controls content from the platform and displays it to the class.
+BA Contributions:
+STEM and coding content delivery flow
+3D videos, animations and simulation content flow
+Teacher classroom controls
+Content search and filtering
+Admin content management
+User stories and acceptance criteria
+UAT scenarios
+Risk and dependency notes
+Relevant Keywords:
+STEM platform, EdTech, smart classroom, teacher-led content, 3D videos, animations, simulations, coding content, admin content management, UAT, acceptance criteria
+
+Case Study 3:
+Autoparts E-commerce Website
+Type:
+Web Platform Business Analyst Case Study
+Organisation Context:
+CKay Solution Ltd
+Summary:
+Business Analyst work for an autoparts website involving product browsing, website flow, enquiry flow, requirements documentation, UI and UX review and UAT support.
+BA Contributions:
+User journey mapping
+Functional requirements
+Product browsing and category flow
+Enquiry and order flow
+UI and UX feedback
+Backlog tracking
+Change tracking
+UAT support and sign-off support
+Relevant Keywords:
+E-commerce, autoparts, product browsing, enquiry flow, web platform, UI review, UX feedback, functional requirements, backlog, change tracking, UAT
+
+Case Study 4:
+Operational Process Improvement and KPI Reporting
+Type:
+Manufacturing and Process Improvement Business Analyst Case Study
+Summary:
+Process improvement work focused on cycle time reduction, waste reduction, KPI tracking, production analysis, operational reporting and performance improvement.
+BA Contributions:
+As-Is and To-Be process mapping
+Gap analysis
+Root cause analysis
+KPI requirement definition
+Operational reporting
+Improvement tracking
+Data analysis support
+Stakeholder coordination
+Relevant Keywords:
+Process improvement, KPI reporting, manufacturing, operations, cycle time, waste reduction, gap analysis, root cause analysis, As-Is, To-Be, reporting, stakeholder coordination
+
+Case Study 5:
+ERP-Aligned Compliance System Upgrade
+Type:
+Professional Simulation
+Simulation Context:
+PwC Forage Technology Consulting Simulation
+Summary:
+Professional simulation focused on an ERP-aligned compliance system upgrade. The work demonstrated discovery planning, user stories, requirements understanding, MVP roadmap, stakeholder communication and executive summary preparation.
+Important Disclaimer:
+This is a professional simulation. It is not paid employment, client delivery or a real PwC project.
+BA Contributions:
+Discovery workshop planning
+User stories and requirements
+MVP roadmap development
+Compliance-focused business process thinking
+Stakeholder communication
+Executive summary presentation
+Consulting-style documentation
+Relevant Keywords:
+ERP-aligned, compliance, simulation, discovery workshop, user stories, requirements, MVP roadmap, stakeholder communication, executive summary, consulting documentation
+
+Role Fit Scoring Guidance:
+When a job description asks for requirements gathering, stakeholder management, Agile, Jira, Confluence, user stories, acceptance criteria, UAT, process mapping, business rules, web applications, mobile applications, reporting, dashboards, Power BI, documentation, communication, change impact analysis or backlog support, Shiv should score strongly.
+
+When a job description asks for APIs, Postman, non-functional requirements, data flows, technical BA support, dashboard requirements, system integration or ERP-aligned process understanding, Shiv should score as knowledgeable or developing, depending on depth requested.
+
+When a job description asks for advanced software development, coding ownership, cloud infrastructure ownership, enterprise architecture ownership, cybersecurity implementation, advanced database administration or full ERP implementation ownership, Shiv should score basic or lower unless the role only requires BA-level coordination.
+
+Recruiter Summary:
+Shiv Satyam Singh is suitable for Business Analyst roles that need structured requirements gathering, stakeholder communication, Agile documentation, user stories, acceptance criteria, process mapping, UAT support, reporting and business-facing documentation. His strongest fit is for digital, EdTech, web and mobile application, operational improvement and process-focused BA roles. He can support technical teams through clear documentation and structured analysis, while staying realistic about advanced technical ownership areas.
 
