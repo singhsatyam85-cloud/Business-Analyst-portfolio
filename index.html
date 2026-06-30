@@ -7,18 +7,21 @@
   <title>Shiv Satyam Singh | Business Analyst Portfolio</title>
   <style>
     :root {
-      --bg: #F8F6F1;
+      --bg: #FFFFFF;
       --card: #FFFFFF;
-      --text: #1F1F1F;
-      --muted: #5F5F5F;
-      --primary: #1F4D36;
-      --primary-dark: #173B2A;
-      --accent: #B08D57;
-      --border: #E4DDD0;
-      --section: #EFE9DD;
-      --footer: #111A14;
-      --shadow: 0 14px 34px rgba(31, 31, 31, 0.08);
-      --soft-shadow: 0 8px 22px rgba(31, 31, 31, 0.07);
+      --text: #0F172A;
+      --muted: #475569;
+      --primary: #0F172A;
+      --primary-dark: #172554;
+      --accent: #EF6F6C;
+      --green: #86EFAC;
+      --green-soft: #DCFCE7;
+      --red-soft: #FEE2E2;
+      --border: #E2E8F0;
+      --section: #F8FAFC;
+      --footer: #0F172A;
+      --shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+      --soft-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
       --radius: 20px;
       --radius-sm: 14px;
       --max: 1180px;
@@ -55,11 +58,24 @@
       margin: 0 auto;
     }
 
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(248, 246, 241, 0.96);
+      background: rgba(255, 255, 255, 0.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
@@ -86,23 +102,26 @@
       place-items: center;
       border-radius: 50%;
       color: #FFFFFF;
-      background: radial-gradient(circle at 32% 28%, var(--accent), var(--primary) 46%, var(--primary-dark));
+      background: radial-gradient(circle at 32% 28%, var(--green), var(--primary) 55%, var(--accent));
       font-weight: 800;
       letter-spacing: 1px;
-      border: 2px solid rgba(176, 141, 87, 0.6);
+      border: 2px solid rgba(239, 111, 108, 0.55);
       font-family: Georgia, 'Times New Roman', serif;
     }
 
     .brand-title {
+      display: block;
       font-size: 17px;
       line-height: 1.1;
       font-weight: 800;
     }
 
     .brand-role {
-      color: var(--muted);
+      display: block;
+      color: var(--text);
       font-size: 12px;
-      margin-top: 2px;
+      font-weight: 800;
+      margin-top: 3px;
     }
 
     .nav-links {
@@ -122,6 +141,7 @@
       border-bottom: 3px solid transparent;
       transition: color .2s ease, border-color .2s ease;
       white-space: nowrap;
+      font-weight: 800;
     }
 
     .nav-links a:hover,
@@ -310,18 +330,19 @@
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+      gap: 12px;
+      align-self: center;
     }
 
     .stat-card {
       background: rgba(255,255,255,0.88);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 24px;
-      min-height: 148px;
+      padding: 16px 18px;
+      min-height: 104px;
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
       box-shadow: var(--shadow);
     }
 
@@ -338,6 +359,12 @@
       background: var(--primary);
       font-weight: 900;
       font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .stat-card .stat-icon {
+      width: 44px;
+      height: 44px;
+      font-size: 13px;
     }
 
     .stat-card:nth-child(2) .stat-icon,
@@ -457,7 +484,7 @@
     .case-card {
       position: relative;
       isolation: isolate;
-      background: linear-gradient(180deg, #FFFFFF 0%, #FFFEFB 54%, #FBF5EA 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFEFB 54%, #F8FAFC 100%);
       border: 1px solid rgba(176, 141, 87, 0.38);
       border-radius: 22px;
       padding: 62px 22px 22px;
@@ -506,7 +533,7 @@
       height: 48px;
       margin: 0;
       border-radius: 50%;
-      background: #F5EEDC;
+      background: #F8FAFC;
       color: var(--primary-dark);
       border: 1px solid rgba(176, 141, 87, 0.45);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 18px rgba(31, 77, 54, 0.07);
@@ -515,7 +542,7 @@
     }
 
     .case-card .card-icon.gold {
-      background: #F5EEDC;
+      background: #F8FAFC;
       color: var(--primary-dark);
       border-color: rgba(176, 141, 87, 0.45);
     }
@@ -587,7 +614,7 @@
     }
 
     .project-preview-card {
-      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF8 52%, #F6F0E4 100%) !important;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 52%, #F8FAFC 100%) !important;
       border: 1px solid rgba(176, 141, 87, 0.58) !important;
       border-radius: 22px !important;
       min-height: 475px !important;
@@ -600,8 +627,8 @@
       height: 56px !important;
       top: 20px !important;
       left: 24px !important;
-      background: #F3EAD4 !important;
-      color: #003D2B !important;
+      background: #FEE2E2 !important;
+      color: #0F172A !important;
       border: 1px solid rgba(176, 141, 87, 0.65) !important;
       font-size: 18px !important;
       font-weight: 900 !important;
@@ -617,7 +644,7 @@
     .project-preview-card .case-subtitle {
       font-size: 14px !important;
       min-height: 56px !important;
-      color: #004B35 !important;
+      color: #172554 !important;
     }
 
     .project-preview-card .case-summary {
@@ -653,7 +680,7 @@
       display: flex;
       gap: 14px;
       align-items: flex-start;
-      background: #FFF8EA;
+      background: #FEE2E2;
       border: 1px solid rgba(176, 141, 87, 0.45);
       border-radius: var(--radius-sm);
       padding: 16px 18px;
@@ -753,7 +780,7 @@
       gap: 8px;
       border: 1px solid var(--border);
       color: var(--muted);
-      background: #F2EFE8;
+      background: #F8FAFC;
       border-radius: 12px;
       padding: 10px 13px;
       font-family: Arial, Helvetica, sans-serif;
@@ -794,7 +821,7 @@
       height: 148px;
       border-radius: 16px;
       border: 1px solid var(--border);
-      background: linear-gradient(145deg, #FFFEFB, #EFE9DD);
+      background: linear-gradient(145deg, #FFFEFB, #F8FAFC);
       margin-bottom: 14px;
       overflow: hidden;
       position: relative;
@@ -841,7 +868,7 @@
     .slide-visual span:nth-child(1) { width: 88px; height: 14px; left: 22px; top: 24px; border-radius: 6px; }
     .slide-visual span:nth-child(2) { width: 118px; height: 10px; left: 22px; top: 50px; border-radius: 5px; background: rgba(31, 77, 54, .2); }
     .slide-visual span:nth-child(3) { width: 98px; height: 10px; left: 22px; top: 70px; border-radius: 5px; background: rgba(31, 77, 54, .2); }
-    .slide-visual span:nth-child(4) { width: 64px; height: 64px; right: 26px; top: 36px; border-radius: 50%; background: conic-gradient(var(--accent) 0 40%, var(--primary) 40% 70%, #EFE9DD 70% 100%); }
+    .slide-visual span:nth-child(4) { width: 64px; height: 64px; right: 26px; top: 36px; border-radius: 50%; background: conic-gradient(var(--accent) 0 40%, var(--primary) 40% 70%, #F8FAFC 70% 100%); }
 
     .sample-card p {
       color: var(--muted);
@@ -1038,7 +1065,7 @@
     .hire-question {
       width: 100%;
       border: 1px solid var(--accent);
-      background: #FFF8EA;
+      background: #FEE2E2;
       color: var(--primary-dark);
       border-radius: 12px;
       padding: 12px;
@@ -1129,7 +1156,7 @@
     }
 
     .match-table th {
-      background: #FFF8EA;
+      background: #FEE2E2;
       color: var(--primary-dark);
     }
 
@@ -1183,15 +1210,40 @@
 
     .site-footer {
       background: var(--footer);
-      color: #F8F6F1;
+      color: #FFFFFF;
       padding: 44px 0 0;
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.2fr .9fr 1fr 1.1fr;
-      gap: 36px;
-      padding-bottom: 34px;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      padding-bottom: 24px;
+    }
+
+    .footer-contact-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .footer-contact-card {
+      border: 1px solid rgba(248, 246, 241, 0.14);
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.05);
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer-contact-card .mini-icon {
+      background: rgba(176,141,87,0.22);
+      color: #FFFFFF;
+    }
+
+    .footer-confidentiality {
+      border-top: 1px solid rgba(248, 246, 241, 0.14);
+      padding-top: 16px;
     }
 
     .footer-grid h3 {
@@ -1317,7 +1369,8 @@
       .detail-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
-      .footer-grid {
+      .footer-grid,
+      .footer-contact-row {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -1440,7 +1493,7 @@
     }
 
     .hire-question {
-      background: linear-gradient(135deg, #FFF8EA, #FFFFFF);
+      background: linear-gradient(135deg, #FEE2E2, #FFFFFF);
       box-shadow: 0 8px 18px rgba(176, 141, 87, 0.12);
     }
 
@@ -1554,7 +1607,7 @@
     }
 
     .match-score.low {
-      background: #6B3B2D;
+      background: #B42318;
     }
 
     .match-score.moderate {
@@ -1655,7 +1708,7 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: conic-gradient(var(--ring-color) var(--score-angle), #EDE6DA 0deg);
+      background: conic-gradient(var(--ring-color) var(--score-angle), #E2E8F0 0deg);
       position: relative;
     }
 
@@ -1725,7 +1778,7 @@
     .fit-track {
       height: 8px;
       border-radius: 999px;
-      background: #EDE6DA;
+      background: #E2E8F0;
       overflow: hidden;
     }
 
@@ -1766,7 +1819,7 @@
 
     .accuracy-note {
       border-left: 3px solid var(--accent);
-      background: #FFF8EA;
+      background: #FEE2E2;
       border-radius: 12px;
       padding: 9px 10px;
       margin-top: 10px;
@@ -1834,7 +1887,7 @@
       margin-top: 22px;
       border: 1px solid rgba(176, 141, 87, 0.28);
       border-radius: var(--radius);
-      background: linear-gradient(145deg, #FFFEFB, #FBF5EA);
+      background: linear-gradient(145deg, #FFFEFB, #F8FAFC);
       box-shadow: 0 10px 22px rgba(31, 77, 54, 0.06);
       overflow: hidden;
     }
@@ -2016,7 +2069,7 @@
     /* Recruiter-friendly compact project preview UI - keeps existing features safe */
     .section#project-work,
     #project-work {
-      background: linear-gradient(180deg, #F8F6F1 0%, #F4EFE4 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
       border-top: 1px solid rgba(176, 141, 87, 0.26);
       border-bottom: 1px solid rgba(176, 141, 87, 0.26);
     }
@@ -2027,7 +2080,7 @@
 
     #project-work .section-title h2 {
       font-size: 22px !important;
-      color: #111A14 !important;
+      color: #0F172A !important;
     }
 
     #project-work .section-icon {
@@ -2085,7 +2138,7 @@
       height: 42px !important;
       margin: 0 0 12px !important;
       border-radius: 50% !important;
-      background: #F4EBD7 !important;
+      background: #F8FAFC !important;
       color: var(--primary-dark) !important;
       border: 1px solid rgba(176, 141, 87, 0.42) !important;
       box-shadow: none !important;
@@ -2099,7 +2152,7 @@
       line-height: 1.12 !important;
       min-height: 42px !important;
       margin: 0 0 7px !important;
-      color: #101713 !important;
+      color: #0F172A !important;
       letter-spacing: -0.15px !important;
     }
 
@@ -2121,7 +2174,7 @@
       min-height: 70px !important;
       margin: 0 0 14px !important;
       padding-left: 16px !important;
-      color: #202020 !important;
+      color: #0F172A !important;
       font-family: Arial, Helvetica, sans-serif !important;
       font-size: 12px !important;
       line-height: 1.35 !important;
@@ -2129,7 +2182,7 @@
 
     .project-preview-card .compact-list li {
       margin-bottom: 4px !important;
-      color: #202020 !important;
+      color: #0F172A !important;
     }
 
     .project-preview-card .compact-list li:nth-child(n+4) {
@@ -2182,6 +2235,446 @@
       .project-preview-card { min-height: auto !important; }
     }
 
+  
+
+    /* Final recruiter UI polish requested by Shiv */
+    :root {
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --text: #111827;
+      --muted: #4B5563;
+      --primary: #22C55E;
+      --primary-dark: #172554;
+      --navy: #0B1F3A;
+      --accent: #B42318;
+      --accent-soft: #FEE4E2;
+      --border: #E5E7EB;
+      --section: #FFFFFF;
+      --footer: #0B1F3A;
+      --shadow: 0 10px 28px rgba(15, 31, 58, 0.08);
+      --soft-shadow: 0 6px 18px rgba(15, 31, 58, 0.06);
+    }
+
+    body,
+    .hero,
+    .about-section,
+    .site-header,
+    .section {
+      background: #FFFFFF !important;
+    }
+
+    .hero::before {
+      background:
+        radial-gradient(circle at 92% 20%, rgba(15, 81, 50, 0.08), transparent 32%),
+        radial-gradient(circle at 80% 78%, rgba(11, 31, 58, 0.07), transparent 34%),
+        linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 62%, #F8FAFC 100%);
+    }
+
+    .nav-wrap {
+      gap: 18px;
+    }
+
+    .brand {
+      min-width: 245px;
+    }
+
+    .nav-links {
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .nav-links a,
+    .brand-role {
+      font-weight: 900;
+    }
+
+    .nav-actions {
+      margin-left: 4px;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(360px, 0.82fr);
+      gap: 34px;
+    }
+
+    .hero-subtitle {
+      color: var(--primary-dark);
+      font-size: clamp(18px, 2.1vw, 28px);
+      line-height: 1.35;
+      max-width: 840px;
+    }
+
+    .keyword {
+      border-color: #DCFCE7;
+      color: var(--primary-dark);
+      background: #F9FAFB;
+    }
+
+    .hero-evidence-visual {
+      display: grid;
+      gap: 16px;
+      align-self: center;
+    }
+
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat-mini {
+      min-height: 74px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #FFFFFF;
+      box-shadow: var(--soft-shadow);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    .stat-mini strong {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      line-height: 1;
+      color: var(--navy);
+    }
+
+    .stat-mini small {
+      margin-top: 5px;
+      color: var(--primary-dark);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .ba-lifecycle-card {
+      border: 1px solid #DCFCE7;
+      border-radius: 22px;
+      background:
+        linear-gradient(135deg, rgba(15, 81, 50, 0.05), rgba(11, 31, 58, 0.05)),
+        #FFFFFF;
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .ba-lifecycle-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+
+    .ba-lifecycle-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 16px;
+    }
+
+    .lifecycle-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+      position: relative;
+    }
+
+    .lifecycle-flow span {
+      min-height: 78px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 5px;
+      padding: 10px 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 900;
+      font-size: 11px;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .lifecycle-flow span:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--soft-shadow);
+      border-color: var(--primary);
+    }
+
+    .lifecycle-flow b {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      font-size: 10px;
+    }
+
+    .lifecycle-flow span:nth-child(3) b,
+    .lifecycle-flow span:nth-child(5) b {
+      background: var(--navy);
+    }
+
+    .lifecycle-flow span:nth-child(4) b {
+      background: var(--accent);
+    }
+
+    .grid-three {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    #ba-deliverables .content-card {
+      padding: 18px;
+    }
+
+    .deliverable-grid,
+    .tool-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .deliverable-card,
+    .tool-card,
+    .skill-pill {
+      min-height: 36px;
+      padding: 8px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      background: #FFFFFF;
+    }
+
+    .skills-wrap {
+      gap: 8px;
+    }
+
+    .mini-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(15, 81, 50, 0.11);
+      color: var(--primary-dark);
+      font-size: 10px;
+    }
+
+    .tool-card:nth-child(even) .mini-icon,
+    .deliverable-card:nth-child(3n) .mini-icon {
+      background: rgba(11, 31, 58, 0.10);
+      color: var(--navy);
+    }
+
+    .section-icon,
+    .card-icon,
+    .stat-icon {
+      background: var(--primary);
+    }
+
+    .btn-primary,
+    .floating-assistant-cta {
+      background: linear-gradient(135deg, var(--primary), var(--navy));
+    }
+
+    .btn-gold {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn:hover,
+    .btn-primary:hover {
+      background: var(--navy);
+      border-color: var(--navy);
+    }
+
+    .site-footer {
+      background: var(--footer) !important;
+      padding-top: 38px;
+    }
+
+    .footer-contact-row {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .footer-confidentiality {
+      margin-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding-top: 18px;
+    }
+
+    @media (max-width: 1180px) {
+      .brand { min-width: auto; }
+      .nav-links { gap: 12px; }
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 980px) {
+      .deliverable-grid,
+      .tool-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .lifecycle-flow,
+      .stat-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 680px) {
+      .deliverable-grid,
+      .tool-grid,
+      .footer-contact-row,
+      .lifecycle-flow,
+      .stat-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  
+
+    /* Section colour pattern requested: White -> Light Grey -> White -> Light Grey -> White -> Light Grey -> White -> Navy */
+    :root {
+      --bg: #FFFFFF;
+      --card: #FFFFFF;
+      --text: #0F172A;
+      --muted: #475569;
+      --primary: #22C55E;
+      --primary-dark: #172554;
+      --navy: #0F172A;
+      --accent: #B42318;
+      --accent-soft: #FEE4E2;
+      --border: #E2E8F0;
+      --section: #F8FAFC;
+      --footer: #0F172A;
+    }
+
+    body {
+      background: #FFFFFF !important;
+      color: #0F172A !important;
+    }
+
+    .site-header,
+    .hero {
+      background: #FFFFFF !important;
+    }
+
+    .hero::before {
+      background:
+        radial-gradient(circle at 92% 18%, rgba(15, 81, 50, 0.07), transparent 30%),
+        radial-gradient(circle at 82% 78%, rgba(180, 35, 24, 0.05), transparent 34%),
+        linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 68%, #F8FAFC 100%) !important;
+    }
+
+    #about {
+      background: #F8FAFC !important;
+    }
+
+    #project-work {
+      background: #F8FAFC !important;
+    }
+
+    #detailed-case-studies,
+    #visual-samples {
+      background: #FFFFFF !important;
+    }
+
+    #ba-deliverables {
+      background: #F8FAFC !important;
+    }
+
+    .site-footer,
+    .footer-contact-strip {
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+    }
+
+    .site-footer h2,
+    .site-footer h3,
+    .site-footer h4,
+    .site-footer p,
+    .site-footer a,
+    .site-footer span,
+    .site-footer small,
+    .footer-contact-card,
+    .footer-contact-card strong,
+    .footer-contact-card a,
+    .footer-confidentiality,
+    .footer-confidentiality p {
+      color: #FFFFFF !important;
+    }
+
+    h1, h2, h3, h4,
+    .nav-links a,
+    .brand-name,
+    .brand-role,
+    .section-title h2,
+    .project-card h3,
+    .detail-card h3,
+    .content-card h2,
+    .content-card h3 {
+      color: #0F172A;
+    }
+
+    .hero-subtitle,
+    .section-note,
+    .lead,
+    .project-card p,
+    .detail-card p,
+    .content-card p {
+      color: #475569;
+    }
+
+    .btn-primary,
+    .floating-assistant-cta,
+    .match-btn {
+      background: linear-gradient(135deg, #22C55E, #0F172A) !important;
+      border-color: #22C55E !important;
+      color: #FFFFFF !important;
+    }
+
+    .section-icon,
+    .card-icon,
+    .stat-icon,
+    .lifecycle-flow b {
+      background: #22C55E !important;
+      color: #FFFFFF !important;
+    }
+
+    .lifecycle-flow span:nth-child(4) b,
+    .document-link:hover,
+    .btn-gold:hover {
+      background: #B42318 !important;
+      border-color: #B42318 !important;
+      color: #FFFFFF !important;
+    }
+
+    .content-card,
+    .project-card,
+    .detail-card,
+    .sample-card,
+    .ba-lifecycle-card,
+    .stat-mini,
+    .deliverable-card,
+    .tool-card,
+    .skill-pill {
+      background: #FFFFFF !important;
+      border-color: #E2E8F0 !important;
+    }
+
+
+    /* Final colour refresh: pure white + navy + light green + medium light red */
+    .site-header, .hero, .section-white { background: #FFFFFF; }
+    .section-muted, .about-section, .projects-section, .tools-section { background: #F8FAFC; }
+    .badge, .pill, .skill-pill, .mini-stat, .deliverable-card, .tool-card { border-color: #E2E8F0; }
+    .badge, .skill-pill { background: #F8FAFC; color: #0F172A; }
+    .btn-primary, .assistant-toggle, .assistant-submit { background: #0F172A; border-color: #0F172A; color: #FFFFFF; }
+    .btn-outline { color: #0F172A; border-color: #0F172A; background: #FFFFFF; }
+    .gold-dot, .pulse-dot, .assistant-dot { background: #EF6F6C !important; box-shadow: 0 0 0 6px rgba(239, 111, 108, 0.16); }
+    .stat-icon, .circle-icon, .section-icon { background: #DCFCE7; color: #0F172A; }
+    .active, .nav-links a:hover { color: #0F172A; }
+
   </style>
 </head>
 <body id="top">
@@ -2210,7 +2703,6 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="btn" href="https://github.com/singhsatyam85-cloud/Business-Analyst-portfolio" target="_blank" rel="noopener">View GitHub Repository</a>
         <a class="btn btn-primary" href="https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/Document/Shiv_Satyam_Singh_BA_CV.pdf" target="_blank" rel="noopener">Download CV</a>
       </div>
     </div>
@@ -2220,8 +2712,7 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Business Analyst | Digital Transformation | Technology Solutions | STEM Platforms</span>
-          <h1 id="hero-title">Business Analyst Portfolio</h1>
+          <h1 id="hero-title" class="sr-only">Business Analyst Portfolio</h1>
           <p class="hero-subtitle">Business Analyst | Digital Transformation | Technology Solutions | STEM Platforms | Web &amp; Mobile Applications | Process Improvement</p>
           <p class="lead">Sanitised Business Analyst project work based on real project experience across EdTech, STEM learning platforms, web and mobile applications, operational process improvement, and ERP-aligned professional simulation work.</p>
           <div class="hero-keywords" aria-label="Portfolio keywords">
@@ -2238,11 +2729,24 @@
             <a class="btn btn-gold" href="#ba-deliverables">View BA Deliverables</a>
           </div>
         </div>
-        <div class="stats-grid" aria-label="Portfolio statistics">
-          <div class="stat-card"><span class="stat-icon">✓</span><div><div class="stat-number">5</div><div class="stat-label">Case Studies</div></div></div>
-          <div class="stat-card"><span class="stat-icon">DOC</span><div><div class="stat-number">20+</div><div class="stat-label">BA Deliverables</div></div></div>
-          <div class="stat-card"><span class="stat-icon">TL</span><div><div class="stat-number">15+</div><div class="stat-label">Tools &amp; Techniques</div></div></div>
-          <div class="stat-card"><span class="stat-icon">BA</span><div><div class="stat-number">8+</div><div class="stat-label">Business Areas</div></div></div>
+        <div class="hero-evidence-visual" aria-label="Business Analyst lifecycle and portfolio statistics">
+          <div class="stat-strip" aria-label="Portfolio statistics">
+            <span class="stat-mini"><strong>5</strong><small>Projects</small></span>
+            <span class="stat-mini"><strong>20+</strong><small>BA Docs</small></span>
+            <span class="stat-mini"><strong>15+</strong><small>Tools</small></span>
+            <span class="stat-mini"><strong>8+</strong><small>Areas</small></span>
+          </div>
+          <div class="ba-lifecycle-card">
+            <h3>How I deliver BA work</h3>
+            <div class="lifecycle-flow">
+              <span><b>01</b>Discovery</span>
+              <span><b>02</b>Requirements</span>
+              <span><b>03</b>Process Mapping</span>
+              <span><b>04</b>UAT</span>
+              <span><b>05</b>Delivery</span>
+            </div>
+            <p>Structured project work supported by requirements, process flows, acceptance criteria, UAT notes and stakeholder-ready documentation.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2295,7 +2799,7 @@
           <article class="case-card project-preview-card">
             <span class="card-icon">01</span>
             <h3>EdTech Attendance Management System</h3>
-            <p class="case-subtitle">Web &amp; Mobile App BA Project Work | FeelTech Digivation Pvt Ltd</p>
+            <p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
             <p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
             <ul class="compact-list">
               <li>Teacher and admin workflow analysis</li>
@@ -2309,7 +2813,7 @@
           <article class="case-card project-preview-card">
             <span class="card-icon gold">02</span>
             <h3>Digital STEM Content Delivery Platform</h3>
-            <p class="case-subtitle">Smart Classroom BA Project Work | FeelTech Digivation Pvt Ltd</p>
+            <p class="case-subtitle">Smart Classroom BA Project Work</p>
             <p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
             <ul class="compact-list">
               <li>No student portal or student login</li>
@@ -2323,7 +2827,7 @@
           <article class="case-card project-preview-card">
             <span class="card-icon">03</span>
             <h3>Autoparts E-commerce Website</h3>
-            <p class="case-subtitle">Web Platform BA Project Work | CKay Solution Ltd</p>
+            <p class="case-subtitle">Web Platform BA Project Work</p>
             <p class="case-summary">Business Analyst work for an autoparts website involving product browsing, website flow, enquiry flow, documentation, UI/UX review, and UAT support.</p>
             <ul class="compact-list">
               <li>User journey mapping</li>
@@ -2351,7 +2855,7 @@
           <article class="case-card project-preview-card">
             <span class="card-icon">05</span>
             <h3>ERP-Aligned Compliance System Upgrade</h3>
-            <p class="case-subtitle">PwC Forage Technology Consulting Simulation</p>
+            <p class="case-subtitle">Technology Consulting Professional Simulation</p>
             <p class="case-summary">Professional simulation focused on an ERP-aligned compliance system upgrade with discovery planning, user stories, MVP roadmap, and executive summary preparation.</p>
             <ul class="compact-list">
               <li>Discovery workshop planning</li>
@@ -2365,7 +2869,7 @@
 
         <div class="disclaimer-card" role="note">
           <span class="notice-icon">i</span>
-          <p>All project work are based on real project experience except the clearly labelled PwC Forage simulation. The PwC project work is a professional simulation and not paid employment, client delivery, or a real PwC project.</p>
+          <p>All project work are based on real project experience except the clearly labelled professional simulation. The compliance project work is a professional simulation and not paid employment, client delivery, or a real consulting client project.</p>
         </div>
       </div>
     </section>
@@ -2388,9 +2892,8 @@
           <article class="detail-card" id="attendance-case">
             <div class="detail-header">
               <div>
-                <span class="detail-label">Project Work 1</span>
                 <h3>EdTech Attendance Management System</h3>
-                <p class="case-subtitle">Web &amp; Mobile App BA Project Work | FeelTech Digivation Pvt Ltd</p>
+                <p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
               </div>
               <a class="btn" href="#project-work">Back to Project Work</a>
             </div>
@@ -2431,7 +2934,6 @@
                   <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario review for main attendance flow.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" target="_blank" rel="noopener">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">UAT Plan</span><span class="doc-desc">UAT approach, test scope, entry and exit criteria.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" target="_blank" rel="noopener">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 0 Review Notes</span><span class="doc-desc">Sprint 0 review notes and delivery summary.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/21-Sprint%200%20Review%20Notes.doc.pdf" target="_blank" rel="noopener">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Roadmap & Timeline</span><span class="doc-desc">Roadmap and timeline view for delivery planning.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" target="_blank" rel="noopener">View PDF</a></div></div>
                 </details>
               </div>
-              <div class="work-pack-download"><a class="btn btn-primary" href="https://github.com/singhsatyam85-cloud/Business-Analyst-portfolio/tree/main/case-study-documents/01-edtech-attendance-management-system" target="_blank" rel="noopener">Open Complete Project 1 Evidence Folder</a></div>
               <div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
             </div>
           </article>
@@ -2439,9 +2941,8 @@
           <article class="detail-card" id="stem-case">
             <div class="detail-header">
               <div>
-                <span class="detail-label">Project Work 2</span>
                 <h3>Digital STEM Content Delivery Platform</h3>
-                <p class="case-subtitle">Smart Classroom BA Project Work | FeelTech Digivation Pvt Ltd</p>
+                <p class="case-subtitle">Smart Classroom BA Project Work</p>
               </div>
               <a class="btn" href="#project-work">Back to Project Work</a>
             </div>
@@ -2487,9 +2988,8 @@
           <article class="detail-card" id="autoparts-case">
             <div class="detail-header">
               <div>
-                <span class="detail-label">Project Work 3</span>
                 <h3>Autoparts E-commerce Website</h3>
-                <p class="case-subtitle">Web Platform BA Project Work | CKay Solution Ltd</p>
+                <p class="case-subtitle">Web Platform BA Project Work</p>
               </div>
               <a class="btn" href="#project-work">Back to Project Work</a>
             </div>
@@ -2535,7 +3035,6 @@
           <article class="detail-card" id="operations-case">
             <div class="detail-header">
               <div>
-                <span class="detail-label">Project Work 4</span>
                 <h3>Operational Process Improvement &amp; KPI Reporting</h3>
                 <p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
               </div>
@@ -2583,9 +3082,8 @@
           <article class="detail-card" id="pwc-case">
             <div class="detail-header">
               <div>
-                <span class="detail-label">Project Work 5 | Professional Simulation</span>
-                <h3>ERP-Aligned Compliance System Upgrade | PwC Forage Simulation</h3>
-                <p class="case-subtitle">PwC Forage Technology Consulting Simulation</p>
+                <h3>ERP-Aligned Compliance System Upgrade | Professional Simulation</h3>
+                <p class="case-subtitle">Technology Consulting Professional Simulation</p>
               </div>
               <a class="btn" href="#project-work">Back to Project Work</a>
             </div>
@@ -2598,7 +3096,7 @@
               <div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Discovery plan</li><li>User stories</li><li>MVP roadmap</li><li>Requirements notes</li><li>Executive summary slide</li><li>Consulting-style documentation</li></ul></div>
               <div class="detail-block"><h4>Tools Used</h4><p>Microsoft PowerPoint, Microsoft Excel, structured discovery notes, Agile requirement formats, stakeholder presentation format.</p></div>
               <div class="detail-block"><h4>Outcome / Impact</h4><p>The simulation demonstrates BA thinking for discovery, requirements, MVP planning, stakeholder communication, and executive summary preparation.</p></div>
-              <div class="detail-block"><h4>Confidentiality Note</h4><p>This is clearly labelled as a professional simulation. It is not paid employment, client delivery, or a real PwC project.</p></div>
+              <div class="detail-block"><h4>Confidentiality Note</h4><p>This is clearly labelled as a professional simulation. It is not paid employment, client delivery, or a real consulting client project.</p></div>
             </div>
             <div class="evidence-panel" aria-label="BA Work Evidence">
               <div class="evidence-panel-head">
@@ -2760,24 +3258,6 @@
       </div>
     </section>
     <!-- BA DELIVERABLES END -->
-
-    <!-- CONTACT SECTION START -->
-    <section class="section-tight" id="contact" aria-labelledby="contact-title">
-      <div class="container">
-        <div class="section-title">
-          <span class="section-icon">CT</span>
-          <h2 id="contact-title">Contact Me</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-card"><span class="mini-icon">@</span><strong>Email</strong><a href="mailto:shivsatyamsingh920@gmail.com">shivsatyamsingh920@gmail.com</a></div>
-          <div class="contact-card"><span class="mini-icon">in</span><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener">linkedin.com/in/shiv-satyam-singh-67a845106</a></div>
-          <div class="contact-card"><span class="mini-icon">GH</span><strong>GitHub</strong><a href="https://github.com/singhsatyam85-cloud/Business-Analyst-portfolio" target="_blank" rel="noopener">github.com/singhsatyam85-cloud/Business-Analyst-portfolio</a></div>
-          <div class="contact-card"><span class="mini-icon">UK</span><strong>Location</strong><span>United Kingdom</span></div>
-          <div class="contact-card"><span class="mini-icon">☎</span><strong>Phone</strong><a href="tel:+447393065593">+44 7393 065593</a></div>
-        </div>
-      </div>
-    </section>
-    <!-- CONTACT SECTION END -->
   </main>
 
   <button class="floating-assistant-cta" id="floatingAssistantButton" type="button" aria-label="Open Role Fit Assistant">Role Fit Assistant</button>
@@ -2789,7 +3269,7 @@
       <button class="assistant-close" id="assistantClose" type="button" aria-label="Close Role Fit Assistant">×</button>
     </div>
     <div class="assistant-body">
-      <small>Quick role-fit with Shiv's detailed professional work document.</small>
+      <small>Quick role-fit using my detailed professional work document.</small>
       <button class="hire-question" id="hireQuestion" type="button">
         <span class="pulse-dot" aria-hidden="true"></span>
         <span class="hire-copy">
@@ -2801,7 +3281,7 @@
         <button class="secondary-match-btn" type="button" id="topCheckAnotherJdButton">Check another JD</button>
       </div>
       <div class="jd-panel" id="jdPanel">
-        <label for="jdText">Paste the job description and check how the role matches Shiv's BA profile.</label>
+        <label for="jdText">Paste the job description and check how the role matches my BA profile.</label>
         <textarea id="jdText" placeholder="Paste the job description here"></textarea>
         <button class="match-btn" id="matchButton" type="button">Check JD Match</button>
       </div>
@@ -2813,40 +3293,22 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h3>About Me</h3>
-        <p>Business Analyst with experience in EdTech, STEM platforms, web and mobile applications, process improvement, and an ERP-aligned professional simulation. Focused on translating business needs into clear documentation, analysis, and stakeholder-ready outputs.</p>
-      </div>
-      <div>
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#project-work">Project Work</a></li>
-          <li><a href="#visual-samples">Visual Samples</a></li>
-          <li><a href="#ba-deliverables">BA Deliverables</a></li>
-          <li><a href="#tools">Tools &amp; Technologies</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
         <h3>Contact Details</h3>
-        <ul class="footer-links">
-          <li><a href="mailto:shivsatyamsingh920@gmail.com">shivsatyamsingh920@gmail.com</a></li>
-          <li><a href="tel:+447393065593">+44 7393 065593</a></li>
-          <li>United Kingdom</li>
-          <li><a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener">LinkedIn profile</a></li>
-          <li><a href="https://github.com/singhsatyam85-cloud/Business-Analyst-portfolio" target="_blank" rel="noopener">GitHub repository</a></li>
-        </ul>
+        <div class="footer-contact-row" aria-label="Footer contact details">
+          <div class="footer-contact-card"><span class="mini-icon">@</span><strong>Email</strong><a href="mailto:shivsatyamsingh920@gmail.com">shivsatyamsingh920@gmail.com</a></div>
+          <div class="footer-contact-card"><span class="mini-icon">in</span><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener">LinkedIn profile</a></div>
+          <div class="footer-contact-card"><span class="mini-icon">UK</span><strong>Location</strong><span>United Kingdom</span></div>
+          <div class="footer-contact-card"><span class="mini-icon">☎</span><strong>Phone</strong><a href="tel:+447393065593">+44 7393 065593</a></div>
+        </div>
       </div>
-      <div>
+      <div class="footer-confidentiality">
         <h3>Confidentiality</h3>
         <p>All project work and samples are sanitised. All sample data is mock data. No real personal, commercial, internal, or confidential organisational information is included.</p>
       </div>
     </div>
     <div class="container footer-bottom">
       <span>© 2026 Shiv Satyam Singh. All rights reserved.</span>
-      <span>Business Analyst Portfolio</span>
+      <span>Business Analyst</span>
       <button class="back-top" type="button" id="backTop">Back to Top ↑</button>
     </div>
   </footer>
@@ -2868,6 +3330,19 @@
     const backTop = document.getElementById('backTop');
 
     const detailedProfilePath = 'cv-data/shiv-satyam-singh-detailed-cv.txt';
+
+
+    document.querySelectorAll('.evidence-accordion').forEach((accordion) => {
+      const items = accordion.querySelectorAll('details');
+      items.forEach((item) => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
+          items.forEach((otherItem) => {
+            if (otherItem !== item) otherItem.open = false;
+          });
+        });
+      });
+    });
     const fallbackProfile = `Shiv Satyam Singh Business Analyst profile. Digital transformation, technology solutions, requirements gathering, stakeholder management, Agile documentation, Jira, Confluence, user stories, acceptance criteria, functional requirements, non-functional requirements, business rules, BRD, FRD, process flows, As-Is and To-Be mapping, gap analysis, UAT support, feedback tracking, backlog support, change impact analysis, MVP scope, risk and dependency notes, stakeholder presentation, reporting samples, Microsoft Excel, Power BI dashboard requirement definition, MS Visio, Draw.io, Figma, Postman basics, web applications, mobile applications, technology solution projects, STEM platforms, attendance management system, e-commerce website, process improvement, KPI reporting, manufacturing operations, ERP-aligned compliance simulation. Basic exposure only: APIs, system integration, technical awareness. Not positioned as a full-stack software engineer or developer.`;
 
     let cachedProfileText = '';
@@ -3175,7 +3650,7 @@
         : result.percentage >= 50
           ? 'Apply after CV tailoring'
           : 'Not recommended for this profile';
-      const ringColor = result.percentage >= 75 ? 'var(--primary)' : result.percentage >= 50 ? 'var(--accent)' : '#6B3B2D';
+      const ringColor = result.percentage >= 75 ? 'var(--primary)' : result.percentage >= 50 ? 'var(--accent)' : '#B42318';
       const angle = Math.max(0, Math.min(100, result.percentage)) * 3.6;
 
       const sortedRows = [...result.rows].sort((a, b) => b.value - a.value);
@@ -3185,7 +3660,7 @@
 
       const barsHtml = visibleBars.map(row => {
         const value = Math.round(row.value * 100);
-        const color = value >= 75 ? 'var(--primary)' : value >= 50 ? 'var(--accent)' : '#6B3B2D';
+        const color = value >= 75 ? 'var(--primary)' : value >= 50 ? 'var(--accent)' : '#B42318';
         return `
           <div class="fit-bar-card">
             <div class="fit-bar-head"><span>${escapeHtml(row.area)}</span><span>${value}%</span></div>
