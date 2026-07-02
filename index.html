@@ -6619,6 +6619,1063 @@
       justify-content: flex-start !important;
     }
 
+
+    /* ===== Controlled content update styles only ===== */
+    .project-confidentiality-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      max-width: 980px;
+      margin: 0 auto 30px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #FFF7ED;
+      border: 1px solid #FDBA74;
+      color: #0F172A;
+      box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+    }
+    .project-confidentiality-note p { margin: 0; font-weight: 700; line-height: 1.55; color: #334155; }
+    .project-group { width: 100%; margin-top: 26px; }
+    .project-group-title { margin: 0 0 16px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(25px, 3vw, 34px); line-height: 1.1; font-weight: 900; color: #0F172A; text-align: left; }
+    .simulation-group { margin-top: 38px; }
+    .simulation-preview-strip { max-width: 560px; }
+    .simulation-card { border: 1px solid #FDBA74; background: linear-gradient(135deg, #FFFFFF 0%, #FFF7ED 100%); }
+    .simulation-note { margin: 16px 0 18px; padding: 14px 16px; border-radius: 16px; background: #FFF7ED; border: 1px solid #FDBA74; color: #7C2D12; font-weight: 800; line-height: 1.55; }
+    .work-pack-download { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 16px; }
+    .work-pack-pending { display: inline-flex; align-items: center; padding: 10px 14px; border-radius: 999px; background: #F1F5F9; border: 1px solid #CBD5E1; color: #475569; font-weight: 900; font-size: 13px; }
+    .pending-only { background: #F8FAFC; border-color: #E2E8F0; }
+    @media (max-width: 760px) {
+      .project-confidentiality-note { flex-direction: column; }
+      .project-group-title { text-align: center; }
+      .simulation-preview-strip { max-width: none; }
+    }
+
+
+    /* ===== Controlled colour separation update: no dice / assistant changes ===== */
+    #project-work .project-preview-strip:not(.simulation-preview-strip) .project-preview-card:nth-child(1) {
+      --project-accent: #16A34A;
+      --project-accent-rgb: 22, 163, 74;
+    }
+
+    #project-work .project-preview-strip:not(.simulation-preview-strip) .project-preview-card:nth-child(2) {
+      --project-accent: #7C3AED;
+      --project-accent-rgb: 124, 58, 237;
+    }
+
+    #project-work .project-preview-strip:not(.simulation-preview-strip) .project-preview-card:nth-child(3) {
+      --project-accent: #2563EB;
+      --project-accent-rgb: 37, 99, 235;
+    }
+
+    #project-work .project-preview-strip:not(.simulation-preview-strip) .project-preview-card:nth-child(4) {
+      --project-accent: #EA580C;
+      --project-accent-rgb: 234, 88, 12;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card {
+      --project-accent: #D97706;
+      --project-accent-rgb: 217, 119, 6;
+    }
+
+    #project-work .project-preview-card {
+      background: linear-gradient(180deg, #111827 0%, #0F172A 100%) !important;
+      border: 1px solid rgba(var(--project-accent-rgb), 0.34) !important;
+      border-top: 6px solid var(--project-accent) !important;
+      color: #E5E7EB !important;
+      box-shadow: 0 18px 34px rgba(2, 6, 23, 0.20) !important;
+    }
+
+    #project-work .project-preview-card::before {
+      height: 0 !important;
+      background: transparent !important;
+    }
+
+    #project-work .project-preview-card::after {
+      background: rgba(var(--project-accent-rgb), 0.14) !important;
+      z-index: 0 !important;
+    }
+
+    #project-work .project-preview-card .card-icon {
+      background: rgba(var(--project-accent-rgb), 0.16) !important;
+      border: 1px solid rgba(var(--project-accent-rgb), 0.55) !important;
+      color: #FFFFFF !important;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    #project-work .project-preview-card h3,
+    #project-work .project-preview-card .case-subtitle,
+    #project-work .project-preview-card .case-summary,
+    #project-work .project-preview-card li {
+      color: #F8FAFC !important;
+    }
+
+    #project-work .project-preview-card .case-subtitle {
+      color: rgba(var(--project-accent-rgb), 0.98) !important;
+      font-weight: 900 !important;
+    }
+
+    #project-work .project-preview-card .btn {
+      background: rgba(255,255,255,0.06) !important;
+      border-color: rgba(var(--project-accent-rgb), 0.55) !important;
+      color: #FFFFFF !important;
+    }
+
+    #project-work .project-preview-card .btn:hover {
+      background: var(--project-accent) !important;
+      border-color: var(--project-accent) !important;
+      color: #FFFFFF !important;
+    }
+
+    #project-work .simulation-card {
+      background: linear-gradient(180deg, #1F2937 0%, #111827 100%) !important;
+      border-color: rgba(217, 119, 6, 0.52) !important;
+      box-shadow: 0 18px 34px rgba(120, 53, 15, 0.16) !important;
+    }
+
+    #project-work .project-group-title {
+      color: #0F172A !important;
+    }
+
+    #detailed-case-studies {
+      background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%) !important;
+    }
+
+    #detailed-case-studies .section-head,
+    #detailed-case-studies .section-title h2,
+    #detailed-case-studies .detail-card h3,
+    #detailed-case-studies .detail-block h4,
+    #detailed-case-studies .evidence-panel h4 {
+      color: #0F172A !important;
+    }
+
+    #detailed-case-studies .detail-card {
+      background: #FFFFFF !important;
+      border: 1px solid #D7E3F5 !important;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07) !important;
+    }
+
+    #detailed-case-studies .detail-header {
+      border-bottom-color: #D7E3F5 !important;
+    }
+
+    #detailed-case-studies .detail-block {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035) !important;
+    }
+
+    #detailed-case-studies .evidence-panel {
+      background: #F8FAFC !important;
+      border: 1px solid #D7E3F5 !important;
+    }
+
+    #detailed-case-studies .evidence-doc-row {
+      background: #FFFFFF !important;
+      border-color: #E2E8F0 !important;
+    }
+
+    #detailed-case-studies .confidentiality-strip {
+      background: #FEF2F2 !important;
+      border: 1px solid #FECACA !important;
+      color: #7F1D1D !important;
+      font-weight: 800 !important;
+    }
+
+    #pwc-case {
+      background: #FFFBEB !important;
+      border: 1px solid #FCD34D !important;
+      box-shadow: 0 18px 40px rgba(217, 119, 6, 0.12) !important;
+    }
+
+    #pwc-case .detail-header {
+      border-bottom-color: #FCD34D !important;
+    }
+
+    #pwc-case .simulation-note {
+      background: #FFF7ED !important;
+      border: 1px solid #FDBA74 !important;
+      color: #7C2D12 !important;
+      box-shadow: none !important;
+    }
+
+    #pwc-case .evidence-panel {
+      background: #FFFFFF !important;
+      border-color: #FED7AA !important;
+    }
+
+    #visual-samples {
+      background: #FAFAF9 !important;
+    }
+
+    #visual-samples .sample-card {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+      border: 1px solid #E2E8F0 !important;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.06) !important;
+    }
+
+    #ba-deliverables.neo-systems-section {
+      background: #0F172A !important;
+    }
+
+    #ba-deliverables .neo-panel {
+      background: #F8FAFC !important;
+      border: 1px solid #D7E3F5 !important;
+      box-shadow: 0 18px 36px rgba(2, 6, 23, 0.18) !important;
+      color: #0F172A !important;
+    }
+
+    #ba-deliverables .neo-panel::before {
+      opacity: 0.12 !important;
+    }
+
+    #ba-deliverables .neo-panel::after {
+      background: rgba(15, 23, 42, 0.04) !important;
+    }
+
+    #ba-deliverables .neo-head h2,
+    #ba-deliverables .neo-detail-copy strong,
+    #ba-deliverables .neo-tool-card b,
+    #ba-deliverables .neo-skill-pill b,
+    #ba-deliverables .neo-item b {
+      color: #0F172A !important;
+    }
+
+    #ba-deliverables .neo-head p,
+    #ba-deliverables .neo-detail-copy p,
+    #ba-deliverables .neo-tool-card small {
+      color: #475569 !important;
+    }
+
+    #ba-deliverables .neo-badge {
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+      border-color: #334155 !important;
+    }
+
+    #ba-deliverables .neo-item,
+    #ba-deliverables .neo-tool-card,
+    #ba-deliverables .neo-skill-pill,
+    #ba-deliverables .neo-detail {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      color: #0F172A !important;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.05) !important;
+    }
+
+    #ba-deliverables .neo-item span,
+    #ba-deliverables .neo-tool-card span,
+    #ba-deliverables .neo-skill-pill span,
+    #ba-deliverables .neo-detail-icon {
+      background: #E0F2FE !important;
+      color: #0F172A !important;
+      border: 1px solid #BAE6FD !important;
+    }
+
+    #ba-deliverables .neo-detail-tag {
+      background: #EEF2FF !important;
+      color: #312E81 !important;
+      border-color: #C7D2FE !important;
+    }
+
+    #ba-deliverables .neo-item.active,
+    #ba-deliverables .neo-tool-card.active,
+    #ba-deliverables .neo-skill-pill.active {
+      border-color: #94A3B8 !important;
+      box-shadow: 0 12px 26px rgba(15, 23, 42, 0.10) !important;
+    }
+
+    .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"],
+    .hero-actions .btn-primary[href="#project-work"],
+    .work-pack-download .btn-primary[href*="Project_1_EdTech_Attendance_Work_Pack"],
+    .work-pack-download .btn-primary[href*="Project_2_Digital_STEM_Work_Pack"] {
+      background: #15803D !important;
+      border-color: #15803D !important;
+      color: #FFFFFF !important;
+    }
+
+    .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"]:hover,
+    .hero-actions .btn-primary[href="#project-work"]:hover,
+    .work-pack-download .btn-primary[href*="Project_1_EdTech_Attendance_Work_Pack"]:hover,
+    .work-pack-download .btn-primary[href*="Project_2_Digital_STEM_Work_Pack"]:hover {
+      background: #166534 !important;
+      border-color: #166534 !important;
+      color: #FFFFFF !important;
+    }
+
+
+    /* ===== Fix Professional Simulation card squeeze only ===== */
+    #project-work .simulation-preview-strip {
+      display: grid !important;
+      grid-template-columns: minmax(320px, 620px) !important;
+      max-width: 680px !important;
+      width: 100% !important;
+      justify-content: start !important;
+      align-items: stretch !important;
+      overflow: visible !important;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card {
+      width: 100% !important;
+      min-width: 0 !important;
+      max-width: 620px !important;
+      padding: 78px 26px 26px !important;
+      overflow: visible !important;
+      white-space: normal !important;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card h3,
+    #project-work .simulation-preview-strip .project-preview-card .case-subtitle,
+    #project-work .simulation-preview-strip .project-preview-card .case-summary,
+    #project-work .simulation-preview-strip .project-preview-card li,
+    #project-work .simulation-preview-strip .project-preview-card .btn {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      word-break: normal !important;
+      overflow-wrap: break-word !important;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card h3 {
+      min-height: auto !important;
+      font-size: 22px !important;
+      line-height: 1.15 !important;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card .case-subtitle {
+      display: block !important;
+      border-left: 3px solid var(--project-accent) !important;
+      padding-left: 12px !important;
+      line-height: 1.25 !important;
+    }
+
+    #project-work .simulation-preview-strip .project-preview-card .btn {
+      width: fit-content !important;
+      max-width: 100% !important;
+    }
+
+    @media (max-width: 760px) {
+      #project-work .simulation-preview-strip {
+        grid-template-columns: 1fr !important;
+        max-width: none !important;
+      }
+
+      #project-work .simulation-preview-strip .project-preview-card {
+        max-width: none !important;
+      }
+    }
+
+
+    /* ===== Hard fix: Professional Simulation card must not use 5-column grid ===== */
+    #project-work .simulation-single-card-strip {
+      display: flex !important;
+      width: 100% !important;
+      max-width: 760px !important;
+      min-width: 0 !important;
+      justify-content: flex-start !important;
+      align-items: stretch !important;
+      gap: 0 !important;
+      overflow: visible !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card {
+      flex: 0 1 620px !important;
+      width: 620px !important;
+      max-width: 100% !important;
+      min-width: 320px !important;
+      box-sizing: border-box !important;
+      display: block !important;
+      overflow: visible !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card h3 {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 0 !important;
+      white-space: normal !important;
+      overflow: visible !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+      text-wrap: balance;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .case-subtitle,
+    #project-work .simulation-single-card-strip .simulation-card .case-summary,
+    #project-work .simulation-single-card-strip .simulation-card ul,
+    #project-work .simulation-single-card-strip .simulation-card li {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+      overflow: visible !important;
+      overflow-wrap: normal !important;
+      word-break: normal !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .btn {
+      display: inline-flex !important;
+      width: auto !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+      overflow: visible !important;
+    }
+
+    @media (max-width: 760px) {
+      #project-work .simulation-single-card-strip {
+        max-width: 100% !important;
+      }
+
+      #project-work .simulation-single-card-strip .simulation-card {
+        flex-basis: 100% !important;
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+    }
+
+
+    /* ===== Controlled home + project card top-section refinement only ===== */
+    .hero {
+      padding-top: clamp(34px, 5vw, 58px) !important;
+      padding-bottom: clamp(34px, 5vw, 58px) !important;
+    }
+
+    .hero-grid {
+      align-items: center !important;
+      gap: clamp(24px, 4vw, 54px) !important;
+      min-height: auto !important;
+    }
+
+    .hero .hero-subtitle {
+      font-size: clamp(28px, 4.2vw, 56px) !important;
+      line-height: 1.05 !important;
+      margin-bottom: 14px !important;
+    }
+
+    .hero .hero-about-label {
+      margin-top: 10px !important;
+      margin-bottom: 7px !important;
+    }
+
+    .hero .lead {
+      font-size: clamp(16px, 1.4vw, 19px) !important;
+      line-height: 1.55 !important;
+      margin-bottom: 16px !important;
+      max-width: 680px !important;
+    }
+
+    .hero-keywords {
+      margin-top: 10px !important;
+      margin-bottom: 16px !important;
+      gap: 10px !important;
+    }
+
+    .hero-actions {
+      margin-top: 18px !important;
+    }
+
+    .hero-evidence-visual {
+      align-self: center !important;
+    }
+
+    #project-work .project-preview-card .btn {
+      white-space: normal !important;
+    }
+
+    #project-work .simulation-group {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    #project-work .simulation-group .project-group-title {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
+    #project-work .simulation-single-card-strip {
+      justify-content: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 30px !important;
+        padding-bottom: 34px !important;
+      }
+
+      .hero-grid {
+        gap: 28px !important;
+      }
+
+      .hero .hero-subtitle {
+        font-size: clamp(26px, 7vw, 42px) !important;
+      }
+    }
+
+
+    /* ===== Home visible balance fix only ===== */
+    .hero {
+      padding-top: clamp(26px, 3.8vw, 44px) !important;
+      padding-bottom: clamp(26px, 3.8vw, 44px) !important;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(520px, 1.04fr) minmax(430px, 0.96fr) !important;
+      gap: clamp(26px, 3.2vw, 44px) !important;
+      align-items: center !important;
+    }
+
+    .hero .hero-subtitle {
+      font-size: clamp(32px, 3.35vw, 48px) !important;
+      line-height: 1.08 !important;
+      max-width: 760px !important;
+      letter-spacing: -0.04em !important;
+      margin-bottom: 12px !important;
+    }
+
+    .hero .lead {
+      max-width: 720px !important;
+      font-size: clamp(16px, 1.15vw, 18px) !important;
+      line-height: 1.48 !important;
+      margin-bottom: 12px !important;
+    }
+
+    .hero-keywords {
+      margin-top: 8px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .hero-actions {
+      margin-top: 12px !important;
+    }
+
+    .hero-evidence-visual {
+      transform: translateY(-8px) !important;
+      gap: 14px !important;
+    }
+
+    .stat-strip {
+      margin-bottom: 8px !important;
+    }
+
+    .hero-core-line {
+      margin-top: 12px !important;
+      margin-bottom: 14px !important;
+      position: relative !important;
+      z-index: 2 !important;
+      max-width: 680px !important;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero .hero-subtitle {
+        font-size: clamp(30px, 6vw, 44px) !important;
+        max-width: 820px !important;
+      }
+
+      .hero-evidence-visual {
+        transform: none !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding-top: 24px !important;
+        padding-bottom: 30px !important;
+      }
+
+      .hero .hero-subtitle {
+        font-size: clamp(28px, 9vw, 38px) !important;
+        line-height: 1.1 !important;
+      }
+
+      .hero .lead {
+        font-size: 16px !important;
+      }
+
+      .hero-core-line {
+        margin-bottom: 70px !important;
+      }
+    }
+
+
+    /* ===== Detailed project case study section refinement only ===== */
+    #detailed-case-studies .detail-card {
+      --detail-accent: #2563EB;
+      border-top: 5px solid var(--detail-accent) !important;
+      padding-top: 22px !important;
+    }
+
+    #detailed-case-studies #attendance-case { --detail-accent: #16A34A; }
+    #detailed-case-studies #stem-case { --detail-accent: #7C3AED; }
+    #detailed-case-studies #autoparts-case { --detail-accent: #2563EB; }
+    #detailed-case-studies #operations-case { --detail-accent: #EA580C; }
+    #detailed-case-studies #pwc-case { --detail-accent: #D97706; }
+
+    #detailed-case-studies .detail-header {
+      padding-bottom: 12px !important;
+      margin-bottom: 12px !important;
+      gap: 14px !important;
+      align-items: flex-start !important;
+      border-bottom-color: #E2E8F0 !important;
+    }
+
+    #detailed-case-studies .detail-header h3 {
+      margin-bottom: 6px !important;
+    }
+
+    #detailed-case-studies .detail-header .case-subtitle {
+      margin-bottom: 8px !important;
+    }
+
+    #detailed-case-studies .project-type-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.22);
+      color: #0F172A;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    #detailed-case-studies .project-type-badge.badge-edtech {
+      background: rgba(22, 163, 74, 0.09);
+      border-color: rgba(22, 163, 74, 0.28);
+      color: #14532D;
+    }
+
+    #detailed-case-studies .project-type-badge.badge-stem {
+      background: rgba(124, 58, 237, 0.09);
+      border-color: rgba(124, 58, 237, 0.28);
+      color: #4C1D95;
+    }
+
+    #detailed-case-studies .project-type-badge.badge-autoparts {
+      background: rgba(37, 99, 235, 0.09);
+      border-color: rgba(37, 99, 235, 0.28);
+      color: #1E3A8A;
+    }
+
+    #detailed-case-studies .project-type-badge.badge-operations {
+      background: rgba(234, 88, 12, 0.09);
+      border-color: rgba(234, 88, 12, 0.28);
+      color: #7C2D12;
+    }
+
+    #detailed-case-studies .project-type-badge.badge-simulation {
+      background: rgba(217, 119, 6, 0.11);
+      border-color: rgba(217, 119, 6, 0.34);
+      color: #78350F;
+    }
+
+    #detailed-case-studies .detail-grid {
+      margin-top: 10px !important;
+      gap: 14px !important;
+    }
+
+    #detailed-case-studies .detail-block {
+      border-left: 3px solid rgba(37, 99, 235, 0.10) !important;
+    }
+
+    #detailed-case-studies #attendance-case .detail-block { border-left-color: rgba(22, 163, 74, 0.20) !important; }
+    #detailed-case-studies #stem-case .detail-block { border-left-color: rgba(124, 58, 237, 0.20) !important; }
+    #detailed-case-studies #autoparts-case .detail-block { border-left-color: rgba(37, 99, 235, 0.20) !important; }
+    #detailed-case-studies #operations-case .detail-block { border-left-color: rgba(234, 88, 12, 0.20) !important; }
+    #detailed-case-studies #pwc-case .detail-block { border-left-color: rgba(217, 119, 6, 0.22) !important; }
+
+    @media (max-width: 760px) {
+      #detailed-case-studies .detail-card {
+        padding-top: 18px !important;
+      }
+
+      #detailed-case-studies .detail-header {
+        margin-bottom: 10px !important;
+      }
+    }
+
+
+    /* ===== Hero headline font size reduction only ===== */
+    .hero .hero-subtitle {
+      font-size: clamp(28px, 2.75vw, 40px) !important;
+      line-height: 1.12 !important;
+      max-width: 720px !important;
+    }
+
+    @media (max-width: 1100px) {
+      .hero .hero-subtitle {
+        font-size: clamp(28px, 5.4vw, 38px) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero .hero-subtitle {
+        font-size: clamp(25px, 8vw, 34px) !important;
+      }
+    }
+
+
+    /* ===== Professional Simulation card only refinement ===== */
+    #project-work .simulation-single-card-strip .simulation-card {
+      min-height: auto !important;
+      padding-top: 62px !important;
+      padding-bottom: 22px !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card h3 {
+      margin-bottom: 8px !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .case-subtitle {
+      margin-bottom: 8px !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .simulation-card-badge {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      padding: 6px 10px;
+      margin: 0 0 12px;
+      border-radius: 999px;
+      background: rgba(217, 119, 6, 0.14);
+      border: 1px solid rgba(217, 119, 6, 0.36);
+      color: #FBBF24;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .case-summary {
+      margin-bottom: 12px !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .compact-list {
+      margin-top: 8px !important;
+      margin-bottom: 14px !important;
+    }
+
+    #project-work .simulation-single-card-strip .simulation-card .btn {
+      margin-top: 4px !important;
+    }
+
+
+    /* ===== Detailed white cards visual polish only ===== */
+    #detailed-case-studies .detail-block {
+      background: #FFFFFF !important;
+      border: 1px solid #E2E8F0 !important;
+      border-radius: 18px !important;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.075) !important;
+      padding: 22px 22px !important;
+    }
+
+    #detailed-case-studies .detail-block:hover {
+      box-shadow: 0 16px 34px rgba(15, 23, 42, 0.095) !important;
+      border-color: #CBD5E1 !important;
+    }
+
+    #detailed-case-studies .detail-block h4 {
+      margin-top: 0 !important;
+      margin-bottom: 10px !important;
+      color: #0F172A !important;
+    }
+
+    #detailed-case-studies .detail-block p,
+    #detailed-case-studies .detail-block ul {
+      margin-bottom: 0 !important;
+    }
+
+
+    /* ===== Detailed project section left accent border only ===== */
+    #detailed-case-studies .detail-card {
+      border-left: 5px solid var(--detail-accent) !important;
+      border-top: 1px solid #D7E3F5 !important;
+    }
+
+    #detailed-case-studies #attendance-case {
+      --detail-accent: #16A34A;
+    }
+
+    #detailed-case-studies #stem-case {
+      --detail-accent: #7C3AED;
+    }
+
+    #detailed-case-studies #autoparts-case {
+      --detail-accent: #2563EB;
+    }
+
+    #detailed-case-studies #operations-case {
+      --detail-accent: #EA580C;
+    }
+
+    #detailed-case-studies #pwc-case {
+      --detail-accent: #D97706;
+    }
+
+    #detailed-case-studies .detail-block {
+      border-left-color: #E2E8F0 !important;
+    }
+
+
+    /* ===== Detailed project section top accent border only ===== */
+    #detailed-case-studies .detail-card {
+      border-top: 4px solid var(--detail-accent) !important;
+    }
+
+    #detailed-case-studies #attendance-case {
+      --detail-accent: #16A34A;
+    }
+
+    #detailed-case-studies #stem-case {
+      --detail-accent: #7C3AED;
+    }
+
+    #detailed-case-studies #autoparts-case {
+      --detail-accent: #2563EB;
+    }
+
+    #detailed-case-studies #operations-case {
+      --detail-accent: #EA580C;
+    }
+
+    #detailed-case-studies #pwc-case {
+      --detail-accent: #D97706;
+    }
+
+
+    /* ===== Detailed project subtle shorter left accent line only ===== */
+    #detailed-case-studies .detail-card {
+      position: relative !important;
+      overflow: hidden !important;
+      border-left: 1px solid #D7E3F5 !important;
+    }
+
+    #detailed-case-studies .detail-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 2px;
+      height: 96px;
+      border-radius: 999px;
+      background: var(--detail-accent-soft);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+
+    #detailed-case-studies #attendance-case {
+      --detail-accent-soft: rgba(22, 163, 74, 0.42);
+    }
+
+    #detailed-case-studies #stem-case {
+      --detail-accent-soft: rgba(124, 58, 237, 0.42);
+    }
+
+    #detailed-case-studies #autoparts-case {
+      --detail-accent-soft: rgba(37, 99, 235, 0.42);
+    }
+
+    #detailed-case-studies #operations-case {
+      --detail-accent-soft: rgba(234, 88, 12, 0.42);
+    }
+
+    #detailed-case-studies #pwc-case {
+      --detail-accent-soft: rgba(217, 119, 6, 0.44);
+    }
+
+    @media (max-width: 760px) {
+      #detailed-case-studies .detail-card::before {
+        top: 20px;
+        height: 78px;
+      }
+    }
+
+
+    /* ===== Remove detailed project outer L-shaped coloured border only ===== */
+    #detailed-case-studies .detail-card {
+      border-left: 1px solid #D7E3F5 !important;
+      border-top: 1px solid #D7E3F5 !important;
+    }
+
+    #detailed-case-studies .detail-card::before {
+      content: none !important;
+      display: none !important;
+    }
+
+
+    /* ===== Detailed project clean solid borders only ===== */
+    #detailed-case-studies #attendance-case {
+      border: 1px solid rgba(22, 163, 74, 0.42) !important;
+      --detail-card-soft-border: rgba(22, 163, 74, 0.20);
+    }
+
+    #detailed-case-studies #stem-case {
+      border: 1px solid rgba(124, 58, 237, 0.42) !important;
+      --detail-card-soft-border: rgba(124, 58, 237, 0.20);
+    }
+
+    #detailed-case-studies #autoparts-case {
+      border: 1px solid rgba(37, 99, 235, 0.42) !important;
+      --detail-card-soft-border: rgba(37, 99, 235, 0.20);
+    }
+
+    #detailed-case-studies #operations-case {
+      border: 1px solid rgba(234, 88, 12, 0.42) !important;
+      --detail-card-soft-border: rgba(234, 88, 12, 0.20);
+    }
+
+    #detailed-case-studies #pwc-case {
+      border: 1px solid rgba(217, 119, 6, 0.44) !important;
+      --detail-card-soft-border: rgba(217, 119, 6, 0.22);
+    }
+
+    #detailed-case-studies .detail-card {
+      border-radius: 22px !important;
+    }
+
+    #detailed-case-studies .detail-card::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    #detailed-case-studies .detail-block {
+      background: #FFFFFF !important;
+      border: 1px solid var(--detail-card-soft-border, #E2E8F0) !important;
+    }
+
+
+    /* ===== Detailed project stronger complete borders only ===== */
+    #detailed-case-studies .detail-card {
+      background: #FFFFFF !important;
+      border-radius: 18px !important;
+      box-sizing: border-box !important;
+      border-left: var(--detail-section-border) !important;
+      border-right: var(--detail-section-border) !important;
+      border-top: var(--detail-section-border) !important;
+      border-bottom: var(--detail-section-border) !important;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.075) !important;
+    }
+
+    #detailed-case-studies .detail-card::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    #detailed-case-studies #attendance-case {
+      --detail-section-border: 2px solid #22C55E;
+      --detail-inner-border: rgba(34, 197, 94, 0.50);
+    }
+
+    #detailed-case-studies #stem-case {
+      --detail-section-border: 2px solid #8B5CF6;
+      --detail-inner-border: rgba(139, 92, 246, 0.50);
+    }
+
+    #detailed-case-studies #autoparts-case {
+      --detail-section-border: 2px solid #2563EB;
+      --detail-inner-border: rgba(37, 99, 235, 0.48);
+    }
+
+    #detailed-case-studies #operations-case {
+      --detail-section-border: 2px solid #F97316;
+      --detail-inner-border: rgba(249, 115, 22, 0.50);
+    }
+
+    #detailed-case-studies #pwc-case {
+      --detail-section-border: 2px solid #D97706;
+      --detail-inner-border: rgba(217, 119, 6, 0.52);
+    }
+
+    #detailed-case-studies .detail-block {
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--detail-inner-border, #CBD5E1) !important;
+      border-radius: 18px !important;
+      box-sizing: border-box !important;
+    }
+
+
+    /* ===== Final override: actual detailed project wrapper border visibility ===== */
+    #detailed-case-studies article.detail-card {
+      border-radius: 18px !important;
+      background: #ffffff !important;
+      box-sizing: border-box !important;
+      background-clip: padding-box !important;
+    }
+
+    #detailed-case-studies article.detail-card::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    #detailed-case-studies article.detail-card#attendance-case {
+      --project-accent: #22C55E;
+      border: 2px solid #22C55E !important;
+      outline: 0 !important;
+    }
+
+    #detailed-case-studies article.detail-card#stem-case {
+      --project-accent: #8B5CF6;
+      border: 2px solid #8B5CF6 !important;
+      outline: 0 !important;
+    }
+
+    #detailed-case-studies article.detail-card#autoparts-case {
+      --project-accent: #2563EB;
+      border: 2px solid #2563EB !important;
+      outline: 0 !important;
+    }
+
+    #detailed-case-studies article.detail-card#operations-case {
+      --project-accent: #F97316;
+      border: 2px solid #F97316 !important;
+      outline: 0 !important;
+    }
+
+    #detailed-case-studies article.detail-card#pwc-case {
+      --project-accent: #D97706;
+      border: 2px solid #D97706 !important;
+      outline: 0 !important;
+    }
+
+    #detailed-case-studies article.detail-card#attendance-case .detail-block {
+      border: 1.5px solid rgba(34, 197, 94, 0.45) !important;
+      background: #ffffff !important;
+    }
+
+    #detailed-case-studies article.detail-card#stem-case .detail-block {
+      border: 1.5px solid rgba(139, 92, 246, 0.45) !important;
+      background: #ffffff !important;
+    }
+
+    #detailed-case-studies article.detail-card#autoparts-case .detail-block {
+      border: 1.5px solid rgba(37, 99, 235, 0.45) !important;
+      background: #ffffff !important;
+    }
+
+    #detailed-case-studies article.detail-card#operations-case .detail-block {
+      border: 1.5px solid rgba(249, 115, 22, 0.45) !important;
+      background: #ffffff !important;
+    }
+
+    #detailed-case-studies article.detail-card#pwc-case .detail-block {
+      border: 1.5px solid rgba(217, 119, 6, 0.45) !important;
+      background: #ffffff !important;
+    }
+
 </style>
 </head>
 <body id="top">
@@ -6644,7 +7701,7 @@
 </ul>
 </nav>
 <div class="nav-actions">
-<a class="btn btn-primary" href="https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/Document/Shiv_Satyam_Singh_BA_CV.pdf" rel="noopener" target="_blank">Download CV</a>
+<a class="btn btn-primary" href="Document/Shiv_Satyam_Singh_BA_CV.pdf" download>Download CV</a>
 </div>
 </div>
 </header>
@@ -6653,14 +7710,14 @@
 <div class="container hero-grid">
 <div>
 <h1 class="sr-only" id="hero-title">Business Analyst Portfolio</h1>
-<p class="hero-subtitle">Business Analyst | Digital Transformation | Technology Solutions | STEM Platforms | Web &amp; Mobile Applications | Process Improvement</p>
+<p class="hero-subtitle">Business Analyst | Digital Projects | Process Improvement | Manufacturing Automation</p>
 <p class="hero-about-label">About Me</p>
-<p class="lead">Sanitised Business Analyst project work based on real project experience across EdTech, STEM learning platforms, web and mobile applications, operational process improvement, and ERP-aligned professional simulation work.</p>
+<p class="lead">Sanitised Business Analyst portfolio based on real project experience across web and mobile applications, EdTech/STEM platforms, operational process improvement and manufacturing automation. One professional simulation is clearly labelled separately.</p>
 <div aria-label="Portfolio keywords" class="hero-keywords">
 <span class="keyword">EdTech</span>
 <span class="keyword">STEM Platforms</span>
 <span class="keyword">Web &amp; Mobile Applications</span>
-<span class="keyword">ERP &amp; Business Systems</span>
+<span class="keyword">Manufacturing Automation</span>
 </div>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#project-work">Explore Project Work</a>
@@ -6672,7 +7729,7 @@
 <span class="stat-mini"><strong>5</strong><small>Projects</small></span>
 <span class="stat-mini"><strong>20+</strong><small>BA Docs</small></span>
 <span class="stat-mini"><strong>15+</strong><small>Tools</small></span>
-<span class="stat-mini"><strong>8+</strong><small>Areas</small></span>
+<span class="stat-mini"><strong>4</strong><small>Domains</small></span>
 </div>
 
 <div class="ba-delivery-axis-card direction-dice-card">
@@ -6719,79 +7776,67 @@
   <span class="project-work-eyebrow">Portfolio Case Studies</span>
   <h2 id="project-work-title">Project Work</h2>
   <span class="project-work-line" aria-hidden="true"></span>
-  <p>A clean preview of my Business Analyst project work, including project summaries, BA evidence and supporting documents.</p>
+  <p>A clean preview of my sanitised Business Analyst project work, including real project-based BA evidence and one clearly labelled professional simulation.</p>
 </div>
-<div aria-label="Project work preview cards" class="project-preview-strip">
-<article class="case-card project-preview-card">
-<span class="card-icon">01</span>
-<h3>EdTech Attendance Management System</h3>
-<p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-<p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
-<ul class="compact-list">
-<li>Teacher and admin workflow analysis</li>
-<li>Attendance marking and submission flow</li>
-<li>Records and basic reporting</li>
-<li>Role-based access and security</li>
-</ul>
-<a class="btn" href="#attendance-case">View Project Work</a>
-</article>
-<article class="case-card project-preview-card">
-<span class="card-icon gold">02</span>
-<h3>Digital STEM Content Delivery Platform</h3>
-<p class="case-subtitle">Smart Classroom BA Project Work</p>
-<p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
-<ul class="compact-list">
-<li>No student portal or student login</li>
-<li>Teacher classroom controls</li>
-<li>3D videos, animations, simulations</li>
-<li>Content search and filtering</li>
-</ul>
-<a class="btn" href="#stem-case">View Project Work</a>
-</article>
-<article class="case-card project-preview-card">
-<span class="card-icon">03</span>
-<h3>Autoparts E-commerce Website</h3>
-<p class="case-subtitle">Web Platform BA Project Work</p>
-<p class="case-summary">Business Analyst work for an autoparts website involving product browsing, website flow, enquiry flow, documentation, UI/UX review, and UAT support.</p>
-<ul class="compact-list">
-<li>User journey mapping</li>
-<li>Functional requirements</li>
-<li>Product browsing and category flow</li>
-<li>UAT support and sign-off support</li>
-</ul>
-<a class="btn" href="#autoparts-case">View Project Work</a>
-</article>
-<article class="case-card project-preview-card">
-<span class="card-icon gold">04</span>
-<h3>Operational Process Improvement &amp; KPI Reporting</h3>
-<p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
-<p class="case-summary">Process improvement work focused on cycle time reduction, waste reduction, KPI tracking, production analysis, operational reporting, and performance improvement.</p>
-<ul class="compact-list">
-<li>As-Is and To-Be process mapping</li>
-<li>Gap and root cause analysis</li>
-<li>KPI requirement definition</li>
-<li>Improvement tracking</li>
-</ul>
-<a class="btn" href="#operations-case">View Project Work</a>
-</article>
-<article class="case-card project-preview-card">
-<span class="card-icon">05</span>
-<h3>ERP-Aligned Compliance System Upgrade</h3>
-<p class="case-subtitle">Technology Consulting Professional Simulation</p>
-<p class="case-summary">Professional simulation focused on an ERP-aligned compliance system upgrade with discovery planning, user stories, MVP roadmap, and executive summary preparation.</p>
-<ul class="compact-list">
-<li>Discovery workshop planning</li>
-<li>User stories and requirements</li>
-<li>MVP roadmap development</li>
-<li>Consulting-style documentation</li>
-</ul>
-<a class="btn" href="#pwc-case">View Project Work</a>
-</article>
+
+<div class="project-confidentiality-note" role="note">
+  <span class="notice-icon">i</span>
+  <p>All project work is sanitised for portfolio use. Real project-based work excludes confidential company, client, school, student, commercial, system and operational data. The ERP compliance project is a professional simulation completed through Forage.</p>
 </div>
-<div class="disclaimer-card" role="note">
-<span class="notice-icon">i</span>
-<p>All project work are based on real project experience except the clearly labelled professional simulation. The compliance project work is a professional simulation and not paid employment, client delivery, or a real consulting client project.</p>
+
+<div class="project-group">
+  <h3 class="project-group-title">Real Project-Based Work</h3>
+  <div aria-label="Real project-based work preview cards" class="project-preview-strip">
+    <article class="case-card project-preview-card">
+      <span class="card-icon">01</span>
+      <h3>EdTech Attendance Management System</h3>
+      <p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
+      <p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
+      <ul class="compact-list"><li>Teacher and admin workflow analysis</li><li>Attendance marking and submission flow</li><li>Records and basic reporting</li><li>Role-based access and security</li></ul>
+      <a class="btn" href="#attendance-case">View Case Study</a>
+    </article>
+    <article class="case-card project-preview-card">
+      <span class="card-icon gold">02</span>
+      <h3>Digital STEM Content Delivery Platform</h3>
+      <p class="case-subtitle">Smart Classroom BA Project Work</p>
+      <p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
+      <ul class="compact-list"><li>No student portal or student login</li><li>Teacher classroom controls</li><li>3D videos, animations, simulations</li><li>Content search and filtering</li></ul>
+      <a class="btn" href="#stem-case">View Case Study</a>
+    </article>
+    <article class="case-card project-preview-card">
+      <span class="card-icon">03</span>
+      <h3>Autoparts Company Website Development</h3>
+      <p class="case-subtitle">Website Development BA Project Work</p>
+      <p class="case-summary">Company website development work covering page structure, user journey, enquiry flow, contact page requirements and customer-facing content.</p>
+      <ul class="compact-list"><li>User journey mapping</li><li>Functional requirements</li><li>Enquiry journey structure</li><li>UI/UX review and UAT support</li></ul>
+      <a class="btn" href="#autoparts-case">View Case Study</a>
+    </article>
+    <article class="case-card project-preview-card">
+      <span class="card-icon gold">04</span>
+      <h3>Operational Process Improvement &amp; KPI Reporting</h3>
+      <p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
+      <p class="case-summary">Process improvement work focused on As-Is/To-Be mapping, gap analysis, KPI requirement definition, reporting needs and improvement tracking.</p>
+      <ul class="compact-list"><li>As-Is and To-Be process mapping</li><li>Gap and root cause analysis</li><li>KPI requirement definition</li><li>Stakeholder coordination</li></ul>
+      <a class="btn" href="#operations-case">View Case Study</a>
+    </article>
+  </div>
 </div>
+
+<div class="project-group simulation-group">
+  <h3 class="project-group-title">Professional Simulation</h3>
+  <div aria-label="Professional simulation preview card" class="simulation-preview-strip simulation-single-card-strip">
+    <article class="case-card project-preview-card simulation-card">
+      <span class="card-icon">05</span>
+      <h3>Professional Simulation: ERP Compliance System Upgrade</h3>
+      <p class="case-subtitle">Forage Technology Consulting Simulation</p>
+      <span class="simulation-card-badge">Forage Simulation</span>
+      <p class="case-summary">This project is a professional simulation completed through Forage. It is not paid employment, client delivery, or real consulting work.</p>
+      <ul class="compact-list"><li>Discovery workshop planning</li><li>User stories and requirements</li><li>MVP roadmap development</li><li>Executive summary preparation</li></ul>
+      <a class="btn" href="#pwc-case">View Simulation</a>
+    </article>
+  </div>
+</div>
+
 </div>
 </section>
 <!-- CASE STUDIES END -->
@@ -6809,242 +7854,126 @@
 </div>
 <div class="detail-stack">
 <article class="detail-card" id="attendance-case">
-<div class="detail-header">
-<div>
-<h3>EdTech Attendance Management System</h3>
-<p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-</div>
-<a class="btn" href="#project-work">Back to Project Work</a>
-</div>
-<div class="detail-grid">
-<div class="detail-block"><h4>Project Background</h4><p>A school-focused attendance management system designed to support teacher and admin workflows for recording attendance and improving visibility of attendance records.</p></div>
-<div class="detail-block"><h4>Business Problem</h4><p>Attendance tracking needed clearer digital workflows, better record visibility, and reduced dependency on manual follow-up between teachers and admin users.</p></div>
-<div class="detail-block"><h4>My BA Role</h4><p>Supported requirement gathering, workflow analysis, user story writing, acceptance criteria preparation, process mapping, UAT support, and feedback tracking.</p></div>
-<div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Teachers</li><li>School admin users</li><li>School leadership</li><li>Implementation and support team</li></ul></div>
-<div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher login flow</li><li>Class and date selection</li><li>Attendance marking and submission</li><li>Admin record visibility</li><li>Basic attendance reporting</li><li>Role-based access</li></ul></div>
-<div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Requirement notes</li><li>User stories</li><li>Acceptance criteria</li><li>Process flow</li><li>UAT scenarios</li><li>Feedback tracker</li></ul></div>
-<div class="detail-block"><h4>Tools Used</h4><p>Jira, Confluence, Microsoft Excel, Microsoft PowerPoint, Draw.io or Visio-style process mapping, Agile Scrum working practices.</p></div>
-<div class="detail-block"><h4>Outcome / Impact</h4><p>The work helped clarify the teacher and admin journey, define the MVP workflow, support testing conversations, and make attendance records easier to manage.</p></div>
-<div class="detail-block"><h4>Confidentiality Note</h4><p>This portfolio version is sanitised. Names, school data, staff details, user details, operational identifiers, and internal information are not included.</p></div>
-</div>
-<div aria-label="BA Work Evidence" class="evidence-panel">
-<div class="evidence-panel-head">
-<div>
-<h4>BA Work Evidence</h4>
-<p>Use the dropdown shutters below to view the project documents without making the page crowded.</p>
-</div>
-<span class="evidence-hint">Click a section to expand</span>
-</div>
-<div class="evidence-accordion">
-<details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Project overview, intake, stakeholders, RACI and discovery notes.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Overview</span><span class="doc-desc">Business context, objectives, scope and success view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/01-Project%20Overview.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial intake notes, background, expectations and starting context.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register &amp; Discovery Questions</span><span class="doc-desc">Stakeholder groups, interest level and discovery questions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Stakeholder%20Register%20and%20Discovery%20Questions.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Roles and responsibilities across BA, PO, Dev, QA and users.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/04-RACI%20Matrix.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Workshop style notes capturing user pain points and needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<div class="detail-header"><div><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
+<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A school-focused attendance management system designed to support teacher and admin workflows for attendance capture, records and visibility.</p></div><div class="detail-block"><h4>Business Problem</h4><p>Attendance work needed clearer digital flow, structured requirements and review evidence to support teacher/admin usage.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported discovery notes, requirement clarification, user stories, acceptance criteria, process flow review, UAT scenarios and feedback tracking.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>School owner or principal</li><li>Admin user</li><li>Teachers</li><li>Development team</li><li>Testing team</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher attendance marking</li><li>Admin record visibility</li><li>Role-based access</li><li>Attendance submission flow</li><li>Basic reporting needs</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Requirement notes</li><li>User stories</li><li>Acceptance criteria</li><li>Process flow</li><li>UAT scenarios</li><li>Feedback tracker</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira-style backlog, Confluence-style documentation, Draw.io or Visio-style process mapping, Excel tracker.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work created a clear BA evidence pack for attendance workflow, requirements and UAT planning.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
+<div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
+<div class="work-pack-download"><a class="btn btn-primary" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html" download>Download Project 1 Work Pack</a></div><div class="evidence-accordion"><details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholders and planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial project context and scope notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholders and discovery questions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Stakeholder%20Register%20and%20Discovery%20Questions.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Workshop notes and business needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">BRD, FRD, NFR, business rules, use case, user stories and backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">BRD</span><span class="doc-desc">Business objectives, scope, stakeholders, assumptions and rules.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">FRD</span><span class="doc-desc">Functional behaviour, validations and system requirements.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/09-Functional%20Requirements%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">NFR</span><span class="doc-desc">Performance, security, usability, reliability and scalability needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/10-Non%20Functional%20Requirements%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules</span><span class="doc-desc">Policies and operational rules for attendance handling.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Use Case Document</span><span class="doc-desc">User interaction flow and system response view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/12-Use%20Case%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories &amp; Acceptance Criteria</span><span class="doc-desc">User stories written with acceptance criteria.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Product Backlog</span><span class="doc-desc">Prioritised backlog with delivery mapping.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/14-Product%20backlog.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">Requirements, stories and acceptance criteria.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Business Requirements Document</span><span class="doc-desc">Business objectives and high-level requirements.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories and Acceptance Criteria</span><span class="doc-desc">Agile stories and acceptance criteria.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules Document</span><span class="doc-desc">Rules for attendance handling.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">As-Is, To-Be, data fields, role permissions and wireframe review.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process Flow</span><span class="doc-desc">Current attendance process before digital change.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Future state process after digital solution.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Data Field List</span><span class="doc-desc">Field list for forms, screens and records.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/16-Data%20Field%20List.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Role Permission Matrix</span><span class="doc-desc">Role-based access and permission view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Wireframe Review Notes</span><span class="doc-desc">UI/UX review notes and improvement suggestions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/18-Wireframe%20Review%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">Process flow, data and role access evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process</span><span class="doc-desc">Current attendance workflow view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Business Flow</span><span class="doc-desc">Improved attendance workflow view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Role and Permission Matrix</span><span class="doc-desc">Access and responsibility mapping.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Test scenario review, UAT plan, sprint review and roadmap.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario review for main attendance flow.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">UAT Plan</span><span class="doc-desc">UAT approach, test scope, entry and exit criteria.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 0 Review Notes</span><span class="doc-desc">Sprint 0 review notes and delivery summary.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/21-Sprint%200%20Review%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Roadmap &amp; Timeline</span><span class="doc-desc">Roadmap and timeline view for delivery planning.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
-</details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">UAT and delivery review evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario coverage and test review notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Acceptance Testing Plan</span><span class="doc-desc">UAT approach and sign-off preparation.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Roadmap and Timeline</span><span class="doc-desc">Delivery planning and timeline view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+</details></div>
+<div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
-<div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
-</div>
-</article>
-<article class="detail-card" id="stem-case">
-<div class="detail-header">
-<div>
-<h3>Digital STEM Content Delivery Platform</h3>
-<p class="case-subtitle">Smart Classroom BA Project Work</p>
-</div>
-<a class="btn" href="#project-work">Back to Project Work</a>
-</div>
-<div class="detail-grid">
-<div class="detail-block"><h4>Project Background</h4><p>A teacher-led platform for displaying STEM and coding learning content on classroom screens, projectors, and smart boards.</p></div>
-<div class="detail-block"><h4>Business Problem</h4><p>Teachers needed an easier way to access visual learning content during class without requiring students to log in or use separate devices.</p></div>
-<div class="detail-block"><h4>My BA Role</h4><p>Supported content delivery flow definition, classroom usage analysis, user stories, acceptance criteria, UAT scenarios, and risk and dependency notes.</p></div>
-<div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Teachers</li><li>Admin content managers</li><li>School leadership</li><li>Implementation and content support team</li></ul></div>
-<div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher-controlled content access</li><li>STEM and coding content categories</li><li>3D videos, animations, and simulations</li><li>Content search and filtering</li><li>Admin content management</li><li>No student portal, login, or separate device access</li></ul></div>
-<div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Business rule notes</li><li>Content delivery workflow</li><li>User stories</li><li>Acceptance criteria</li><li>UAT scenarios</li><li>Risk and dependency notes</li></ul></div>
-<div class="detail-block"><h4>Tools Used</h4><p>Jira, Confluence, Microsoft Excel, Microsoft PowerPoint, Draw.io or Visio-style flows, Agile documentation practices.</p></div>
-<div class="detail-block"><h4>Outcome / Impact</h4><p>The project work defines a realistic smart classroom flow where teachers control the platform and deliver content to the full class from one screen.</p></div>
-<div class="detail-block"><h4>Confidentiality Note</h4><p>This portfolio version uses sanitised wording and sample labels only. No school, student, staff, content licence, commercial, or internal platform data is shown.</p></div>
-</div>
-<div aria-label="BA Work Evidence" class="evidence-panel">
-<div class="evidence-panel-head">
-<div>
-<h4>BA Work Evidence</h4>
-<p>Use the dropdown shutters below to view the project documents without making the page crowded.</p>
-</div>
-<span class="evidence-hint">Click a section to expand</span>
-</div>
-<div class="evidence-accordion">
-<details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Intake notes, discovery questions, stakeholder register, RACI, roadmap and learning objectives.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial intake notes, project background, expectations and starting context.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Question</span><span class="doc-desc">Discovery questions used to clarify stakeholder needs and content delivery expectations.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Question.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Meeting notes capturing discussion points, user needs and decisions.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholder groups, roles, interest level and communication view.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Stakeholder%20Register.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Responsibility mapping across BA, PO, Dev, QA and stakeholder groups.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/RACI%20matrix.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Delivery Roadmap</span><span class="doc-desc">Delivery phases, timeline view and key planning milestones.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Learning Objective Matrix</span><span class="doc-desc">Learning objectives mapped to STEM content and classroom delivery needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+</article><article class="detail-card" id="stem-case">
+<div class="detail-header"><div><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
+<span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A teacher-led digital STEM content platform for classroom screens, projectors or smart boards, with no student portal or student login.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The platform needed clear content delivery rules, teacher journey structure, classroom delivery flow and review evidence.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported business rule notes, content delivery workflow, user stories, acceptance criteria, risk/dependency notes and UAT planning.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>School leadership</li><li>Teachers</li><li>Content team</li><li>Development team</li><li>Testing team</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher content access</li><li>STEM and coding content delivery</li><li>Search and filter flow</li><li>Classroom display journey</li><li>Content review needs</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Business rule notes</li><li>Content delivery workflow</li><li>User stories</li><li>Acceptance criteria</li><li>UAT scenarios</li><li>Risk and dependency notes</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira-style backlog, Confluence-style documentation, Draw.io or Visio-style process mapping, Excel tracker.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work created a clear BA evidence pack for teacher-led content delivery, requirements and testing preparation.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div aria-label="BA Work Evidence" class="evidence-panel" id="stem-case-evidence">
+<div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
+<div class="work-pack-download"><a class="btn btn-primary" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html" download>Download Project 2 Work Pack</a></div><div class="evidence-accordion"><details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholder and roadmap evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Project context and starting scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Stakeholder discussion and findings.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Learning Objective Matrix</span><span class="doc-desc">Learning objectives mapped to content needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">BRD, FRD, NFR, content requirement, business rules, use case, user stories and backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Business Requirements Document</span><span class="doc-desc">Business objectives, scope, stakeholders, assumptions and high-level requirements.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Functional Requirements Document</span><span class="doc-desc">Functional behaviour, validations, system actions and expected outcomes.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Functional%20Requirements%20Document.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Non Functional Requirements</span><span class="doc-desc">Performance, usability, reliability, compatibility and scalability needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Non%20Functional%20Requirements%20.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Content Requirement</span><span class="doc-desc">Content structure, categories, delivery expectations and classroom usage needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules</span><span class="doc-desc">Policies, constraints and operational rules for STEM content delivery.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Rules.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Use Case</span><span class="doc-desc">User interaction flow between teacher, admin and platform functions.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Use%20Case.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories &amp; Acceptance Criteria</span><span class="doc-desc">User stories written with acceptance criteria for delivery and validation.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Product Backlog</span><span class="doc-desc">Prioritised backlog items for the STEM content delivery platform.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Product%20Backlog.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 1 Backlog</span><span class="doc-desc">Sprint 1 delivery items and backlog planning view.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">Rules, content needs and backlog evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Business Requirements Document</span><span class="doc-desc">Business goals and requirement scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Content Requirement</span><span class="doc-desc">Content delivery requirements.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories and Acceptance Criteria</span><span class="doc-desc">Agile stories and acceptance criteria.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">As-Is, To-Be, screen flow, wireframe review, data fields and role permissions.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process</span><span class="doc-desc">Current classroom content access process before the proposed solution.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Future-state process flow for improved STEM content delivery.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Storyboard and Screen Flow</span><span class="doc-desc">Screen journey and storyboard flow for teacher-led classroom usage.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Wireframe Review</span><span class="doc-desc">UI/UX review notes and improvement suggestions for platform screens.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Wireframe%20Review.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Data Field List</span><span class="doc-desc">Field list for screens, records, content items and admin inputs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Data%20Field%20List.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Role and Permission Matrix</span><span class="doc-desc">Role-based access view for teachers, admins and platform users.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Role%20and%20Permission%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">Process, storyboard and screen flow evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process</span><span class="doc-desc">Current classroom content delivery view.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Improved teacher-led content delivery flow.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Storyboard and Screen Flow</span><span class="doc-desc">Screen and content flow evidence.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Testing timeline and scenario review plan for validating the project flow.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Timeline and Review Plan</span><span class="doc-desc">Testing timeline, scenario review approach and validation planning.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Testing and review planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Timeline and Review Plan</span><span class="doc-desc">Testing timeline and review plan.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 1 Backlog</span><span class="doc-desc">Sprint planning and delivery scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Delivery Roadmap</span><span class="doc-desc">Delivery planning and dependencies.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
+</details></div>
+<div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
+</div>
+</article><article class="detail-card" id="autoparts-case">
+<div class="detail-header"><div><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
+<span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A company website development project covering product and service information, page structure, user journey, enquiry flow, contact page requirements and customer-facing website content.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The website needed clearer page requirements, better enquiry journey structure, organised feedback tracking and improved user experience for visitors submitting enquiries.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported stakeholder discussions, user journey mapping, functional requirements, UI/UX review notes, backlog tracking, change tracking, UAT support and sign-off preparation.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Business owner or product owner</li><li>Website visitors</li><li>Development team</li><li>Testing team</li><li>Business support users</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Page structure</li><li>Customer enquiry flow</li><li>Contact page requirements</li><li>Product and service information</li><li>UI/UX review</li><li>UAT support</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>User journey map</li><li>Functional requirement notes</li><li>Website flow notes</li><li>Backlog tracker</li><li>Change tracker</li><li>UAT feedback notes</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira or tracker-style backlog, Confluence-style documentation, Microsoft Excel, Microsoft PowerPoint, Draw.io or Visio-style flow mapping.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work helped structure website requirements, improve enquiry flow understanding and support review/testing discussions.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div aria-label="BA Work Evidence" class="evidence-panel" id="autoparts-case-evidence">
+<div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
-</div>
-<div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
-</div>
-</article>
-<article class="detail-card" id="autoparts-case">
-<div class="detail-header">
-<div>
-<h3>Autoparts E-commerce Website</h3>
-<p class="case-subtitle">Web Platform BA Project Work</p>
-</div>
-<a class="btn" href="#project-work">Back to Project Work</a>
-</div>
-<div class="detail-grid">
-<div class="detail-block"><h4>Project Background</h4><p>A web platform project work for an autoparts website covering product browsing, category navigation, website flow, enquiry flow, and customer-facing page requirements.</p></div>
-<div class="detail-block"><h4>Business Problem</h4><p>The website needed clearer user journeys, better requirement structure, and organised feedback tracking for product discovery and enquiry actions.</p></div>
-<div class="detail-block"><h4>My BA Role</h4><p>Supported user journey mapping, functional requirements, UI/UX review notes, backlog tracking, change tracking, UAT support, and sign-off preparation.</p></div>
-<div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Website visitors</li><li>Business owner or product owner</li><li>Development team</li><li>Testing team</li><li>Business support users</li></ul></div>
-<div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Product browsing journey</li><li>Category and search flow</li><li>Enquiry or order flow</li><li>Contact and support flow</li><li>UI/UX feedback</li><li>UAT support</li></ul></div>
-<div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>User journey map</li><li>Functional requirement notes</li><li>Website flow notes</li><li>Backlog tracker</li><li>Change tracker</li><li>UAT feedback notes</li></ul></div>
-<div class="detail-block"><h4>Tools Used</h4><p>Jira or tracker-style backlog, Confluence-style documentation, Microsoft Excel, Microsoft PowerPoint, Draw.io or Visio-style flow mapping.</p></div>
-<div class="detail-block"><h4>Outcome / Impact</h4><p>The work helped structure website requirements, improve shared understanding of user journeys, and support review and testing discussions.</p></div>
-<div class="detail-block"><h4>Confidentiality Note</h4><p>Content is sanitised. No real customer data, commercial figures, supplier details, internal IDs, login details, or operational information is shown.</p></div>
-</div>
-<div aria-label="BA Work Evidence" class="evidence-panel">
-<div class="evidence-panel-head">
-<div>
-<h4>BA Work Evidence</h4>
-<p>Use the dropdown shutters below to view the project documents without making the page crowded.</p>
-</div>
-<span class="evidence-hint">Click a section to expand</span>
-</div>
-<div class="evidence-accordion">
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Project overview, stakeholders, RACI, discovery notes and scope.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Overview</span><span class="doc-desc">Business context, objectives, scope and success view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholder groups, interest level and discovery questions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Roles and responsibilities across BA, PO, Dev, QA and users.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Notes</span><span class="doc-desc">Workshop style notes capturing user pain points and needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">BRD, FRD, NFR, business rules, user stories and backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">BRD</span><span class="doc-desc">Business objectives, scope, stakeholders, assumptions and rules.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">FRD</span><span class="doc-desc">Functional behaviour, validations and system requirements.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">NFR</span><span class="doc-desc">Performance, security, usability, reliability and scalability needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules</span><span class="doc-desc">Policies and operational rules for attendance handling.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories &amp; Acceptance Criteria</span><span class="doc-desc">User stories written with acceptance criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Product Backlog</span><span class="doc-desc">Prioritised backlog with delivery mapping.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">As-Is, To-Be, role permissions, wireframes and data fields.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process Flow</span><span class="doc-desc">Current attendance process before digital change.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Future state process after digital solution.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Role Permission Matrix</span><span class="doc-desc">Role-based access and permission view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Wireframe Review</span><span class="doc-desc">UI/UX review notes and improvement suggestions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Data Field List</span><span class="doc-desc">Field list for forms, screens and records.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">UAT plan, testing scenarios, sprint review and retrospective notes.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">UAT Plan</span><span class="doc-desc">UAT approach, test scope, entry and exit criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario review for main attendance flow.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint Review</span><span class="doc-desc">Sprint 0 review notes and delivery summary.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Retrospective Notes</span><span class="doc-desc">Learning and improvement notes from the sprint.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
-</div>
-<div class="work-pack-download"><a aria-disabled="true" class="btn btn-primary" href="#">Complete Work Pack Upload Pending</a></div>
-<div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
-</div>
-</article>
-<article class="detail-card" id="operations-case">
-<div class="detail-header">
-<div>
-<h3>Operational Process Improvement &amp; KPI Reporting</h3>
-<p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
-</div>
-<a class="btn" href="#project-work">Back to Project Work</a>
-</div>
-<div class="detail-grid">
-<div class="detail-block"><h4>Project Background</h4><p>Operational improvement project work focused on cycle time, waste reduction, KPI tracking, production analysis, reporting, and performance visibility.</p></div>
-<div class="detail-block"><h4>Business Problem</h4><p>Operational teams needed clearer process understanding, improvement tracking, and reporting views to support better decision-making and follow-up.</p></div>
-<div class="detail-block"><h4>My BA Role</h4><p>Supported As-Is and To-Be process mapping, gap analysis, root cause analysis, KPI requirement definition, reporting needs, and stakeholder coordination.</p></div>
-<div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Operations stakeholders</li><li>Production teams</li><li>Reporting users</li><li>Process owners</li><li>Leadership reviewers</li></ul></div>
-<div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Process mapping</li><li>Gap analysis</li><li>KPI tracking requirements</li><li>Operational reporting</li><li>Improvement tracker</li><li>Performance review support</li></ul></div>
-<div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>As-Is process view</li><li>To-Be process view</li><li>Gap analysis notes</li><li>KPI requirement list</li><li>Reporting sample</li><li>Improvement tracker</li></ul></div>
-<div class="detail-block"><h4>Tools Used</h4><p>Microsoft Excel, Power BI concepts, Microsoft PowerPoint, Visio-style process maps, reporting templates, stakeholder review notes.</p></div>
-<div class="detail-block"><h4>Outcome / Impact</h4><p>The work helped translate operational problems into structured improvement actions, KPI reporting needs, and clearer process documentation.</p></div>
-<div class="detail-block"><h4>Confidentiality Note</h4><p>This version uses mock figures and sample labels. No commercial, production, internal system, operational, or confidential company data is included.</p></div>
-</div>
-<div aria-label="BA Work Evidence" class="evidence-panel">
-<div class="evidence-panel-head">
-<div>
-<h4>BA Work Evidence</h4>
-<p>Use the dropdown shutters below to view the project documents without making the page crowded.</p>
-</div>
-<span class="evidence-hint">Click a section to expand</span>
-</div>
-<div class="evidence-accordion">
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Project overview, stakeholders, RACI, discovery notes and scope.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Overview</span><span class="doc-desc">Business context, objectives, scope and success view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholder groups, interest level and discovery questions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Roles and responsibilities across BA, PO, Dev, QA and users.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Notes</span><span class="doc-desc">Workshop style notes capturing user pain points and needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">BRD, FRD, NFR, business rules, user stories and backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">BRD</span><span class="doc-desc">Business objectives, scope, stakeholders, assumptions and rules.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">FRD</span><span class="doc-desc">Functional behaviour, validations and system requirements.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">NFR</span><span class="doc-desc">Performance, security, usability, reliability and scalability needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules</span><span class="doc-desc">Policies and operational rules for attendance handling.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories &amp; Acceptance Criteria</span><span class="doc-desc">User stories written with acceptance criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Product Backlog</span><span class="doc-desc">Prioritised backlog with delivery mapping.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">As-Is, To-Be, role permissions, wireframes and data fields.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process Flow</span><span class="doc-desc">Current attendance process before digital change.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Future state process after digital solution.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Role Permission Matrix</span><span class="doc-desc">Role-based access and permission view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Wireframe Review</span><span class="doc-desc">UI/UX review notes and improvement suggestions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Data Field List</span><span class="doc-desc">Field list for forms, screens and records.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">UAT plan, testing scenarios, sprint review and retrospective notes.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">UAT Plan</span><span class="doc-desc">UAT approach, test scope, entry and exit criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario review for main attendance flow.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint Review</span><span class="doc-desc">Sprint 0 review notes and delivery summary.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Retrospective Notes</span><span class="doc-desc">Learning and improvement notes from the sprint.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
-</div>
-<div class="work-pack-download"><a aria-disabled="true" class="btn btn-primary" href="#">Complete Work Pack Upload Pending</a></div>
-<div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
-</div>
-</article>
-<article class="detail-card" id="pwc-case">
-<div class="detail-header">
-<div>
-<h3>ERP-Aligned Compliance System Upgrade | Professional Simulation</h3>
-<p class="case-subtitle">Technology Consulting Professional Simulation</p>
-</div>
-<a class="btn" href="#project-work">Back to Project Work</a>
-</div>
-<div class="detail-grid">
-<div class="detail-block"><h4>Project Background</h4><p>A professional simulation focused on an ERP-aligned compliance system upgrade and consulting-style delivery documentation.</p></div>
-<div class="detail-block"><h4>Business Problem</h4><p>The scenario required structured discovery planning, clearer requirements, user stories, MVP roadmap thinking, and an executive-level summary of project value.</p></div>
-<div class="detail-block"><h4>My BA Role</h4><p>Completed discovery workshop planning, requirements understanding, user stories, MVP roadmap preparation, stakeholder communication, and executive summary presentation.</p></div>
-<div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Business stakeholders in the simulation</li><li>Compliance process users in the simulation</li><li>Consulting delivery reviewers</li><li>Technology delivery team roles in the simulation</li></ul></div>
-<div class="detail-block"><h4>Key Features or Scope</h4><ul><li>ERP-aligned process understanding</li><li>Compliance-focused business process thinking</li><li>Discovery workshop planning</li><li>User stories</li><li>MVP roadmap</li><li>Executive summary</li></ul></div>
-<div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Discovery plan</li><li>User stories</li><li>MVP roadmap</li><li>Requirements notes</li><li>Executive summary slide</li><li>Consulting-style documentation</li></ul></div>
-<div class="detail-block"><h4>Tools Used</h4><p>Microsoft PowerPoint, Microsoft Excel, structured discovery notes, Agile requirement formats, stakeholder presentation format.</p></div>
-<div class="detail-block"><h4>Outcome / Impact</h4><p>The simulation demonstrates BA thinking for discovery, requirements, MVP planning, stakeholder communication, and executive summary preparation.</p></div>
-<div class="detail-block"><h4>Confidentiality Note</h4><p>This is clearly labelled as a professional simulation. It is not paid employment, client delivery, or a real consulting client project.</p></div>
-</div>
-<div aria-label="BA Work Evidence" class="evidence-panel">
-<div class="evidence-panel-head">
-<div>
-<h4>BA Work Evidence</h4>
-<p>Use the dropdown shutters below to view the project documents without making the page crowded.</p>
-</div>
-<span class="evidence-hint">Click a section to expand</span>
-</div>
-<div class="evidence-accordion">
 <details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Project overview, stakeholders, RACI, discovery notes and scope.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Overview</span><span class="doc-desc">Business context, objectives, scope and success view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholder groups, interest level and discovery questions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Roles and responsibilities across BA, PO, Dev, QA and users.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Notes</span><span class="doc-desc">Workshop style notes capturing user pain points and needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">BRD, FRD, NFR, business rules, user stories and backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">BRD</span><span class="doc-desc">Business objectives, scope, stakeholders, assumptions and rules.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">FRD</span><span class="doc-desc">Functional behaviour, validations and system requirements.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">NFR</span><span class="doc-desc">Performance, security, usability, reliability and scalability needs.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Business Rules</span><span class="doc-desc">Policies and operational rules for attendance handling.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">User Stories &amp; Acceptance Criteria</span><span class="doc-desc">User stories written with acceptance criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Product Backlog</span><span class="doc-desc">Prioritised backlog with delivery mapping.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">As-Is, To-Be, role permissions, wireframes and data fields.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">As-Is Process Flow</span><span class="doc-desc">Current attendance process before digital change.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">To-Be Process Flow</span><span class="doc-desc">Future state process after digital solution.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Role Permission Matrix</span><span class="doc-desc">Role-based access and permission view.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Wireframe Review</span><span class="doc-desc">UI/UX review notes and improvement suggestions.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Data Field List</span><span class="doc-desc">Field list for forms, screens and records.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
-</details><details>
-<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">UAT plan, testing scenarios, sprint review and retrospective notes.</span></span></span><span class="accordion-arrow">⌄</span></summary>
-<div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">UAT Plan</span><span class="doc-desc">UAT approach, test scope, entry and exit criteria.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario review for main attendance flow.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint Review</span><span class="doc-desc">Sprint 0 review notes and delivery summary.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div><div class="evidence-doc-row"><span class="doc-name">Retrospective Notes</span><span class="doc-desc">Learning and improvement notes from the sprint.</span><a aria-disabled="true" class="doc-link" href="#">Upload Pending</a></div></div>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details></div>
+<div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
+</div>
+</article><article class="detail-card" id="operations-case">
+<div class="detail-header"><div><h3>Operational Process Improvement &amp; KPI Reporting</h3><p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
+<span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>Operational improvement work focused on manufacturing process understanding, KPI visibility, reporting needs and performance follow-up.</p></div><div class="detail-block"><h4>Business Problem</h4><p>Operational teams needed clearer process views, gap analysis, improvement tracking and KPI reporting requirements.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported As-Is and To-Be process mapping, gap analysis, root cause analysis, KPI requirement definition, reporting needs and stakeholder coordination.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Operations stakeholders</li><li>Production teams</li><li>Process owners</li><li>Reporting users</li><li>Leadership reviewers</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>As-Is and To-Be process mapping</li><li>Gap analysis</li><li>Root cause analysis</li><li>KPI requirement definition</li><li>Reporting needs</li><li>Improvement tracking</li><li>Stakeholder coordination</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>As-Is process view</li><li>To-Be process view</li><li>Gap analysis notes</li><li>KPI requirement list</li><li>Reporting sample</li><li>Improvement tracker</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Microsoft Excel, Power BI concepts, Microsoft PowerPoint, Visio-style process maps, reporting templates.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work translated operational problems into structured improvement actions, KPI reporting needs and clearer process documentation.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div aria-label="BA Work Evidence" class="evidence-panel" id="operations-case-evidence">
+<div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details></div>
+<div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
-<div class="work-pack-download"><a aria-disabled="true" class="btn btn-primary" href="#">Complete Work Pack Upload Pending</a></div>
-<div class="confidentiality-strip">All documents are sample/sanitised portfolio evidence. No confidential company data, real student data, login details, commercial figures, or private operational data is included.</div>
+</article><article class="detail-card" id="pwc-case">
+<div class="detail-header"><div><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
+<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div><div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A professional simulation completed through Forage to practise BA documentation for an ERP compliance system upgrade scenario.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The simulation required structured discovery planning, clear requirements, user stories, MVP roadmap thinking and executive communication.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Completed discovery workshop planning, requirement understanding, user stories, MVP roadmap preparation and executive summary presentation as simulation work.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Business stakeholders in the simulation</li><li>Compliance process users in the simulation</li><li>Technology delivery team roles in the simulation</li><li>Simulation reviewers</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>ERP compliance scenario</li><li>Discovery workshop planning</li><li>User stories</li><li>MVP roadmap</li><li>Executive summary</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Discovery plan</li><li>User stories</li><li>MVP roadmap</li><li>Requirements notes</li><li>Executive summary slide</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Microsoft PowerPoint, Microsoft Excel, structured discovery notes and Agile requirement formats.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The simulation demonstrates BA documentation practice for discovery, requirements, MVP planning and executive communication.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div aria-label="BA Work Evidence" class="evidence-panel" id="pwc-case-evidence">
+<div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">RQ</span><span>2. Requirements Documentation<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">PD</span><span>3. Process &amp; Design<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details>
+<details>
+<summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
+<div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
+</details></div>
+<div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
-</article>
-</div>
-</div>
-</section>
+</article></section>
 <!-- DETAILED CASE STUDIES END -->
 <!-- VISUAL SAMPLES START -->
 <section aria-labelledby="samples-title" class="section samples-section" id="visual-samples">
@@ -7055,7 +7984,7 @@
 <span class="section-icon">VS</span>
 <h2 id="samples-title">BA Visual, Reporting &amp; Presentation Samples</h2>
 </div>
-<p class="section-note">Visual examples are represented with clean placeholders until the sample images are added to the assets folder.</p>
+<p class="section-note">Visual examples of process maps, wireframes, dashboards and presentation samples used to communicate Business Analyst work clearly.</p>
 </div>
 </div>
 <div class="sample-grid">
@@ -7234,7 +8163,7 @@
 </div>
 </section>
 <!-- PORTFOLIO ASSISTANT END -->
-<footer class="site-footer">
+<footer class="site-footer" id="contact">
 <div class="container footer-grid">
 <div>
 <h3>Contact Details</h3>
