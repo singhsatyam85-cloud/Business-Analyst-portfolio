@@ -10121,6 +10121,561 @@
 }
 
 </style>
+<style>
+/* Final fix: remove project summary cards and close the empty space in detailed project sections */
+#detailed-case-studies .detail-card > .evidence-panel {
+  margin-top: 0 !important;
+}
+#detailed-case-studies .detail-header {
+  margin-bottom: 14px !important;
+}
+#detailed-case-studies .simulation-note {
+  margin-bottom: 14px !important;
+}
+
+
+/* FINAL FIX: make Professional Simulation preview card same size/alignment as real project cards */
+#project-work .simulation-group {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#project-work .simulation-group .project-group-title {
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}
+
+#project-work .simulation-single-card-strip,
+#project-work .simulation-preview-strip.simulation-single-card-strip {
+  max-width: 1180px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  justify-content: start !important;
+  align-items: stretch !important;
+}
+
+#project-work #erpSimulationCard {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 252px !important;
+  max-height: none !important;
+  padding: 20px 16px 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0 !important;
+  row-gap: 0 !important;
+  align-content: stretch !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+}
+
+#project-work #erpSimulationCard .card-icon {
+  position: static !important;
+  width: 42px !important;
+  height: 42px !important;
+  margin: 0 0 12px !important;
+  font-size: 16px !important;
+}
+
+#project-work #erpSimulationCard h3 {
+  font-size: 16px !important;
+  line-height: 1.12 !important;
+  min-height: 42px !important;
+  max-width: none !important;
+  margin: 0 0 7px !important;
+  letter-spacing: -0.15px !important;
+}
+
+#project-work #erpSimulationCard .case-subtitle {
+  font-size: 12.5px !important;
+  line-height: 1.25 !important;
+  min-height: 34px !important;
+  margin: 0 0 6px !important;
+  padding-left: 0 !important;
+  border-left: 0 !important;
+  white-space: normal !important;
+}
+
+#project-work #erpSimulationCard .simulation-card-badge {
+  display: inline-flex !important;
+  width: fit-content !important;
+  margin: 0 0 7px !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+  line-height: 1.1 !important;
+}
+
+#project-work #erpSimulationCard .case-summary {
+  display: block !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 0 8px !important;
+  font-size: 11.5px !important;
+  line-height: 1.35 !important;
+}
+
+#project-work #erpSimulationCard .compact-list {
+  min-height: 54px !important;
+  margin: 0 0 14px !important;
+  padding-left: 16px !important;
+  font-size: 12px !important;
+  line-height: 1.35 !important;
+  gap: 0 !important;
+}
+
+#project-work #erpSimulationCard .compact-list li {
+  display: list-item !important;
+  margin-bottom: 4px !important;
+}
+
+#project-work #erpSimulationCard .compact-list li:nth-child(n+4) {
+  display: none !important;
+}
+
+#project-work #erpSimulationCard .btn {
+  margin-top: auto !important;
+  width: 100% !important;
+  align-self: stretch !important;
+  justify-content: center !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+  min-height: 34px !important;
+  font-size: 12.5px !important;
+}
+
+@media (max-width: 1024px) {
+  #project-work .simulation-single-card-strip,
+  #project-work .simulation-preview-strip.simulation-single-card-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #project-work .simulation-single-card-strip,
+  #project-work .simulation-preview-strip.simulation-single-card-strip {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+
+
+/* ===== FINAL FIX: move BA Deliverables, Tools and Key Skills beside simulation card ===== */
+#project-work .simulation-group {
+  max-width: 1180px !important;
+  margin: 30px auto 0 !important;
+}
+#project-work .simulation-group .project-group-title {
+  max-width: 1180px !important;
+  margin: 0 auto 16px !important;
+  text-align: left !important;
+}
+#project-work .simulation-showcase-layout {
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  gap: 24px !important;
+  align-items: stretch !important;
+}
+#project-work .simulation-showcase-layout .simulation-single-card-strip {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+#project-work .simulation-showcase-layout #erpSimulationCard {
+  width: 100% !important;
+  min-height: 392px !important;
+  height: 100% !important;
+  padding: 22px 18px 18px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+#project-work .simulation-showcase-layout #erpSimulationCard .compact-list {
+  margin-bottom: 12px !important;
+}
+#project-work .simulation-showcase-layout #erpSimulationCard .btn {
+  margin-top: auto !important;
+}
+#project-work .simulation-side-capabilities {
+  min-height: 392px !important;
+  display: grid !important;
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+#project-work .side-capability-panel {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 62%, rgba(34, 197, 94, 0.08) 100%) !important;
+  border: 1.5px solid rgba(15, 23, 42, 0.10) !important;
+  border-left: 5px solid #22c55e !important;
+  border-radius: 16px !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+  padding: 14px 16px !important;
+  overflow: hidden !important;
+}
+#project-work .side-capability-panel:nth-child(2) {
+  border-left-color: #0ea5e9 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 62%, rgba(14, 165, 233, 0.08) 100%) !important;
+}
+#project-work .side-capability-panel:nth-child(3) {
+  border-left-color: #8b5cf6 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 62%, rgba(139, 92, 246, 0.08) 100%) !important;
+}
+#project-work .side-capability-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+#project-work .side-badge {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 10px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  background: #0f172a !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  flex: 0 0 auto !important;
+}
+#project-work .side-capability-head h4 {
+  margin: 0 !important;
+  font-size: 15px !important;
+  line-height: 1.1 !important;
+  color: #0f172a !important;
+}
+#project-work .side-capability-head p {
+  margin: 3px 0 0 !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+  color: #475569 !important;
+}
+#project-work .side-chip-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 7px !important;
+}
+#project-work .side-chip-grid span {
+  min-height: 26px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px 7px !important;
+  border-radius: 9px !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  color: #0f172a !important;
+  font-size: 10.5px !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.04) !important;
+}
+#project-work .tools-mini-panel .side-chip-grid span:nth-child(4n+1),
+#project-work .tools-mini-panel .side-chip-grid span:nth-child(4n+2),
+#project-work .tools-mini-panel .side-chip-grid span:nth-child(4n+3),
+#project-work .tools-mini-panel .side-chip-grid span:nth-child(4n+4) {
+  background: rgba(240, 249, 255, 0.92) !important;
+}
+#project-work .skills-mini-panel .side-chip-grid span {
+  background: rgba(250, 245, 255, 0.88) !important;
+}
+/* Remove old standalone BA section space completely */
+body .ba-polished,
+body #ba-deliverables.ba-polished {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+@media (max-width: 1024px) {
+  #project-work .simulation-showcase-layout {
+    grid-template-columns: 1fr !important;
+  }
+  #project-work .simulation-side-capabilities {
+    min-height: 0 !important;
+  }
+  #project-work .side-chip-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+@media (max-width: 640px) {
+  #project-work .side-chip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  #project-work .simulation-showcase-layout #erpSimulationCard {
+    min-height: 0 !important;
+  }
+}
+
+</style>
+<style>
+/* FINAL MICRO FIX: reduce Professional Simulation heading size only */
+#project-work .simulation-group > .project-group-title {
+  font-size: 30px !important;
+  line-height: 1.15 !important;
+  margin-bottom: 14px !important;
+  letter-spacing: -0.3px !important;
+}
+@media (max-width: 768px) {
+  #project-work .simulation-group > .project-group-title {
+    font-size: 24px !important;
+  }
+}
+@media (max-width: 480px) {
+  #project-work .simulation-group > .project-group-title {
+    font-size: 22px !important;
+  }
+}
+</style>
+
+<style>
+/* FINAL: 3D icon hover rotate + scale effect for Professional Simulation side panels only */
+#project-work .simulation-side-capabilities .side-badge {
+  transform-style: preserve-3d !important;
+  transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease !important;
+  will-change: transform !important;
+}
+
+#project-work .simulation-side-capabilities .side-capability-panel:hover .side-badge {
+  transform: perspective(600px) rotateY(-12deg) rotateX(5deg) translateY(-3px) scale(1.08) !important;
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.22), 0 0 20px rgba(34, 197, 94, 0.22) !important;
+}
+
+#project-work .simulation-side-capabilities .side-capability-panel:nth-child(2):hover .side-badge {
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.22), 0 0 20px rgba(14, 165, 233, 0.24) !important;
+}
+
+#project-work .simulation-side-capabilities .side-capability-panel:nth-child(3):hover .side-badge {
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.22), 0 0 20px rgba(139, 92, 246, 0.24) !important;
+}
+
+#project-work .simulation-side-capabilities .side-capability-panel {
+  transition: transform 0.28s ease, box-shadow 0.28s ease !important;
+}
+
+#project-work .simulation-side-capabilities .side-capability-panel:hover {
+  transform: translateY(-2px) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-work .simulation-side-capabilities .side-badge,
+  #project-work .simulation-side-capabilities .side-capability-panel {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+</style>
+
+<style>
+/* FINAL POSITION FIX: align Professional Simulation heading with card and shift card group left */
+#project-work .simulation-group {
+  max-width: 1180px !important;
+  margin: 26px auto 0 !important;
+}
+
+#project-work .simulation-showcase-layout {
+  max-width: 1180px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  gap: 24px !important;
+  justify-content: start !important;
+}
+
+#project-work .simulation-group > .project-group-title {
+  width: 280px !important;
+  max-width: 280px !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+  font-size: 26px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.2px !important;
+}
+
+@media (max-width: 1024px) {
+  #project-work .simulation-group {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #project-work .simulation-showcase-layout {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    grid-template-columns: 1fr !important;
+  }
+  #project-work .simulation-group > .project-group-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    font-size: 24px !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* FINAL CORRECTION: Professional Simulation layout as requested
+   - simulation card stays on the left
+   - keep a clear gap between card and BA panels
+   - heading aligns above the right-side BA panels, not above the card
+*/
+#project-work .simulation-group {
+  max-width: 1120px !important;
+  margin: 28px auto 0 !important;
+  padding: 0 !important;
+}
+
+#project-work .simulation-group > .project-group-title {
+  width: calc(100% - 332px) !important;
+  max-width: calc(100% - 332px) !important;
+  margin: 0 0 14px 332px !important;
+  text-align: center !important;
+  font-size: 30px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.25px !important;
+}
+
+#project-work .simulation-showcase-layout {
+  width: 100% !important;
+  max-width: 1120px !important;
+  margin: 0 !important;
+  display: grid !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  column-gap: 52px !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+  justify-content: start !important;
+}
+
+#project-work .simulation-preview-strip {
+  grid-column: 1 !important;
+  width: 280px !important;
+  max-width: 280px !important;
+  margin: 0 !important;
+}
+
+#project-work #erpSimulationCard {
+  width: 280px !important;
+  max-width: 280px !important;
+  min-height: 520px !important;
+  height: 520px !important;
+}
+
+#project-work .simulation-side-capabilities {
+  grid-column: 2 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  gap: 14px !important;
+}
+
+@media (max-width: 1024px) {
+  #project-work .simulation-group {
+    max-width: 92vw !important;
+  }
+  #project-work .simulation-group > .project-group-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 14px 0 !important;
+    text-align: center !important;
+    font-size: 26px !important;
+  }
+  #project-work .simulation-showcase-layout {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  #project-work .simulation-preview-strip,
+  #project-work #erpSimulationCard {
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 auto !important;
+  }
+  #project-work .simulation-side-capabilities {
+    grid-column: 1 !important;
+  }
+}
+</style>
+
+
+<style>
+/* FINAL CORRECTION: Professional Simulation heading above 5th card only */
+#project-work .simulation-group > .project-group-title {
+  display: none !important;
+}
+
+#project-work .simulation-showcase-layout .simulation-preview-strip > .simulation-left-title {
+  display: block !important;
+  width: 280px !important;
+  max-width: 280px !important;
+  margin: 0 0 14px 0 !important;
+  padding: 0 !important;
+  text-align: center !important;
+  font-size: 26px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.2px !important;
+  color: #0f172a !important;
+}
+
+#project-work .simulation-showcase-layout {
+  max-width: 1120px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  column-gap: 52px !important;
+  align-items: start !important;
+}
+
+#project-work .simulation-showcase-layout .simulation-preview-strip {
+  grid-column: 1 !important;
+  width: 280px !important;
+  max-width: 280px !important;
+  margin: 0 !important;
+}
+
+#project-work .simulation-showcase-layout #erpSimulationCard {
+  width: 280px !important;
+  max-width: 280px !important;
+}
+
+#project-work .simulation-side-capabilities {
+  grid-column: 2 !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  #project-work .simulation-showcase-layout {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  #project-work .simulation-showcase-layout .simulation-preview-strip,
+  #project-work .simulation-showcase-layout .simulation-preview-strip > .simulation-left-title,
+  #project-work .simulation-showcase-layout #erpSimulationCard {
+    width: 100% !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #project-work .simulation-side-capabilities {
+    grid-column: 1 !important;
+  }
+}
+</style>
 </head>
 <body id="top">
 <header class="site-header">
@@ -10145,7 +10700,7 @@
 </ul>
 </nav>
 <div class="nav-actions">
-<a class="btn btn-primary" href="Document/Shiv_Satyam_Singh_BA_CV.pdf" download>Download CV</a>
+<a class="btn btn-primary" download="" href="Document/Shiv_Satyam_Singh_BA_CV.pdf">Download CV</a>
 </div>
 </div>
 </header>
@@ -10175,112 +10730,125 @@
 <span class="stat-mini"><strong>15+</strong><small>Tools</small></span>
 <span class="stat-mini"><strong>4</strong><small>Domains</small></span>
 </div>
-
 <div class="ba-delivery-axis-card direction-dice-card">
-  <h3 class="ba-delivery-axis-title">How I deliver BA work</h3>
-  <div class="ba-axis-layout direction-dice-layout">
-    <div aria-hidden="true" class="direction-dice-scene">
-      <div class="direction-dice-cube flip-left" id="directionDiceCube">
-        <span class="direction-dice-depth"></span>
-        <div class="direction-dice-face" id="directionDiceFace">
-          <span class="direction-dice-corner">LEFT</span>
-          <strong>1</strong>
-        </div>
-      </div>
-    </div>
-    <div aria-live="polite" class="axis-step-name-box direction-step-name-box">
-      <span id="directionStepLabel">Left</span>
-      <h4 id="directionStepName">Discovery</h4>
-    </div>
-  </div>
+<h3 class="ba-delivery-axis-title">How I deliver BA work</h3>
+<div class="ba-axis-layout direction-dice-layout">
+<div aria-hidden="true" class="direction-dice-scene">
+<div class="direction-dice-cube flip-left" id="directionDiceCube">
+<span class="direction-dice-depth"></span>
+<div class="direction-dice-face" id="directionDiceFace">
+<span class="direction-dice-corner">LEFT</span>
+<strong>1</strong>
 </div>
-<div class="hero-core-line" aria-label="Core strengths">
-  <span class="hero-core-label">Core Strengths</span>
-  <div class="hero-core-points">
-    <span class="hero-core-pill" style="--accent:#2563EB">Requirement Gathering</span>
-    <span class="hero-core-pill" style="--accent:#7C3AED">Stakeholder Management</span>
-    <span class="hero-core-pill" style="--accent:#C2410C">Process Mapping</span>
-    <span class="hero-core-pill" style="--accent:#BE123C">User Stories &amp; AC</span>
-    <span class="hero-core-pill" style="--accent:#0F172A">UAT Support</span>
-    <span class="hero-core-pill" style="--accent:#B45309">Change Impact Analysis</span>
-  </div>
+</div>
+</div>
+<div aria-live="polite" class="axis-step-name-box direction-step-name-box">
+<span id="directionStepLabel">Left</span>
+<h4 id="directionStepName">Discovery</h4>
+</div>
+</div>
+</div>
+<div aria-label="Core strengths" class="hero-core-line">
+<span class="hero-core-label">Core Strengths</span>
+<div class="hero-core-points">
+<span class="hero-core-pill" style="--accent:#2563EB">Requirement Gathering</span>
+<span class="hero-core-pill" style="--accent:#7C3AED">Stakeholder Management</span>
+<span class="hero-core-pill" style="--accent:#C2410C">Process Mapping</span>
+<span class="hero-core-pill" style="--accent:#BE123C">User Stories &amp; AC</span>
+<span class="hero-core-pill" style="--accent:#0F172A">UAT Support</span>
+<span class="hero-core-pill" style="--accent:#B45309">Change Impact Analysis</span>
+</div>
 </div>
 </div>
 </div>
 
 
-
-</div>
-</div>
 </section>
 <section aria-labelledby="project-work-title" class="section" id="project-work">
 <div class="container">
-
 <div class="project-work-heading">
-  <span class="project-work-eyebrow">Portfolio Case Studies</span>
-  <h2 id="project-work-title">Project Work</h2>
-  <span class="project-work-line" aria-hidden="true"></span>
-  <p>A clean preview of my sanitised Business Analyst project work, including real project-based BA evidence and one clearly labelled professional simulation.</p>
+<span class="project-work-eyebrow">Portfolio Case Studies</span>
+<h2 id="project-work-title">Project Work</h2>
+<span aria-hidden="true" class="project-work-line"></span>
+<p>A clean preview of my sanitised Business Analyst project work, including real project-based BA evidence and one clearly labelled professional simulation.</p>
 </div>
-
 <div class="project-confidentiality-note" role="note">
-  <span class="notice-icon">i</span>
-  <p>All project work is sanitised for portfolio use. Real project-based work excludes confidential company, client, school, student, commercial, system and operational data. The ERP compliance project is a professional simulation completed through Forage.</p>
+<span class="notice-icon">i</span>
+<p>All project work is sanitised for portfolio use. Real project-based work excludes confidential company, client, school, student, commercial, system and operational data. The ERP compliance project is a professional simulation completed through Forage.</p>
 </div>
-
 <div class="project-group">
-  <h3 class="project-group-title">Real Project-Based Work</h3>
-  <div aria-label="Real project-based work preview cards" class="project-preview-strip">
-    <article class="case-card project-preview-card">
-      <span class="card-icon">01</span>
-      <h3>EdTech Attendance Management System</h3>
-      <p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-      <p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
-      <ul class="compact-list"><li>Teacher and admin workflow analysis</li><li>Attendance marking and submission flow</li><li>Records and basic reporting</li><li>Role-based access and security</li></ul>
-      <a class="btn" href="#attendance-case">View Case Study</a>
-    </article>
-    <article class="case-card project-preview-card">
-      <span class="card-icon gold">02</span>
-      <h3>Digital STEM Content Delivery Platform</h3>
-      <p class="case-subtitle">Smart Classroom BA Project Work</p>
-      <p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
-      <ul class="compact-list"><li>No student portal or student login</li><li>Teacher classroom controls</li><li>3D videos, animations, simulations</li><li>Content search and filtering</li></ul>
-      <a class="btn" href="#stem-case">View Case Study</a>
-    </article>
-    <article class="case-card project-preview-card">
-      <span class="card-icon">03</span>
-      <h3>Autoparts Company Website Development</h3>
-      <p class="case-subtitle">Website Development BA Project Work</p>
-      <p class="case-summary">Company website development work covering page structure, user journey, enquiry flow, contact page requirements and customer-facing content.</p>
-      <ul class="compact-list"><li>User journey mapping</li><li>Functional requirements</li><li>Enquiry journey structure</li><li>UI/UX review and UAT support</li></ul>
-      <a class="btn" href="#autoparts-case">View Case Study</a>
-    </article>
-    <article class="case-card project-preview-card">
-      <span class="card-icon gold">04</span>
-      <h3>Operational Process Improvement &amp; KPI Reporting</h3>
-      <p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
-      <p class="case-summary">Process improvement work focused on As-Is/To-Be mapping, gap analysis, KPI requirement definition, reporting needs and improvement tracking.</p>
-      <ul class="compact-list"><li>As-Is and To-Be process mapping</li><li>Gap and root cause analysis</li><li>KPI requirement definition</li><li>Stakeholder coordination</li></ul>
-      <a class="btn" href="#operations-case">View Case Study</a>
-    </article>
-  </div>
+<h3 class="project-group-title">Real Project-Based Work</h3>
+<div aria-label="Real project-based work preview cards" class="project-preview-strip">
+<article class="case-card project-preview-card">
+<span class="card-icon">01</span>
+<h3>EdTech Attendance Management System</h3>
+<p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
+<p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
+<ul class="compact-list"><li>Teacher and admin workflow analysis</li><li>Attendance marking and submission flow</li><li>Records and basic reporting</li><li>Role-based access and security</li></ul>
+<a class="btn" href="#attendance-case">View Case Study</a>
+</article>
+<article class="case-card project-preview-card">
+<span class="card-icon gold">02</span>
+<h3>Digital STEM Content Delivery Platform</h3>
+<p class="case-subtitle">Smart Classroom BA Project Work</p>
+<p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
+<ul class="compact-list"><li>No student portal or student login</li><li>Teacher classroom controls</li><li>3D videos, animations, simulations</li><li>Content search and filtering</li></ul>
+<a class="btn" href="#stem-case">View Case Study</a>
+</article>
+<article class="case-card project-preview-card">
+<span class="card-icon">03</span>
+<h3>Autoparts Company Website Development</h3>
+<p class="case-subtitle">Website Development BA Project Work</p>
+<p class="case-summary">Company website development work covering page structure, user journey, enquiry flow, contact page requirements and customer-facing content.</p>
+<ul class="compact-list"><li>User journey mapping</li><li>Functional requirements</li><li>Enquiry journey structure</li><li>UI/UX review and UAT support</li></ul>
+<a class="btn" href="#autoparts-case">View Case Study</a>
+</article>
+<article class="case-card project-preview-card">
+<span class="card-icon gold">04</span>
+<h3>Operational Process Improvement &amp; KPI Reporting</h3>
+<p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
+<p class="case-summary">Process improvement work focused on As-Is/To-Be mapping, gap analysis, KPI requirement definition, reporting needs and improvement tracking.</p>
+<ul class="compact-list"><li>As-Is and To-Be process mapping</li><li>Gap and root cause analysis</li><li>KPI requirement definition</li><li>Stakeholder coordination</li></ul>
+<a class="btn" href="#operations-case">View Case Study</a>
+</article>
 </div>
-
+</div>
 <div class="project-group simulation-group">
-  <h3 class="project-group-title">Professional Simulation</h3>
+<div class="simulation-showcase-layout" aria-label="Professional simulation and portfolio capabilities">
   <div aria-label="Professional simulation preview card" class="simulation-preview-strip simulation-single-card-strip">
+    <h3 class="project-group-title simulation-left-title">Professional Simulation</h3>
     <article class="case-card project-preview-card simulation-card" id="erpSimulationCard">
       <span class="card-icon">05</span>
       <h3>Professional Simulation: ERP Compliance System Upgrade</h3>
       <p class="case-subtitle">Forage Technology Consulting Simulation</p>
       <span class="simulation-card-badge">Forage Simulation</span>
       <p class="case-summary">This project is a professional simulation completed through Forage. It is not paid employment, client delivery, or real consulting work.</p>
-      <ul class="compact-list"><li>Discovery workshop planning</li><li>User stories and requirements</li><li>MVP roadmap development</li><li>Executive summary preparation</li></ul>
+      <ul class="compact-list"><li>Discovery workshop planning</li><li>User stories and requirements</li><li>MVP roadmap development</li></ul>
       <a class="btn" href="#pwc-case">View Simulation</a>
     </article>
   </div>
+  <aside class="simulation-side-capabilities" aria-label="BA deliverables tools and key skills">
+    <section class="side-capability-panel" id="ba-deliverables">
+      <div class="side-capability-head"><span class="side-badge">BD</span><div><h4>BA Deliverables</h4><p>Core BA documents used across project work.</p></div></div>
+      <div class="side-chip-grid">
+        <span>BRD</span><span>FRD</span><span>User Stories</span><span>Acceptance Criteria</span><span>Business Rules</span><span>Process Flows</span><span>UAT Test Cases</span><span>Stakeholder Register</span><span>MVP Scope</span><span>Change Impact Notes</span><span>RTM</span><span>Presentation Samples</span>
+      </div>
+    </section>
+    <section class="side-capability-panel tools-mini-panel" id="tools">
+      <div class="side-capability-head"><span class="side-badge">TT</span><div><h4>Tools &amp; Technologies</h4><p>Tools used for backlog, documentation and review.</p></div></div>
+      <div class="side-chip-grid tool-chip-grid">
+        <span>Jira</span><span>Confluence</span><span>Excel</span><span>Power BI</span><span>MS Visio</span><span>Draw.io</span><span>Figma</span><span>Postman</span><span>SQL</span><span>Agile Scrum</span><span>Kanban</span><span>PowerPoint</span>
+      </div>
+    </section>
+    <section class="side-capability-panel skills-mini-panel" id="skills">
+      <div class="side-capability-head"><span class="side-badge">KS</span><div><h4>Key Skills</h4><p>Business analysis strengths applied across projects.</p></div></div>
+      <div class="side-chip-grid skill-chip-grid">
+        <span>Requirement Gathering</span><span>Stakeholder Management</span><span>Gap Analysis</span><span>Process Mapping</span><span>User Stories</span><span>Acceptance Criteria</span><span>UAT Support</span><span>Backlog Management</span><span>Change Impact Analysis</span><span>Functional Requirements</span><span>Visual Communication</span><span>Data Analysis</span>
+      </div>
+    </section>
+  </aside>
 </div>
-
+</div>
 </div>
 </section>
 <!-- CASE STUDIES END -->
@@ -10300,10 +10868,10 @@
 <article class="detail-card" id="attendance-case">
 <div class="detail-header"><div><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
 <span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
-<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A school-focused attendance management system designed to support teacher and admin workflows for attendance capture, records and visibility.</p></div><div class="detail-block"><h4>Business Problem</h4><p>Attendance work needed clearer digital flow, structured requirements and review evidence to support teacher/admin usage.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported discovery notes, requirement clarification, user stories, acceptance criteria, process flow review, UAT scenarios and feedback tracking.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>School owner or principal</li><li>Admin user</li><li>Teachers</li><li>Development team</li><li>Testing team</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher attendance marking</li><li>Admin record visibility</li><li>Role-based access</li><li>Attendance submission flow</li><li>Basic reporting needs</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Requirement notes</li><li>User stories</li><li>Acceptance criteria</li><li>Process flow</li><li>UAT scenarios</li><li>Feedback tracker</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira-style backlog, Confluence-style documentation, Draw.io or Visio-style process mapping, Excel tracker.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work created a clear BA evidence pack for attendance workflow, requirements and UAT planning.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+
 <div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
-<div class="work-pack-download"><a class="btn btn-primary" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html" download>Download Project 1 Work Pack</a></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html">Download Project 1 Work Pack</a></div><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholders and planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial project context and scope notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholders and discovery questions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Stakeholder%20Register%20and%20Discovery%20Questions.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Workshop notes and business needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -10324,10 +10892,10 @@
 </article><article class="detail-card" id="stem-case">
 <div class="detail-header"><div><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
 <span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
-<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A teacher-led digital STEM content platform for classroom screens, projectors or smart boards, with no student portal or student login.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The platform needed clear content delivery rules, teacher journey structure, classroom delivery flow and review evidence.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported business rule notes, content delivery workflow, user stories, acceptance criteria, risk/dependency notes and UAT planning.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>School leadership</li><li>Teachers</li><li>Content team</li><li>Development team</li><li>Testing team</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Teacher content access</li><li>STEM and coding content delivery</li><li>Search and filter flow</li><li>Classroom display journey</li><li>Content review needs</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Business rule notes</li><li>Content delivery workflow</li><li>User stories</li><li>Acceptance criteria</li><li>UAT scenarios</li><li>Risk and dependency notes</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira-style backlog, Confluence-style documentation, Draw.io or Visio-style process mapping, Excel tracker.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work created a clear BA evidence pack for teacher-led content delivery, requirements and testing preparation.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+
 <div aria-label="BA Work Evidence" class="evidence-panel" id="stem-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
-<div class="work-pack-download"><a class="btn btn-primary" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html" download>Download Project 2 Work Pack</a></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html">Download Project 2 Work Pack</a></div><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholder and roadmap evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Project context and starting scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Stakeholder discussion and findings.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Learning Objective Matrix</span><span class="doc-desc">Learning objectives mapped to content needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -10348,7 +10916,7 @@
 </article><article class="detail-card" id="autoparts-case">
 <div class="detail-header"><div><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
 <span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
-<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A company website development project covering product and service information, page structure, user journey, enquiry flow, contact page requirements and customer-facing website content.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The website needed clearer page requirements, better enquiry journey structure, organised feedback tracking and improved user experience for visitors submitting enquiries.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported stakeholder discussions, user journey mapping, functional requirements, UI/UX review notes, backlog tracking, change tracking, UAT support and sign-off preparation.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Business owner or product owner</li><li>Website visitors</li><li>Development team</li><li>Testing team</li><li>Business support users</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>Page structure</li><li>Customer enquiry flow</li><li>Contact page requirements</li><li>Product and service information</li><li>UI/UX review</li><li>UAT support</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>User journey map</li><li>Functional requirement notes</li><li>Website flow notes</li><li>Backlog tracker</li><li>Change tracker</li><li>UAT feedback notes</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Jira or tracker-style backlog, Confluence-style documentation, Microsoft Excel, Microsoft PowerPoint, Draw.io or Visio-style flow mapping.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work helped structure website requirements, improve enquiry flow understanding and support review/testing discussions.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+
 <div aria-label="BA Work Evidence" class="evidence-panel" id="autoparts-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
 <div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
@@ -10372,7 +10940,7 @@
 </article><article class="detail-card" id="operations-case">
 <div class="detail-header"><div><h3>Operational Process Improvement &amp; KPI Reporting</h3><p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
 <span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
-<div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>Operational improvement work focused on manufacturing process understanding, KPI visibility, reporting needs and performance follow-up.</p></div><div class="detail-block"><h4>Business Problem</h4><p>Operational teams needed clearer process views, gap analysis, improvement tracking and KPI reporting requirements.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Supported As-Is and To-Be process mapping, gap analysis, root cause analysis, KPI requirement definition, reporting needs and stakeholder coordination.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Operations stakeholders</li><li>Production teams</li><li>Process owners</li><li>Reporting users</li><li>Leadership reviewers</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>As-Is and To-Be process mapping</li><li>Gap analysis</li><li>Root cause analysis</li><li>KPI requirement definition</li><li>Reporting needs</li><li>Improvement tracking</li><li>Stakeholder coordination</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>As-Is process view</li><li>To-Be process view</li><li>Gap analysis notes</li><li>KPI requirement list</li><li>Reporting sample</li><li>Improvement tracker</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Microsoft Excel, Power BI concepts, Microsoft PowerPoint, Visio-style process maps, reporting templates.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The work translated operational problems into structured improvement actions, KPI reporting needs and clearer process documentation.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+
 <div aria-label="BA Work Evidence" class="evidence-panel" id="operations-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
 <div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
@@ -10396,7 +10964,7 @@
 </article><article class="detail-card" id="pwc-case">
 <div class="detail-header"><div><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
 <span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
-<div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div><div class="detail-grid"><div class="detail-block"><h4>Project Background</h4><p>A professional simulation completed through Forage to practise BA documentation for an ERP compliance system upgrade scenario.</p></div><div class="detail-block"><h4>Business Problem</h4><p>The simulation required structured discovery planning, clear requirements, user stories, MVP roadmap thinking and executive communication.</p></div><div class="detail-block"><h4>My BA Role</h4><p>Completed discovery workshop planning, requirement understanding, user stories, MVP roadmap preparation and executive summary presentation as simulation work.</p></div><div class="detail-block"><h4>Key Users / Stakeholders</h4><ul><li>Business stakeholders in the simulation</li><li>Compliance process users in the simulation</li><li>Technology delivery team roles in the simulation</li><li>Simulation reviewers</li></ul></div><div class="detail-block"><h4>Key Features or Scope</h4><ul><li>ERP compliance scenario</li><li>Discovery workshop planning</li><li>User stories</li><li>MVP roadmap</li><li>Executive summary</li></ul></div><div class="detail-block"><h4>BA Deliverables Created</h4><ul><li>Discovery plan</li><li>User stories</li><li>MVP roadmap</li><li>Requirements notes</li><li>Executive summary slide</li></ul></div><div class="detail-block"><h4>Tools Used</h4><p>Microsoft PowerPoint, Microsoft Excel, structured discovery notes and Agile requirement formats.</p></div><div class="detail-block"><h4>Outcome / Impact</h4><p>The simulation demonstrates BA documentation practice for discovery, requirements, MVP planning and executive communication.</p></div><div class="detail-block"><h4>Confidentiality Note</h4><p>Sanitised portfolio sample. No confidential data included.</p></div></div>
+<div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="pwc-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
 <div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
@@ -10417,7 +10985,7 @@
 </details></div>
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
-</article></section>
+</article></div></div></section>
 <!-- DETAILED CASE STUDIES END -->
 <!-- VISUAL SAMPLES START -->
 <section aria-labelledby="samples-title" class="section samples-section" id="visual-samples">
@@ -10464,66 +11032,6 @@
 </div>
 </section>
 <!-- VISUAL SAMPLES END -->
-<!-- BA DELIVERABLES START -->
-<section class="ba-polished" id="ba-deliverables">
-  <div class="ba-polished-wrap">
-    <article class="smart-panel deliverables-panel">
-      <div class="smart-head"><div class="smart-title"><span class="smart-badge">BD</span><div><h2>BA Deliverables</h2><p>Core Business Analyst documents and evidence used across my project work.</p></div></div><span class="smart-chip">Documentation</span></div>
-      <div class="smart-grid">
-        <div class="smart-card" style="--card-color:#2563eb"><span class="mark">BR</span><div><b>BRD</b><small>Business requirements</small></div></div>
-        <div class="smart-card" style="--card-color:#60a5fa"><span class="mark">FR</span><div><b>FRD</b><small>Functional requirements</small></div></div>
-        <div class="smart-card" style="--card-color:#22c55e"><span class="mark">US</span><div><b>User Stories</b><small>Backlog-ready needs</small></div></div>
-        <div class="smart-card" style="--card-color:#f59e0b"><span class="mark">AC</span><div><b>Acceptance Criteria</b><small>Testable conditions</small></div></div>
-        <div class="smart-card" style="--card-color:#ef4444"><span class="mark">BR</span><div><b>Business Rules</b><small>Rules and decisions</small></div></div>
-        <div class="smart-card" style="--card-color:#06b6d4"><span class="mark">PF</span><div><b>Process Flows</b><small>As-Is / To-Be flows</small></div></div>
-        <div class="smart-card" style="--card-color:#8b5cf6"><span class="mark">UT</span><div><b>UAT Test Cases</b><small>User validation checks</small></div></div>
-        <div class="smart-card" style="--card-color:#10b981"><span class="mark">SR</span><div><b>Stakeholder Register</b><small>Roles and ownership</small></div></div>
-        <div class="smart-card" style="--card-color:#fb7185"><span class="mark">MV</span><div><b>MVP Scope</b><small>Delivery boundary</small></div></div>
-        <div class="smart-card" style="--card-color:#eab308"><span class="mark">CI</span><div><b>Change Impact Notes</b><small>Impact and control</small></div></div>
-        <div class="smart-card" style="--card-color:#059669"><span class="mark">RT</span><div><b>Requirement Traceability Matrix</b><small>Coverage tracking</small></div></div>
-        <div class="smart-card" style="--card-color:#3b82f6"><span class="mark">PS</span><div><b>Presentation Samples</b><small>Clear communication</small></div></div>
-      </div>
-    </article>
-
-    <article class="smart-panel tools-panel" id="tools">
-      <div class="smart-head"><div class="smart-title"><span class="smart-badge">TT</span><div><h2>Tools &amp; Technologies</h2><p>Tools used for backlog, documentation, process mapping, reporting and review.</p></div></div><span class="smart-chip">Toolkit</span></div>
-      <div class="smart-grid trademark-tool-grid">
-        <div class="smart-card" style="--card-color:#0052CC"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/jira/0052CC" alt="Jira logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>JI</em></span><div><b>Jira</b><small>Backlog and sprint management</small></div></div>
-        <div class="smart-card" style="--card-color:#172B4D"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/confluence/172B4D" alt="Confluence logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>CO</em></span><div><b>Confluence</b><small>Documentation and collaboration</small></div></div>
-        <div class="smart-card" style="--card-color:#217346"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Microsoft Excel logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>XL</em></span><div><b>Microsoft Excel</b><small>Trackers and analysis</small></div></div>
-        <div class="smart-card" style="--card-color:#F2C811"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/powerbi/F2C811" alt="Power BI logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>BI</em></span><div><b>Power BI</b><small>Reporting and dashboards</small></div></div>
-        <div class="smart-card" style="--card-color:#3955A3"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/microsoftvisio/3955A3" alt="MS Visio logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>VI</em></span><div><b>MS Visio</b><small>Process mapping</small></div></div>
-        <div class="smart-card" style="--card-color:#F08705"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/diagramsdotnet/F08705" alt="Draw.io logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>DI</em></span><div><b>Draw.io</b><small>Diagramming</small></div></div>
-        <div class="smart-card" style="--card-color:#F24E1E"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>FI</em></span><div><b>Figma</b><small>Wireframes and UI review</small></div></div>
-        <div class="smart-card" style="--card-color:#FF6C37"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/postman/FF6C37" alt="Postman Basics logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>PO</em></span><div><b>Postman Basics</b><small>API basics</small></div></div>
-        <div class="smart-card" style="--card-color:#2563EB"><span class="mark nonbrand-mark">SQL</span><div><b>SQL</b><small>Query and data checks</small></div></div>
-        <div class="smart-card" style="--card-color:#22C55E"><span class="mark nonbrand-mark">AS</span><div><b>Agile Scrum</b><small>Delivery rhythm</small></div></div>
-        <div class="smart-card" style="--card-color:#0EA5E9"><span class="mark nonbrand-mark">KB</span><div><b>Kanban</b><small>Visual workflow</small></div></div>
-        <div class="smart-card" style="--card-color:#B7472A"><span class="mark logo-mark"><img src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="Microsoft PowerPoint logo" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid';"/><em>PP</em></span><div><b>Microsoft PowerPoint</b><small>Presentation storytelling</small></div></div>
-      </div>
-    </article>
-
-    <article class="smart-panel skills-panel" id="skills">
-      <div class="smart-head"><div class="smart-title"><span class="smart-badge">KS</span><div><h2>Key Skills</h2><p>Business analysis strengths applied across digital, EdTech and process improvement work.</p></div></div><span class="smart-chip">Capability</span></div>
-      <div class="smart-grid">
-        <div class="smart-card" style="--card-color:#3b82f6"><span class="mark">RG</span><div><b>Requirement Gathering</b><small>Workshops and questions</small></div></div>
-        <div class="smart-card" style="--card-color:#10b981"><span class="mark">SM</span><div><b>Stakeholder Management</b><small>Business alignment</small></div></div>
-        <div class="smart-card" style="--card-color:#f59e0b"><span class="mark">GA</span><div><b>Gap Analysis</b><small>Current vs future state</small></div></div>
-        <div class="smart-card" style="--card-color:#06b6d4"><span class="mark">PM</span><div><b>Business Process Mapping</b><small>Workflow clarity</small></div></div>
-        <div class="smart-card" style="--card-color:#22c55e"><span class="mark">US</span><div><b>User Stories</b><small>User-focused delivery</small></div></div>
-        <div class="smart-card" style="--card-color:#ef4444"><span class="mark">AC</span><div><b>Acceptance Criteria</b><small>Clear test rules</small></div></div>
-        <div class="smart-card" style="--card-color:#8b5cf6"><span class="mark">UT</span><div><b>UAT Support</b><small>Business validation</small></div></div>
-        <div class="smart-card" style="--card-color:#2563eb"><span class="mark">BL</span><div><b>Backlog Management</b><small>Delivery readiness</small></div></div>
-        <div class="smart-card" style="--card-color:#f59e0b"><span class="mark">CI</span><div><b>Change Impact Analysis</b><small>People/process impact</small></div></div>
-        <div class="smart-card" style="--card-color:#16a34a"><span class="mark">FR</span><div><b>Functional Requirements</b><small>System behaviour</small></div></div>
-        <div class="smart-card" style="--card-color:#dc2626"><span class="mark">VC</span><div><b>Visual Communication</b><small>Diagrams and samples</small></div></div>
-        <div class="smart-card" style="--card-color:#0284c7"><span class="mark">DA</span><div><b>Data Analysis & Reporting</b><small>KPIs and evidence</small></div></div>
-      </div>
-    </article>
-  </div>
-</section>
-<!-- BA DELIVERABLES END -->
-
 </main>
 <button aria-label="Open Role Fit Assistant" class="floating-assistant-cta" id="floatingAssistantButton" type="button">Role Fit Assistant</button>
 <!-- PORTFOLIO ASSISTANT START -->
@@ -11145,9 +11653,7 @@
       }, 2100);
     });
   </script>
-
-  
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
       function setupNeoSection(itemSelector, detailSelector, cycleMs) {
         const items = Array.from(document.querySelectorAll(itemSelector));
@@ -11212,8 +11718,6 @@
       setupNeoSection('.neo-skill-pill', '#neoSkillDetail', 2200);
     });
   </script>
-
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
       const cube = document.getElementById('directionDiceCube');
@@ -11258,6 +11762,41 @@
       }, 2100);
     });
   </script>
-
 </body>
 </html>
+
+<style>
+/* FINAL FIX: Professional Simulation title must sit above the 5th card only */
+#project-work .simulation-group > .project-group-title {
+  width: 280px !important;
+  max-width: 280px !important;
+  margin: 0 0 14px 0 !important;
+  text-align: center !important;
+  font-size: 28px !important;
+  line-height: 1.08 !important;
+}
+
+#project-work .simulation-showcase-layout {
+  grid-template-columns: 280px minmax(0, 1fr) !important;
+  column-gap: 52px !important;
+  align-items: start !important;
+}
+
+#project-work .simulation-preview-strip {
+  grid-column: 1 !important;
+  margin: 0 !important;
+}
+
+#project-work .simulation-side-capabilities {
+  grid-column: 2 !important;
+}
+
+@media (max-width: 1024px) {
+  #project-work .simulation-group > .project-group-title {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 14px 0 !important;
+    text-align: center !important;
+  }
+}
+</style>
