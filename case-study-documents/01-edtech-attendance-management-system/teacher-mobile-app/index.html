@@ -1,1 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Attendance App - Prototype</title>
+    <!-- Google Fonts: Outfit for modern premium typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Material Symbols (Rounded) -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+    <!-- Vanilla CSS Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Interactive Device Shell -->
+        <div class="phone-frame">
+            <!-- Notch/Speaker -->
+            <div class="phone-notch"></div>
+            
+            <!-- Phone Screen Area -->
+            <div class="phone-screen">
+                
+                <!-- Android Status Bar -->
+                <div class="status-bar">
+                    <span class="status-time" id="status-time">09:41</span>
+                    <div class="status-icons">
+                        <span class="material-symbols-rounded">network_cell</span>
+                        <span class="material-symbols-rounded">wifi</span>
+                        <span class="material-symbols-rounded">battery_5_bar</span>
+                    </div>
+                </div>
 
+                <!-- App Screens Container -->
+                <div class="screens-viewport">
+
+                    <!-- SCREEN 1: SPLASH SCREEN -->
+                    <div id="screen-splash" class="screen active">
+                        <div class="splash-content">
+                            <div class="splash-logo-container">
+                                <span class="material-symbols-rounded splash-icon">co_present</span>
+                                <div class="splash-logo-ring"></div>
+                            </div>
+                            <h1 class="splash-title">Teacher Attendance</h1>
+                            <p class="splash-subtitle">Smart School System</p>
+                            <div class="splash-loader">
+                                <div class="loader-dot"></div>
+                                <div class="loader-dot"></div>
+                                <div class="loader-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 2: LOGIN SCREEN -->
+                    <div id="screen-login" class="screen">
+                        <div class="login-header">
+                            <div class="login-logo">
+                                <span class="material-symbols-rounded">school</span>
+                            </div>
+                            <h2>Welcome Back</h2>
+                            <p>Sign in to manage student attendance</p>
+                        </div>
+                        <div class="login-form">
+                            <div class="input-group">
+                                <label for="login-username"><span class="material-symbols-rounded">person</span> Teacher ID / Email</label>
+                                <input type="text" id="login-username" placeholder="Enter teacher@school.edu" value="teacher@school.edu">
+                            </div>
+                            <div class="input-group">
+                                <label for="login-password"><span class="material-symbols-rounded">lock</span> Password</label>
+                                <div class="password-wrapper">
+                                    <input type="password" id="login-password" placeholder="Enter password" value="password">
+                                    <button type="button" id="toggle-password" class="icon-btn">
+                                        <span class="material-symbols-rounded" id="pass-visibility-icon">visibility</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="forgot-pwd-row">
+                                <a href="#" id="forgot-password" class="text-link">Forgot Password?</a>
+                            </div>
+                            <div id="login-error" class="error-banner hidden">
+                                <span class="material-symbols-rounded">error</span>
+                                <span id="error-message">Invalid ID or password.</span>
+                            </div>
+                            <button id="btn-login" class="btn btn-primary btn-block">
+                                <span>Sign In</span>
+                                <span class="material-symbols-rounded">arrow_forward</span>
+                            </button>
+                        </div>
+                        <div class="login-footer">
+                            <p>Version 1.0.0 (Prototype)</p>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 3: DASHBOARD -->
+                    <div id="screen-dashboard" class="screen">
+                        <div class="app-header">
+                            <div class="user-greeting">
+                                <span class="avatar">MS</span>
+                                <div class="greeting-text">
+                                    <p class="greeting-sub">Welcome,</p>
+                                    <h3 class="greeting-main" id="dash-teacher-name">Mr. Rohan Sharma</h3>
+                                </div>
+                            </div>
+                            <button id="theme-toggle-btn" class="icon-btn header-action-btn">
+                                <span class="material-symbols-rounded">dark_mode</span>
+                            </button>
+                        </div>
+                        
+                        <div class="scroll-container">
+                            <div class="date-card">
+                                <div class="date-info">
+                                    <span class="material-symbols-rounded calendar-icon">calendar_today</span>
+                                    <div>
+                                        <h4 id="dash-today-date">Sunday, July 5, 2026</h4>
+                                        <p>Term 1 • Academic Year 2026-27</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quick-stats-row">
+                                <div class="stat-card">
+                                    <span class="stat-num" id="stat-completed-classes">0</span>
+                                    <span class="stat-label">Classes Taken</span>
+                                </div>
+                                <div class="stat-card">
+                                    <span class="stat-num" id="stat-avg-attendance">--</span>
+                                    <span class="stat-label">Avg Attendance</span>
+                                </div>
+                            </div>
+
+                            <h4 class="section-title">Quick Actions</h4>
+                            <div class="action-grid">
+                                <button id="dash-action-mark" class="action-card mark-card">
+                                    <div class="action-icon-circle">
+                                        <span class="material-symbols-rounded">how_to_reg</span>
+                                    </div>
+                                    <h4>Mark Attendance</h4>
+                                    <p>Select class and log student status</p>
+                                </button>
+                                <button id="dash-action-view" class="action-card history-card">
+                                    <div class="action-icon-circle">
+                                        <span class="material-symbols-rounded">history</span>
+                                    </div>
+                                    <h4>View Records</h4>
+                                    <p>Browse previously submitted sheets</p>
+                                </button>
+                            </div>
+
+                            <h4 class="section-title">Assigned Classes</h4>
+                            <div class="assigned-classes-list">
+                                <div class="class-item">
+                                    <div class="class-badge">10-A</div>
+                                    <div class="class-details">
+                                        <h5>Class 10 - Section A</h5>
+                                        <p>Room 302 • 10 Students</p>
+                                    </div>
+                                    <span class="material-symbols-rounded chevron">chevron_right</span>
+                                </div>
+                                <div class="class-item">
+                                    <div class="class-badge">10-B</div>
+                                    <div class="class-details">
+                                        <h5>Class 10 - Section B</h5>
+                                        <p>Room 304 • 12 Students</p>
+                                    </div>
+                                    <span class="material-symbols-rounded chevron">chevron_right</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 4: SELECT CLASS AND DATE -->
+                    <div id="screen-class-select" class="screen">
+                        <div class="app-header back-header">
+                            <button class="icon-btn btn-back">
+                                <span class="material-symbols-rounded">arrow_back</span>
+                            </button>
+                            <h3>Configure Attendance</h3>
+                            <div style="width:40px;"></div>
+                        </div>
+
+                        <div class="scroll-container">
+                            <div class="wizard-progress">
+                                <div class="progress-step active">1<span class="step-desc">Class Setup</span></div>
+                                <div class="progress-line"></div>
+                                <div class="progress-step">2<span class="step-desc">Marking</span></div>
+                                <div class="progress-line"></div>
+                                <div class="progress-step">3<span class="step-desc">Submit</span></div>
+                            </div>
+
+                            <div class="form-container">
+                                <div class="input-group">
+                                    <label for="select-class"><span class="material-symbols-rounded">class</span> Select Class</label>
+                                    <div class="select-wrapper">
+                                        <select id="select-class">
+                                            <option value="" disabled selected>Choose class</option>
+                                            <option value="Class 10">Class 10</option>
+                                            <option value="Class 9">Class 9</option>
+                                        </select>
+                                        <span class="material-symbols-rounded dropdown-icon">expand_more</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="select-section"><span class="material-symbols-rounded">grid_view</span> Select Section</label>
+                                    <div class="select-wrapper">
+                                        <select id="select-section">
+                                            <option value="" disabled selected>Choose section</option>
+                                            <option value="Section A">Section A</option>
+                                            <option value="Section B">Section B</option>
+                                        </select>
+                                        <span class="material-symbols-rounded dropdown-icon">expand_more</span>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <label for="select-date"><span class="material-symbols-rounded">calendar_month</span> Date</label>
+                                    <input type="date" id="select-date">
+                                </div>
+
+                                <div id="class-select-error" class="error-banner hidden">
+                                    <span class="material-symbols-rounded">error</span>
+                                    <span>Please select class, section, and date.</span>
+                                </div>
+
+                                <button id="btn-class-continue" class="btn btn-primary btn-block">
+                                    <span>Continue to Student List</span>
+                                    <span class="material-symbols-rounded">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 5: STUDENT ATTENDANCE LIST -->
+                    <div id="screen-attendance-list" class="screen">
+                        <div class="app-header back-header">
+                            <button class="icon-btn btn-back">
+                                <span class="material-symbols-rounded">arrow_back</span>
+                            </button>
+                            <div class="header-title-details">
+                                <h3 id="list-header-class">Class 10-A</h3>
+                                <p id="list-header-date">July 5, 2026</p>
+                            </div>
+                            <button id="list-save-draft" class="icon-btn header-action-btn" title="Save Draft">
+                                <span class="material-symbols-rounded">save</span>
+                            </button>
+                        </div>
+
+                        <div class="attendance-summary-banner">
+                            <div class="banner-stat green-bg">
+                                <span class="banner-num" id="list-stat-present">0</span>
+                                <span class="banner-lbl">Present</span>
+                            </div>
+                            <div class="banner-stat red-bg">
+                                <span class="banner-num" id="list-stat-absent">0</span>
+                                <span class="banner-lbl">Absent</span>
+                            </div>
+                            <div class="banner-stat yellow-bg">
+                                <span class="banner-num" id="list-stat-late">0</span>
+                                <span class="banner-lbl">Late</span>
+                            </div>
+                            <div class="banner-stat grey-bg">
+                                <span class="banner-num" id="list-stat-unmarked">10</span>
+                                <span class="banner-lbl">Unmarked</span>
+                            </div>
+                        </div>
+
+                        <!-- Search Bar -->
+                        <div class="search-bar-container">
+                            <span class="material-symbols-rounded search-icon">search</span>
+                            <input type="text" id="student-search-input" placeholder="Search student by name or roll...">
+                            <button id="clear-search-btn" class="icon-btn hidden">
+                                <span class="material-symbols-rounded">close</span>
+                            </button>
+                        </div>
+
+                        <!-- Scrollable Student List -->
+                        <div class="student-scroll-list" id="student-list-container">
+                            <!-- Dynamic items injected here by app.js -->
+                        </div>
+
+                        <!-- Bottom Buttons Floating Area -->
+                        <div class="list-action-footer">
+                            <button id="btn-save-draft" class="btn btn-secondary">
+                                <span class="material-symbols-rounded">save</span>
+                                <span>Save Draft</span>
+                            </button>
+                            <button id="btn-submit-list" class="btn btn-primary">
+                                <span>Review & Submit</span>
+                                <span class="material-symbols-rounded">checklist</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 6: ATTENDANCE REVIEW SCREEN -->
+                    <div id="screen-attendance-review" class="screen">
+                        <div class="app-header back-header">
+                            <button class="icon-btn btn-back">
+                                <span class="material-symbols-rounded">arrow_back</span>
+                            </button>
+                            <h3>Review Attendance</h3>
+                            <div style="width:40px;"></div>
+                        </div>
+
+                        <div class="scroll-container">
+                            <div class="wizard-progress">
+                                <div class="progress-step completed"><span class="material-symbols-rounded progress-check">check</span><span class="step-desc">Class Setup</span></div>
+                                <div class="progress-line active"></div>
+                                <div class="progress-step completed"><span class="material-symbols-rounded progress-check">check</span><span class="step-desc">Marking</span></div>
+                                <div class="progress-line active"></div>
+                                <div class="progress-step active">3<span class="step-desc">Submit</span></div>
+                            </div>
+
+                            <div class="review-details-card">
+                                <div class="detail-row">
+                                    <span class="detail-label">Class & Section:</span>
+                                    <strong class="detail-value" id="review-class-val">Class 10-A</strong>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Date:</span>
+                                    <strong class="detail-value" id="review-date-val">July 5, 2026</strong>
+                                </div>
+                                <div class="detail-row border-top">
+                                    <span class="detail-label">Total Students:</span>
+                                    <span class="detail-value font-medium" id="review-total-val">10</span>
+                                </div>
+                            </div>
+
+                            <h4 class="section-title">Attendance Metrics</h4>
+                            <div class="review-stats-grid">
+                                <div class="review-stat-box green-border">
+                                    <span class="stat-count text-present" id="review-present-count">0</span>
+                                    <span class="stat-title">Present</span>
+                                </div>
+                                <div class="review-stat-box red-border">
+                                    <span class="stat-count text-absent" id="review-absent-count">0</span>
+                                    <span class="stat-title">Absent</span>
+                                </div>
+                                <div class="review-stat-box yellow-border">
+                                    <span class="stat-count text-late" id="review-late-count">0</span>
+                                    <span class="stat-title">Late</span>
+                                </div>
+                            </div>
+
+                            <h4 class="section-title">Absentees & Late List</h4>
+                            <div class="exception-list" id="review-exception-list">
+                                <!-- Absentees and Late entries listed here -->
+                            </div>
+
+                            <div class="form-container" style="padding-top: 10px;">
+                                <button id="btn-confirm-submit" class="btn btn-primary btn-block">
+                                    <span class="material-symbols-rounded">cloud_upload</span>
+                                    <span>Confirm & Submit Attendance</span>
+                                </button>
+                                <button id="btn-review-back" class="btn btn-flat btn-block">
+                                    <span class="material-symbols-rounded">edit</span>
+                                    <span>Go Back & Edit</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 7: SUBMISSION SUCCESS SCREEN -->
+                    <div id="screen-success" class="screen">
+                        <div class="success-viewport">
+                            <div class="success-animation-container">
+                                <div class="success-circle">
+                                    <span class="material-symbols-rounded checkmark-icon">check</span>
+                                </div>
+                                <div class="success-sparkles"></div>
+                            </div>
+
+                            <h2 class="success-title">Submission Successful</h2>
+                            <p class="success-desc">Student attendance has been recorded in the central database.</p>
+
+                            <div class="success-summary-card">
+                                <h3>Attendance Summary</h3>
+                                <div class="success-summary-row">
+                                    <span>Class:</span>
+                                    <strong id="success-class-val">Class 10-A</strong>
+                                </div>
+                                <div class="success-summary-row">
+                                    <span>Date:</span>
+                                    <strong id="success-date-val">July 5, 2026</strong>
+                                </div>
+                                <div class="success-summary-grid">
+                                    <div class="grid-item">
+                                        <span class="val-p" id="success-p-val">8</span>
+                                        <label>Present</label>
+                                    </div>
+                                    <div class="grid-item">
+                                        <span class="val-a" id="success-a-val">1</span>
+                                        <label>Absent</label>
+                                    </div>
+                                    <div class="grid-item">
+                                        <span class="val-l" id="success-l-val">1</span>
+                                        <label>Late</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button id="btn-success-dashboard" class="btn btn-primary btn-block">
+                                <span class="material-symbols-rounded">dashboard</span>
+                                <span>Back to Dashboard</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 8: VIEW SUBMITTED ATTENDANCE -->
+                    <div id="screen-history" class="screen">
+                        <div class="app-header">
+                            <h3>Attendance Logs</h3>
+                            <button id="history-filter-toggle" class="icon-btn header-action-btn">
+                                <span class="material-symbols-rounded">filter_list</span>
+                            </button>
+                        </div>
+
+                        <div class="history-filters" id="history-filter-panel">
+                            <div class="filter-row">
+                                <div class="filter-col">
+                                    <label for="filter-class">Class</label>
+                                    <select id="filter-class">
+                                        <option value="all">All Classes</option>
+                                        <option value="Class 10-A">Class 10-A</option>
+                                        <option value="Class 10-B">Class 10-B</option>
+                                        <option value="Class 9-A">Class 9-A</option>
+                                        <option value="Class 9-B">Class 9-B</option>
+                                    </select>
+                                </div>
+                                <div class="filter-col">
+                                    <label for="filter-date">Date</label>
+                                    <input type="date" id="filter-date">
+                                </div>
+                            </div>
+                            <div class="filter-actions">
+                                <button id="btn-clear-filters" class="btn btn-flat btn-sm">Clear</button>
+                                <button id="btn-apply-filters" class="btn btn-primary btn-sm">Apply Filters</button>
+                            </div>
+                        </div>
+
+                        <div class="scroll-container" style="padding-top: 10px;">
+                            <div id="history-list-container" class="history-list">
+                                <!-- Dynamic logs list will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCREEN 9: TEACHER PROFILE SCREEN -->
+                    <div id="screen-profile" class="screen">
+                        <div class="app-header">
+                            <h3>My Profile</h3>
+                            <div style="width:40px;"></div>
+                        </div>
+
+                        <div class="scroll-container">
+                            <div class="profile-hero">
+                                <div class="profile-avatar">MS</div>
+                                <h3 id="profile-name">Mr. Rohan Sharma</h3>
+                                <p id="profile-role">Senior Mathematics Teacher</p>
+                                <span class="id-badge">ID: T-4091</span>
+                            </div>
+
+                            <div class="profile-info-section">
+                                <h4 class="section-title">Teacher Information</h4>
+                                <div class="info-card">
+                                    <div class="info-row">
+                                        <span class="material-symbols-rounded info-icon">mail</span>
+                                        <div class="info-content">
+                                            <label>Email Address</label>
+                                            <span id="profile-email">teacher@school.edu</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="material-symbols-rounded info-icon">verified_user</span>
+                                        <div class="info-content">
+                                            <label>Designation</label>
+                                            <span>Class Teacher (10-A)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="material-symbols-rounded info-icon">school</span>
+                                        <div class="info-content">
+                                            <label>Assigned Subjects & Classes</label>
+                                            <span>Maths (10-A, 10-B), Physics (9-A)</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-row">
+                                        <span class="material-symbols-rounded info-icon">calendar_month</span>
+                                        <div class="info-content">
+                                            <label>Joining Date</label>
+                                            <span>June 15, 2021</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-actions-section">
+                                <button id="btn-logout" class="btn btn-outline btn-block text-danger">
+                                    <span class="material-symbols-rounded">logout</span>
+                                    <span>Log Out</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- screens-viewport -->
+
+                <!-- Global Bottom Navigation Bar (Hidden on Splash/Login) -->
+                <div class="bottom-nav hidden" id="bottom-nav">
+                    <button class="nav-item active" data-screen="screen-dashboard">
+                        <span class="material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Home</span>
+                    </button>
+                    <button class="nav-item" data-screen="screen-history">
+                        <span class="material-symbols-rounded">history</span>
+                        <span class="nav-label">Logs</span>
+                    </button>
+                    <button class="nav-item" data-screen="screen-profile">
+                        <span class="material-symbols-rounded">person</span>
+                        <span class="nav-label">Profile</span>
+                    </button>
+                </div>
+
+                <!-- Toast Notification -->
+                <div id="toast-notification" class="toast hidden">
+                    <span class="material-symbols-rounded" id="toast-icon">info</span>
+                    <span id="toast-message">Message text here</span>
+                </div>
+
+                <!-- Android Navigation Bar (Home indicator / Back) -->
+                <div class="system-nav-bar">
+                    <div class="sys-btn" id="sys-back-btn">
+                        <span class="material-symbols-rounded">arrow_left</span>
+                    </div>
+                    <div class="sys-btn-home" id="sys-home-btn"></div>
+                    <div class="sys-btn-recent">
+                        <span class="material-symbols-rounded">crop_square</span>
+                    </div>
+                </div>
+
+            </div> <!-- phone-screen -->
+        </div> <!-- phone-frame -->
+    </div> <!-- app-container -->
+
+    <!-- Vanilla Javascript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
