@@ -1,1 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC School Login Page</title>
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --panel: #ffffff;
+      --text: #312821;
+      --muted: #71675f;
+      --line: #ded4c7;
+      --primary: #332820;
+      --primary-2: #6d5846;
+      --success: #2f7d4a;
+      --danger: #a9352f;
+      --warning: #c97b20;
+      --soft: #faf7f1;
+      --shadow: 0 18px 45px rgba(49,40,33,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    .app { min-height: 100vh; }
+    .hidden { display: none !important; }
+    .login-page {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 430px;
+    }
+    .login-hero {
+      padding: 70px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #332820 0%, #6d5846 100%);
+      color: #fff;
+    }
+    .login-hero h1 { font-size: 48px; margin: 0 0 18px; line-height: 1.08; }
+    .login-hero p { font-size: 18px; max-width: 650px; line-height: 1.6; color: #eee5da; }
+    .scope-list { display: grid; grid-template-columns: repeat(2, minmax(180px, 1fr)); gap: 14px; margin-top: 36px; max-width: 720px; }
+    .scope-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); padding: 14px; border-radius: 14px; }
+    .login-panel {
+      background: var(--soft);
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--line);
+    }
+    .login-card {
+      width: 100%;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+    .login-card h2 { margin: 0 0 8px; font-size: 26px; }
+    .login-card .hint { color: var(--muted); font-size: 14px; margin-bottom: 28px; }
+    label { display: block; font-weight: 700; font-size: 13px; margin: 16px 0 8px; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 13px;
+      font-size: 14px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--primary-2); box-shadow: 0 0 0 3px rgba(109,88,70,0.14); }
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+      min-height: 42px;
+    }
+    .btn:hover { background: #1f1813; }
+    .btn.secondary { background: var(--primary-2); }
+    .btn.light { background: #efe7dc; color: var(--text); border: 1px solid var(--line); }
+    .btn.danger { background: var(--danger); }
+    .btn.disabled { opacity: .55; cursor: not-allowed; }
+    .demo-note { margin-top: 18px; padding: 12px; background: #f7f2ea; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .error { margin-top: 14px; color: var(--danger); font-weight: 700; font-size: 13px; }
+    .layout { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
+    .sidebar {
+      background: var(--primary);
+      color: #fff;
+      padding: 28px 20px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+    }
+    .brand { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .role-pill { display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 7px 11px; font-size: 12px; margin: 12px 0 26px; color: #efe7dc; }
+    .nav button {
+      width: 100%;
+      text-align: left;
+      background: transparent;
+      color: #f7f2ea;
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 14px;
+      margin: 3px 0;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .nav button.active, .nav button:hover { background: rgba(255,255,255,0.12); }
+    .main { padding: 0; }
+    .topbar {
+      height: 72px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    .topbar h2 { margin: 0; font-size: 24px; }
+    .content { padding: 30px 34px 55px; }
+    .cards { display: grid; grid-template-columns: repeat(4, minmax(170px, 1fr)); gap: 18px; margin-bottom: 28px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(49,40,33,0.04);
+    }
+    .card .label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .card .value { font-size: 30px; font-weight: 800; margin-top: 10px; }
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 25px rgba(49,40,33,0.04);
+    }
+    .section-header { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+    .section h3 { margin: 0; font-size: 20px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; background: #faf7f1; }
+    tr:hover td { background: #fffaf4; }
+    .badge { display: inline-block; padding: 6px 10px; border-radius: 999px; font-weight: 800; font-size: 12px; }
+    .badge.active { background: #e6f4eb; color: var(--success); }
+    .badge.inactive { background: #fbe9e7; color: var(--danger); }
+    .badge.present { background: #e6f4eb; color: var(--success); }
+    .badge.absent { background: #fbe9e7; color: var(--danger); }
+    .filters { display: grid; grid-template-columns: repeat(4, minmax(160px, 1fr)); gap: 12px; align-items: end; margin-bottom: 18px; }
+    .two-col { display: grid; grid-template-columns: 1.2fr .8fr; gap: 20px; }
+    .muted { color: var(--muted); }
+    .callout { background: #f7f2ea; border: 1px solid var(--line); border-radius: 14px; padding: 15px; color: var(--muted); line-height: 1.5; }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(31,24,19,0.42); display: none; align-items: center; justify-content: center; padding: 20px; z-index: 50; }
+    .modal-backdrop.show { display: flex; }
+    .modal { background: #fff; border-radius: 18px; border: 1px solid var(--line); width: min(620px, 100%); box-shadow: var(--shadow); padding: 22px; }
+    .modal-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+    .modal-header h3 { margin: 0; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .toast { position: fixed; right: 24px; bottom: 24px; background: var(--primary); color: #fff; padding: 14px 16px; border-radius: 12px; box-shadow: var(--shadow); display: none; font-weight: 700; z-index: 80; }
+    .toast.show { display: block; }
+    .portfolio-note { font-size: 12px; color: var(--muted); margin-top: 22px; line-height: 1.5; }
+    @media (max-width: 980px) {
+      .login-page { grid-template-columns: 1fr; }
+      .login-hero { padding: 34px; }
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; }
+      .cards, .filters, .two-col { grid-template-columns: 1fr; }
+      .topbar { position: relative; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <section id="loginPage" class="login-page">
+      <div class="login-hero">
+        <h1>ABC School Login Page</h1>
+      </div>
+      <div class="login-panel">
+        <div class="login-card">
+          <h2>Login</h2>
+          <form id="loginForm">
+            <label for="username">Admin Username</label>
+            <input id="username" type="text" value="admin@abcschool.demo" autocomplete="username" />
+            <label for="password">Password</label>
+            <input id="password" type="password" value="Admin@123" autocomplete="current-password" />
+            <button class="btn" type="submit" style="width:100%; margin-top:22px;">Login</button>
+            <div id="loginError" class="error hidden">Enter valid username and password.</div>
+          </form>
 
+        </div>
+      </div>
+    </section>
+
+    <section id="adminApp" class="layout hidden">
+      <aside class="sidebar">
+        <div class="brand">ABC School</div>
+        <div class="role-pill">Admin Web Access</div>
+        <nav class="nav">
+          <button data-view="dashboard" class="active">Dashboard</button>
+          <button data-view="students">Student Management</button>
+          <button data-view="teachers">Teacher Management</button>
+          <button data-view="attendance">Submitted Attendance</button>
+          <button data-view="reports">Attendance Reports</button>
+          <button data-view="access">Role-Based Access</button>
+        </nav>
+
+      </aside>
+      <main class="main">
+        <div class="topbar">
+          <h2 id="pageTitle">Admin Dashboard</h2>
+          <div class="actions">
+            <button class="btn light" onclick="showView('reports')">View Reports</button>
+            <button class="btn secondary" onclick="logout()">Logout</button>
+          </div>
+        </div>
+        <div class="content">
+          <div id="dashboardView" class="view"></div>
+          <div id="studentsView" class="view hidden"></div>
+          <div id="teachersView" class="view hidden"></div>
+          <div id="attendanceView" class="view hidden"></div>
+          <div id="reportsView" class="view hidden"></div>
+          <div id="accessView" class="view hidden"></div>
+        </div>
+      </main>
+    </section>
+  </div>
+
+  <div id="modalBackdrop" class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add Record</h3>
+        <button class="btn light" onclick="closeModal()">Close</button>
+      </div>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast"></div>
+
+  <script>
+    const demo = {
+      students: [
+        { admissionNo: 'ADM-001', name: 'Aarav Sharma', className: '6', section: 'A', status: 'Active' },
+        { admissionNo: 'ADM-002', name: 'Diya Patel', className: '6', section: 'A', status: 'Active' },
+        { admissionNo: 'ADM-003', name: 'Kabir Singh', className: '7', section: 'B', status: 'Active' },
+        { admissionNo: 'ADM-004', name: 'Meera Joshi', className: '8', section: 'A', status: 'Inactive' }
+      ],
+      teachers: [
+        { teacherId: 'T-001', name: 'Neha Verma', assignedClass: '6A', status: 'Active', access: 'Admin managed, mobile attendance user' },
+        { teacherId: 'T-002', name: 'Rahul Mehta', assignedClass: '7B', status: 'Active', access: 'Admin managed, mobile attendance user' },
+        { teacherId: 'T-003', name: 'Priya Shah', assignedClass: '8A', status: 'Inactive', access: 'Login blocked' }
+      ],
+      attendance: [
+        { date: '2026-07-28', className: '6', section: 'A', admissionNo: 'ADM-001', student: 'Aarav Sharma', status: 'Present', submittedBy: 'T-001' },
+        { date: '2026-07-28', className: '6', section: 'A', admissionNo: 'ADM-002', student: 'Diya Patel', status: 'Absent', submittedBy: 'T-001' },
+        { date: '2026-07-28', className: '7', section: 'B', admissionNo: 'ADM-003', student: 'Kabir Singh', status: 'Present', submittedBy: 'T-002' },
+        { date: '2026-07-29', className: '6', section: 'A', admissionNo: 'ADM-001', student: 'Aarav Sharma', status: 'Present', submittedBy: 'T-001' },
+        { date: '2026-07-29', className: '6', section: 'A', admissionNo: 'ADM-002', student: 'Diya Patel', status: 'Present', submittedBy: 'T-001' }
+      ]
+    };
+
+    let students = JSON.parse(localStorage.getItem('abc_students') || JSON.stringify(demo.students));
+    let teachers = JSON.parse(localStorage.getItem('abc_teachers') || JSON.stringify(demo.teachers));
+    const attendance = demo.attendance;
+
+    function save() {
+      localStorage.setItem('abc_students', JSON.stringify(students));
+      localStorage.setItem('abc_teachers', JSON.stringify(teachers));
+    }
+    function toast(message) {
+      const t = document.getElementById('toast');
+      t.textContent = message;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const u = document.getElementById('username').value.trim();
+      const p = document.getElementById('password').value.trim();
+      if (u === 'admin@abcschool.demo' && p === 'Admin@123') {
+        document.getElementById('loginPage').classList.add('hidden');
+        document.getElementById('adminApp').classList.remove('hidden');
+        renderAll();
+      } else {
+        document.getElementById('loginError').classList.remove('hidden');
+      }
+    });
+    function logout() {
+      document.getElementById('adminApp').classList.add('hidden');
+      document.getElementById('loginPage').classList.remove('hidden');
+    }
+    const titles = {
+      dashboard: 'Admin Dashboard', students: 'Student Management', teachers: 'Teacher Management', attendance: 'Submitted Attendance', reports: 'Attendance Reports', access: 'Role-Based Access'
+    };
+    function showView(name) {
+      document.querySelectorAll('.view').forEach(v => v.classList.add('hidden'));
+      document.getElementById(name + 'View').classList.remove('hidden');
+      document.getElementById('pageTitle').textContent = titles[name];
+      document.querySelectorAll('.nav button').forEach(b => b.classList.toggle('active', b.dataset.view === name));
+      if (name === 'reports') renderReports();
+    }
+    document.querySelectorAll('.nav button').forEach(btn => btn.addEventListener('click', () => showView(btn.dataset.view)));
+
+    function statusBadge(value) {
+      const cls = value.toLowerCase() === 'active' || value.toLowerCase() === 'present' ? 'active present' : 'inactive absent';
+      return `<span class="badge ${cls}">${value}</span>`;
+    }
+    function renderDashboard() {
+      const presentToday = attendance.filter(a => a.date === '2026-07-28' && a.status === 'Present').length;
+      const absentToday = attendance.filter(a => a.date === '2026-07-28' && a.status === 'Absent').length;
+      document.getElementById('dashboardView').innerHTML = `
+        <div class="cards">
+          <div class="card"><div class="label">Active Students</div><div class="value">${students.filter(s => s.status === 'Active').length}</div></div>
+          <div class="card"><div class="label">Active Teachers</div><div class="value">${teachers.filter(t => t.status === 'Active').length}</div></div>
+          <div class="card"><div class="label">Present Today</div><div class="value">${presentToday}</div></div>
+          <div class="card"><div class="label">Absent Today</div><div class="value">${absentToday}</div></div>
+        </div>
+        <div class="section">
+          <div class="section-header"><h3>Recent Attendance Submissions</h3><button class="btn light" onclick="showView('attendance')">Open</button></div>
+          <table><thead><tr><th>Date</th><th>Class</th><th>Submitted By</th><th>Status</th></tr></thead><tbody>
+            <tr><td>28 Jul 2026</td><td>Class 6A</td><td>T-001</td><td>${statusBadge('Present')}</td></tr>
+            <tr><td>28 Jul 2026</td><td>Class 7B</td><td>T-002</td><td>${statusBadge('Present')}</td></tr>
+            <tr><td>29 Jul 2026</td><td>Class 6A</td><td>T-001</td><td>${statusBadge('Present')}</td></tr>
+          </tbody></table>
+        </div>`;
+    }
+    function renderStudents() {
+      document.getElementById('studentsView').innerHTML = `
+        <div class="section">
+          <div class="section-header"><h3>Student Records</h3><div class="actions"><button class="btn" onclick="openStudentModal()">Add Student</button><button class="btn light disabled" onclick="toast('CSV upload marked as future enhancement for this prototype')">CSV Upload</button></div></div>
+          <table><thead><tr><th>Admission No.</th><th>Student Name</th><th>Class</th><th>Section</th><th>Status</th><th>Action</th></tr></thead><tbody>
+          ${students.map((s,i) => `<tr><td>${s.admissionNo}</td><td>${s.name}</td><td>${s.className}</td><td>${s.section}</td><td>${statusBadge(s.status)}</td><td><button class="btn light" onclick="openStudentModal(${i})">Edit</button></td></tr>`).join('')}
+          </tbody></table>
+        </div>`;
+    }
+    function renderTeachers() {
+      document.getElementById('teachersView').innerHTML = `
+        <div class="section">
+          <div class="section-header"><h3>Teacher Records</h3><button class="btn" onclick="openTeacherModal()">Add Teacher</button></div>
+          <table><thead><tr><th>Teacher ID</th><th>Teacher Name</th><th>Assigned Class</th><th>Status</th><th>Access</th><th>Action</th></tr></thead><tbody>
+          ${teachers.map((t,i) => `<tr><td>${t.teacherId}</td><td>${t.name}</td><td>${t.assignedClass}</td><td>${statusBadge(t.status)}</td><td>${t.access}</td><td><button class="btn light" onclick="openTeacherModal(${i})">Edit</button></td></tr>`).join('')}
+          </tbody></table>
+        </div>`;
+    }
+    function renderAttendance() {
+      document.getElementById('attendanceView').innerHTML = `
+        <div class="section">
+          <div class="section-header"><h3>Submitted Attendance</h3><button class="btn light" onclick="showView('reports')">Open Reports</button></div>
+          <table><thead><tr><th>Date</th><th>Admission No.</th><th>Student Name</th><th>Class</th><th>Section</th><th>Status</th><th>Submitted By</th></tr></thead><tbody>
+          ${attendance.map(a => `<tr><td>${a.date}</td><td>${a.admissionNo}</td><td>${a.student}</td><td>${a.className}</td><td>${a.section}</td><td>${statusBadge(a.status)}</td><td>${a.submittedBy}</td></tr>`).join('')}
+          </tbody></table>
+        </div>`;
+    }
+    function renderReports() {
+      const classVal = document.getElementById('reportClass')?.value || '';
+      const dateVal = document.getElementById('reportDate')?.value || '';
+      const studentVal = document.getElementById('reportStudent')?.value || '';
+      let rows = attendance.filter(a => (!classVal || a.className === classVal) && (!dateVal || a.date === dateVal) && (!studentVal || a.admissionNo === studentVal));
+      document.getElementById('reportsView').innerHTML = `
+        <div class="section">
+          <h3>Attendance Report Filters</h3>
+          <div class="filters">
+            <div><label>Class</label><select id="reportClass"><option value="">All Classes</option><option value="6" ${classVal==='6'?'selected':''}>Class 6</option><option value="7" ${classVal==='7'?'selected':''}>Class 7</option><option value="8" ${classVal==='8'?'selected':''}>Class 8</option></select></div>
+            <div><label>Date</label><input id="reportDate" type="date" value="${dateVal}"></div>
+            <div><label>Student</label><select id="reportStudent"><option value="">All Students</option>${students.map(s => `<option value="${s.admissionNo}" ${studentVal===s.admissionNo?'selected':''}>${s.name}</option>`).join('')}</select></div>
+            <div><button class="btn" onclick="renderReports()">View Report</button></div>
+          </div>
+          <div class="callout">Admin can view reports by class, single date and student. Reports are Admin-only and view-only in Project 1.</div>
+        </div>
+        <div class="section">
+          <div class="section-header"><h3>Report Results</h3><div class="actions"><button class="btn light disabled" onclick="toast('Export is out of Project 1 scope')">Export Disabled</button><button class="btn light disabled" onclick="toast('Print is out of Project 1 scope')">Print Disabled</button></div></div>
+          <table><thead><tr><th>Date</th><th>Admission No.</th><th>Student Name</th><th>Class</th><th>Section</th><th>Status</th></tr></thead><tbody>
+          ${rows.map(a => `<tr><td>${a.date}</td><td>${a.admissionNo}</td><td>${a.student}</td><td>${a.className}</td><td>${a.section}</td><td>${statusBadge(a.status)}</td></tr>`).join('') || '<tr><td colspan="6">No records found for selected filters.</td></tr>'}
+          </tbody></table>
+        </div>`;
+    }
+    function renderAccess() {
+      document.getElementById('accessView').innerHTML = `
+        <div class="section">
+          <h3>Role-Based Access Matrix</h3>
+          <table><thead><tr><th>Role</th><th>Allowed Access</th><th>Restricted Access</th></tr></thead><tbody>
+            <tr><td>Admin</td><td>Student data, teacher data, submitted attendance and reports</td><td>None in Admin web scope</td></tr>
+            <tr><td>Teacher</td><td>Mobile attendance marking for assigned class only</td><td>Admin web app, student management, teacher management, reports</td></tr>
+            <tr><td>Inactive Teacher</td><td>No active system access</td><td>Login blocked</td></tr>
+          </tbody></table>
+        </div>
+        <div class="section">
+          <h3>Access Denied Simulation</h3>
+          <p class="muted">This shows what happens if a non-Admin role tries to access Admin-only screens.</p>
+          <button class="btn danger" onclick="toast('Access denied: Teacher role cannot access Admin web screens')">Simulate Teacher Access Attempt</button>
+        </div>`;
+    }
+    function renderAll() { renderDashboard(); renderStudents(); renderTeachers(); renderAttendance(); renderReports(); renderAccess(); }
+
+    function closeModal() { document.getElementById('modalBackdrop').classList.remove('show'); }
+    function openStudentModal(index = null) {
+      const s = index !== null ? students[index] : { admissionNo: '', name: '', className: '6', section: 'A', status: 'Active' };
+      document.getElementById('modalTitle').textContent = index !== null ? 'Edit Student' : 'Add Student';
+      document.getElementById('modalBody').innerHTML = `
+        <div class="form-grid">
+          <div><label>Admission No.</label><input id="mAdmission" value="${s.admissionNo}"></div>
+          <div><label>Student Name</label><input id="mStudentName" value="${s.name}"></div>
+          <div><label>Class</label><select id="mClass"><option ${s.className==='6'?'selected':''}>6</option><option ${s.className==='7'?'selected':''}>7</option><option ${s.className==='8'?'selected':''}>8</option></select></div>
+          <div><label>Section</label><select id="mSection"><option ${s.section==='A'?'selected':''}>A</option><option ${s.section==='B'?'selected':''}>B</option></select></div>
+          <div><label>Status</label><select id="mStatus"><option ${s.status==='Active'?'selected':''}>Active</option><option ${s.status==='Inactive'?'selected':''}>Inactive</option></select></div>
+        </div>
+        <div class="actions" style="margin-top:18px;"><button class="btn" onclick="saveStudent(${index})">Save Student</button></div>`;
+      document.getElementById('modalBackdrop').classList.add('show');
+    }
+    function saveStudent(index) {
+      const s = { admissionNo: mAdmission.value.trim(), name: mStudentName.value.trim(), className: mClass.value, section: mSection.value, status: mStatus.value };
+      if (!s.admissionNo || !s.name) return toast('Admission No. and Student Name are required');
+      if (index === null || Number.isNaN(index)) students.push(s); else students[index] = s;
+      save(); renderAll(); closeModal(); toast('Student record saved');
+    }
+    function openTeacherModal(index = null) {
+      const t = index !== null ? teachers[index] : { teacherId: '', name: '', assignedClass: '6A', status: 'Active', access: 'Admin managed, mobile attendance user' };
+      document.getElementById('modalTitle').textContent = index !== null ? 'Edit Teacher' : 'Add Teacher';
+      document.getElementById('modalBody').innerHTML = `
+        <div class="form-grid">
+          <div><label>Teacher ID</label><input id="mTeacherId" value="${t.teacherId}"></div>
+          <div><label>Teacher Name</label><input id="mTeacherName" value="${t.name}"></div>
+          <div><label>Assigned Class</label><select id="mAssigned"><option ${t.assignedClass==='6A'?'selected':''}>6A</option><option ${t.assignedClass==='7B'?'selected':''}>7B</option><option ${t.assignedClass==='8A'?'selected':''}>8A</option></select></div>
+          <div><label>Status</label><select id="mTeacherStatus"><option ${t.status==='Active'?'selected':''}>Active</option><option ${t.status==='Inactive'?'selected':''}>Inactive</option></select></div>
+        </div>
+        <div class="callout" style="margin-top:14px;">Inactive teacher status blocks login access in the security enhancement flow.</div>
+        <div class="actions" style="margin-top:18px;"><button class="btn" onclick="saveTeacher(${index})">Save Teacher</button></div>`;
+      document.getElementById('modalBackdrop').classList.add('show');
+    }
+    function saveTeacher(index) {
+      const status = mTeacherStatus.value;
+      const t = { teacherId: mTeacherId.value.trim(), name: mTeacherName.value.trim(), assignedClass: mAssigned.value, status, access: status === 'Active' ? 'Admin managed, mobile attendance user' : 'Login blocked' };
+      if (!t.teacherId || !t.name) return toast('Teacher ID and Teacher Name are required');
+      if (index === null || Number.isNaN(index)) teachers.push(t); else teachers[index] = t;
+      save(); renderAll(); closeModal(); toast('Teacher record saved');
+    }
+  </script>
+</body>
+</html>
