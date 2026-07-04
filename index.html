@@ -11968,7 +11968,7 @@ body #ba-deliverables.ba-polished {
 <div class="detail-stack">
 <article class="detail-card" id="attendance-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><div class="case-action-group" aria-label="Attendance evidence quick links"><a class="case-split-btn product-action" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn prototype-action" href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener"><span class="case-btn-label"><span class="prototype-pointer" aria-hidden="true">☛</span>Open Product Prototype</span><span class="case-btn-arrow">›</span></a></div></div>
+<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><div class="case-action-group" aria-label="Attendance evidence quick links"><a class="case-split-btn product-action" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a><details class="case-prototype-dropdown prototype-action"><summary class="case-split-btn prototype-action"><span class="case-btn-label"><span class="prototype-pointer" aria-hidden="true">☛</span>Open Product Prototype</span><span class="case-btn-arrow">›</span></summary><div class="prototype-dropdown-menu"><a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener">Product 1</a><a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener">Product 2</a></div></details></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
 <div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html">Download Project 1 Work Pack</a></div><div class="evidence-accordion"><details>
@@ -13086,6 +13086,61 @@ body #ba-deliverables.ba-polished {
 @keyframes prototypeFingerPoint {
   0%, 100% { transform: translateX(0); }
   50% { transform: translateX(7px); }
+}
+
+
+/* Project 1 prototype dropdown: Product 1 and Product 2. Same yellow button colour retained. */
+#attendance-case .case-prototype-dropdown {
+  position: relative !important;
+  width: 100% !important;
+}
+
+#attendance-case .case-prototype-dropdown summary {
+  list-style: none !important;
+  cursor: pointer !important;
+}
+
+#attendance-case .case-prototype-dropdown summary::-webkit-details-marker {
+  display: none !important;
+}
+
+#attendance-case .case-prototype-dropdown[open] summary .case-btn-arrow {
+  transform: rotate(90deg) !important;
+}
+
+#attendance-case .prototype-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 40 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  padding: 10px !important;
+  background: #FFFFFF !important;
+  border: 2px solid #D39E00 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, .22) !important;
+}
+
+#attendance-case .prototype-dropdown-menu a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 38px !important;
+  border-radius: 9px !important;
+  background: linear-gradient(135deg, #F4C300, #D39E00) !important;
+  color: #000000 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  text-decoration: none !important;
+}
+
+#attendance-case .prototype-dropdown-menu a:hover {
+  filter: brightness(1.04) !important;
+  transform: translateY(-1px) !important;
 }
 
 #stem-case .product-action { --case-main: #F4C300; --case-dark: #D39E00; --case-shadow: rgba(244, 195, 0, .30); }
