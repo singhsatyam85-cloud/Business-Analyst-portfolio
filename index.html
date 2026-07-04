@@ -11453,6 +11453,330 @@ body #ba-deliverables.ba-polished {
 }
 </style>
 
+
+
+<style>
+/* Final: solid colour split evidence buttons across all detailed project sections */
+#detailed-case-studies .evidence-accordion {
+  width: min(72%, 820px) !important;
+  margin: 28px auto 0 !important;
+  display: grid !important;
+  justify-items: stretch !important;
+  gap: 16px !important;
+}
+
+#detailed-case-studies .evidence-accordion details {
+  width: 100% !important;
+  margin: 0 auto !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  border: 2px solid var(--solid-border, #0F172A) !important;
+  background: var(--solid-main, #0F172A) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .16) !important;
+  animation: solidEvidenceFloat 3s ease-in-out infinite !important;
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease !important;
+}
+
+#detailed-case-studies .evidence-accordion details:nth-child(5n+1) {
+  --solid-main: #0077B6;
+  --solid-arrow: #005F92;
+  --solid-border: #005F92;
+}
+
+#detailed-case-studies .evidence-accordion details:nth-child(5n+2) {
+  --solid-main: #111827;
+  --solid-arrow: #030712;
+  --solid-border: #030712;
+  animation-delay: .12s !important;
+}
+
+#detailed-case-studies .evidence-accordion details:nth-child(5n+3) {
+  --solid-main: #D7263D;
+  --solid-arrow: #B91C1C;
+  --solid-border: #B91C1C;
+  animation-delay: .24s !important;
+}
+
+#detailed-case-studies .evidence-accordion details:nth-child(5n+4) {
+  --solid-main: #008F5A;
+  --solid-arrow: #047857;
+  --solid-border: #047857;
+  animation-delay: .36s !important;
+}
+
+#detailed-case-studies .evidence-accordion details:nth-child(5n+5) {
+  --solid-main: #F59E0B;
+  --solid-arrow: #D97706;
+  --solid-border: #D97706;
+  animation-delay: .48s !important;
+}
+
+#detailed-case-studies .evidence-accordion summary {
+  min-height: 64px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: var(--solid-main) !important;
+  color: #FFFFFF !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 74px !important;
+  align-items: stretch !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+#detailed-case-studies .evidence-accordion summary::-webkit-details-marker {
+  display: none !important;
+}
+
+#detailed-case-studies .evidence-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 26px !important;
+  gap: 0 !important;
+  min-width: 0 !important;
+  background: var(--solid-main) !important;
+  color: #FFFFFF !important;
+}
+
+#detailed-case-studies .evidence-title-wrap strong,
+#detailed-case-studies .evidence-title-wrap span,
+#detailed-case-studies .evidence-hint {
+  color: #FFFFFF !important;
+}
+
+#detailed-case-studies .evidence-hint {
+  opacity: .92 !important;
+  font-weight: 800 !important;
+}
+
+#detailed-case-studies .evidence-mini-icon,
+#detailed-case-studies .evidence-accordion summary::before,
+#detailed-case-studies .evidence-accordion summary::after {
+  display: none !important;
+  content: none !important;
+}
+
+#detailed-case-studies .accordion-arrow {
+  width: 74px !important;
+  height: auto !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border-left: 2px solid rgba(255,255,255,.72) !important;
+  background: var(--solid-arrow) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  box-shadow: none !important;
+}
+
+#detailed-case-studies .accordion-arrow::before {
+  content: "" !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+  border-top: 12px solid #FFFFFF !important;
+  transition: transform .22s ease !important;
+}
+
+#detailed-case-studies .evidence-accordion details[open] .accordion-arrow::before {
+  transform: rotate(180deg) !important;
+}
+
+#detailed-case-studies .evidence-accordion details:hover {
+  transform: translateY(-4px) scale(1.01) !important;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, .24) !important;
+  filter: brightness(1.04) !important;
+}
+
+#detailed-case-studies .evidence-doc-list {
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 0 0 12px 12px !important;
+  overflow: hidden !important;
+  background: #FFFFFF !important;
+}
+
+@keyframes solidEvidenceFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies .evidence-accordion {
+    width: min(94%, 820px) !important;
+    gap: 13px !important;
+  }
+  #detailed-case-studies .evidence-accordion summary {
+    grid-template-columns: minmax(0, 1fr) 56px !important;
+  }
+  #detailed-case-studies .evidence-title-wrap {
+    padding: 12px 16px !important;
+  }
+  #detailed-case-studies .accordion-arrow {
+    width: 56px !important;
+    min-height: 62px !important;
+  }
+}
+</style>
+
+
+
+<style>
+/* Final fix: make Project 1 evidence buttons even, solid and consistent. Other sections are unchanged. */
+#detailed-case-studies #attendance-case-evidence .evidence-accordion {
+  width: min(72%, 820px) !important;
+  max-width: 820px !important;
+  margin: 28px auto 0 !important;
+  display: grid !important;
+  justify-items: stretch !important;
+  gap: 16px !important;
+  padding-top: 0 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  border: 2px solid var(--solid-border, #0F172A) !important;
+  background: var(--solid-main, #0F172A) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .16) !important;
+  animation: solidEvidenceFloat 3s ease-in-out infinite !important;
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details:nth-child(1) {
+  --solid-main: #0077B6;
+  --solid-arrow: #005F92;
+  --solid-border: #005F92;
+  animation-delay: 0s !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details:nth-child(2) {
+  --solid-main: #111827;
+  --solid-arrow: #030712;
+  --solid-border: #030712;
+  animation-delay: .12s !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details:nth-child(3) {
+  --solid-main: #D7263D;
+  --solid-arrow: #B91C1C;
+  --solid-border: #B91C1C;
+  animation-delay: .24s !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details:nth-child(4) {
+  --solid-main: #008F5A;
+  --solid-arrow: #047857;
+  --solid-border: #047857;
+  animation-delay: .36s !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary {
+  min-height: 64px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: var(--solid-main) !important;
+  color: #FFFFFF !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 74px !important;
+  align-items: stretch !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.20) !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary::-webkit-details-marker {
+  display: none !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  padding: 14px 26px !important;
+  gap: 0 !important;
+  min-width: 0 !important;
+  background: var(--solid-main) !important;
+  color: #FFFFFF !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-title-wrap strong,
+#detailed-case-studies #attendance-case-evidence .evidence-title-wrap span,
+#detailed-case-studies #attendance-case-evidence .evidence-hint {
+  color: #FFFFFF !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-hint {
+  opacity: .92 !important;
+  font-weight: 800 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-mini-icon,
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary::before,
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary::after {
+  display: none !important;
+  content: none !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .accordion-arrow {
+  width: 74px !important;
+  height: auto !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border-left: 2px solid rgba(255,255,255,.72) !important;
+  background: var(--solid-arrow) !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  box-shadow: none !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .accordion-arrow::before {
+  content: "" !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 10px solid transparent !important;
+  border-right: 10px solid transparent !important;
+  border-top: 12px solid #FFFFFF !important;
+  transition: transform .22s ease !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details[open] .accordion-arrow::before {
+  transform: rotate(180deg) !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion {
+    width: min(94%, 820px) !important;
+    gap: 13px !important;
+  }
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion summary {
+    grid-template-columns: minmax(0, 1fr) 56px !important;
+  }
+  #detailed-case-studies #attendance-case-evidence .evidence-title-wrap {
+    padding: 12px 16px !important;
+  }
+  #detailed-case-studies #attendance-case-evidence .accordion-arrow {
+    width: 56px !important;
+    min-height: 62px !important;
+  }
+}
+</style>
+
 </head>
 <body id="top">
 <header class="site-header">
@@ -11643,8 +11967,8 @@ body #ba-deliverables.ba-polished {
 </div>
 <div class="detail-stack">
 <article class="detail-card" id="attendance-case">
-<div class="detail-header"><div><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><a class="product-screenshot-btn" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="btn-icon">▣</span><span>View Product Screenshots</span></a><a class="btn wireframe-btn" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener">Wireframes / Screen Flows</a></div>
+<div class="detail-header"><div class="detail-heading-block"><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
+<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><div class="case-action-group" aria-label="Attendance evidence quick links"><a class="case-split-btn product-action" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
@@ -11667,8 +11991,8 @@ body #ba-deliverables.ba-polished {
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="stem-case">
-<div class="detail-header"><div><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
-<span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-header"><div class="detail-heading-block"><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
+<span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div><div class="case-action-group" aria-label="STEM evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="stem-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
@@ -11691,8 +12015,8 @@ body #ba-deliverables.ba-polished {
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="autoparts-case">
-<div class="detail-header"><div><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
-<span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-header"><div class="detail-heading-block"><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
+<span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div><div class="case-action-group" aria-label="Autoparts evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="autoparts-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
@@ -11715,8 +12039,8 @@ body #ba-deliverables.ba-polished {
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="operations-case">
-<div class="detail-header"><div><h3>Operational Process Improvement &amp; KPI Reporting</h3><p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
-<span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-header"><div class="detail-heading-block"><h3>Operational Process Improvement &amp; KPI Reporting</h3><p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
+<span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div><div class="case-action-group" aria-label="Operations evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="operations-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
@@ -11739,8 +12063,8 @@ body #ba-deliverables.ba-polished {
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="pwc-case">
-<div class="detail-header"><div><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
-<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div><a class="btn" href="#project-work">Back to Project Work</a></div>
+<div class="detail-header"><div class="detail-heading-block"><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
+<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div><div class="case-action-group" aria-label="Simulation evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
 <div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="pwc-case-evidence">
 <div class="evidence-panel-head"><div><h4>BA Work Evidence</h4><p>Evidence is grouped into four BA work areas to keep the page clean.</p></div><span class="evidence-hint">Click a section to expand</span></div>
@@ -12676,4 +13000,107 @@ body #ba-deliverables.ba-polished {
     justify-self: start !important;
   }
 }
+
+
+/* Unified project detail header quick buttons - Olympic colour inspired, no logo/rings */
+#detailed-case-studies .detail-header {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1fr) minmax(300px, 420px) !important;
+  align-items: center !important;
+  gap: 22px !important;
+}
+
+#detailed-case-studies .detail-heading-block {
+  min-width: 0 !important;
+}
+
+#detailed-case-studies .case-action-group {
+  justify-self: center !important;
+  width: min(100%, 390px) !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+
+#detailed-case-studies .case-split-btn {
+  --case-main: #2563EB;
+  --case-dark: #1D4ED8;
+  --case-shadow: rgba(37, 99, 235, .25);
+  min-height: 42px !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr 44px !important;
+  align-items: stretch !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  letter-spacing: .15px !important;
+  line-height: 1 !important;
+  box-shadow: 0 10px 22px var(--case-shadow) !important;
+  animation: detailButtonPulse 2.8s ease-in-out infinite !important;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease !important;
+}
+
+#detailed-case-studies .case-split-btn:hover {
+  transform: translateY(-2px) scale(1.015) !important;
+  filter: brightness(1.04) !important;
+  box-shadow: 0 14px 30px var(--case-shadow) !important;
+}
+
+#detailed-case-studies .case-btn-label {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 42px !important;
+  padding: 10px 14px !important;
+  background: linear-gradient(135deg, var(--case-main), var(--case-dark)) !important;
+  white-space: nowrap !important;
+}
+
+#detailed-case-studies .case-btn-arrow {
+  display: grid !important;
+  place-items: center !important;
+  min-height: 42px !important;
+  background: rgba(15, 23, 42, .92) !important;
+  border-left: 1px solid rgba(255, 255, 255, .28) !important;
+  color: #FFFFFF !important;
+  font-size: 24px !important;
+  font-weight: 900 !important;
+}
+
+#attendance-case .product-action { --case-main: #0085C7; --case-dark: #005F9E; --case-shadow: rgba(0, 133, 199, .26); }
+#attendance-case .wireframe-action { --case-main: #009F3D; --case-dark: #007A32; --case-shadow: rgba(0, 159, 61, .25); }
+
+#stem-case .product-action { --case-main: #F4C300; --case-dark: #D39E00; --case-shadow: rgba(244, 195, 0, .30); }
+#stem-case .wireframe-action { --case-main: #0085C7; --case-dark: #005F9E; --case-shadow: rgba(0, 133, 199, .26); }
+
+#autoparts-case .product-action { --case-main: #DF0024; --case-dark: #A8001B; --case-shadow: rgba(223, 0, 36, .24); }
+#autoparts-case .wireframe-action { --case-main: #111827; --case-dark: #000000; --case-shadow: rgba(17, 24, 39, .22); }
+
+#operations-case .product-action { --case-main: #009F3D; --case-dark: #007A32; --case-shadow: rgba(0, 159, 61, .25); }
+#operations-case .wireframe-action { --case-main: #DF0024; --case-dark: #A8001B; --case-shadow: rgba(223, 0, 36, .24); }
+
+#pwc-case .product-action { --case-main: #0085C7; --case-dark: #005F9E; --case-shadow: rgba(0, 133, 199, .24); }
+#pwc-case .wireframe-action { --case-main: #F4C300; --case-dark: #D39E00; --case-shadow: rgba(244, 195, 0, .30); }
+#pwc-case .wireframe-action .case-btn-label { color: #111827 !important; }
+
+@keyframes detailButtonPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.018); }
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies .detail-header {
+    grid-template-columns: 1fr !important;
+  }
+  #detailed-case-studies .case-action-group {
+    justify-self: center !important;
+    width: min(100%, 360px) !important;
+  }
+}
+
 </style>
