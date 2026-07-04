@@ -1,1 +1,63 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital STEM Content Delivery Platform</title>
+  <style>
+    :root{
+      --green:#076b51;
+      --green-dark:#044434;
+      --mint:#cceedd;
+      --cream:#fff6e5;
+      --paper:#fffdf7;
+      --text:#151515;
+      --muted:#64615b;
+      --line:#dbd1bd;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial, Helvetica, sans-serif;background:#f2efe8;color:var(--text);}
+    .page{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;}
+    .shell{width:min(1040px,100%);background:var(--cream);border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+    .hero{background:var(--green);color:#fff;padding:42px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+    .hero h1{font-size:34px;line-height:1.15;margin:0;font-weight:800;}
+    .badge{background:var(--mint);color:var(--green);padding:14px 24px;border-radius:999px;font-weight:800;white-space:nowrap;}
+    .content{padding:48px 52px 56px;}
+    .roles{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+    .card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 32px;min-height:310px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.05)}
+    .icon{width:64px;height:64px;border-radius:20px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:30px;margin-bottom:18px;}
+    .card h2{font-size:30px;margin:0 0 28px;}
+    .btn{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;border-radius:14px;padding:15px 28px;font-weight:800;font-size:16px;border:0;color:#fff;background:var(--green);min-width:230px;margin-bottom:18px;}
+    .btn.admin{background:var(--green-dark)}
+    .credentials{font-size:15px;line-height:1.7;color:var(--muted);margin:0;}
+    .credentials strong{color:var(--text)}
+    @media(max-width:760px){.hero{display:block;padding:30px}.badge{display:inline-block;margin-top:18px}.content{padding:28px}.roles{grid-template-columns:1fr}.hero h1{font-size:28px}.card h2{font-size:26px}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="shell">
+      <header class="hero">
+        <h1>Digital STEM Content Delivery Platform</h1>
+        <div class="badge">ABC School</div>
+      </header>
+      <section class="content">
+        <div class="roles">
+          <article class="card">
+            <div class="icon">👩‍🏫</div>
+            <h2>Teacher Portal</h2>
+            <a class="btn" href="teacher.html">Teacher Login</a>
+            <p class="credentials"><strong>Sample login credentials</strong><br>Username: teacher1234<br>Password: 12345</p>
+          </article>
+          <article class="card">
+            <div class="icon">🗂️</div>
+            <h2>Admin Portal</h2>
+            <a class="btn admin" href="admin.html">Admin Login</a>
+            <p class="credentials"><strong>Sample login credentials</strong><br>Username: admin1234<br>Password: 12345</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

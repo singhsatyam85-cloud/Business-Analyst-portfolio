@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Web Product Prototype | Digital STEM Content Delivery Platform</title>
+<style>
+  :root{
+    --green:#0b6b4f;
+    --green-dark:#064735;
+    --mint:#ccefdc;
+    --cream:#fff6e6;
+    --paper:#fffdf8;
+    --line:#ded2bd;
+    --text:#1b1b1b;
+    --muted:#68645e;
+    --orange:#e8891c;
+    --red:#d74638;
+    --purple:#4f2a55;
+    --shadow: 0 18px 45px rgba(6,71,53,.12);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Arial, Helvetica, sans-serif;background:#eee;color:var(--text)}
+  .app{min-height:100vh;display:none}
+  .layout{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+  .sidebar{background:var(--paper);border-right:1px solid var(--line);padding:22px 18px;position:sticky;top:0;height:100vh;overflow:auto}
+  .brand{font-weight:800;font-size:18px;color:var(--green);line-height:1.2;margin-bottom:6px}
+  .subbrand{font-size:12px;color:var(--muted);margin-bottom:26px;line-height:1.35}
+  .nav-title{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#555;font-weight:800;margin:22px 0 10px}
+  .nav button{width:100%;border:0;background:transparent;text-align:left;padding:12px 14px;border-radius:12px;font-weight:700;color:#4d4a45;cursor:pointer;margin:3px 0;font-size:14px}
+  .nav button:hover,.nav button.active{background:var(--mint);color:var(--green-dark);outline:2px solid var(--green-dark)}
+  .logout{margin-top:22px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--red);font-weight:800;cursor:pointer}
+  .main{background:var(--cream);padding:28px;min-width:0}
+  .topbar{background:var(--green);color:#fff;padding:24px 28px;border-radius:24px 24px 0 0;display:flex;justify-content:space-between;gap:18px;align-items:center;box-shadow:var(--shadow)}
+  .topbar h1{margin:0;font-size:28px}.topbar p{margin:7px 0 0;color:#d8f0e6}.chip{background:var(--mint);color:var(--green-dark);border-radius:999px;padding:10px 26px;font-weight:800;white-space:nowrap}
+  .content{background:#fff6e6;border-radius:0 0 24px 24px;padding:28px;border:1px solid var(--line);border-top:0;box-shadow:var(--shadow);min-height:calc(100vh - 130px)}
+  .page{display:none}.page.active{display:block}
+  .grid{display:grid;gap:18px}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:120px}.metric{text-align:center}.metric strong{display:block;font-size:32px;margin-top:8px}.metric.approved{color:var(--green)}.metric.review{color:var(--orange)}.metric.draft{color:var(--purple)}.metric.inactive{color:var(--red)}
+  .section-title{font-size:22px;margin:0 0 16px}.hint{color:var(--muted);font-size:14px;margin:0 0 22px;line-height:1.5}
+  table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:table} th,td{text-align:left;padding:14px;border-bottom:1px solid #eee4d2;font-size:14px;vertical-align:top} th{background:#fffaf0;color:#3d3a34;font-size:13px;text-transform:uppercase;letter-spacing:.04em} tr:last-child td{border-bottom:0}
+  .status{display:inline-block;padding:7px 12px;border-radius:999px;font-weight:800;font-size:12px}.Approved{background:var(--mint);color:var(--green-dark)}.Review{background:#ffe4b5;color:#a55400}.Draft{background:#eadcf0;color:var(--purple)}.Inactive{background:#ffe0de;color:var(--red)}
+  .btn{border:0;border-radius:12px;background:var(--green);color:#fff;font-weight:800;padding:11px 16px;cursor:pointer}.btn.secondary{background:var(--purple)}.btn.danger{background:var(--red)}.btn.ghost{background:#fff;border:1px solid var(--line);color:var(--green-dark)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap}.form{display:grid;gap:16px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px} label{display:block;font-weight:800;margin-bottom:8px;color:#615c54;font-size:14px} input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff;font:inherit;color:var(--text)} textarea{min-height:110px;resize:vertical}.readonly{background:#fffaf1;color:#514c45}.note{background:#fffdf8;border-left:5px solid var(--green);padding:14px 16px;border-radius:12px;color:#4f4b45;line-height:1.5}.success{display:none;background:#e9f8ee;border:1px solid #bce8ca;color:#0b6b4f;padding:12px 14px;border-radius:12px;font-weight:800;margin-bottom:16px}
+  .login-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#fff6e6,#f0efe7);padding:30px}.login-card{width:min(940px,96vw);display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-radius:30px;border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}.login-left{background:var(--green);color:#fff;padding:48px}.login-left h1{font-size:34px;margin:0 0 12px}.login-left p{color:#d6f1e4;line-height:1.6}.login-right{padding:48px}.login-right h2{font-size:28px;margin:0 0 10px}.login-meta{margin:18px 0;background:var(--mint);color:var(--green-dark);display:inline-block;padding:9px 14px;border-radius:999px;font-weight:800}.error{display:none;color:var(--red);font-weight:800;margin-top:10px}.demo-box{margin-top:24px;background:#fff6e6;border:1px solid var(--line);border-radius:16px;padding:14px;font-size:14px;color:#514c45;line-height:1.6}
+  .screen-label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#777;margin-bottom:10px}.ba-evidence{margin-top:22px;background:#fffdf8;border:1px dashed var(--line);border-radius:16px;padding:18px}.ba-evidence b{color:var(--green-dark)}
+  @media(max-width:1050px){.layout{grid-template-columns:220px 1fr}.grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:760px){.layout{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.form-row,.grid-2,.grid-3,.grid-4,.login-card{grid-template-columns:1fr}.main{padding:16px}.topbar{border-radius:18px 18px 0 0}.content{padding:18px}.login-left,.login-right{padding:30px}}
+</style>
+</head>
+<body>
+<section id="login" class="login-wrap">
+  <div class="login-card">
+    <div class="login-left">
+      <h1>Digital STEM Content Delivery Platform</h1>
+      <p>Admin web portal prototype for managing STEM and Coding learning content before approval and classroom delivery.</p>
+      <div class="demo-box"><b>Scope:</b><br>Admin Login, Admin Dashboard, Content Management List, Add Content, Edit Content, Submit for Review, Status Tracking, Mark Inactive.</div>
+    </div>
+    <div class="login-right">
+      <h2>Admin Login</h2>
+      <p class="hint">Enter admin credentials to open the web portal.</p>
+      <div class="login-meta">Role: Admin</div>
+      <label for="username">Username</label>
+      <input id="username" type="text" placeholder="Enter admin username" autocomplete="off" />
+      <br><br>
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="Enter password" />
+      <br><br>
+      <button class="btn" style="width:100%" onclick="login()">Login</button>
+      <div id="loginError" class="error">Invalid username or password</div>
+      <div class="demo-box"><b>Demo credentials</b><br>Username: admin1234<br>Password: 12345</div>
+    </div>
+  </div>
+</section>
+
+<section id="app" class="app">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Digital STEM<br>Admin Portal</div>
+      <div class="subbrand">Product prototype demonstration</div>
+      <div class="nav-title">Admin Screens</div>
+      <nav class="nav">
+        <button class="active" onclick="showPage('dashboard',this)">Admin Dashboard</button>
+        <button onclick="showPage('contentList',this)">Content Management</button>
+        <button onclick="showPage('addContent',this)">Add Learning Content</button>
+        <button onclick="showPage('editContent',this)">Edit Content</button>
+        <button onclick="showPage('submitReview',this)">Submit for Review</button>
+        <button onclick="showPage('statusTracking',this)">View Content Status</button>
+        <button onclick="showPage('inactiveContent',this)">Mark Inactive</button>
+        <button onclick="showPage('uatEvidence',this)">UAT Evidence</button>
+      </nav>
+      <button class="logout" onclick="logout()">Logout</button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 id="pageHeader">Admin Dashboard</h1>
+          <p id="pageSubHeader">Content management overview</p>
+        </div>
+        <span class="chip">Admin</span>
+      </header>
+
+      <section class="content">
+        <div id="msg" class="success"></div>
+
+        <div id="dashboard" class="page active">
+          <div class="screen-label">Screen 01</div>
+          <h2 class="section-title">Admin Dashboard</h2>
+          <p class="hint">Admin can view content status summary and decide which content records need action.</p>
+          <div class="grid grid-4">
+            <div class="card metric approved"><span>Approved</span><strong>18</strong></div>
+            <div class="card metric review"><span>Under Review</span><strong>4</strong></div>
+            <div class="card metric draft"><span>Draft</span><strong>6</strong></div>
+            <div class="card metric inactive"><span>Inactive</span><strong>2</strong></div>
+          </div>
+          <br>
+          <div class="card">
+            <h3>Recent content records</h3>
+            <table>
+              <thead><tr><th>Content Title</th><th>Class</th><th>Subject</th><th>Status</th><th>Last Action</th></tr></thead>
+              <tbody>
+                <tr><td>H2O Molecule Structure</td><td>Class 6</td><td>Science</td><td><span class="status Approved">Approved</span></td><td>Visible to Teacher</td></tr>
+                <tr><td>Electric Circuit</td><td>Class 8</td><td>Science</td><td><span class="status Review">Under Review</span></td><td>Submitted to Approver</td></tr>
+                <tr><td>Loops in Coding</td><td>Class 8</td><td>Coding</td><td><span class="status Draft">Draft</span></td><td>Saved by Admin</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ba-evidence"><b>BA evidence:</b> Validates Admin dashboard requirement, content status visibility and role-based Admin access.</div>
+        </div>
+
+        <div id="contentList" class="page">
+          <div class="screen-label">Screen 02</div>
+          <h2 class="section-title">Content Management List</h2>
+          <p class="hint">Admin can search, review and manage all learning content records.</p>
+          <div class="actions" style="margin-bottom:16px"><input style="max-width:340px" placeholder="Search by title, class, subject or topic"><button class="btn" onclick="showPageById('addContent')">Add New Content</button></div>
+          <table>
+            <thead><tr><th>Title</th><th>Class</th><th>Subject</th><th>Topic</th><th>Type</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody>
+              <tr><td>H2O Molecule Structure</td><td>Class 6</td><td>Science</td><td>Molecules</td><td>3D Video</td><td><span class="status Approved">Approved</span></td><td><button class="btn ghost" onclick="showPageById('editContent')">Edit</button></td></tr>
+              <tr><td>Electric Circuit</td><td>Class 8</td><td>Science</td><td>Electricity</td><td>Animated Video</td><td><span class="status Review">Under Review</span></td><td><button class="btn ghost" onclick="showPageById('statusTracking')">View Status</button></td></tr>
+              <tr><td>If-Else Logic</td><td>Class 7</td><td>Coding</td><td>Conditional Logic</td><td>Coding Simulation</td><td><span class="status Draft">Draft</span></td><td><button class="btn ghost" onclick="showPageById('submitReview')">Submit</button></td></tr>
+              <tr><td>Old Solar System Video</td><td>Class 6</td><td>Science</td><td>Space</td><td>Video</td><td><span class="status Inactive">Inactive</span></td><td><button class="btn ghost" onclick="showPageById('inactiveContent')">View</button></td></tr>
+            </tbody>
+          </table>
+          <div class="ba-evidence"><b>Requirement covered:</b> Admin views and manages content list with class, subject, topic, content type and status.</div>
+        </div>
+
+        <div id="addContent" class="page">
+          <div class="screen-label">Screen 03</div>
+          <h2 class="section-title">Add New Learning Content</h2>
+          <p class="hint">Admin creates a content record with metadata before saving as Draft or submitting for approval.</p>
+          <div class="form">
+            <div class="form-row"><div><label>Content Title</label><input id="newTitle" placeholder="Example: States of Matter Animation"></div><div><label>Content Type</label><select><option>3D Video</option><option>Animated Video</option><option>Coding Simulation</option><option>Visual Explanation</option><option>Interactive Web Content</option></select></div></div>
+            <div class="form-row"><div><label>Class</label><select><option>Class 6</option><option>Class 7</option><option>Class 8</option></select></div><div><label>Subject</label><select><option>Science</option><option>Coding</option><option>Mathematics</option></select></div></div>
+            <div class="form-row"><div><label>Topic</label><input placeholder="Example: Molecules"></div><div><label>Content File / Link</label><input placeholder="Paste content URL or file reference"></div></div>
+            <label>Learning Objective</label><textarea placeholder="Example: Explain water molecule structure using visual content."></textarea>
+            <div class="actions"><button class="btn secondary" onclick="notify('Content saved as Draft.')">Save Draft</button><button class="btn" onclick="notify('Content submitted for review.')">Submit for Review</button></div>
+          </div>
+          <div class="ba-evidence"><b>Requirement covered:</b> Admin adds class, subject, topic, content type, learning objective and content link.</div>
+        </div>
+
+        <div id="editContent" class="page">
+          <div class="screen-label">Screen 04</div>
+          <h2 class="section-title">Edit Learning Content</h2>
+          <p class="hint">Admin can update existing content metadata before resubmitting it for review.</p>
+          <div class="form">
+            <div class="form-row"><div><label>Content Title</label><input value="H2O Molecule Structure"></div><div><label>Status</label><input class="readonly" value="Approved" readonly></div></div>
+            <div class="form-row"><div><label>Class</label><select><option selected>Class 6</option><option>Class 7</option><option>Class 8</option></select></div><div><label>Subject</label><select><option selected>Science</option><option>Coding</option></select></div></div>
+            <div class="form-row"><div><label>Topic</label><input value="Molecules"></div><div><label>Content Type</label><select><option selected>3D Video</option><option>Animated Video</option><option>Coding Simulation</option></select></div></div>
+            <label>Learning Objective</label><textarea>Explain water molecule structure using visual content.</textarea>
+            <div class="actions"><button class="btn" onclick="notify('Content changes saved.')">Save Changes</button><button class="btn secondary" onclick="showPageById('submitReview')">Submit Updated Version</button></div>
+          </div>
+          <div class="ba-evidence"><b>Requirement covered:</b> Admin edits learning content and metadata.</div>
+        </div>
+
+        <div id="submitReview" class="page">
+          <div class="screen-label">Screen 05</div>
+          <h2 class="section-title">Submit Content for Review</h2>
+          <p class="hint">Admin submits Draft content to Principal or Subject Teacher for approval.</p>
+          <div class="card">
+            <h3>If-Else Logic</h3>
+            <p>Class 7 • Coding • Coding Simulation</p>
+            <p><b>Current status:</b> <span class="status Draft">Draft</span></p>
+            <p><b>Approval owner:</b> Principal / Subject Teacher</p>
+            <div class="note">After submission, system should change status from Draft to Under Review. Teacher should not see this content until it is approved.</div>
+            <br>
+            <button class="btn" onclick="notify('If-Else Logic submitted. Status changed to Under Review.')">Submit for Review</button>
+          </div>
+          <div class="ba-evidence"><b>Business rule:</b> Draft and Under Review content is hidden from Teacher library.</div>
+        </div>
+
+        <div id="statusTracking" class="page">
+          <div class="screen-label">Screen 06</div>
+          <h2 class="section-title">View Content Status</h2>
+          <p class="hint">Admin tracks whether content is Draft, Under Review, Approved or Inactive.</p>
+          <table>
+            <thead><tr><th>Content</th><th>Status</th><th>Visible to Teacher?</th><th>Owner</th><th>Next Step</th></tr></thead>
+            <tbody>
+              <tr><td>H2O Molecule Structure</td><td><span class="status Approved">Approved</span></td><td>Yes</td><td>Teacher</td><td>Available in library</td></tr>
+              <tr><td>Electric Circuit</td><td><span class="status Review">Under Review</span></td><td>No</td><td>Approver</td><td>Waiting for approval</td></tr>
+              <tr><td>Loops in Coding</td><td><span class="status Draft">Draft</span></td><td>No</td><td>Admin</td><td>Complete metadata and submit</td></tr>
+              <tr><td>Old Solar System Video</td><td><span class="status Inactive">Inactive</span></td><td>No</td><td>Admin</td><td>Keep hidden</td></tr>
+            </tbody>
+          </table>
+          <div class="ba-evidence"><b>Requirement covered:</b> Admin can view content status and teacher visibility.</div>
+        </div>
+
+        <div id="inactiveContent" class="page">
+          <div class="screen-label">Screen 07</div>
+          <h2 class="section-title">Mark Content Inactive</h2>
+          <p class="hint">Admin can make outdated or unsuitable content inactive so it is hidden from Teacher library.</p>
+          <div class="card">
+            <h3>Old Solar System Video</h3>
+            <p>Class 6 • Science • Video</p>
+            <p><b>Current status:</b> <span class="status Approved">Approved</span></p>
+            <label>Reason for making inactive</label>
+            <textarea placeholder="Example: Content is outdated and needs replacement."></textarea>
+            <button class="btn danger" onclick="notify('Content marked as Inactive and hidden from Teacher library.')">Mark Inactive</button>
+          </div>
+          <div class="ba-evidence"><b>Business rule:</b> Inactive content must not appear in Teacher web portal or classroom display mode.</div>
+        </div>
+
+        <div id="uatEvidence" class="page">
+          <div class="screen-label">Screen 08</div>
+          <h2 class="section-title">Admin UAT Evidence</h2>
+          <p class="hint">This screen supports portfolio screenshots after running the prototype in browser.</p>
+          <table>
+            <thead><tr><th>UAT Scenario</th><th>Expected Result</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Admin logs in with valid credentials</td><td>Admin dashboard is displayed</td><td><span class="status Approved">Passed</span></td></tr>
+              <tr><td>Admin adds new learning content</td><td>Content can be saved as Draft</td><td><span class="status Approved">Passed</span></td></tr>
+              <tr><td>Admin submits content for review</td><td>Status changes to Under Review</td><td><span class="status Approved">Passed</span></td></tr>
+              <tr><td>Admin marks content inactive</td><td>Content hidden from Teacher library</td><td><span class="status Approved">Passed</span></td></tr>
+            </tbody>
+          </table>
+          <div class="ba-evidence"><b>Portfolio wording:</b> Product prototype demonstration and UAT evidence prepared for a simulated Agile BA project.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+</section>
+
+<script>
+const headers={
+ dashboard:['Admin Dashboard','Content management overview'],contentList:['Content Management','Manage all STEM and Coding content'],addContent:['Add Learning Content','Create metadata and content record'],editContent:['Edit Content','Update existing content details'],submitReview:['Submit for Review','Move Draft content to approval workflow'],statusTracking:['View Content Status','Track Draft, Under Review, Approved and Inactive content'],inactiveContent:['Mark Inactive','Hide outdated content from Teacher library'],uatEvidence:['UAT Evidence','Admin product prototype validation']
+};
+function login(){const u=document.getElementById('username').value.trim();const p=document.getElementById('password').value.trim();if(u==='admin1234'&&p==='12345'){document.getElementById('login').style.display='none';document.getElementById('app').style.display='block';}else{document.getElementById('loginError').style.display='block';}}
+function logout(){document.getElementById('app').style.display='none';document.getElementById('login').style.display='flex';document.getElementById('password').value='';}
+function showPage(id,btn){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');document.getElementById('pageHeader').textContent=headers[id][0];document.getElementById('pageSubHeader').textContent=headers[id][1];document.getElementById('msg').style.display='none';window.scrollTo({top:0,behavior:'smooth'});}
+function showPageById(id){const buttons=[...document.querySelectorAll('.nav button')];const map={dashboard:0,contentList:1,addContent:2,editContent:3,submitReview:4,statusTracking:5,inactiveContent:6,uatEvidence:7};showPage(id,buttons[map[id]]);}
+function notify(text){const m=document.getElementById('msg');m.textContent=text;m.style.display='block';window.scrollTo({top:0,behavior:'smooth'});}
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.getElementById('login').style.display!=='none')login();});
+</script>
+</body>
+</html>
