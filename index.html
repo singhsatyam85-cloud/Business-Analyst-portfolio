@@ -10159,6 +10159,103 @@
   }
 }
 
+
+/* ===== Mobile header fix: keep Download CV visible ===== */
+@media (max-width: 980px) {
+  .site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"] {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 40px !important;
+    padding: 10px 14px !important;
+    font-size: 12px !important;
+    border-radius: 12px !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header .nav-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .site-header .nav-wrap {
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header .brand-title {
+    font-size: 14px !important;
+  }
+
+  .site-header .logo {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  .site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"] {
+    padding: 9px 11px !important;
+    font-size: 11px !important;
+  }
+}
+
+
+
+/* ===== Correct Project 1 layout: top prototype buttons placed inside evidence panel, right of the 4 evidence buttons ===== */
+#detailed-case-studies article#attendance-case > .detail-header {
+  display: block !important;
+}
+
+#detailed-case-studies article#attendance-case > .detail-header > .detail-heading-block {
+  max-width: 620px !important;
+}
+
+#attendance-case-evidence .project1-evidence-body {
+  display: grid !important;
+  grid-template-columns: minmax(420px, 620px) minmax(320px, 500px) !important;
+  align-items: start !important;
+  gap: 28px !important;
+  width: 100% !important;
+  margin-top: 26px !important;
+}
+
+#attendance-case-evidence .project1-evidence-body .evidence-accordion {
+  width: 100% !important;
+  max-width: 620px !important;
+  margin: 0 !important;
+  justify-self: start !important;
+}
+
+#attendance-case-evidence .project1-evidence-body .case-action-group {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 !important;
+  justify-self: end !important;
+  align-self: start !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+
+#attendance-case-evidence .project1-evidence-body .case-action-group .case-split-btn,
+#attendance-case-evidence .project1-evidence-body .case-action-group .case-prototype-dropdown {
+  width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  #attendance-case-evidence .project1-evidence-body {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  #attendance-case-evidence .project1-evidence-body .case-action-group,
+  #attendance-case-evidence .project1-evidence-body .evidence-accordion {
+    max-width: 100% !important;
+    justify-self: center !important;
+  }
+}
+
 </style>
 <style>
 /* Final fix: remove project summary cards and close the empty space in detailed project sections */
@@ -11777,12 +11874,231 @@ body #ba-deliverables.ba-polished {
 }
 </style>
 
+
+<style>
+/* Project 1 only: compact left-aligned evidence buttons, remove unused empty button area */
+#detailed-case-studies #attendance-case-evidence .evidence-accordion {
+  width: min(58%, 680px) !important;
+  max-width: 680px !important;
+  margin: 28px 0 0 0 !important;
+  justify-items: start !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details {
+  width: 100% !important;
+  max-width: 680px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary {
+  grid-template-columns: minmax(0, 1fr) 68px !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .accordion-arrow {
+  width: 68px !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion {
+    width: min(94%, 680px) !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion summary {
+    grid-template-columns: minmax(0, 1fr) 54px !important;
+  }
+
+  #detailed-case-studies #attendance-case-evidence .accordion-arrow {
+    width: 54px !important;
+  }
+}
+</style>
+
+
+<style>
+/* FINAL: Project 1 evidence buttons normal size again. Links and colours unchanged. */
+#detailed-case-studies #attendance-case-evidence .project1-evidence-body {
+  display: grid !important;
+  grid-template-columns: minmax(0, 620px) minmax(300px, 500px) !important;
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion {
+  width: 100% !important;
+  max-width: 620px !important;
+  margin: 28px 0 0 0 !important;
+  gap: 12px !important;
+  padding-top: 0 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion details {
+  width: 100% !important;
+  max-width: 620px !important;
+  border-radius: 12px !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-accordion summary {
+  min-height: 52px !important;
+  grid-template-columns: minmax(0, 1fr) 58px !important;
+  border-radius: 12px !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-title-wrap {
+  padding: 9px 18px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-title-wrap > span:last-child {
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .evidence-hint {
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .accordion-arrow {
+  width: 58px !important;
+  min-height: 52px !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .accordion-arrow::before {
+  border-left-width: 8px !important;
+  border-right-width: 8px !important;
+  border-top-width: 10px !important;
+}
+
+#detailed-case-studies #attendance-case-evidence .case-action-group {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 28px 0 0 auto !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies #attendance-case-evidence .project1-evidence-body {
+    grid-template-columns: 1fr !important;
+  }
+
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion,
+  #detailed-case-studies #attendance-case-evidence .evidence-accordion details,
+  #detailed-case-studies #attendance-case-evidence .case-action-group {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+</style>
+
+
+<style>
+/* FINAL: Apply Project 1 evidence layout to all other detailed project sections. Buttons, links and colours unchanged. */
+#detailed-case-studies article.detail-card:not(#attendance-case) > .detail-header {
+  display: block !important;
+}
+
+#detailed-case-studies article.detail-card:not(#attendance-case) > .detail-header > .detail-heading-block {
+  max-width: 620px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body {
+  display: grid !important;
+  grid-template-columns: minmax(0, 620px) minmax(300px, 500px) !important;
+  gap: 24px !important;
+  align-items: start !important;
+  width: 100% !important;
+  margin-top: 26px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-accordion {
+  width: 100% !important;
+  max-width: 620px !important;
+  margin: 28px 0 0 0 !important;
+  gap: 12px !important;
+  padding-top: 0 !important;
+  justify-self: start !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-accordion details {
+  width: 100% !important;
+  max-width: 620px !important;
+  border-radius: 12px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-accordion summary {
+  min-height: 52px !important;
+  grid-template-columns: minmax(0, 1fr) 58px !important;
+  border-radius: 12px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-title-wrap {
+  padding: 9px 18px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-title-wrap > span:last-child {
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .evidence-hint {
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .accordion-arrow {
+  width: 58px !important;
+  min-height: 52px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .accordion-arrow::before {
+  border-left-width: 8px !important;
+  border-right-width: 8px !important;
+  border-top-width: 10px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .case-action-group {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 28px 0 0 auto !important;
+  justify-self: end !important;
+  align-self: start !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+
+#detailed-case-studies .evidence-panel .project-evidence-body .case-action-group .case-split-btn,
+#detailed-case-studies .evidence-panel .project-evidence-body .case-action-group .case-prototype-dropdown {
+  width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies .evidence-panel .project-evidence-body {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  #detailed-case-studies .evidence-panel .project-evidence-body .evidence-accordion,
+  #detailed-case-studies .evidence-panel .project-evidence-body .evidence-accordion details,
+  #detailed-case-studies .evidence-panel .project-evidence-body .case-action-group {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    justify-self: center !important;
+  }
+}
+</style>
+
 </head>
 <body id="top">
 <header class="site-header">
 <div class="container nav-wrap">
 <a aria-label="Shiv Satyam Singh Portfolio Home" class="brand" href="#top">
-<span class="logo">SS</span>
+<span class="logo" aria-hidden="true"></span>
 <span>
 <span class="brand-title">Shiv Satyam Singh</span>
 <span class="brand-role">Business Analyst</span>
@@ -11968,10 +12284,10 @@ body #ba-deliverables.ba-polished {
 <div class="detail-stack">
 <article class="detail-card" id="attendance-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
-<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div><div class="case-action-group" aria-label="Attendance evidence quick links"><a class="case-split-btn product-action" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a><details class="case-prototype-dropdown prototype-action"><summary class="case-split-btn prototype-action"><span class="case-btn-label"><span class="prototype-pointer" aria-hidden="true">☛</span>Open Product Prototype</span><span class="case-btn-arrow">›</span></summary><div class="prototype-dropdown-menu"><a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener">Product 1</a><a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener">Product 2</a></div></details></div></div>
+<span class="project-type-badge badge-edtech" data-badge-for="attendance-case">Real Project | EdTech</span></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html">Download Project 1 Work Pack</a></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html">Download Project 1 Work Pack</a></div><div class="project1-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholders and planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial project context and scope notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholders and discovery questions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Stakeholder%20Register%20and%20Discovery%20Questions.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Workshop notes and business needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -11987,14 +12303,17 @@ body #ba-deliverables.ba-polished {
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">UAT and delivery review evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Review</span><span class="doc-desc">Scenario coverage and test review notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">User Acceptance Testing Plan</span><span class="doc-desc">UAT approach and sign-off preparation.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Roadmap and Timeline</span><span class="doc-desc">Delivery planning and timeline view.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details></div>
+<div class="case-action-group" aria-label="Attendance evidence quick links"><a class="case-split-btn product-action" href="assets/docs/edtech_product_screenshots.pdf" rel="noopener" target="_blank"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/wireframes_screen_flows.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a><details class="case-prototype-dropdown prototype-action"><summary class="case-split-btn prototype-action"><span class="case-btn-label"><span class="prototype-pointer" aria-hidden="true">☛</span>Open Product Prototype</span><span class="case-btn-arrow">›</span></summary><div class="prototype-dropdown-menu"><a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener">Product 1</a><a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener">Product 2</a></div></details></div>
+</div>
+
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="stem-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
-<span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div><div class="case-action-group" aria-label="STEM evidence quick links"><a class="case-split-btn product-action" href="case-study-documents/02-digital-stem-content-delivery-platform/product-prototype/index.html" target="_blank" rel="noopener"><span class="case-btn-label"><span class="stem-prototype-pointer" aria-hidden="true">☛</span>Product Prototype</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/figma_screen_flows_project2.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
+<span class="project-type-badge badge-stem" data-badge-for="stem-case">Real Project | STEM Platform</span></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="stem-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html">Download Project 2 Work Pack</a></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html">Download Project 2 Work Pack</a></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholder and roadmap evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Project context and starting scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Stakeholder discussion and findings.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Learning Objective Matrix</span><span class="doc-desc">Learning objectives mapped to content needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -12010,14 +12329,16 @@ body #ba-deliverables.ba-polished {
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Testing and review planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Test Scenario Timeline and Review Plan</span><span class="doc-desc">Testing timeline and review plan.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 1 Backlog</span><span class="doc-desc">Sprint planning and delivery scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Delivery Roadmap</span><span class="doc-desc">Delivery planning and dependencies.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details></div>
+<div class="case-action-group" aria-label="STEM evidence quick links"><a class="case-split-btn product-action" href="case-study-documents/02-digital-stem-content-delivery-platform/product-prototype/index.html" target="_blank" rel="noopener"><span class="case-btn-label"><span class="stem-prototype-pointer" aria-hidden="true">☛</span>Product Prototype</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="Document/figma_screen_flows_project2.pdf" target="_blank" rel="noopener"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div>
+</div>
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="autoparts-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
-<span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div><div class="case-action-group" aria-label="Autoparts evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
+<span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Real Project | Website Development</span></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="autoparts-case-evidence">
-<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
@@ -12033,14 +12354,16 @@ body #ba-deliverables.ba-polished {
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details></div>
+<div class="case-action-group" aria-label="Autoparts evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div>
+</div>
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="operations-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>Operational Process Improvement &amp; KPI Reporting</h3><p class="case-subtitle">Manufacturing BA Project Work | Process Improvement</p>
-<span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div><div class="case-action-group" aria-label="Operations evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
+<span class="project-type-badge badge-operations" data-badge-for="operations-case">Real Project | Manufacturing Process</span></div></div>
 
 <div aria-label="BA Work Evidence" class="evidence-panel" id="operations-case-evidence">
-<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
@@ -12056,14 +12379,16 @@ body #ba-deliverables.ba-polished {
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details></div>
+<div class="case-action-group" aria-label="Operations evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div>
+</div>
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="pwc-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
-<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div><div class="case-action-group" aria-label="Simulation evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div></div>
+<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div></div>
 <div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="pwc-case-evidence">
-<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="evidence-accordion"><details>
+<div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details>
@@ -12079,6 +12404,8 @@ body #ba-deliverables.ba-polished {
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">TD</span><span>4. Testing &amp; Delivery<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row pending-only"><span class="doc-name">Complete Work Pack Upload Pending</span><span class="doc-desc">No file has been uploaded for this project yet.</span></div></div>
 </details></div>
+<div class="case-action-group" aria-label="Simulation evidence quick links"><a class="case-split-btn product-action" href="#visual-samples"><span class="case-btn-label">Product Screenshots</span><span class="case-btn-arrow">›</span></a><a class="case-split-btn wireframe-action" href="#visual-samples"><span class="case-btn-label">Wireframes / Screen Flows</span><span class="case-btn-arrow">›</span></a></div>
+</div>
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article></div></div></section>
@@ -13186,6 +13513,118 @@ body #ba-deliverables.ba-polished {
   #detailed-case-studies .case-action-group {
     justify-self: center !important;
     width: min(100%, 360px) !important;
+  }
+}
+
+
+
+/* ===== Header colour update only: remove green from top navigation area ===== */
+.site-header .logo {
+  background: radial-gradient(circle at 32% 28%, #38BDF8, #0F172A 58%, #334155) !important;
+  border-color: rgba(15, 23, 42, 0.35) !important;
+}
+
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active {
+  color: #0F172A !important;
+  border-color: #0F172A !important;
+}
+
+.site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"],
+.site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"]:visited,
+.site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"]:focus,
+.site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"]:active {
+  background: #0F172A !important;
+  border-color: #0F172A !important;
+  color: #FFFFFF !important;
+}
+
+.site-header .nav-actions .btn-primary[href*="Shiv_Satyam_Singh_BA_CV.pdf"]:hover {
+  background: #1E293B !important;
+  border-color: #1E293B !important;
+  color: #FFFFFF !important;
+}
+
+
+
+
+
+/* ===== Final fix: Project 1 top buttons moved to the right side only ===== */
+#detailed-case-studies #attendance-case .detail-header {
+  grid-template-columns: minmax(0, 1fr) 520px !important;
+  align-items: center !important;
+}
+
+#detailed-case-studies #attendance-case .case-action-group {
+  justify-self: end !important;
+  align-self: center !important;
+  width: 500px !important;
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+#detailed-case-studies #attendance-case .case-action-group .case-split-btn,
+#detailed-case-studies #attendance-case .case-action-group .case-prototype-dropdown {
+  width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies #attendance-case .detail-header {
+    grid-template-columns: 1fr !important;
+  }
+
+  #detailed-case-studies #attendance-case .case-action-group {
+    justify-self: center !important;
+    width: min(100%, 360px) !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+
+/* ===== FINAL OVERRIDE: Project 1 top buttons fixed to RIGHT side only ===== */
+#detailed-case-studies article#attendance-case > .detail-header {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+  width: 100% !important;
+}
+
+#detailed-case-studies article#attendance-case > .detail-header > .detail-heading-block {
+  flex: 1 1 auto !important;
+  min-width: 280px !important;
+  max-width: 520px !important;
+}
+
+#detailed-case-studies article#attendance-case > .detail-header > .case-action-group {
+  flex: 0 0 500px !important;
+  width: 500px !important;
+  max-width: 500px !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  justify-self: flex-end !important;
+  align-self: flex-start !important;
+}
+
+#detailed-case-studies article#attendance-case > .detail-header > .case-action-group .case-split-btn,
+#detailed-case-studies article#attendance-case > .detail-header > .case-action-group .case-prototype-dropdown {
+  width: 100% !important;
+}
+
+@media (max-width: 900px) {
+  #detailed-case-studies article#attendance-case > .detail-header {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  #detailed-case-studies article#attendance-case > .detail-header > .case-action-group {
+    width: min(100%, 360px) !important;
+    max-width: 360px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
