@@ -256,7 +256,7 @@
 <div class="p-md">
 <h3 class="font-headline-sm text-headline-sm mb-xs">Engine Components</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Pistons, gaskets, timing kits and complete assemblies.</p>
-<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
+<button onclick="window.location.href='https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/case-study-documents/03-autoparts-company-website-development/product-prototype/product-categories.html'" class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
                                 Explore <span class="material-symbols-outlined text-sm">chevron_right</span>
 </button>
 </div>
@@ -272,7 +272,7 @@
 <div class="p-md">
 <h3 class="font-headline-sm text-headline-sm mb-xs">Brake Systems</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Discs, pads, calipers, and hydraulic lines for all major models.</p>
-<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
+<button onclick="window.location.href='https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/case-study-documents/03-autoparts-company-website-development/product-prototype/product-categories.html'" class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
                                 Explore <span class="material-symbols-outlined text-sm">chevron_right</span>
 </button>
 </div>
@@ -288,7 +288,7 @@
 <div class="p-md">
 <h3 class="font-headline-sm text-headline-sm mb-xs">Suspension &amp; Steering</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-md">Shock absorbers, springs, rack &amp; pinion, and link arms.</p>
-<button class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
+<button onclick="window.location.href='https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/case-study-documents/03-autoparts-company-website-development/product-prototype/product-categories.html'" class="text-primary font-label-md text-label-md flex items-center gap-xs hover:gap-md transition-all">
                                 Explore <span class="material-symbols-outlined text-sm">chevron_right</span>
 </button>
 </div>
@@ -533,4 +533,49 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+
+<script>
+// Direct page link fix for GitHub Pages prototype navigation
+(function () {
+  const BASE = "https://singhsatyam85-cloud.github.io/Business-Analyst-portfolio/case-study-documents/03-autoparts-company-website-development/product-prototype/";
+  const pageLinks = {
+    "Home": BASE + "index.html",
+    "Products": BASE + "product-categories.html",
+    "Browse Catalog": BASE + "product-categories.html",
+    "View All Categories": BASE + "product-categories.html",
+    "Explore": BASE + "product-categories.html",
+    "Quote": BASE + "request-quote.html",
+    "Request a Quote": BASE + "request-quote.html",
+    "Check Availability": BASE + "request-quote.html",
+    "Get Started Now": BASE + "request-quote.html",
+    "Contact": BASE + "contact.html",
+    "About": BASE + "about.html",
+    "Privacy Policy": BASE + "privacy-policy.html",
+    "Terms of Service": BASE + "terms-conditions.html",
+    "Delivery Information": BASE + "delivery-returns.html",
+    "Returns & Refunds": BASE + "delivery-returns.html",
+    "Cookie Policy": BASE + "cookie-policy.html"
+  };
+
+  function cleanText(el) {
+    return (el.textContent || "").replace(/\s+/g, " ").trim();
+  }
+
+  document.querySelectorAll("a, button").forEach(function (el) {
+    const label = cleanText(el);
+    const directUrl = pageLinks[label];
+    if (directUrl) {
+      if (el.tagName.toLowerCase() === "a") {
+        el.setAttribute("href", directUrl);
+        el.setAttribute("target", "_self");
+      }
+      el.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = directUrl;
+      });
+    }
+  });
+})();
+</script>
+
 </body></html>
