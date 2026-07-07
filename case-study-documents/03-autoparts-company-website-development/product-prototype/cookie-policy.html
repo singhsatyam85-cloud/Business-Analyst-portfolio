@@ -141,29 +141,20 @@
 </head>
 <body class="font-body-md text-body-md">
 <!-- TopNavBar -->
-<nav class="bg-surface-container-lowest border-b border-outline-variant shadow-sm sticky top-0 z-50">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-16">
-<div class="font-headline-md text-headline-md font-bold text-primary">
-                Auto Parts SME
-            </div>
-<!-- Desktop Links -->
-<div class="hidden md:flex gap-md items-center h-full">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Products</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Quote</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
-</div>
-<div class="flex items-center gap-sm">
-<button class="hidden md:block bg-primary text-on-primary px-md py-xs font-label-md text-label-md hover:bg-primary-container transition-all active:scale-95 duration-100 ease-in-out">
-                    Request a Quote
-                </button>
-<button class="md:hidden text-on-surface-variant">
-<span class="material-symbols-outlined">menu</span>
-</button>
-</div>
-</div>
-</nav>
+<!-- Shared fixed navigation header -->
+<header class="bg-surface-container-lowest border-b border-outline-variant shadow-sm sticky top-0 z-50">
+  <nav class="flex flex-wrap justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto min-h-16 py-xs gap-sm">
+    <a href="index.html" class="font-headline-md text-headline-md font-bold text-primary no-underline">Auto Parts SME</a>
+    <div class="flex flex-wrap items-center gap-sm md:gap-lg">
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="product-categories.html">Products</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="request-quote.html">Quote</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+      <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About</a>
+      <a class="bg-primary text-on-primary font-label-md text-label-md px-md py-xs rounded-lg tactile-button hover:bg-primary-container transition-colors inline-block" href="request-quote.html">Request a Quote</a>
+    </div>
+  </nav>
+</header>
 <!-- Hero Section -->
 <header class="relative py-xl bg-surface-container-low overflow-hidden border-b border-outline-variant">
 <div class="absolute inset-0 opacity-10">
@@ -387,4 +378,18 @@
             });
         });
     </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('header a[href]').forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        const target = link.getAttribute('href');
+        if (target && target !== '#') {
+          event.preventDefault();
+          window.location.href = target;
+        }
+      });
+    });
+  });
+</script>
 </body></html>
