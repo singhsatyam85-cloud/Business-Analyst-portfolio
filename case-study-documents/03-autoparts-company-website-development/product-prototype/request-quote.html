@@ -1,0 +1,364 @@
+<!DOCTYPE html><html class="light" lang="en"><plasmo-csui id="g0-textarea-recorder"></plasmo-csui><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Request a Quote | Auto Parts SME</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#a9c7ff",
+                    "tertiary-fixed": "#e0e2e6",
+                    "surface-variant": "#e2e2e5",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#60656b",
+                    "outline": "#727783",
+                    "inverse-surface": "#2f3133",
+                    "primary-container": "#005eb8",
+                    "on-tertiary-fixed": "#191c1f",
+                    "surface-container-low": "#f3f3f6",
+                    "surface-bright": "#f9f9fc",
+                    "secondary-fixed-dim": "#c2c7cd",
+                    "error": "#ba1a1a",
+                    "on-background": "#1a1c1e",
+                    "on-surface": "#1a1c1e",
+                    "surface": "#f9f9fc",
+                    "secondary-fixed": "#dee3ea",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#5c5f63",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-tertiary-container": "#d7d9dd",
+                    "surface-dim": "#dadadc",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "on-primary-container": "#c8daff",
+                    "outline-variant": "#c2c6d4",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#d6e3ff",
+                    "background": "#f9f9fc",
+                    "secondary": "#5a5f65",
+                    "surface-container-highest": "#e2e2e5",
+                    "primary": "#00478d",
+                    "on-surface-variant": "#424752",
+                    "tertiary": "#44474b",
+                    "on-secondary-fixed-variant": "#42474d",
+                    "inverse-on-surface": "#f0f0f3",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#00468c",
+                    "surface-tint": "#005db6",
+                    "surface-container-high": "#e8e8ea",
+                    "on-secondary-fixed": "#171c21",
+                    "secondary-container": "#dee3ea",
+                    "surface-container": "#eeeef0",
+                    "on-primary-fixed": "#001b3d",
+                    "on-tertiary-fixed-variant": "#44474a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "16px",
+                    "margin-mobile": "16px",
+                    "max-width": "1280px",
+                    "margin-desktop": "48px",
+                    "xs": "8px",
+                    "xl": "64px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "base": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Montserrat"],
+                    "headline-xl": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"]
+            },
+            "fontSize": {
+                    "headline-sm": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .uk-plate {
+            background-color: #FFD202;
+            color: #000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 4px;
+            border: 1px solid #000;
+        }
+        .industrial-shadow {
+            box-shadow: 0 4px 20px -2px rgba(26, 28, 30, 0.08), 0 2px 8px -1px rgba(26, 28, 30, 0.04);
+        }
+        .form-recessed {
+            background-color: #F3F4F6;
+            transition: all 0.2s ease-in-out;
+        }
+        .form-recessed:focus {
+            background-color: #ffffff;
+            border-color: #00478d;
+            box-shadow: 0 0 0 2px rgba(0, 71, 141, 0.1);
+        }
+    </style>
+<style data-styled="" data-styled-version="4.3.1"></style></head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-max-width mx-auto h-16">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary">Auto Parts SME</div>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-lg h-full">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Products</a>
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="#">Quote</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">About</a>
+<button class="ml-4 bg-primary text-on-primary px-md py-xs rounded-lg font-label-md text-label-md hover:bg-primary-container active:scale-95 transition-all duration-100 shadow-sm">
+                    Request a Quote
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface cursor-pointer">menu</span>
+</div>
+</div>
+</nav>
+<main class="flex-grow w-full max-w-max-width mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl items-start">
+<!-- Content Side -->
+<div class="lg:col-span-5 flex flex-col gap-md">
+<div class="inline-flex items-center gap-xs text-primary font-label-md text-label-md bg-primary-fixed px-sm py-xs rounded-full w-fit">
+<span class="material-symbols-outlined" style="font-size: 18px;">bolt</span>
+                    Expert Response within 2 Hours
+                </div>
+<h1 class="font-headline-xl text-headline-xl text-primary">Get Your Precise Parts Quote</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Whether it's a rare OEM component or standard replacement parts, our specialists leverage trade networks to find exactly what you need at competitive rates.
+                </p>
+<!-- Process Steps -->
+<div class="mt-lg space-y-md">
+<div class="flex gap-md items-start">
+<div class="bg-secondary-container p-sm rounded-xl flex-shrink-0">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">1. Submit Details</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Provide your UK registration and part description. It only takes 60 seconds.</p>
+</div>
+</div>
+<div class="flex gap-md items-start">
+<div class="bg-secondary-container p-sm rounded-xl flex-shrink-0">
+<span class="material-symbols-outlined text-primary">engineering</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">2. Specialist Check</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">Our automotive technicians verify compatibility with official OEM databases.</p>
+</div>
+</div>
+<div class="flex gap-md items-start">
+<div class="bg-secondary-container p-sm rounded-xl flex-shrink-0">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm">3. Receive Quote</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm">A personalized, no-obligation breakdown arrives in your inbox within 120 minutes.</p>
+</div>
+</div>
+</div>
+<!-- Trust Badge Area -->
+<div class="mt-xl p-md border border-outline-variant bg-surface-container-low rounded-xl flex items-center gap-md">
+<div class="flex-grow">
+<p class="font-label-md text-label-md text-primary mb-xs">No Obligation Policy</p>
+<p class="font-body-sm text-body-sm text-on-secondary-container">Your data is strictly used for quote generation and technical consultation. No spam, ever.</p>
+</div>
+<span class="material-symbols-outlined text-secondary" style="font-size: 40px;">verified_user</span>
+</div>
+</div>
+<!-- Form Side -->
+<div class="lg:col-span-7"><div id="success-message" class="hidden mb-md p-md bg-green-100 border border-green-500 rounded-lg flex items-center gap-sm text-green-800"><span class="material-symbols-outlined">check_circle</span><p class="font-label-md">Quote request submitted successfully! Our team will contact you shortly.</p></div>
+<div class="bg-surface-container-lowest industrial-shadow rounded-xl p-md md:p-xl border border-outline-variant">
+<form action="#" class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="full-name">Full Name<span class="text-error ml-1">*</span></label>
+<input class="form-recessed rounded-lg border-outline-variant px-sm py-md font-body-md focus:ring-0" id="full-name" placeholder="John Doe" type="text">
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="email">Work Email<span class="text-error ml-1">*</span></label>
+<input class="form-recessed rounded-lg border-outline-variant px-sm py-md font-body-md focus:ring-0" id="email" placeholder="j.doe@example.com" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="reg">Vehicle Registration (UK)<span class="text-error ml-1">*</span></label>
+<div class="relative group">
+<input class="uk-plate w-full rounded-lg px-xl py-md text-headline-md tracking-widest text-center border-2 border-black outline-none focus:ring-4 focus:ring-primary/20" id="reg" placeholder="AA11 BBB" type="text">
+<div class="absolute left-0 top-0 bottom-0 w-8 bg-primary rounded-l-lg flex flex-col items-center justify-center pointer-events-none">
+<div class="w-4 h-3 bg-yellow-400 opacity-20 mb-1"></div>
+<span class="text-[8px] text-white font-bold">GB</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-xs">Used to verify exact engine codes and chassis compatibility.</p>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant" for="part-desc">Part Description &amp; Specification<span class="text-error ml-1">*</span></label>
+<textarea class="form-recessed rounded-lg border-outline-variant px-sm py-md font-body-md focus:ring-0 resize-none" id="part-desc" placeholder="e.g. Front Brake Pads for High Performance Brembo Calipers, or OEM Part Number..." rows="4"></textarea>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface-variant">Urgency Level</label>
+<div class="grid grid-cols-3 gap-xs">
+<button class="urgency-btn py-sm px-xs border border-outline-variant rounded-lg font-label-md text-label-md flex flex-col items-center gap-xs hover:bg-surface-container transition-all active:scale-95" onclick="selectUrgency(this, 'standard')" type="button">
+<span class="material-symbols-outlined text-secondary">schedule</span>
+                                    Standard
+                                </button>
+<button class="urgency-btn py-sm px-xs border border-outline-variant rounded-lg font-label-md text-label-md flex flex-col items-center gap-xs hover:bg-surface-container transition-all active:scale-95" onclick="selectUrgency(this, 'urgent')" type="button">
+<span class="material-symbols-outlined text-primary">priority_high</span>
+                                    Urgent
+                                </button>
+<button class="urgency-btn py-sm px-xs border border-outline-variant rounded-lg font-label-md text-label-md flex flex-col items-center gap-xs hover:bg-surface-container transition-all active:scale-95" onclick="selectUrgency(this, 'vorg')" type="button">
+<span class="material-symbols-outlined text-error">warning</span>
+                                    Vehicle Off Road
+                                </button>
+</div>
+</div>
+<div class="pt-md">
+<button class="w-full bg-primary text-on-primary py-md px-xl rounded-lg font-headline-sm text-headline-sm shadow-md hover:bg-primary-container transition-all flex items-center justify-center gap-sm relative overflow-hidden group" type="submit" id="submit-quote-btn">
+<span class="relative z-10">Request My Secure Quote</span>
+<span class="material-symbols-outlined relative z-10 transition-transform group-hover:translate-x-1">arrow_forward</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-active:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 left-0 w-full h-[2px] bg-white/20"></div>
+</button>
+</div>
+</form>
+</div>
+<!-- Secondary Info Cards -->
+<div class="mt-md grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="bg-surface-container p-md rounded-lg flex items-center gap-md">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A macro photograph of high-precision machined steel engine valves sitting on a reflective laboratory surface. Cold, clinical blue lighting highlights the metallic texture and mechanical accuracy. Professional automotive workshop aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmY7LEPsXeLXvoGKXiL-YGDlRD04vv8PN0WYzl0TLyOQof-7Kcp74ziLZELy78eIwMHzZzUeXg1AmkdQpnW9lnH6hxCqahyRO0qwY1ANzSm1vFLjEDcNV12fGzFG6jFLXeqYe43ZGFwbDME5XdQ_z0qDKiA78H0yVh3-BlxohhAZwJR-nfLovDjpvmyQ29GvxgIEVwMyQBZMz8867TUMEABR3yfg40eJVZi8AfAa2L39fBkFq73fLD">
+<div>
+<p class="font-label-md text-label-md">100% Fitment Guarantee</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Technician-verified orders.</p>
+</div>
+</div>
+<div class="bg-surface-container p-md rounded-lg flex items-center gap-md">
+<img class="w-16 h-16 rounded-lg object-cover" data-alt="A warehouse logistics setting showing a neatly stacked pile of professional car part boxes with clean black and white branding labels. Soft, ambient warehouse lighting with a warm glow. The scene represents order fulfillment and UK shipping readiness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBjaxZjIkckAIWNEowrkiiANLpqecedtD_C1qAmFgKQTRwDftHYggmypG3h_nyELia0-AV2xRIvOHjZ4NIZNdt1_JegyNhY7oXf0mvSOu2GaSdcHg3_4qe0XymEXRAulcNDF6AWinekG8z1rIDL-_VXGT0RDYHv3MNdEmQi71bM9T0ZFGJVKiXaMFqFNvnJVftYqR7Ra2nBtwGILsHP5PsS8CrbeSS0a12c6EgBjPRvKxTt82E4qH8">
+<div>
+<p class="font-label-md text-label-md">Trade-Ready Logistics</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">UK-wide next day delivery.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-dim dark:bg-inverse-surface mt-xl">
+<div class="w-full px-margin-desktop py-xl max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="flex flex-col gap-md">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">Auto Parts SME</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Providing technical excellence and precision components to the UK automotive trade for over 15 years.</p>
+</div>
+<div class="flex flex-col gap-sm">
+<p class="font-label-md text-label-md text-primary uppercase tracking-wider">Quick Links</p>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary underline" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary underline" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary underline" href="#">Returns</a>
+</div>
+<div class="flex flex-col gap-sm">
+<p class="font-label-md text-label-md text-primary uppercase tracking-wider">Support</p>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary underline" href="#">Delivery Information</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary underline" href="#">Cookie Policy</a>
+</div>
+<div class="flex flex-col gap-sm"><p class="font-label-md text-label-md text-primary uppercase tracking-wider">Contact</p><p class="font-body-sm text-body-sm text-on-surface-variant">123 Business Park, Manchester, UK</p><p class="font-body-sm text-body-sm text-on-surface-variant">0800 000 0000</p></div>
+</div>
+<div class="border-t border-outline-variant py-md px-margin-desktop max-w-max-width mx-auto">
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center md:text-left">© 2024 Auto Parts SME. Professional UK Automotive Solutions.</p>
+</div>
+</footer>
+<script>
+        function selectUrgency(element, type) {
+            // Remove active classes from all
+            document.querySelectorAll('.urgency-btn').forEach(btn => {
+                btn.classList.remove('bg-primary-container', 'text-on-primary-container', 'border-primary');
+                btn.classList.add('border-outline-variant');
+            });
+            
+            // Add active classes to selected
+            element.classList.remove('border-outline-variant');
+            element.classList.add('bg-primary-container', 'text-on-primary-container', 'border-primary');
+            
+            // Animate
+            element.classList.add('scale-95');
+            setTimeout(() => element.classList.remove('scale-95'), 100);
+        }
+
+        // UK Plate Formatting micro-interaction
+        const regInput = document.getElementById('reg');
+        regInput.addEventListener('input', function(e) {
+            let val = e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+            if (val.length > 4) {
+                val = val.slice(0, 4) + ' ' + val.slice(4, 7);
+            }
+            e.target.value = val.slice(0, 8);
+        });
+
+        // Simple form submission micro-interaction
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> Request Sent';
+                btn.classList.replace('bg-primary', 'bg-green-600');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-primary');
+                    btn.disabled = false;
+                    this.reset();
+                }, 3000);
+            }, 1500);
+        });
+    </script>
+
+
+
+</body></html>
