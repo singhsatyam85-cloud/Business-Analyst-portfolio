@@ -7990,35 +7990,27 @@
     }
 
 
-    /* ===== Project card row alignment only ===== */
+    /* ===== Keep all five project cards in one row ===== */
     #project-work .project-preview-strip:not(.simulation-preview-strip):not(.simulation-single-card-strip) {
       max-width: 1180px !important;
       margin-left: auto !important;
       margin-right: auto !important;
       display: grid !important;
-      grid-template-columns: repeat(4, 1fr) !important;
-      gap: 24px !important;
+      grid-template-columns: repeat(5, minmax(205px, 1fr)) !important;
+      gap: 16px !important;
       align-items: stretch !important;
-      justify-content: center !important;
+      justify-content: start !important;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      padding-bottom: 8px !important;
+      scrollbar-width: thin;
     }
 
     #project-work .project-preview-strip:not(.simulation-preview-strip):not(.simulation-single-card-strip) .project-preview-card {
       width: 100% !important;
       height: 100% !important;
-      min-width: 0 !important;
+      min-width: 205px !important;
       box-sizing: border-box !important;
-    }
-
-    @media (max-width: 1024px) {
-      #project-work .project-preview-strip:not(.simulation-preview-strip):not(.simulation-single-card-strip) {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-    }
-
-    @media (max-width: 640px) {
-      #project-work .project-preview-strip:not(.simulation-preview-strip):not(.simulation-single-card-strip) {
-        grid-template-columns: 1fr !important;
-      }
     }
 
     #project-work .simulation-single-card-strip {
@@ -10256,6 +10248,60 @@
   }
 }
 
+
+
+/* ===== Final fix: place all five project cards in the same row ===== */
+#project-work > .container > .project-group:first-of-type .project-preview-strip {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(205px, 1fr)) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 4px 0 10px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card {
+  min-width: 205px !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#project-work > .container > .project-group:first-of-type #erpSimulationCard {
+  max-width: none !important;
+  min-height: 475px !important;
+  padding: 78px 24px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .btn {
+  width: 100% !important;
+  margin-top: auto !important;
+}
+
+#project-work .simulation-showcase-layout {
+  display: block !important;
+  width: 100% !important;
+}
+
+#project-work .simulation-side-capabilities {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  grid-column: 1 / -1 !important;
+}
+
+#project-work .simulation-preview-strip,
+#project-work .simulation-single-card-strip,
+#project-work .simulation-left-title {
+  display: none !important;
+}
+
 </style>
 <style>
 /* Final fix: remove project summary cards and close the empty space in detailed project sections */
@@ -12325,6 +12371,557 @@ body #ba-deliverables.ba-polished {
     color: #FFFFFF !important;
   }
 </style>
+
+<style>
+/* FINAL: compact five-card portfolio row */
+#project-work > .container > .project-group:first-of-type .project-preview-strip {
+  align-items: stretch !important;
+  gap: 14px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard {
+  min-height: 286px !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 18px 14px 14px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .card-icon,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .card-icon {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 0 9px !important;
+  font-size: 14px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card h3,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard h3 {
+  min-height: 0 !important;
+  margin: 0 0 7px !important;
+  font-size: 15px !important;
+  line-height: 1.15 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .case-subtitle,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .case-subtitle {
+  min-height: 0 !important;
+  margin: 0 0 8px !important;
+  font-size: 11.5px !important;
+  line-height: 1.25 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .case-summary,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .case-summary {
+  display: none !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list {
+  min-height: 62px !important;
+  margin: 0 0 10px !important;
+  padding-left: 15px !important;
+  font-size: 11.5px !important;
+  line-height: 1.3 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list li,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list li {
+  margin-bottom: 3px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list li:nth-child(n+4),
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list li:nth-child(n+4) {
+  display: none !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .btn,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .btn {
+  min-height: 32px !important;
+  padding: 6px 9px !important;
+  font-size: 12px !important;
+  margin-top: auto !important;
+}
+</style>
+
+
+<style>
+/* ===== Final capability width and no-scroll correction ===== */
+#project-work .simulation-showcase-layout {
+  display: block !important;
+  grid-template-columns: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+#project-work .simulation-side-capabilities,
+#project-work .cyber-pipeline-suite {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  grid-column: 1 / -1 !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 10px 8px 8px !important;
+  overflow: hidden !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head {
+  margin: 0 0 6px !important;
+  padding: 0 2px !important;
+}
+
+#project-work .cyber-pipeline.snake-pipeline {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: 46px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 46px !important;
+  gap: 2px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+#project-work .snake-pipeline .cyber-node,
+#project-work .snake-pipeline .cyber-node:nth-of-type(n) {
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  height: 46px !important;
+  padding: 4px 1px !important;
+  overflow: hidden !important;
+}
+
+#project-work .snake-pipeline .cyber-node strong {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  min-height: 30px !important;
+  padding: 3px 2px !important;
+  border-radius: 8px !important;
+  font-size: clamp(6.4px, .53vw, 8.2px) !important;
+  line-height: 1.02 !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+#project-work .snake-pipeline .cyber-snake-track {
+  width: 100% !important;
+  height: 46px !important;
+  inset: 0 !important;
+}
+
+@media (max-width: 1100px) {
+  #project-work .cyber-pipeline.snake-pipeline {
+    grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+    overflow: hidden !important;
+    scrollbar-width: none !important;
+  }
+
+  #project-work .simulation-side-capabilities .cyber-pipeline-panel::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+</style>
+
+<style>
+/* ===== Final compact five-card row with no project-area scrollbar ===== */
+#project-work > .container > .project-group:first-of-type {
+  width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-strip {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  scrollbar-width: none !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-strip::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard {
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 224px !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 13px 11px 11px !important;
+  border-radius: 11px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .card-icon,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .card-icon {
+  width: 31px !important;
+  height: 31px !important;
+  margin: 0 0 7px !important;
+  font-size: 11px !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card h3,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard h3 {
+  min-height: 45px !important;
+  margin: 0 0 5px !important;
+  font-size: clamp(11px, 1vw, 13.5px) !important;
+  line-height: 1.12 !important;
+  overflow-wrap: anywhere !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .case-subtitle,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .case-subtitle {
+  min-height: 26px !important;
+  margin: 0 0 6px !important;
+  font-size: clamp(8.5px, .76vw, 10.5px) !important;
+  line-height: 1.16 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .case-summary,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .case-summary {
+  display: none !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list {
+  min-height: 50px !important;
+  margin: 0 0 7px !important;
+  padding-left: 13px !important;
+  font-size: clamp(8px, .72vw, 10px) !important;
+  line-height: 1.18 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list li,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list li {
+  margin-bottom: 2px !important;
+  padding-left: 0 !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .compact-list li:nth-child(n+4),
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .compact-list li:nth-child(n+4) {
+  display: none !important;
+}
+
+#project-work > .container > .project-group:first-of-type .project-preview-card .btn,
+#project-work > .container > .project-group:first-of-type #erpSimulationCard .btn {
+  min-height: 28px !important;
+  padding: 5px 6px !important;
+  margin-top: auto !important;
+  border-radius: 6px !important;
+  font-size: clamp(8.5px, .75vw, 10.5px) !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 900px) {
+  #project-work > .container > .project-group:first-of-type .project-preview-strip {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    overflow: hidden !important;
+  }
+
+  #project-work > .container > .project-group:first-of-type .project-preview-card,
+  #project-work > .container > .project-group:first-of-type #erpSimulationCard {
+    min-width: 0 !important;
+    min-height: 205px !important;
+    padding: 10px 7px 8px !important;
+  }
+
+  #project-work > .container > .project-group:first-of-type .project-preview-card h3,
+  #project-work > .container > .project-group:first-of-type #erpSimulationCard h3 {
+    min-height: 42px !important;
+  }
+}
+</style>
+
+
+<style>
+/* VERIFIED FIX: selectors directly target the actual five-card grid */
+#project-work > .container > .project-group > .project-preview-strip {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  align-items: start !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  scrollbar-width: none !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: start !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 14px 12px 12px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .card-icon {
+  position: static !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 0 9px !important;
+  font-size: 12px !important;
+  flex: 0 0 auto !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card h3 {
+  min-height: 0 !important;
+  margin: 0 0 6px !important;
+  font-size: clamp(12px, 1vw, 15px) !important;
+  line-height: 1.15 !important;
+  overflow-wrap: anywhere !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .case-subtitle {
+  min-height: 0 !important;
+  margin: 0 0 7px !important;
+  font-size: clamp(9px, .78vw, 11px) !important;
+  line-height: 1.2 !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .case-summary {
+  display: none !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .compact-list {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding-left: 16px !important;
+  font-size: clamp(9px, .77vw, 11px) !important;
+  line-height: 1.28 !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .compact-list li {
+  margin: 0 0 3px !important;
+  padding-left: 0 !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .compact-list li:nth-child(n+4) {
+  display: none !important;
+}
+
+#project-work > .container > .project-group > .project-preview-strip > .project-preview-card .btn {
+  position: static !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  min-height: 30px !important;
+  margin: 8px 0 0 !important;
+  padding: 6px 7px !important;
+  border-radius: 7px !important;
+  font-size: clamp(9px, .76vw, 11px) !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 900px) {
+  #project-work > .container > .project-group > .project-preview-strip {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+  }
+  #project-work > .container > .project-group > .project-preview-strip > .project-preview-card {
+    padding: 9px 6px 7px !important;
+  }
+  #project-work > .container > .project-group > .project-preview-strip > .project-preview-card .card-icon {
+    width: 29px !important;
+    height: 29px !important;
+    margin-bottom: 6px !important;
+    font-size: 10px !important;
+  }
+}
+</style>
+
+
+<style>
+/* BiteBuddy card override: neutralise the former simulation-card sizing */
+#project-work #erpSimulationCard {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-self: start !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 14px 12px 12px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+#project-work #erpSimulationCard .card-icon {
+  position: static !important;
+  width: 36px !important;
+  height: 36px !important;
+  margin: 0 0 9px !important;
+  font-size: 12px !important;
+}
+
+#project-work #erpSimulationCard h3 {
+  min-height: 0 !important;
+  margin: 0 0 6px !important;
+  font-size: clamp(12px, 1vw, 15px) !important;
+  line-height: 1.15 !important;
+}
+
+#project-work #erpSimulationCard .case-summary {
+  display: none !important;
+}
+
+#project-work #erpSimulationCard .compact-list {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding-left: 16px !important;
+  font-size: clamp(9px, .77vw, 11px) !important;
+  line-height: 1.28 !important;
+}
+
+#project-work #erpSimulationCard .compact-list li {
+  margin: 0 0 3px !important;
+  padding-left: 0 !important;
+}
+
+#project-work #erpSimulationCard .compact-list li:nth-child(n+4) {
+  display: none !important;
+}
+
+#project-work #erpSimulationCard .btn {
+  position: static !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  min-height: 30px !important;
+  margin: 8px 0 0 !important;
+  padding: 6px 7px !important;
+  border-radius: 7px !important;
+  font-size: clamp(9px, .76vw, 11px) !important;
+  line-height: 1 !important;
+}
+</style>
+
+
+<style>
+/* FINAL: polished presenter and silent speaking animation */
+.ba-presenter-document {
+  padding-top: 14px !important;
+  min-height: 70px !important;
+}
+
+.ba-presenter-document strong {
+  min-height: 30px !important;
+  margin: 0 0 6px !important;
+  font-size: 14px !important;
+  line-height: 1.08 !important;
+  text-align: left !important;
+}
+
+.ba-mouth {
+  transform-box: fill-box !important;
+  transform-origin: center !important;
+}
+
+.ba-mouth-open,
+.ba-mouth-lip {
+  opacity: 0;
+  transform-box: fill-box !important;
+  transform-origin: center !important;
+}
+
+.ba-presenter-wrap.is-speaking .ba-mouth-smile {
+  animation: baSilentSmile .22s steps(2, end) infinite !important;
+}
+
+.ba-presenter-wrap.is-speaking .ba-mouth-open {
+  animation: baSilentMouth .22s steps(2, end) infinite !important;
+}
+
+.ba-presenter-wrap.is-speaking .ba-mouth-lip {
+  animation: baSilentLip .22s steps(2, end) infinite !important;
+}
+
+.ba-presenter-wrap.is-speaking .ba-presenter-body {
+  animation: baSpeakingNod .55s ease-in-out 2 !important;
+  transform-box: fill-box !important;
+  transform-origin: 50% 48% !important;
+}
+
+@keyframes baSilentSmile {
+  0%, 44%, 100% { opacity: 1; }
+  45%, 78% { opacity: 0; }
+}
+
+@keyframes baSilentMouth {
+  0%, 44%, 100% { opacity: 0; transform: scaleY(.35); }
+  45%, 78% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes baSilentLip {
+  0%, 44%, 100% { opacity: 0; }
+  45%, 78% { opacity: .9; }
+}
+
+@keyframes baSpeakingNod {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(.7deg) translateY(1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ba-presenter-wrap.is-speaking .ba-mouth-smile,
+  .ba-presenter-wrap.is-speaking .ba-mouth-open,
+  .ba-presenter-wrap.is-speaking .ba-mouth-lip,
+  .ba-presenter-wrap.is-speaking .ba-presenter-body {
+    animation: none !important;
+  }
+}
+</style>
+
 </head>
 <body id="top">
 <header class="site-header">
@@ -12359,12 +12956,12 @@ body #ba-deliverables.ba-polished {
 <h1 class="sr-only" id="hero-title">Business Analyst Portfolio</h1>
 <p class="hero-subtitle hero-main-heading" id="mainHeroTitle">Business Analyst | Digital Projects | Process Improvement | Manufacturing Automation</p>
 <p class="hero-about-label">About Me</p>
-<p class="lead">Business Analyst project experience across web and mobile applications, EdTech/STEM platforms, operational process improvement and manufacturing automation. One professional simulation is clearly labelled separately.</p>
+<p class="lead">I turn business needs into practical, delivery-ready digital solutions — across EdTech, STEM learning, e-commerce, BI reporting, and AI-powered food delivery. I define requirements, map processes, build prototypes, support UAT, and leave behind the BA evidence that shows exactly how an idea moved from discovery to delivery.</p>
 <div aria-label="Portfolio keywords" class="hero-keywords">
-<span class="keyword">EdTech</span>
-<span class="keyword">STEM Platforms</span>
-<span class="keyword">Web &amp; Mobile Applications</span>
-<span class="keyword">Manufacturing Automation</span>
+<span class="keyword">AI Powred Solution</span>
+<span class="keyword">Interactive Prototyping</span>
+<span class="keyword">Digital Projects</span>
+<span class="keyword">BI Reporting</span>
 </div>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#project-work">Explore Project Work</a>
@@ -12378,34 +12975,78 @@ body #ba-deliverables.ba-polished {
 <span class="stat-mini"><strong>15+</strong><small>Tools</small></span>
 <span class="stat-mini"><strong>4</strong><small>Domains</small></span>
 </div>
-<div class="ba-delivery-axis-card direction-dice-card">
-<h3 class="ba-delivery-axis-title">How I deliver BA work</h3>
-<div class="ba-axis-layout direction-dice-layout">
-<div aria-hidden="true" class="direction-dice-scene">
-<div class="direction-dice-cube flip-left" id="directionDiceCube">
-<span class="direction-dice-depth"></span>
-<div class="direction-dice-face" id="directionDiceFace">
-<span class="direction-dice-corner">LEFT</span>
-<strong>1</strong>
+<div class="ba-helix-card" aria-label="Animated Business Analyst delivery process">
+<h3 class="ba-helix-title">How I deliver BA work</h3>
+<div class="ba-helix-stage" id="baHelixStage">
+<div class="ba-helix-halo" aria-hidden="true"></div>
+<div class="ba-helix-track" aria-hidden="true"></div>
+<div class="ba-helix-steps" aria-label="Business Analyst delivery steps">
+<button class="ba-helix-step" type="button" data-step="Discovery" data-index="0"><span class="ba-step-index">01</span><span class="ba-step-label">Discovery</span></button>
+<button class="ba-helix-step" type="button" data-step="Requirements" data-index="1"><span class="ba-step-index">02</span><span class="ba-step-label">Requirements</span></button>
+<button class="ba-helix-step" type="button" data-step="Analysis" data-index="2"><span class="ba-step-index">03</span><span class="ba-step-label">Analysis</span></button>
+<button class="ba-helix-step" type="button" data-step="Process Mapping" data-index="3"><span class="ba-step-index">04</span><span class="ba-step-label">Process Mapping</span></button>
+<button class="ba-helix-step" type="button" data-step="UAT" data-index="4"><span class="ba-step-index">05</span><span class="ba-step-label">UAT</span></button>
+<button class="ba-helix-step" type="button" data-step="Delivery" data-index="5"><span class="ba-step-index">06</span><span class="ba-step-label">Delivery</span></button>
+</div>
+<div class="ba-presenter-wrap" aria-hidden="true">
+<svg class="ba-presenter" viewBox="0 0 180 300" role="img" aria-label="Professional Business Analyst holding a project document">
+<defs>
+<linearGradient id="coatGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#233A63"/><stop offset="1" stop-color="#0F172A"/></linearGradient>
+<linearGradient id="shirtGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient>
+<filter id="presenterShadow" x="-35%" y="-25%" width="170%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#0F172A" flood-opacity=".24"/></filter>
+</defs>
+<ellipse cx="90" cy="282" rx="49" ry="10" fill="#0F172A" opacity=".13"/>
+<g filter="url(#presenterShadow)" class="ba-presenter-body">
+<path d="M66 176 L81 176 L78 272 L53 272 Z" fill="#18243A"/>
+<path d="M99 176 L114 176 L127 272 L102 272 Z" fill="#18243A"/>
+<path d="M48 270 H80 V282 H43 Q40 278 48 270Z" fill="#0B1220"/>
+<path d="M101 270 H132 Q140 278 134 282 H102Z" fill="#0B1220"/>
+<rect x="74" y="78" width="31" height="28" rx="10" fill="#C88763"/>
+<ellipse cx="90" cy="55" rx="35" ry="42" fill="#D99B72"/>
+<ellipse cx="55" cy="58" rx="6" ry="10" fill="#D99B72"/>
+<ellipse cx="125" cy="58" rx="6" ry="10" fill="#D99B72"/>
+<path d="M56 51 Q54 25 74 13 Q91 2 110 10 Q128 18 127 51 Q116 35 91 35 Q68 35 56 51Z" fill="#111827"/>
+<path d="M61 36 Q68 18 88 13 Q108 8 121 22 Q106 18 90 24 Q74 27 61 36Z" fill="#2B3A55"/>
+<path d="M56 47 Q59 28 74 16 Q64 32 64 54Z" fill="#0B1220"/>
+<path d="M121 47 Q121 30 109 18 Q124 27 127 51Z" fill="#0B1220"/>
+<path d="M62 28 Q78 12 98 13" stroke="#3B4B68" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".65"/>
+<path d="M72 57 Q78 53 84 57" stroke="#25324A" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="M97 57 Q103 53 109 57" stroke="#25324A" stroke-width="3" stroke-linecap="round" fill="none"/>
+<circle class="ba-eye ba-eye-left" cx="78" cy="59" r="2.4" fill="#0F172A"/>
+<circle class="ba-eye ba-eye-right" cx="103" cy="59" r="2.4" fill="#0F172A"/>
+<path d="M87 69 Q91 72 95 69" stroke="#A95F47" stroke-width="2" stroke-linecap="round" fill="none"/>
+<g class="ba-mouth">
+<path class="ba-mouth-smile" d="M78 80 Q90 87 102 80" stroke="#8E4D3E" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+<ellipse class="ba-mouth-open" cx="90" cy="82" rx="8.5" ry="4.2" fill="#7F1D1D"/>
+<path class="ba-mouth-lip" d="M83 83 Q90 87 97 83" stroke="#E7A4A0" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0"/>
+</g>
+<path d="M46 113 Q59 95 78 94 H102 Q121 95 134 113 L123 205 H56Z" fill="url(#coatGradient)"/>
+<path d="M76 95 L90 119 L104 95 L109 176 H70Z" fill="url(#shirtGradient)"/>
+<path d="M90 118 L98 131 L92 166 L84 131Z" fill="#EF6F6C"/>
+<path d="M76 96 L60 105 L74 137 L90 119Z" fill="#2F4B78"/>
+<path d="M104 96 L120 105 L106 137 L90 119Z" fill="#1B3154"/>
+<path d="M62 108 Q43 121 35 158 L51 163 Q60 139 75 131Z" fill="#20385F"/>
+<path d="M35 158 Q30 177 47 191 L58 179 Q48 169 51 161Z" fill="#D99B72"/>
+<g class="ba-presenter-arm">
+<path d="M118 108 Q137 115 145 142 L132 149 Q123 132 108 129Z" fill="#182F52"/>
+<path d="M145 142 Q150 154 142 167 L128 160 Q134 152 132 148Z" fill="#D99B72"/>
+<circle cx="137" cy="163" r="9" fill="#D99B72"/>
+</g>
+<path d="M55 178 Q90 191 124 178 L122 205 H57Z" fill="#0D1A2D" opacity=".56"/>
+<circle cx="90" cy="147" r="3" fill="#D7E2F2"/><circle cx="90" cy="163" r="3" fill="#D7E2F2"/><circle cx="90" cy="179" r="3" fill="#D7E2F2"/>
+<path d="M59 184 H121" stroke="#0A1322" stroke-width="6" stroke-linecap="round" opacity=".9"/>
+<rect x="86" y="180" width="9" height="8" rx="2" fill="#D7E2F2"/>
+<path d="M112 135 h10" stroke="#E2E8F0" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+</g>
+</svg>
+<div class="ba-presenter-document">
+<strong id="baPresenterStep">Discovery</strong>
+<i></i><i></i><i></i>
 </div>
 </div>
+<div class="ba-helix-floor" aria-hidden="true"></div>
 </div>
-<div aria-live="polite" class="axis-step-name-box direction-step-name-box">
-<span id="directionStepLabel">Left</span>
-<h4 id="directionStepName">Discovery</h4>
-</div>
-</div>
-</div>
-<div aria-label="Core strengths" class="hero-core-line">
-<span class="hero-core-label">Core Strengths</span>
-<div class="hero-core-points">
-<span class="hero-core-pill" style="--accent:#2563EB">Requirement Gathering</span>
-<span class="hero-core-pill" style="--accent:#7C3AED">Stakeholder Management</span>
-<span class="hero-core-pill" style="--accent:#C2410C">Process Mapping</span>
-<span class="hero-core-pill" style="--accent:#BE123C">User Stories &amp; AC</span>
-<span class="hero-core-pill" style="--accent:#0F172A">UAT Support</span>
-<span class="hero-core-pill" style="--accent:#B45309">Change Impact Analysis</span>
-</div>
+<p class="sr-only" aria-live="polite">Current delivery step: <span id="baHelixLiveStep">Discovery</span></p>
 </div>
 </div>
 </div>
@@ -12423,7 +13064,7 @@ body #ba-deliverables.ba-polished {
 <p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
 <p class="case-summary">Attendance management system for school users, supporting teacher and admin workflows for managing attendance records and school-level visibility.</p>
 <ul class="compact-list"><li>Teacher and admin workflow analysis</li><li>Attendance marking and submission flow</li><li>Records and basic reporting</li><li>Role-based access and security</li></ul>
-<a class="btn" href="#attendance-case">View Case Study</a>
+<a class="btn" href="#attendance-case">View Project Work</a>
 </article>
 <article class="case-card project-preview-card">
 <span class="card-icon gold">02</span>
@@ -12431,7 +13072,7 @@ body #ba-deliverables.ba-polished {
 <p class="case-subtitle">Smart Classroom BA Project Work</p>
 <p class="case-summary">Teacher-led digital STEM content platform where teachers open STEM and coding learning content on classroom screens, projectors, or smart boards.</p>
 <ul class="compact-list"><li>No student portal or student login</li><li>Teacher classroom controls</li><li>3D videos, animations, simulations</li><li>Content search and filtering</li></ul>
-<a class="btn" href="#stem-case">View Case Study</a>
+<a class="btn" href="#stem-case">View Project Work</a>
 </article>
 <article class="case-card project-preview-card">
 <span class="card-icon">03</span>
@@ -12439,7 +13080,7 @@ body #ba-deliverables.ba-polished {
 <p class="case-subtitle">Website Development BA Project Work</p>
 <p class="case-summary">Company website development work covering page structure, user journey, enquiry flow, contact page requirements and customer-facing content.</p>
 <ul class="compact-list"><li>User journey mapping</li><li>Functional requirements</li><li>Enquiry journey structure</li><li>UI/UX review and UAT support</li></ul>
-<a class="btn" href="#autoparts-case">View Case Study</a>
+<a class="btn" href="#autoparts-case">View Project Work</a>
 </article>
 <article class="case-card project-preview-card">
 <span class="card-icon gold">04</span>
@@ -12447,42 +13088,54 @@ body #ba-deliverables.ba-polished {
 <p class="case-subtitle">SQL and Power BI Reporting BA Project Work</p>
 <p class="case-summary">End-to-end reporting project covering SQL data requirements, data model review, Power BI dashboard build, KPI validation and UAT evidence for an anonymised Auto Parts SME.</p>
 <ul class="compact-list"><li>SQL data requirements and ERD review</li><li>Power BI dashboard and KPI measures</li><li>SQL validation and UAT evidence</li><li>Sprint 5 and Sprint 6 delivery</li></ul>
-<a class="btn" href="#autoinsight-case">View Case Study</a>
+<a class="btn" href="#autoinsight-case">View Project Work</a>
+</article>
+<article class="case-card project-preview-card simulation-card" id="erpSimulationCard">
+<span class="card-icon">05</span>
+<h3>BiteBuddy: AI-Powered Food Delivery &amp; Customer Support</h3>
+<p class="case-summary">A mobile-first food delivery platform with an AI assistant that helps users find meals based on dietary needs, allergies, taste and budget, while also supporting order tracking and common customer queries.</p>
+<ul class="compact-list"><li>AI-powered meal discovery</li><li>Dietary, allergy and budget rules</li><li>Interactive product prototype</li><li>Order tracking and support journeys</li></ul>
+<a class="btn" href="#pwc-case">View Project Work</a>
 </article>
 </div>
 </div>
 <div class="project-group simulation-group">
-<div aria-label="Professional simulation and portfolio capabilities" class="simulation-showcase-layout">
-<div aria-label="Professional simulation preview card" class="simulation-preview-strip simulation-single-card-strip">
-<h3 class="project-group-title simulation-left-title">Professional Simulation</h3>
-<article class="case-card project-preview-card simulation-card" id="erpSimulationCard">
-<span class="card-icon">05</span>
-<h3>Professional Simulation: ERP Compliance System Upgrade</h3>
-<p class="case-subtitle">Forage Technology Consulting Simulation</p>
-<span class="simulation-card-badge">Forage Simulation</span>
-<p class="case-summary">This project is a professional simulation completed through Forage. It is not paid employment, client delivery, or real consulting work.</p>
-<ul class="compact-list"><li>Discovery workshop planning</li><li>User stories and requirements</li><li>MVP roadmap development</li></ul>
-<a class="btn" href="#pwc-case">View Simulation</a>
-</article>
+<div aria-label="Business Analyst portfolio capabilities" class="simulation-showcase-layout">
+<aside aria-label="Interactive BA capability pipelines" class="simulation-side-capabilities cyber-pipeline-suite">
+<section class="side-capability-panel cyber-pipeline-panel" id="ba-deliverables" data-pipeline="deliverables">
+<div class="side-capability-head"><span class="side-badge">BD</span><div><h4>BA Deliverables</h4></div></div>
+<div class="cyber-pipeline snake-pipeline" role="tablist" aria-label="BA deliverables cyber-glow pipeline">
+<svg class="cyber-snake-track" viewBox="0 0 1000 108" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="cyber-snake-line" d="M42 54 H958"></path>
+<circle class="cyber-snake-pulse" r="8" cx="0" cy="0"><animateMotion dur="7.2s" repeatCount="indefinite" path="M42 54 H958"></animateMotion></circle>
+</svg>
+<button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Business Requirements Document" data-description="Defines the business need, objectives, scope, stakeholders, constraints and expected outcomes."><strong>BRD</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Functional Requirements Document" data-description="Translates business needs into clear system functions, behaviours, inputs, outputs and rules."><strong>FRD</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="User Stories" data-description="Captures user needs in an Agile format with clear value and delivery context."><strong>User Stories</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Acceptance Criteria" data-description="Sets measurable conditions that must be met before a story or feature can be accepted."><strong>Acceptance Criteria</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Business Rules" data-description="Documents the policies, validations and decision logic that control business processes."><strong>Business Rules</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Process Flows" data-description="Maps current and future workflows to expose hand-offs, pain points and improvement opportunities."><strong>Process Flows</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="UAT Test Cases" data-description="Defines business scenarios, expected results and evidence used to validate solution readiness."><strong>UAT Test Cases</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Stakeholder Register" data-description="Records stakeholder roles, influence, needs, communication preferences and engagement actions."><strong>Stakeholder Register</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="MVP Scope" data-description="Separates essential launch requirements from later improvements to protect time and delivery focus."><strong>MVP Scope</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Change Impact Notes" data-description="Explains how process, people, data and technology will be affected by the proposed change."><strong>Change Impact</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Requirements Traceability Matrix" data-description="Links requirements to stories, test cases, outcomes and approvals so coverage can be verified."><strong>RTM</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Presentation Samples" data-description="Communicates findings, options, decisions, progress and outcomes in a stakeholder-ready format."><strong>Presentation Samples</strong></button>
 </div>
-<aside aria-label="BA deliverables tools and key skills" class="simulation-side-capabilities">
-<section class="side-capability-panel" id="ba-deliverables">
-<div class="side-capability-head"><span class="side-badge">BD</span><div><h4>BA Deliverables</h4><p>Core BA documents used across project work.</p></div></div>
-<div class="side-chip-grid">
-<span>BRD</span><span>FRD</span><span>User Stories</span><span>Acceptance Criteria</span><span>Business Rules</span><span>Process Flows</span><span>UAT Test Cases</span><span>Stakeholder Register</span><span>MVP Scope</span><span>Change Impact Notes</span><span>RTM</span><span>Presentation Samples</span>
-</div>
+
 </section>
-<section class="side-capability-panel tools-mini-panel" id="tools">
-<div class="side-capability-head"><span class="side-badge">TT</span><div><h4>Tools &amp; Technologies</h4><p>Tools used for backlog, documentation and review.</p></div></div>
-<div class="side-chip-grid tool-chip-grid">
-<span>Jira</span><span>Confluence</span><span>Excel</span><span>Power BI</span><span>MS Visio</span><span>Draw.io</span><span>Figma</span><span>Postman</span><span>SQL</span><span>Agile Scrum</span><span>Kanban</span><span>PowerPoint</span>
+
+<section class="side-capability-panel cyber-pipeline-panel" id="tools" data-pipeline="tools">
+<div class="side-capability-head"><span class="side-badge">TT</span><div><h4>Tools &amp; Techniques</h4></div></div>
+<div class="cyber-pipeline snake-pipeline" role="tablist" aria-label="Tools and technologies cyber-glow pipeline">
+<svg class="cyber-snake-track" viewBox="0 0 1000 108" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="cyber-snake-line" d="M42 54 H958"></path>
+<circle class="cyber-snake-pulse" r="8" cx="0" cy="0"><animateMotion dur="7.2s" repeatCount="indefinite" path="M42 54 H958"></animateMotion></circle>
+</svg>
+<button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Jira" data-description="Used for backlog management, user stories, sprint planning, issue tracking and delivery status."><strong>Jira</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Confluence" data-description="Used to organise requirements, meeting notes, decisions, process documentation and project knowledge."><strong>Confluence</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Microsoft Excel" data-description="Used for structured analysis, registers, validation checks, prioritisation and data preparation."><strong>Excel</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Power BI" data-description="Used to build dashboards, validate KPIs and present business performance through interactive reporting."><strong>Power BI</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Microsoft Visio" data-description="Used to create professional process maps, swimlanes, system flows and business diagrams."><strong>MS Visio</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Draw.io" data-description="Used for fast process modelling, architecture views, user journeys and visual documentation."><strong>Draw.io</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Figma" data-description="Used for wireframes, interface concepts, user journey validation and stakeholder design reviews."><strong>Figma</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Postman" data-description="Used to review and test API requests, responses, fields, status codes and integration behaviour."><strong>Postman</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="SQL" data-description="Used to query, validate and structure data for analysis, reporting and business-rule checks."><strong>SQL</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Agile Scrum" data-description="Used to organise iterative delivery through backlogs, sprints, reviews and continuous feedback."><strong>Agile Scrum</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Kanban" data-description="Used to visualise work, manage flow, limit work in progress and expose delivery blockers."><strong>Kanban</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="PowerPoint" data-description="Used to present findings, recommendations, roadmaps, decisions and project outcomes clearly."><strong>PowerPoint</strong></button>
 </div>
+
 </section>
-<section class="side-capability-panel skills-mini-panel" id="skills">
-<div class="side-capability-head"><span class="side-badge">KS</span><div><h4>Key Skills</h4><p>Business analysis strengths applied across projects.</p></div></div>
-<div class="side-chip-grid skill-chip-grid">
-<span>Requirement Gathering</span><span>Stakeholder Management</span><span>Gap Analysis</span><span>Process Mapping</span><span>User Stories</span><span>Acceptance Criteria</span><span>UAT Support</span><span>Backlog Management</span><span>Change Impact Analysis</span><span>Functional Requirements</span><span>Visual Communication</span><span>Data Analysis</span>
+
+<section class="side-capability-panel cyber-pipeline-panel" id="skills" data-pipeline="skills">
+<div class="side-capability-head"><span class="side-badge">KS</span><div><h4>Key Skills</h4></div></div>
+<div class="cyber-pipeline snake-pipeline" role="tablist" aria-label="Key skills cyber-glow pipeline">
+<svg class="cyber-snake-track" viewBox="0 0 1000 108" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+<path class="cyber-snake-line" d="M42 54 H958"></path>
+<circle class="cyber-snake-pulse" r="8" cx="0" cy="0"><animateMotion dur="7.2s" repeatCount="indefinite" path="M42 54 H958"></animateMotion></circle>
+</svg>
+<button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Requirement Gathering" data-description="Uses interviews, workshops, observation and document review to understand business and user needs."><strong>Requirement Gathering</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Stakeholder Management" data-description="Identifies stakeholder interests, influence and communication needs to support alignment and decisions."><strong>Stakeholder Management</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Gap Analysis" data-description="Compares the current and desired states to identify missing capabilities, risks and required changes."><strong>Gap Analysis</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Process Mapping" data-description="Visualises activities, hand-offs, decisions and pain points to support process improvement."><strong>Process Mapping</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="User Stories" data-description="Turns needs into concise, value-focused backlog items that delivery teams can understand and estimate."><strong>User Stories</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Acceptance Criteria" data-description="Defines testable success conditions and creates shared understanding of what complete means."><strong>Acceptance Criteria</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="UAT Support" data-description="Plans scenarios, coordinates business testing, records defects and supports final readiness decisions."><strong>UAT Support</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Backlog Management" data-description="Refines, prioritises and maintains delivery items so teams work on the highest-value requirements."><strong>Backlog Management</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Change Impact Analysis" data-description="Assesses effects on users, roles, processes, data, controls, training and operational readiness."><strong>Change Impact</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Functional Requirements" data-description="Specifies expected system behaviour, validations, data needs, integrations and user interactions."><strong>Functional Requirements</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Visual Communication" data-description="Uses diagrams, wireframes and structured presentations to make complex information easier to review."><strong>Visual Communication</strong></button><button class="cyber-node" type="button" role="tab" aria-selected="false" data-title="Data Analysis" data-description="Examines data quality, trends and measures to support decisions, validation and performance reporting."><strong>Data Analysis</strong></button>
 </div>
+
 </section>
 </aside>
 </div>
@@ -12491,23 +13144,14 @@ body #ba-deliverables.ba-polished {
 </section>
 <!-- CASE STUDIES END -->
 <!-- DETAILED CASE STUDIES START -->
-<section aria-labelledby="detailed-title" class="section-tight" id="detailed-case-studies">
+<section aria-label="Detailed project work" class="section-tight" id="detailed-case-studies">
 <div class="container">
-<div class="section-head">
-<div>
-<div class="section-title">
-<span class="section-icon">DT</span>
-<h2 id="detailed-title">Detailed Project Work &amp; BA Evidence</h2>
-</div>
-<p class="section-note">Each project follows a simple BA structure: background, business problem, BA role, stakeholders, scope, deliverables, tools, outcome, and confidentiality note.</p>
-</div>
-</div>
 <div class="detail-stack">
 <article class="detail-card" id="attendance-case">
 <div class="detail-header"><div class="detail-heading-block"><h3>EdTech Attendance Management System</h3><p class="case-subtitle">Web &amp; Mobile App BA Project Work</p>
 <span class="project-type-badge badge-edtech" data-badge-for="attendance-case">EdTech</span></div></div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="attendance-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html">Download Project 1 Work Pack</a></div><div class="project1-evidence-body"><div class="evidence-accordion"><details>
+<div class="project1-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholders and planning evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Initial project context and scope notes.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholders and discovery questions.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Stakeholder%20Register%20and%20Discovery%20Questions.doc.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Workshop notes and business needs.</span><a class="doc-link" href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -12531,7 +13175,7 @@ body #ba-deliverables.ba-polished {
 <div class="detail-header"><div class="detail-heading-block"><h3>Digital STEM Content Delivery Platform</h3><p class="case-subtitle">Smart Classroom BA Project Work</p>
 <span class="project-type-badge badge-stem" data-badge-for="stem-case">STEM Platform</span></div></div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="stem-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" download="" href="assets/docs/Project_2_Digital_STEM_Work_Pack.html">Download Project 2 Work Pack</a></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
+<div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery, stakeholder and roadmap evidence.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Project Intake Notes</span><span class="doc-desc">Project context and starting scope.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Discovery Meeting Notes</span><span class="doc-desc">Stakeholder discussion and findings.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Learning Objective Matrix</span><span class="doc-desc">Learning objectives mapped to content needs.</span><a class="doc-link" href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -12555,7 +13199,7 @@ body #ba-deliverables.ba-polished {
 <div class="detail-header"><div class="detail-heading-block"><h3>Autoparts Company Website Development</h3><p class="case-subtitle">Website Development BA Project Work</p>
 <span class="project-type-badge badge-autoparts" data-badge-for="autoparts-case">Website Development</span></div></div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="autoparts-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" download="" href="case-study-documents/03-autoparts-company-website-development/Project_3_Autoparts_Document_Work_Pack.zip">Download Project 3 Work Pack</a></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
+<div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Discovery notes, stakeholders, RACI, business case, timeline and initial backlog.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Discovery Notes</span><span class="doc-desc">Discovery notes capturing project context, stakeholder needs and early website requirements.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Stakeholder Register</span><span class="doc-desc">Stakeholder roles, responsibilities and communication touchpoints.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">RACI Matrix</span><span class="doc-desc">Responsibility matrix showing BA, business, design, development and testing ownership.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Business Case Note</span><span class="doc-desc">Business rationale, expected benefits, problem statement and value summary.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Project Timeline</span><span class="doc-desc">Timeline, delivery phases and key project milestones.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Initial Product Backlog</span><span class="doc-desc">Early backlog items grouped for delivery planning and prioritisation.</span><a class="doc-link" href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -12579,7 +13223,7 @@ body #ba-deliverables.ba-polished {
 <div class="detail-header"><div class="detail-heading-block"><h3>AutoInsight: Digital Enquiry and BI Reporting System</h3><p class="case-subtitle">SQL and Power BI Reporting BA Project Work</p>
 <span class="project-type-badge badge-operations" data-badge-for="autoinsight-case">SQL and Power BI Reporting</span></div></div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="autoinsight-case-evidence">
-<div class="work-pack-download"><a class="btn btn-primary" href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
+<div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Linked evidence documents for project initiation and planning.</span></span></span><span class="accordion-arrow">⌄</span></summary>
 <div class="evidence-doc-list"><div class="evidence-doc-row"><span class="doc-name">Phase 2 Approval Note</span><span class="doc-desc">Approval note confirming Phase 2 SQL and Power BI reporting scope.</span><a class="doc-link" href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 5 Planning Notes</span><span class="doc-desc">Sprint planning evidence for SQL data build activities.</span><a class="doc-link" href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" rel="noopener" target="_blank">View PDF</a></div><div class="evidence-doc-row"><span class="doc-name">Sprint 6 Planning Notes</span><span class="doc-desc">Sprint planning evidence for Power BI dashboard build activities.</span><a class="doc-link" href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" rel="noopener" target="_blank">View PDF</a></div></div>
 </details>
@@ -12600,9 +13244,7 @@ body #ba-deliverables.ba-polished {
 <div class="confidentiality-strip">Sanitised portfolio sample. No confidential data included.</div>
 </div>
 </article><article class="detail-card" id="pwc-case">
-<div class="detail-header"><div class="detail-heading-block"><h3>Professional Simulation: ERP Compliance System Upgrade</h3><p class="case-subtitle">Forage Technology Consulting Simulation</p>
-<span class="project-type-badge badge-simulation" data-badge-for="pwc-case">Forage Simulation</span></div></div>
-<div class="simulation-note">This project was completed as a professional simulation through Forage and is included only to show BA documentation practice. It is not paid employment, client delivery, or real consulting experience.</div>
+<div class="detail-header"><div class="detail-heading-block"><h3>BiteBuddy: AI-Powered Food Delivery &amp; Customer Support</h3><p class="case-subtitle">AI Meal Discovery, Order Tracking and Customer Support Prototype</p></div></div>
 <div aria-label="BA Work Evidence" class="evidence-panel" id="pwc-case-evidence">
 <div class="work-pack-download"><span class="work-pack-pending">Complete Work Pack Upload Pending</span></div><div class="project-evidence-body"><div class="evidence-accordion"><details>
 <summary><span class="evidence-title-wrap"><span class="evidence-mini-icon">DP</span><span>1. Discovery &amp; Planning<br/><span class="evidence-hint">Evidence group retained for future upload.</span></span></span><span class="accordion-arrow">⌄</span></summary>
@@ -12848,13 +13490,13 @@ body #ba-deliverables.ba-polished {
         honestView: 'Good for BA-level technical awareness, but not for hands-on engineering ownership.'
       },
       {
-        area: 'ERP, compliance & controls context',
+        area: 'AI-enabled product and support context',
         level: 'Knowledgeable',
-        matchValue: 0.50,
+        matchValue: 0.68,
         weight: 6,
-        terms: ['erp', 'compliance', 'controls', 'audit', 'sox'],
-        evidence: 'Knowledgeable context from an ERP-aligned compliance professional simulation and governance-focused BA documentation.',
-        honestView: 'Relevant context, but simulation-based and should not be treated as direct ERP delivery employment.'
+        terms: ['ai', 'artificial intelligence', 'chatbot', 'recommendation', 'customer support', 'order tracking', 'dietary', 'allergy'],
+        evidence: 'Practical portfolio evidence from BiteBuddy, covering AI-assisted meal discovery, dietary and allergy rules, order tracking and customer-support journeys.',
+        honestView: 'Strong BA and product-analysis context. The portfolio does not claim machine-learning engineering ownership.'
       },
       {
         area: 'Hands-on software engineering build',
@@ -13313,48 +13955,183 @@ body #ba-deliverables.ba-polished {
   </script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const cube = document.getElementById('directionDiceCube');
-      const face = document.getElementById('directionDiceFace');
-      const stepName = document.getElementById('directionStepName');
-      const stepLabel = document.getElementById('directionStepLabel');
+      const stage = document.getElementById('baHelixStage');
+      if (!stage) return;
 
-      if (!cube || !face || !stepName) return;
+      const steps = Array.from(stage.querySelectorAll('.ba-helix-step'));
+      const documentStep = document.getElementById('baPresenterStep');
+      const liveStep = document.getElementById('baHelixLiveStep');
+      const presenterWrap = stage.querySelector('.ba-presenter-wrap');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const total = steps.length;
+      let rotation = 0;
+      let lastTime = performance.now();
+      let activeIndex = -1;
+      let pausedUntil = 0;
+      let speakingTimer = 0;
 
-      const steps = [
-        { number: '1', direction: 'left',  name: 'Discovery',       className: 'flip-left direction-left' },
-        { number: '2', direction: 'top',   name: 'Requirements',    className: 'flip-top direction-top' },
-        { number: '3', direction: 'down',  name: 'Analysis',        className: 'flip-down direction-down' },
-        { number: '4', direction: 'right', name: 'Process Mapping', className: 'flip-right direction-right' },
-        { number: '5', direction: 'left',  name: 'UAT',             className: 'flip-left direction-left' },
-        { number: '6', direction: 'top',   name: 'Delivery',        className: 'flip-top direction-top' }
-      ];
-
-      let index = 0;
-
-      function renderStep(step, instant = false) {
-        stepName.classList.add('step-changing');
-
-        window.setTimeout(() => {
-          cube.className = 'direction-dice-cube';
-          cube.offsetHeight;
-          cube.className = 'direction-dice-cube ' + step.className;
-
-          face.innerHTML = '<strong>' + step.number + '</strong>';
-
-          if (stepLabel) stepLabel.textContent = '';
-          stepName.textContent = step.name;
-          stepName.classList.remove('step-changing');
-        }, instant ? 0 : 220);
+      function updateActive(index) {
+        if (index === activeIndex) return;
+        activeIndex = index;
+        steps.forEach((step, itemIndex) => {
+          const selected = itemIndex === index;
+          step.classList.toggle('is-front', selected);
+          step.setAttribute('aria-current', selected ? 'step' : 'false');
+        });
+        const name = steps[index].dataset.step;
+        if (documentStep) {
+          documentStep.classList.add('is-changing');
+          window.setTimeout(() => {
+            documentStep.textContent = name;
+            documentStep.classList.remove('is-changing');
+          }, 130);
+        }
+        if (liveStep) liveStep.textContent = name;
+        if (presenterWrap && !reduceMotion) {
+          window.clearTimeout(speakingTimer);
+          presenterWrap.classList.remove('is-speaking');
+          void presenterWrap.offsetWidth;
+          presenterWrap.classList.add('is-speaking');
+          speakingTimer = window.setTimeout(() => {
+            presenterWrap.classList.remove('is-speaking');
+          }, 1050);
+        }
       }
 
-      renderStep(steps[index], true);
+      function layoutHelix() {
+        const width = stage.clientWidth;
+        const compact = width < 410;
+        const radiusX = Math.max(122, Math.min(compact ? 148 : 185, width * (compact ? 0.37 : 0.40)));
+        const radiusY = compact ? 66 : 78;
+        let closestIndex = 0;
+        let closestDepth = -Infinity;
 
-      window.setInterval(() => {
-        index = (index + 1) % steps.length;
-        renderStep(steps[index]);
-      }, 2100);
+        steps.forEach((step, index) => {
+          const angle = rotation + index * ((Math.PI * 2) / total);
+          const depth = Math.sin(angle);
+          const x = Math.cos(angle) * radiusX;
+          const helixLevel = (index - (total - 1) / 2) * (compact ? 20 : 23);
+          const y = helixLevel + Math.sin(angle * 1.35) * radiusY * 0.24;
+          const depthNorm = (depth + 1) / 2;
+          const scale = 0.68 + depthNorm * 0.40;
+          const blur = (1 - depthNorm) * 3.5;
+          const opacity = 0.26 + depthNorm * 0.74;
+          const glow = Math.max(0, (depthNorm - 0.72) / 0.28);
+
+          step.style.setProperty('--helix-x', `${x.toFixed(1)}px`);
+          step.style.setProperty('--helix-y', `${y.toFixed(1)}px`);
+          step.style.setProperty('--helix-scale', scale.toFixed(3));
+          step.style.setProperty('--helix-blur', `${blur.toFixed(2)}px`);
+          step.style.setProperty('--helix-opacity', opacity.toFixed(3));
+          step.style.setProperty('--helix-glow', glow.toFixed(3));
+          step.style.zIndex = String(Math.round(20 + depthNorm * 80));
+
+          if (depth > closestDepth) {
+            closestDepth = depth;
+            closestIndex = index;
+          }
+        });
+
+        updateActive(closestIndex);
+      }
+
+      function animate(now) {
+        const delta = Math.min(40, now - lastTime);
+        lastTime = now;
+        if (!reduceMotion && now > pausedUntil) rotation += delta * 0.00034;
+        layoutHelix();
+        window.requestAnimationFrame(animate);
+      }
+
+      steps.forEach((step, index) => {
+        step.addEventListener('click', () => {
+          const targetAngle = Math.PI / 2 - index * ((Math.PI * 2) / total);
+          rotation = targetAngle;
+          pausedUntil = performance.now() + 1800;
+          layoutHelix();
+        });
+      });
+
+      layoutHelix();
+      window.requestAnimationFrame(animate);
+      window.addEventListener('resize', layoutHelix, { passive: true });
     });
   </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.cyber-pipeline-panel').forEach(function (panel) {
+    const nodes = Array.from(panel.querySelectorAll('.cyber-node'));
+    const description = panel.querySelector('.cyber-description');
+    const title = description ? description.querySelector('h5') : null;
+    const copy = description ? description.querySelector('p') : null;
+
+    nodes.forEach(function (node, index) {
+      node.addEventListener('click', function () {
+        nodes.forEach(function (item) {
+          item.classList.remove('is-active');
+          item.setAttribute('aria-selected', 'false');
+        });
+
+        node.classList.add('is-active');
+        node.setAttribute('aria-selected', 'true');
+
+        if (!description || !title || !copy) return;
+        description.classList.add('is-transitioning');
+
+        window.setTimeout(function () {
+          title.textContent = node.dataset.title || '';
+          copy.textContent = node.dataset.description || '';
+          description.classList.remove('is-transitioning');
+        }, 170);
+      });
+
+      node.addEventListener('keydown', function (event) {
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp' && event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+        event.preventDefault();
+        const direction = (event.key === 'ArrowDown' || event.key === 'ArrowRight') ? 1 : -1;
+        const nextIndex = (index + direction + nodes.length) % nodes.length;
+        nodes[nextIndex].focus();
+        nodes[nextIndex].click();
+      });
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const pulseStops = [0, 0.1004, 0.2008, 0.3012, 0.3494, 0.4498, 0.5502, 0.6506, 0.6988, 0.7992, 0.8996, 0.999];
+  const cycleDuration = 7200;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('.snake-pipeline').forEach(function (pipeline) {
+    const nodes = Array.from(pipeline.querySelectorAll('.cyber-node'));
+    if (!nodes.length || reducedMotion) return;
+    const startedAt = performance.now();
+    let previousIndex = -1;
+
+    function animateNodeGlow(now) {
+      const progress = ((now - startedAt) % cycleDuration) / cycleDuration;
+      let activeIndex = 0;
+      for (let i = 0; i < pulseStops.length; i += 1) {
+        if (progress >= pulseStops[i]) activeIndex = i;
+      }
+
+      if (activeIndex !== previousIndex) {
+        nodes.forEach(function (node) { node.classList.remove('is-pulse'); });
+        if (nodes[activeIndex]) nodes[activeIndex].classList.add('is-pulse');
+        previousIndex = activeIndex;
+      }
+      window.requestAnimationFrame(animateNodeGlow);
+    }
+
+    window.requestAnimationFrame(animateNodeGlow);
+  });
+});
+</script>
+
 </body>
 </html>
 <style>
@@ -13796,5 +14573,983 @@ body #ba-deliverables.ba-polished {
     margin-right: auto !important;
   }
 }
+
+</style>
+
+
+<style>
+/* ===== Cyber-Glow capability pipelines ===== */
+#project-work .cyber-pipeline-suite {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 20px !important;
+  border: 1px solid rgba(56, 189, 248, .32) !important;
+  background:
+    radial-gradient(circle at 88% 8%, rgba(34, 211, 238, .13), transparent 34%),
+    linear-gradient(145deg, #07111f 0%, #0b1728 56%, #0d1c30 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 18px 38px rgba(2, 8, 23, .24) !important;
+  color: #E2E8F0 !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .28;
+  background-image:
+    linear-gradient(rgba(56,189,248,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent 78%);
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-bottom: 18px !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-badge {
+  background: rgba(34, 211, 238, .12) !important;
+  border: 1px solid rgba(103, 232, 249, .55) !important;
+  color: #67E8F9 !important;
+  box-shadow: 0 0 18px rgba(34, 211, 238, .24) !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head h4 {
+  color: #F8FAFC !important;
+  font-size: 16px !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head p {
+  color: #94A3B8 !important;
+  line-height: 1.45 !important;
+}
+
+.cyber-pipeline {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  gap: 12px !important;
+  padding: 2px 0 2px 0 !important;
+}
+
+.cyber-flow-line {
+  position: absolute !important;
+  top: 20px !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  width: 3px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(to bottom, rgba(34,211,238,.12), rgba(34,211,238,.72), rgba(99,102,241,.34)) !important;
+  box-shadow: 0 0 14px rgba(34,211,238,.38) !important;
+  overflow: hidden !important;
+}
+
+.cyber-energy-pulse {
+  position: absolute !important;
+  left: -3px !important;
+  top: -18px !important;
+  width: 9px !important;
+  height: 32px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(to bottom, transparent, #FFFFFF 34%, #22D3EE 66%, transparent) !important;
+  filter: drop-shadow(0 0 7px #22D3EE) !important;
+  animation: cyberPulseFlow 2.25s linear infinite !important;
+}
+
+@keyframes cyberPulseFlow {
+  0% { transform: translateY(-28px); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(224px); opacity: 0; }
+}
+
+.cyber-node {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  display: grid !important;
+  grid-template-columns: 42px 1fr !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 6px 12px 6px 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 13px !important;
+  background: transparent !important;
+  color: #CBD5E1 !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: background .24s ease, border-color .24s ease, color .24s ease, transform .24s ease, box-shadow .24s ease !important;
+}
+
+.cyber-node span {
+  width: 42px !important;
+  height: 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(103,232,249,.46) !important;
+  background: #07111F !important;
+  color: #67E8F9 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 16px rgba(34,211,238,.18) !important;
+}
+
+.cyber-node strong {
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  letter-spacing: .02em !important;
+}
+
+.cyber-node:hover,
+.cyber-node:focus-visible {
+  transform: translateX(4px) !important;
+  border-color: rgba(103,232,249,.28) !important;
+  background: rgba(34,211,238,.07) !important;
+  outline: none !important;
+}
+
+.cyber-node.is-active {
+  color: #FFFFFF !important;
+  border-color: rgba(103,232,249,.55) !important;
+  background: linear-gradient(90deg, rgba(34,211,238,.14), rgba(99,102,241,.08)) !important;
+  box-shadow: inset 0 0 18px rgba(34,211,238,.06), 0 0 18px rgba(34,211,238,.10) !important;
+}
+
+.cyber-node.is-active span {
+  color: #07111F !important;
+  border-color: #A5F3FC !important;
+  background: #67E8F9 !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 13px #22D3EE, 0 0 28px rgba(34,211,238,.78) !important;
+  animation: activeNodeBreath 1.6s ease-in-out infinite !important;
+}
+
+@keyframes activeNodeBreath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+.cyber-description {
+  position: relative !important;
+  z-index: 2 !important;
+  min-height: 124px !important;
+  margin-top: 18px !important;
+  padding: 15px 16px !important;
+  border: 1px solid rgba(129,140,248,.30) !important;
+  border-radius: 14px !important;
+  background: linear-gradient(135deg, rgba(15,23,42,.90), rgba(30,41,59,.70)) !important;
+  box-shadow: inset 0 0 24px rgba(99,102,241,.06) !important;
+  transition: opacity .17s ease, transform .17s ease !important;
+}
+
+.cyber-description.is-transitioning {
+  opacity: .18 !important;
+  transform: translateY(5px) !important;
+}
+
+.cyber-description-kicker {
+  display: block !important;
+  margin-bottom: 5px !important;
+  color: #67E8F9 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .13em !important;
+  text-transform: uppercase !important;
+}
+
+.cyber-description h5 {
+  margin: 0 0 6px !important;
+  color: #F8FAFC !important;
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 16px !important;
+}
+
+.cyber-description p {
+  margin: 0 !important;
+  color: #CBD5E1 !important;
+  font-size: 12.5px !important;
+  line-height: 1.52 !important;
+}
+
+@media (max-width: 680px) {
+  #project-work .simulation-side-capabilities .cyber-pipeline-panel { padding: 18px 16px !important; }
+  .cyber-node { grid-template-columns: 40px 1fr !important; }
+  .cyber-node span { width: 40px !important; height: 40px !important; }
+  .cyber-flow-line { left: 19px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cyber-energy-pulse,
+  .cyber-node.is-active span { animation: none !important; }
+  .cyber-node,
+  .cyber-description { transition: none !important; }
+}
+</style>
+
+
+<style>
+/* ===== Cyber-Glow snake path: three compact rows, same panel footprint ===== */
+#project-work .cyber-pipeline.snake-pipeline {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(3, 70px) !important;
+  gap: 0 !important;
+  height: 210px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+#project-work .snake-pipeline .cyber-snake-track {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+}
+
+#project-work .snake-pipeline .cyber-snake-line {
+  fill: none !important;
+  stroke: rgba(34, 211, 238, .48) !important;
+  stroke-width: 5 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  vector-effect: non-scaling-stroke !important;
+  filter: drop-shadow(0 0 7px rgba(34, 211, 238, .62)) !important;
+}
+
+#project-work .snake-pipeline .cyber-snake-pulse {
+  fill: #FFFFFF !important;
+  stroke: #67E8F9 !important;
+  stroke-width: 4 !important;
+  vector-effect: non-scaling-stroke !important;
+  filter: drop-shadow(0 0 5px #FFFFFF) drop-shadow(0 0 12px #22D3EE) drop-shadow(0 0 22px rgba(34,211,238,.9)) !important;
+}
+
+#project-work .snake-pipeline .cyber-node {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  min-height: 70px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 4px !important;
+  padding: 5px 4px 2px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  color: #CBD5E1 !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: transform .2s ease, color .2s ease !important;
+}
+
+/* Row 1: left to right */
+#project-work .snake-pipeline .cyber-node:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(3) { grid-column: 3; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(4) { grid-column: 4; grid-row: 1; }
+/* Row 2: right to left */
+#project-work .snake-pipeline .cyber-node:nth-of-type(5) { grid-column: 4; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(6) { grid-column: 3; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(7) { grid-column: 2; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(8) { grid-column: 1; grid-row: 2; }
+/* Row 3: left to right */
+#project-work .snake-pipeline .cyber-node:nth-of-type(9) { grid-column: 1; grid-row: 3; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(10) { grid-column: 2; grid-row: 3; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(11) { grid-column: 3; grid-row: 3; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(12) { grid-column: 4; grid-row: 3; }
+
+#project-work .snake-pipeline .cyber-node span {
+  width: 36px !important;
+  height: 36px !important;
+  flex: 0 0 36px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  border: 1px solid rgba(103,232,249,.62) !important;
+  background: #07111F !important;
+  color: #67E8F9 !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 14px rgba(34,211,238,.20) !important;
+  transition: transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+}
+
+#project-work .snake-pipeline .cyber-node strong {
+  max-width: 100% !important;
+  color: inherit !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9.5px !important;
+  line-height: 1.08 !important;
+  letter-spacing: .01em !important;
+  overflow-wrap: anywhere !important;
+}
+
+#project-work .snake-pipeline .cyber-node:hover,
+#project-work .snake-pipeline .cyber-node:focus-visible {
+  transform: translateY(-2px) !important;
+  background: transparent !important;
+  color: #FFFFFF !important;
+  outline: none !important;
+}
+
+#project-work .snake-pipeline .cyber-node:hover span,
+#project-work .snake-pipeline .cyber-node:focus-visible span {
+  border-color: #A5F3FC !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 15px rgba(34,211,238,.64) !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-pulse {
+  color: #67E8F9 !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-pulse span {
+  color: #07111F !important;
+  background: #E6FCFF !important;
+  border-color: #FFFFFF !important;
+  transform: scale(1.13) !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 10px #FFFFFF, 0 0 24px #22D3EE, 0 0 38px rgba(34,211,238,.84) !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-active {
+  color: #FFFFFF !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-active span {
+  color: #07111F !important;
+  border-color: #A5F3FC !important;
+  background: #67E8F9 !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 13px #22D3EE, 0 0 28px rgba(34,211,238,.78) !important;
+  animation: activeNodeBreath 1.6s ease-in-out infinite !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-active.is-pulse span {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 4px rgba(7,17,31,.94), 0 0 12px #FFFFFF, 0 0 30px #22D3EE, 0 0 46px rgba(34,211,238,.95) !important;
+}
+
+@media (max-width: 680px) {
+  #project-work .cyber-pipeline.snake-pipeline {
+    grid-template-rows: repeat(3, 66px) !important;
+    height: 198px !important;
+  }
+  #project-work .snake-pipeline .cyber-node {
+    min-height: 66px !important;
+    padding-inline: 2px !important;
+  }
+  #project-work .snake-pipeline .cyber-node span {
+    width: 32px !important;
+    height: 32px !important;
+    flex-basis: 32px !important;
+    font-size: 11px !important;
+  }
+  #project-work .snake-pipeline .cyber-node strong {
+    font-size: 8.5px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #project-work .snake-pipeline .cyber-snake-pulse { display: none !important; }
+  #project-work .snake-pipeline .cyber-node.is-pulse span { transform: none !important; }
+}
+</style>
+
+<style>
+/* ===== Portfolio compact Cyber-Glow nodes ===== */
+#project-work .cyber-pipeline-suite {
+  gap: 12px !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  padding: 14px 14px 12px !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head {
+  margin-bottom: 9px !important;
+  align-items: center !important;
+}
+
+#project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head h4 {
+  margin: 0 !important;
+  font-size: 15px !important;
+}
+
+#project-work .cyber-pipeline.snake-pipeline {
+  grid-template-rows: repeat(3, 54px) !important;
+  height: 162px !important;
+}
+
+#project-work .snake-pipeline .cyber-node {
+  min-height: 54px !important;
+  padding: 7px 5px !important;
+  justify-content: center !important;
+  color: #CBD5E1 !important;
+}
+
+#project-work .snake-pipeline .cyber-node strong {
+  position: relative !important;
+  z-index: 3 !important;
+  width: min(100%, 112px) !important;
+  min-height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5px 7px !important;
+  border: 1px solid rgba(103,232,249,.48) !important;
+  border-radius: 12px !important;
+  background: #07111F !important;
+  color: #CBD5E1 !important;
+  box-shadow: 0 0 0 3px rgba(7,17,31,.94), 0 0 12px rgba(34,211,238,.16) !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: 0 !important;
+  text-align: center !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  transition: transform .18s ease, color .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+}
+
+#project-work .snake-pipeline .cyber-node:hover strong,
+#project-work .snake-pipeline .cyber-node:focus-visible strong {
+  color: #FFFFFF !important;
+  border-color: #A5F3FC !important;
+  box-shadow: 0 0 0 3px rgba(7,17,31,.94), 0 0 17px rgba(34,211,238,.58) !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-pulse strong {
+  color: #07111F !important;
+  background: #E6FCFF !important;
+  border-color: #FFFFFF !important;
+  transform: scale(1.06) !important;
+  box-shadow: 0 0 0 3px rgba(7,17,31,.94), 0 0 10px #FFFFFF, 0 0 23px #22D3EE, 0 0 34px rgba(34,211,238,.80) !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-active strong {
+  color: #07111F !important;
+  background: #67E8F9 !important;
+  border-color: #A5F3FC !important;
+  box-shadow: 0 0 0 3px rgba(7,17,31,.94), 0 0 13px #22D3EE, 0 0 26px rgba(34,211,238,.74) !important;
+}
+
+#project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
+  background: #FFFFFF !important;
+  box-shadow: 0 0 0 3px rgba(7,17,31,.94), 0 0 12px #FFFFFF, 0 0 28px #22D3EE, 0 0 42px rgba(34,211,238,.92) !important;
+}
+
+@media (max-width: 680px) {
+  #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+    padding: 12px 10px 10px !important;
+  }
+  #project-work .cyber-pipeline.snake-pipeline {
+    grid-template-rows: repeat(3, 50px) !important;
+    height: 150px !important;
+  }
+  #project-work .snake-pipeline .cyber-node {
+    min-height: 50px !important;
+    padding: 5px 2px !important;
+  }
+  #project-work .snake-pipeline .cyber-node strong {
+    min-height: 32px !important;
+    padding: 4px 3px !important;
+    border-radius: 10px !important;
+    font-size: 7.8px !important;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Final two-row capability layout ===== */
+#project-work .cyber-pipeline.snake-pipeline {
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, 50px) !important;
+  width: 100% !important;
+  height: 100px !important;
+  gap: 0 !important;
+  padding: 0 !important;
+}
+
+#project-work .snake-pipeline .cyber-node {
+  min-width: 0 !important;
+  min-height: 50px !important;
+  padding: 5px 3px !important;
+}
+
+#project-work .snake-pipeline .cyber-node strong {
+  width: calc(100% - 6px) !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 32px !important;
+  padding: 4px 4px !important;
+  border-radius: 9px !important;
+  font-size: clamp(7.4px, .62vw, 9px) !important;
+  line-height: 1.08 !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Row 1: left to right */
+#project-work .snake-pipeline .cyber-node:nth-of-type(1) { grid-column: 1; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(2) { grid-column: 2; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(3) { grid-column: 3; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(4) { grid-column: 4; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(5) { grid-column: 5; grid-row: 1; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(6) { grid-column: 6; grid-row: 1; }
+
+/* Row 2: right to left, preserving the pulse path */
+#project-work .snake-pipeline .cyber-node:nth-of-type(7) { grid-column: 6; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(8) { grid-column: 5; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(9) { grid-column: 4; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(10) { grid-column: 3; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(11) { grid-column: 2; grid-row: 2; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(12) { grid-column: 1; grid-row: 2; }
+
+@media (max-width: 680px) {
+  #project-work .cyber-pipeline.snake-pipeline {
+    grid-template-columns: repeat(6, minmax(74px, 1fr)) !important;
+    grid-template-rows: repeat(2, 48px) !important;
+    height: 96px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: thin;
+  }
+  #project-work .snake-pipeline .cyber-node {
+    min-height: 48px !important;
+    padding: 4px 2px !important;
+  }
+  #project-work .snake-pipeline .cyber-node strong {
+    min-height: 30px !important;
+    font-size: 7.4px !important;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Final one-row capability layout ===== */
+#project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  padding: 12px 14px 10px !important;
+}
+
+#project-work .cyber-pipeline.snake-pipeline {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: 52px !important;
+  width: 100% !important;
+  height: 52px !important;
+  min-width: 0 !important;
+  gap: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+#project-work .snake-pipeline .cyber-node,
+#project-work .snake-pipeline .cyber-node:nth-of-type(n) {
+  grid-row: 1 !important;
+  min-width: 0 !important;
+  min-height: 52px !important;
+  padding: 5px 2px !important;
+}
+
+#project-work .snake-pipeline .cyber-node:nth-of-type(1) { grid-column: 1 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(2) { grid-column: 2 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(3) { grid-column: 3 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(4) { grid-column: 4 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(5) { grid-column: 5 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(6) { grid-column: 6 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(7) { grid-column: 7 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(8) { grid-column: 8 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(9) { grid-column: 9 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(10) { grid-column: 10 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(11) { grid-column: 11 !important; }
+#project-work .snake-pipeline .cyber-node:nth-of-type(12) { grid-column: 12 !important; }
+
+#project-work .snake-pipeline .cyber-node strong {
+  width: calc(100% - 4px) !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  min-height: 34px !important;
+  padding: 4px 3px !important;
+  border-radius: 9px !important;
+  font-size: clamp(6.8px, .54vw, 8.4px) !important;
+  line-height: 1.05 !important;
+  overflow-wrap: anywhere !important;
+}
+
+#project-work .snake-pipeline .cyber-snake-track {
+  height: 52px !important;
+}
+
+@media (max-width: 1100px) {
+  #project-work .cyber-pipeline.snake-pipeline {
+    grid-template-columns: repeat(12, minmax(92px, 1fr)) !important;
+    min-width: 1104px !important;
+  }
+
+  #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: thin;
+  }
+
+  #project-work .snake-pipeline .cyber-node strong {
+    font-size: 8px !important;
+  }
+}
+
+
+    /* ===== Professional 3D BA helix presenter ===== */
+    .ba-helix-card {
+      width: min(100%, 500px) !important;
+      min-height: 356px !important;
+      margin: 0 auto !important;
+      padding: 0 !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      overflow: visible !important;
+    }
+
+    .ba-helix-title {
+      margin: 0 0 6px !important;
+      color: #0F172A !important;
+      font-size: 20px !important;
+      line-height: 1.2 !important;
+      font-weight: 900 !important;
+      text-align: center !important;
+      letter-spacing: -.01em !important;
+    }
+
+    .ba-helix-stage {
+      position: relative !important;
+      width: 100% !important;
+      height: 326px !important;
+      isolation: isolate !important;
+      perspective: 980px !important;
+      perspective-origin: 50% 48% !important;
+      overflow: hidden !important;
+      border-radius: 28px !important;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(37, 99, 235, .10), transparent 34%),
+        radial-gradient(circle at 50% 74%, rgba(134, 239, 172, .12), transparent 33%),
+        linear-gradient(180deg, rgba(255,255,255,.96), rgba(248,250,252,.70)) !important;
+      border: 1px solid rgba(226,232,240,.82) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.95), 0 18px 42px rgba(15,23,42,.07) !important;
+    }
+
+    .ba-helix-halo {
+      position: absolute !important;
+      left: 50% !important;
+      top: 48% !important;
+      width: 226px !important;
+      height: 226px !important;
+      transform: translate(-50%, -50%) rotateX(70deg) !important;
+      border: 1px solid rgba(37,99,235,.16) !important;
+      border-radius: 50% !important;
+      box-shadow: 0 0 38px rgba(37,99,235,.12), inset 0 0 32px rgba(37,99,235,.08) !important;
+      opacity: .85 !important;
+      z-index: 1 !important;
+    }
+
+    .ba-helix-track {
+      position: absolute !important;
+      left: 50% !important;
+      top: 49% !important;
+      width: 370px !important;
+      height: 250px !important;
+      transform: translate(-50%, -50%) !important;
+      border-radius: 50% !important;
+      border-left: 1px solid rgba(37,99,235,.10) !important;
+      border-right: 1px solid rgba(239,111,108,.10) !important;
+      box-shadow: inset 20px 0 34px rgba(37,99,235,.035), inset -20px 0 34px rgba(239,111,108,.035) !important;
+      z-index: 1 !important;
+    }
+
+    .ba-helix-steps {
+      position: absolute !important;
+      inset: 0 !important;
+      z-index: 10 !important;
+      pointer-events: none !important;
+    }
+
+    .ba-helix-step {
+      --helix-x: 0px;
+      --helix-y: 0px;
+      --helix-scale: 1;
+      --helix-blur: 0px;
+      --helix-opacity: 1;
+      --helix-glow: 0;
+      position: absolute !important;
+      left: 50% !important;
+      top: 48% !important;
+      width: clamp(104px, 28%, 138px) !important;
+      min-height: 44px !important;
+      transform:
+        translate(-50%, -50%)
+        translate3d(var(--helix-x), var(--helix-y), 0)
+        scale(var(--helix-scale)) !important;
+      transform-origin: center !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      padding: 8px 10px !important;
+      border-radius: 13px !important;
+      border: 1px solid rgba(148,163,184,.42) !important;
+      background: rgba(255,255,255,.92) !important;
+      color: #0F172A !important;
+      box-shadow:
+        0 10px 24px rgba(15,23,42,.10),
+        0 0 calc(28px * var(--helix-glow)) rgba(37,99,235,calc(.45 * var(--helix-glow))) !important;
+      filter: blur(var(--helix-blur)) saturate(calc(.72 + var(--helix-glow) * .45)) !important;
+      opacity: var(--helix-opacity) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      text-align: left !important;
+      cursor: pointer !important;
+      pointer-events: auto !important;
+      will-change: transform, filter, opacity !important;
+      transition: border-color .2s ease, background .2s ease, box-shadow .2s ease !important;
+    }
+
+    .ba-helix-step::after {
+      content: "" !important;
+      position: absolute !important;
+      inset: -2px !important;
+      border-radius: 15px !important;
+      border: 1px solid rgba(37,99,235,calc(.65 * var(--helix-glow))) !important;
+      opacity: var(--helix-glow) !important;
+      pointer-events: none !important;
+    }
+
+    .ba-helix-step.is-front {
+      background: linear-gradient(145deg, #FFFFFF, #EFF6FF) !important;
+      border-color: rgba(37,99,235,.62) !important;
+      color: #0F172A !important;
+    }
+
+    .ba-helix-step:focus-visible {
+      outline: 3px solid rgba(37,99,235,.30) !important;
+      outline-offset: 3px !important;
+    }
+
+    .ba-step-index {
+      flex: 0 0 auto !important;
+      width: 27px !important;
+      height: 27px !important;
+      display: grid !important;
+      place-items: center !important;
+      border-radius: 9px !important;
+      background: #0F172A !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      line-height: 1 !important;
+      font-weight: 900 !important;
+      letter-spacing: .04em !important;
+    }
+
+    .ba-helix-step.is-front .ba-step-index {
+      background: #2563EB !important;
+      box-shadow: 0 0 18px rgba(37,99,235,.34) !important;
+    }
+
+    .ba-step-label {
+      min-width: 0 !important;
+      font-size: 11.5px !important;
+      line-height: 1.15 !important;
+      font-weight: 900 !important;
+      letter-spacing: -.01em !important;
+    }
+
+    .ba-presenter-wrap {
+      position: absolute !important;
+      left: 50% !important;
+      top: 52% !important;
+      width: 180px !important;
+      height: 285px !important;
+      transform: translate(-50%, -50%) !important;
+      z-index: 54 !important;
+      pointer-events: none !important;
+      animation: baPresenterFloat 3.2s ease-in-out infinite !important;
+    }
+
+    .ba-presenter {
+      width: 100% !important;
+      height: 100% !important;
+      overflow: visible !important;
+      display: block !important;
+    }
+
+    .ba-presenter-arm {
+      transform-box: fill-box !important;
+      transform-origin: 12% 12% !important;
+      animation: baPresenterArm 3.2s ease-in-out infinite !important;
+    }
+
+    .ba-eye {
+      transform-box: fill-box !important;
+      transform-origin: center !important;
+      animation: baPresenterBlink 5.4s linear infinite !important;
+    }
+
+    .ba-presenter-document {
+      position: absolute !important;
+      left: 111px !important;
+      top: 132px !important;
+      width: 126px !important;
+      min-height: 72px !important;
+      padding: 10px 11px !important;
+      transform: rotate(-4deg) !important;
+      border-radius: 11px !important;
+      border: 1px solid rgba(37,99,235,.34) !important;
+      background: linear-gradient(150deg, #FFFFFF, #EFF6FF) !important;
+      box-shadow: 0 15px 26px rgba(15,23,42,.18), 0 0 24px rgba(37,99,235,.14) !important;
+      font-family: Arial, Helvetica, sans-serif !important;
+      animation: baDocumentFloat 3.2s ease-in-out infinite !important;
+    }
+
+    .ba-presenter-document::before {
+      content: "" !important;
+      position: absolute !important;
+      left: -8px !important;
+      top: 31px !important;
+      width: 13px !important;
+      height: 13px !important;
+      border-radius: 50% !important;
+      background: #D99B72 !important;
+      box-shadow: 5px 1px 0 #D99B72 !important;
+    }
+
+    .ba-presenter-document span {
+      display: block !important;
+      margin-bottom: 5px !important;
+      color: #64748B !important;
+      font-size: 7px !important;
+      line-height: 1 !important;
+      font-weight: 900 !important;
+      letter-spacing: .16em !important;
+    }
+
+    .ba-presenter-document strong {
+      display: block !important;
+      min-height: 27px !important;
+      color: #0F172A !important;
+      font-size: 13px !important;
+      line-height: 1.05 !important;
+      font-weight: 900 !important;
+      transition: opacity .13s ease, transform .13s ease !important;
+    }
+
+    .ba-presenter-document strong.is-changing {
+      opacity: 0 !important;
+      transform: translateY(4px) !important;
+    }
+
+    .ba-presenter-document i {
+      display: block !important;
+      height: 3px !important;
+      margin-top: 4px !important;
+      border-radius: 999px !important;
+      background: #CBD5E1 !important;
+    }
+
+    .ba-presenter-document i:nth-of-type(1) { width: 88% !important; }
+    .ba-presenter-document i:nth-of-type(2) { width: 70% !important; }
+    .ba-presenter-document i:nth-of-type(3) { width: 48% !important; background: #86EFAC !important; }
+
+    .ba-helix-floor {
+      position: absolute !important;
+      left: 50% !important;
+      bottom: 20px !important;
+      width: 250px !important;
+      height: 34px !important;
+      transform: translateX(-50%) !important;
+      border-radius: 50% !important;
+      background: radial-gradient(ellipse at center, rgba(15,23,42,.16), rgba(15,23,42,0) 70%) !important;
+      filter: blur(3px) !important;
+      z-index: 2 !important;
+    }
+
+    @keyframes baPresenterFloat {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-4px); }
+    }
+
+    @keyframes baPresenterArm {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-3deg); }
+    }
+
+    @keyframes baDocumentFloat {
+      0%, 100% { transform: rotate(-4deg) translateY(0); }
+      50% { transform: rotate(-2deg) translateY(-3px); }
+    }
+
+    @keyframes baPresenterBlink {
+      0%, 45%, 48%, 100% { transform: scaleY(1); }
+      46%, 47% { transform: scaleY(.08); }
+    }
+
+    @media (max-width: 1100px) {
+      .ba-helix-card { width: min(100%, 540px) !important; }
+    }
+
+    @media (max-width: 520px) {
+      .ba-helix-card { min-height: 326px !important; }
+      .ba-helix-stage { height: 294px !important; }
+      .ba-presenter-wrap {
+        width: 154px !important;
+        height: 255px !important;
+        top: 54% !important;
+      }
+      .ba-presenter-document {
+        left: 96px !important;
+        top: 122px !important;
+        width: 112px !important;
+      }
+      .ba-helix-step {
+        width: 104px !important;
+        min-height: 40px !important;
+        padding: 7px 8px !important;
+      }
+      .ba-step-index {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      .ba-step-label { font-size: 10px !important; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ba-presenter-wrap,
+      .ba-presenter-arm,
+      .ba-presenter-document,
+      .ba-eye {
+        animation: none !important;
+      }
+      .ba-helix-step {
+        filter: none !important;
+      }
+    }
 
 </style>
