@@ -213,6 +213,24 @@
       color: var(--primary-dark);
     }
 
+    .btn-github {
+      background: #24292F;
+      color: #FFFFFF;
+      border-color: #24292F;
+    }
+
+    .btn-github:hover {
+      background: #0D1117;
+      border-color: #0D1117;
+    }
+
+    .btn-github svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
     .section {
       padding: 64px 0;
     }
@@ -12911,7 +12929,6 @@ body #ba-deliverables.ba-polished {
   }
 }
 </style>
-
 <style id="role-fit-robot-theme">
 /* Compact robot launcher for the Role Fit Assistant. */
 .floating-assistant-cta.robot-assistant-button {
@@ -13017,7 +13034,10 @@ body #ba-deliverables.ba-polished {
 </ul>
 </nav>
 <div class="nav-actions">
-<a class="btn btn-primary" download="" href="Document/Shiv_Satyam_Singh_BA_CV.pdf">Download CV</a>
+<a aria-label="View Shiv Satyam Singh's GitHub profile" class="btn btn-github" href="https://github.com/singhsatyam85-cloud" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.17c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.73-1.53-2.54-.29-5.21-1.27-5.21-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.11 1.17A10.8 10.8 0 0 1 12 5.92c.96 0 1.93.13 2.83.38 2.15-1.48 3.11-1.17 3.11-1.17.62 1.57.23 2.73.11 3.02.74.8 1.18 1.82 1.18 3.07 0 4.39-2.68 5.35-5.23 5.64.41.35.78 1.05.78 2.12v3.15c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"></path></svg>
+<span>View GitHub</span>
+</a><a class="btn btn-primary" download="" href="Document/Shiv_Satyam_Singh_BA_CV.pdf">Download CV</a>
 </div>
 </div>
 </header>
@@ -13038,6 +13058,7 @@ body #ba-deliverables.ba-polished {
 <div class="hero-actions">
 <a class="btn btn-primary" href="#project-work">Explore Project Work</a>
 <a class="btn btn-gold" href="#ba-deliverables">View BA Deliverables</a>
+
 </div>
 </div>
 <div aria-label="Business Analyst lifecycle and portfolio statistics" class="hero-evidence-visual">
@@ -13172,56 +13193,56 @@ body #ba-deliverables.ba-polished {
 </div>
 </aside>
 <section aria-live="polite" class="project-browser-panel is-intro" id="project-browser-panel" role="tabpanel" tabindex="0">
-  <div class="project-intro-view" id="projectIntroView">
-    <div class="project-intro-copy">
-      <h3>Explore My Project Work</h3>
-      <p class="project-intro-lead">Select a project from the side menu to view:</p>
-      <ul class="project-intro-points" id="projectIntroPoints">
-        <li>AI/ML Projects and Intelligent Solutions</li>
-        <li>BI Dashboards and Insight-Driven Reporting</li>
-        <li>Websites and Business Portal Solutions</li>
-        <li>Mobile Apps and Interactive Prototypes</li>
-      </ul>
-    </div>
-    <div class="project-intro-character" id="projectIntroCharacter" aria-hidden="true">
-      <div class="project-guide-pointer" id="projectGuidePointer"><span></span></div>
-    </div>
-    <svg class="project-guide-connector" id="projectGuideConnector" aria-hidden="true">
-      <defs>
-        <marker id="projectGuideArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
-          <path d="M 0 0 L 10 5 L 0 10 z"></path>
-        </marker>
-      </defs>
-      <path class="project-guide-connector-path" id="projectGuideConnectorPath"></path>
-      <circle class="project-guide-hand-pulse" id="projectGuideHandPulse" r="7"></circle>
-      <circle class="project-guide-target-pulse" id="projectGuideTargetPulse" r="6"></circle>
-    </svg>
-  </div>
-  <div class="project-info-column" id="projectInfoColumn" hidden>
-    <p class="project-browser-kicker" id="projectBrowserCategory">Project category</p>
-    <h3 id="projectBrowserTitle">Project title</h3>
-    <ul class="project-browser-points" id="projectBrowserPoints"></ul>
-  </div>
-  <div class="project-controls-column" id="projectControlsColumn" hidden>
-    <div class="project-panel-section project-evidence-section" id="projectEvidenceSection">
-      <div class="project-panel-section-head"><h4>BA Evidence</h4></div>
-      <div class="project-evidence-tabs" id="projectEvidenceTabs" role="tablist" aria-label="BA evidence categories"></div>
-    </div>
-    <div class="project-panel-section" id="projectResourceSection">
-      <div class="project-panel-section-head"><h4>Prototype &amp; Visuals</h4></div>
-      <div class="project-browser-actions" id="projectBrowserActions"></div>
-    </div>
-  </div>
+<div class="project-intro-view" id="projectIntroView">
+<div class="project-intro-copy">
+<h3>Explore My Project Work</h3>
+<p class="project-intro-lead">Select a project from the side menu to view:</p>
+<ul class="project-intro-points" id="projectIntroPoints">
+<li>AI/ML Projects and Intelligent Solutions</li>
+<li>BI Dashboards and Insight-Driven Reporting</li>
+<li>Websites and Business Portal Solutions</li>
+<li>Mobile Apps and Interactive Prototypes</li>
+</ul>
+</div>
+<div aria-hidden="true" class="project-intro-character" id="projectIntroCharacter">
+<div class="project-guide-pointer" id="projectGuidePointer"><span></span></div>
+</div>
+<svg aria-hidden="true" class="project-guide-connector" id="projectGuideConnector">
+<defs>
+<marker id="projectGuideArrow" markerheight="10" markerunits="strokeWidth" markerwidth="10" orient="auto" refx="8" refy="5">
+<path d="M 0 0 L 10 5 L 0 10 z"></path>
+</marker>
+</defs>
+<path class="project-guide-connector-path" id="projectGuideConnectorPath"></path>
+<circle class="project-guide-hand-pulse" id="projectGuideHandPulse" r="7"></circle>
+<circle class="project-guide-target-pulse" id="projectGuideTargetPulse" r="6"></circle>
+</svg>
+</div>
+<div class="project-info-column" hidden="" id="projectInfoColumn">
+<p class="project-browser-kicker" id="projectBrowserCategory">Project category</p>
+<h3 id="projectBrowserTitle">Project title</h3>
+<ul class="project-browser-points" id="projectBrowserPoints"></ul>
+</div>
+<div class="project-controls-column" hidden="" id="projectControlsColumn">
+<div class="project-panel-section project-evidence-section" id="projectEvidenceSection">
+<div class="project-panel-section-head"><h4>BA Evidence</h4></div>
+<div aria-label="BA evidence categories" class="project-evidence-tabs" id="projectEvidenceTabs" role="tablist"></div>
+</div>
+<div class="project-panel-section" id="projectResourceSection">
+<div class="project-panel-section-head"><h4>Prototype &amp; Visuals</h4></div>
+<div class="project-browser-actions" id="projectBrowserActions"></div>
+</div>
+</div>
 </section>
-<div class="evidence-modal" id="projectEvidenceModal" hidden>
-  <div class="evidence-modal-backdrop" data-close-evidence="true"></div>
-  <section class="evidence-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="evidenceModalTitle">
-    <div class="evidence-modal-head">
-      <div><small id="evidenceModalProject"></small><h3 id="evidenceModalTitle">BA Evidence</h3></div>
-      <button class="evidence-modal-close" id="evidenceModalClose" type="button" aria-label="Close evidence documents">×</button>
-    </div>
-    <div class="project-evidence-documents" id="projectEvidenceDocuments"></div>
-  </section>
+<div class="evidence-modal" hidden="" id="projectEvidenceModal">
+<div class="evidence-modal-backdrop" data-close-evidence="true"></div>
+<section aria-labelledby="evidenceModalTitle" aria-modal="true" class="evidence-modal-dialog" role="dialog">
+<div class="evidence-modal-head">
+<div><small id="evidenceModalProject"></small><h3 id="evidenceModalTitle">BA Evidence</h3></div>
+<button aria-label="Close evidence documents" class="evidence-modal-close" id="evidenceModalClose" type="button">×</button>
+</div>
+<div class="project-evidence-documents" id="projectEvidenceDocuments"></div>
+</section>
 </div>
 </div>
 </div>
@@ -13262,20 +13283,19 @@ body #ba-deliverables.ba-polished {
 </aside>
 </div>
 </div>
-
 </section>
 <!-- CASE STUDIES END -->
 </main>
 <button aria-label="Open Role Fit Assistant" class="floating-assistant-cta robot-assistant-button" id="floatingAssistantButton" title="Role Fit Assistant" type="button">
-<svg aria-hidden="true" class="robot-assistant-icon" viewBox="0 0 64 64" focusable="false">
-  <path d="M32 11v7" class="robot-line"></path>
-  <circle cx="32" cy="8" r="3" class="robot-accent"></circle>
-  <rect x="15" y="18" width="34" height="29" rx="9" class="robot-head"></rect>
-  <circle cx="25" cy="31" r="3" class="robot-eye"></circle>
-  <circle cx="39" cy="31" r="3" class="robot-eye"></circle>
-  <path d="M24 40h16" class="robot-mouth"></path>
-  <path d="M15 27H9v12h6M49 27h6v12h-6" class="robot-ear"></path>
-  <path d="M22 48v6M42 48v6" class="robot-line"></path>
+<svg aria-hidden="true" class="robot-assistant-icon" focusable="false" viewbox="0 0 64 64">
+<path class="robot-line" d="M32 11v7"></path>
+<circle class="robot-accent" cx="32" cy="8" r="3"></circle>
+<rect class="robot-head" height="29" rx="9" width="34" x="15" y="18"></rect>
+<circle class="robot-eye" cx="25" cy="31" r="3"></circle>
+<circle class="robot-eye" cx="39" cy="31" r="3"></circle>
+<path class="robot-mouth" d="M24 40h16"></path>
+<path class="robot-ear" d="M15 27H9v12h6M49 27h6v12h-6"></path>
+<path class="robot-line" d="M22 48v6M42 48v6"></path>
 </svg>
 <span class="sr-only">Role Fit Assistant</span>
 </button>
@@ -14141,7 +14161,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
-
 <style>
 /* ===== Category-wise capability colours, with no automatic visual selection ===== */
 #project-work .simulation-group {
@@ -14236,7 +14255,6 @@ document.addEventListener('DOMContentLoaded', function () {
   transform: none !important;
 }
 </style>
-
 <style>
 /* Final specificity pass for the capability groups. */
 body #project-work .simulation-side-capabilities .cyber-pipeline-panel {
@@ -14293,7 +14311,6 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
   animation: none !important;
 }
 </style>
-
 <style id="project-intro-character-fix-v2">
 /* Final project-intro correction: self-contained character, balanced layout and attached guide pointer. */
 #project-work .project-intro-view {
@@ -14339,9 +14356,6 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
   #project-work .project-intro-character,#project-work .project-guide-pointer { display:none !important; }
 }
 </style>
-
-
-
 <style id="project-intro-six-step-guide">
 /* Six-step welcome guide: title, instruction, then four project evidence points. */
 #project-work .project-intro-copy h3,
@@ -14404,7 +14418,6 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
   }
 }
 </style>
-
 <style id="project-intro-hand-connector">
 /* A curved animated connector makes the character's pointing hand visibly guide each item. */
 #project-work .project-guide-pointer { display: none !important; }
@@ -14457,7 +14470,6 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
   #project-work .project-guide-target-pulse { animation:none !important; }
 }
 </style>
-
 <style id="professional-character-point-motion">
 #project-work .project-guide-connector,#project-work .project-guide-pointer{display:none!important;}
 #project-work .project-intro-view{grid-template-columns:minmax(0,1fr) 250px!important;position:relative!important;overflow:hidden!important;}
@@ -14475,7 +14487,6 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
 @media(max-width:900px){#project-work .project-intro-view{grid-template-columns:1fr!important;}#project-work .project-intro-character{display:none!important;}}
 @media(prefers-reduced-motion:reduce){#project-work .project-intro-character{transition:none!important;}}
 </style>
-
 <style id="real-forearm-motion-fix">
 /* The body stays fixed. A separate forearm layer rotates at the elbow to point at each active item. */
 #project-work .project-intro-character {
@@ -14598,7 +14609,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.setTimeout(updateFromActivePoint, 700);
 });
 </script>
-
 </body>
 </html>
 <style>
@@ -17727,7 +17737,6 @@ document.addEventListener('DOMContentLoaded', function () {
   showProjectIntro();
 });
 </script>
-
 <style id="project-intro-character-fix-v3">
 /* Final project-intro correction: self-contained character, balanced layout and attached guide pointer. */
 #project-work .project-intro-view {
@@ -17773,7 +17782,6 @@ document.addEventListener('DOMContentLoaded', function () {
   #project-work .project-intro-character,#project-work .project-guide-pointer { display:none !important; }
 }
 </style>
-
 <style id="project-intro-pointer-overflow-fix">#project-work .project-intro-character{overflow:visible !important;}#project-work .project-intro-view{overflow:hidden !important;}</style>
 <style id="project-pointing-character-final-fix">
 /* Final correction: the character itself points left; detached pointer graphics are removed. */
@@ -17823,14 +17831,12 @@ document.addEventListener('DOMContentLoaded', function () {
   #project-work .project-intro-character { display:none !important; }
 }
 </style>
-
 <style id="remove-large-duplicate-project-character">
 /* Keep the existing small layered character and remove only the large background duplicate. */
 #project-work .project-intro-character {
   background-image: none !important;
 }
 </style>
-
 <style id="remove-extra-moving-hand-mark">
 /* Remove only the unwanted static arm artifact beside the moving pointing hand. */
 #project-work .project-character-joint {
