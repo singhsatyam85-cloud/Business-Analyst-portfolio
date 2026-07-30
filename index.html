@@ -10321,6 +10321,8 @@
 }
 
 </style>
+
+
 <style>
 /* Final fix: remove project summary cards and close the empty space in detailed project sections */
 #detailed-case-studies .detail-card > .evidence-panel {
@@ -13050,7 +13052,7 @@ body #ba-deliverables.ba-polished {
 <p class="hero-about-label">About Me</p>
 <p class="lead">I turn business needs into practical, delivery-ready digital solutions — across EdTech, STEM learning, e-commerce, BI reporting, and AI-powered food delivery. I define requirements, map processes, build prototypes, support UAT, and leave behind the BA evidence that shows exactly how an idea moved from discovery to delivery.</p>
 <div aria-label="Portfolio keywords" class="hero-keywords">
-<span class="keyword">AI Powred Solution</span>
+<span class="keyword">AI-Powered Solutions</span>
 <span class="keyword">Interactive Prototyping</span>
 <span class="keyword">Digital Projects</span>
 <span class="keyword">BI Reporting</span>
@@ -13268,6 +13270,19 @@ body #ba-deliverables.ba-polished {
 <circle class="cyber-snake-pulse" cx="0" cy="0" r="8"><animatemotion dur="7.2s" path="M42 54 H958" repeatcount="indefinite"></animatemotion></circle>
 </svg>
 <button aria-selected="false" class="cyber-node" data-description="Used for backlog management, user stories, sprint planning, issue tracking and delivery status." data-title="Jira" role="tab" type="button"><strong>Jira</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to organise requirements, meeting notes, decisions, process documentation and project knowledge." data-title="Confluence" role="tab" type="button"><strong>Confluence</strong></button><button aria-selected="false" class="cyber-node" data-description="Used for structured analysis, registers, validation checks, prioritisation and data preparation." data-title="Microsoft Excel" role="tab" type="button"><strong>Excel</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to build dashboards, validate KPIs and present business performance through interactive reporting." data-title="Power BI" role="tab" type="button"><strong>Power BI</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to create professional process maps, swimlanes, system flows and business diagrams." data-title="Microsoft Visio" role="tab" type="button"><strong>MS Visio</strong></button><button aria-selected="false" class="cyber-node" data-description="Used for fast process modelling, architecture views, user journeys and visual documentation." data-title="Draw.io" role="tab" type="button"><strong>Draw.io</strong></button><button aria-selected="false" class="cyber-node" data-description="Used for wireframes, interface concepts, user journey validation and stakeholder design reviews." data-title="Figma" role="tab" type="button"><strong>Figma</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to review and test API requests, responses, fields, status codes and integration behaviour." data-title="Postman" role="tab" type="button"><strong>Postman</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to query, validate and structure data for analysis, reporting and business-rule checks." data-title="SQL" role="tab" type="button"><strong>SQL</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to organise iterative delivery through backlogs, sprints, reviews and continuous feedback." data-title="Agile Scrum" role="tab" type="button"><strong>Agile Scrum</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to visualise work, manage flow, limit work in progress and expose delivery blockers." data-title="Kanban" role="tab" type="button"><strong>Kanban</strong></button><button aria-selected="false" class="cyber-node" data-description="Used to present findings, recommendations, roadmaps, decisions and project outcomes clearly." data-title="PowerPoint" role="tab" type="button"><strong>PowerPoint</strong></button>
+</div>
+</section>
+<section class="side-capability-panel cyber-pipeline-panel" data-pipeline="ai-tools" id="ai-tools">
+<div class="side-capability-head"><span class="side-badge">AI</span><div><h4>AI Development Tools</h4></div></div>
+<div aria-label="AI development tools pipeline" class="cyber-pipeline snake-pipeline" role="tablist">
+<svg aria-hidden="true" class="cyber-snake-track" focusable="false" preserveaspectratio="none" viewbox="0 0 1000 108">
+<path class="cyber-snake-line" d="M42 54 H958"></path>
+<circle class="cyber-snake-pulse" cx="0" cy="0" r="8"><animatemotion dur="7.2s" path="M42 54 H958" repeatcount="indefinite"></animatemotion></circle>
+</svg>
+<button aria-selected="false" class="cyber-node" data-description="Used to turn clearly defined requirements into working features, review implementation choices and support iterative product development." data-title="Claude Code" role="tab" type="button"><strong>Claude Code</strong></button>
+<button aria-selected="false" class="cyber-node" data-description="Used to build, review and refine code-based prototypes while maintaining clear links between requirements and implemented behaviour." data-title="Codex" role="tab" type="button"><strong>Codex</strong></button>
+<button aria-selected="false" class="cyber-node" data-description="Used as an AI-assisted development environment for creating and improving functional product prototypes." data-title="Antigravity IDE" role="tab" type="button"><strong>Antigravity IDE</strong></button>
+<button aria-selected="false" class="cyber-node" data-description="Used for editing, organising, running and validating project code, files and development workflows." data-title="Visual Studio Code" role="tab" type="button"><strong>VS Code</strong></button>
 </div>
 </section>
 <section class="side-capability-panel cyber-pipeline-panel" data-pipeline="skills" id="skills">
@@ -14145,8 +14160,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function animateNodeGlow(now) {
       const progress = ((now - startedAt) % cycleDuration) / cycleDuration;
       let activeIndex = 0;
-      for (let i = 0; i < pulseStops.length; i += 1) {
-        if (progress >= pulseStops[i]) activeIndex = i;
+      const activeStops = nodes.length === pulseStops.length
+        ? pulseStops
+        : nodes.map(function (_, index) { return index / nodes.length; });
+      for (let i = 0; i < activeStops.length; i += 1) {
+        if (progress >= activeStops[i]) activeIndex = i;
       }
 
       if (activeIndex !== previousIndex) {
@@ -17841,5 +17859,820 @@ document.addEventListener('DOMContentLoaded', function () {
 /* Remove only the unwanted static arm artifact beside the moving pointing hand. */
 #project-work .project-character-joint {
   display: none !important;
+}
+</style>
+
+<style id="professional-portfolio-refresh">
+/* Final visual layer. Interaction, animation and link behaviour remain unchanged. */
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #536274;
+  --primary: #12345b;
+  --primary-dark: #0a2342;
+  --accent: #c9903d;
+  --green: #79b8aa;
+  --green-soft: #e7f4f1;
+  --red-soft: #fff0ee;
+  --border: #dbe3ec;
+  --section: #f1f5f9;
+  --footer: #091c32;
+  --shadow: 0 22px 50px rgba(15, 34, 58, .10);
+  --soft-shadow: 0 10px 28px rgba(15, 34, 58, .08);
+  --radius: 18px;
+  --radius-sm: 12px;
+  --max: 1240px;
+}
+
+html {
+  scroll-padding-top: 92px;
+}
+
+body {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif !important;
+  background:
+    linear-gradient(180deg, #ffffff 0, #f8fafc 34rem, #ffffff 100%);
+  color: var(--text);
+  letter-spacing: -.006em;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, li, a, button, input, .badge, .tool-card, .deliverable-card,
+.meta, .assistant-panel, h1, h2, h3, h4, h5, h6 {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif !important;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(29, 112, 184, .28) !important;
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(100% - 48px, var(--max));
+}
+
+.site-header {
+  background: rgba(255, 255, 255, .90) !important;
+  border-bottom-color: rgba(148, 163, 184, .32) !important;
+  box-shadow: 0 8px 30px rgba(15, 34, 58, .045);
+  backdrop-filter: blur(18px) saturate(150%);
+}
+
+.nav-wrap {
+  min-height: 76px !important;
+}
+
+.brand {
+  gap: 11px;
+}
+
+.logo {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 13px !important;
+  background:
+    linear-gradient(145deg, #183f68, #0b2745 66%, #527d86) !important;
+  border: 1px solid rgba(255,255,255,.26) !important;
+  box-shadow: 0 8px 18px rgba(10, 35, 66, .18);
+}
+
+.logo::after {
+  content: "SS";
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+
+.brand-title {
+  font-size: 15px !important;
+  letter-spacing: -.01em;
+}
+
+.brand-role {
+  color: #66768a !important;
+  font-size: 11px !important;
+  font-weight: 650 !important;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  gap: clamp(12px, 1.5vw, 24px) !important;
+  color: #526174 !important;
+}
+
+.nav-links a {
+  padding: 28px 0 23px !important;
+  border-bottom-width: 2px !important;
+  font-size: 12px;
+  font-weight: 650 !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #102f52 !important;
+  border-color: #c9903d !important;
+}
+
+.btn {
+  min-height: 44px !important;
+  padding: 12px 17px !important;
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: .01em;
+  box-shadow: none;
+}
+
+.btn:hover {
+  box-shadow: 0 10px 24px rgba(15, 34, 58, .13) !important;
+}
+
+.btn-primary {
+  background: #12345b !important;
+  border-color: #12345b !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover {
+  background: #0a2342 !important;
+  border-color: #0a2342 !important;
+}
+
+.btn-gold {
+  background: #fff !important;
+  border-color: #b9c5d2 !important;
+  color: #173b61 !important;
+}
+
+.btn-gold:hover {
+  background: #f2f6fa !important;
+  border-color: #8fa2b6 !important;
+  color: #0a2342 !important;
+}
+
+.btn-github {
+  background: #fff !important;
+  color: #18283a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.btn-github:hover {
+  background: #18283a !important;
+  color: #fff !important;
+  border-color: #18283a !important;
+}
+
+.hero {
+  padding: clamp(64px, 7vw, 96px) 0 72px !important;
+  background:
+    radial-gradient(circle at 85% 18%, rgba(102, 151, 158, .16), transparent 34%),
+    radial-gradient(circle at 12% 78%, rgba(201, 144, 61, .10), transparent 28%),
+    linear-gradient(135deg, #fbfdff 0%, #f3f7fb 54%, #ffffff 100%) !important;
+  border-bottom: 1px solid #dde5ee !important;
+}
+
+.hero::before {
+  background:
+    linear-gradient(rgba(18, 52, 91, .032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 52, 91, .032) 1px, transparent 1px) !important;
+  background-size: 44px 44px !important;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.75), transparent);
+}
+
+.hero-grid {
+  gap: clamp(46px, 6vw, 84px) !important;
+  align-items: center !important;
+}
+
+.hero-main-heading {
+  max-width: 760px;
+  color: #0d2949 !important;
+  font-size: clamp(35px, 4.3vw, 62px) !important;
+  line-height: 1.06 !important;
+  font-weight: 760 !important;
+  letter-spacing: -.045em !important;
+}
+
+.hero-about-label {
+  margin-top: 28px !important;
+  color: #a36c20 !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase;
+}
+
+.hero .lead {
+  max-width: 720px;
+  color: #506176 !important;
+  font-size: 16px !important;
+  line-height: 1.76 !important;
+}
+
+.hero-keywords {
+  gap: 9px !important;
+  margin-top: 24px !important;
+}
+
+.keyword {
+  padding: 8px 12px !important;
+  border: 1px solid #d8e1ea !important;
+  border-radius: 999px !important;
+  background: rgba(255,255,255,.76) !important;
+  color: #29445f !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 12px rgba(15, 34, 58, .04);
+}
+
+.hero-actions {
+  margin-top: 28px !important;
+  gap: 11px !important;
+}
+
+.hero-evidence-visual,
+.ba-helix-card {
+  border-color: rgba(170, 186, 203, .58) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 28px 65px rgba(15, 34, 58, .13) !important;
+}
+
+.hero-evidence-visual {
+  background: rgba(255,255,255,.76) !important;
+  backdrop-filter: blur(10px);
+}
+
+.stat-strip {
+  background: linear-gradient(135deg, #0d2949, #173f68) !important;
+  border-radius: 17px 17px 0 0 !important;
+}
+
+.stat-mini strong {
+  color: #fff !important;
+}
+
+.stat-mini small {
+  color: rgba(255,255,255,.72) !important;
+  letter-spacing: .05em;
+}
+
+.section {
+  padding: clamp(76px, 8vw, 112px) 0 !important;
+}
+
+.section-tight {
+  padding: 58px 0 !important;
+}
+
+.section h2,
+.project-work-heading h2 {
+  color: #102f52 !important;
+  font-size: clamp(30px, 3.4vw, 44px) !important;
+  font-weight: 760 !important;
+}
+
+.project-work-heading {
+  margin-bottom: 32px !important;
+}
+
+.project-work-heading h2::after {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-top: 13px;
+  border-radius: 99px;
+  background: #c9903d;
+}
+
+.project-group,
+.project-browser,
+.project-browser-panel,
+.side-capability-panel,
+.simulation-main-panel,
+.assistant-panel {
+  border-color: #d9e2eb !important;
+  box-shadow: var(--soft-shadow) !important;
+}
+
+.project-group {
+  border-radius: 22px !important;
+  background: #fff !important;
+}
+
+.project-browser {
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.project-browser-menu {
+  background: linear-gradient(180deg, #0d2949, #0a213b) !important;
+  border-color: transparent !important;
+}
+
+.project-browser-menu h3 {
+  color: rgba(255,255,255,.62) !important;
+  font-size: 11px !important;
+  letter-spacing: .15em !important;
+  text-transform: uppercase;
+}
+
+.project-browser-tab {
+  border-color: rgba(255,255,255,.12) !important;
+  border-radius: 10px !important;
+  color: rgba(255,255,255,.78) !important;
+  font-weight: 650 !important;
+}
+
+.project-browser-tab:hover,
+.project-browser-tab[aria-selected="true"] {
+  background: rgba(255,255,255,.11) !important;
+  border-color: rgba(255,255,255,.26) !important;
+  color: #fff !important;
+  box-shadow: inset 3px 0 0 #d4a052 !important;
+}
+
+.project-browser-panel {
+  background:
+    radial-gradient(circle at 88% 14%, rgba(105, 157, 163, .11), transparent 30%),
+    #fff !important;
+}
+
+.project-intro-copy h3,
+.project-info-column h3 {
+  color: #102f52 !important;
+}
+
+.project-intro-lead,
+.project-browser-points,
+.project-info-column p {
+  color: #5b6c7f !important;
+}
+
+.project-intro-points li,
+.project-browser-points li,
+.project-panel-section {
+  border-color: #dce5ee !important;
+  background: #f8fafc !important;
+  border-radius: 12px !important;
+}
+
+.side-capability-panel {
+  border-radius: 18px !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.98), rgba(245,248,251,.98)) !important;
+}
+
+.side-capability-head {
+  border-bottom-color: #e0e7ef !important;
+}
+
+.side-capability-head h4 {
+  color: #153858 !important;
+}
+
+.side-badge {
+  background: #12345b !important;
+  color: #fff !important;
+  border-color: #12345b !important;
+  box-shadow: 0 7px 18px rgba(18, 52, 91, .16);
+}
+
+.cyber-node {
+  border-color: #cad6e2 !important;
+  background: #fff !important;
+  color: #29465f !important;
+  border-radius: 10px !important;
+}
+
+.cyber-node:hover,
+.cyber-node.is-active,
+.cyber-node[aria-selected="true"] {
+  border-color: #617f9e !important;
+  background: #edf3f8 !important;
+  color: #0f3153 !important;
+}
+
+.assistant-panel {
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 95% 0%, rgba(105,157,163,.13), transparent 32%),
+    linear-gradient(145deg, #ffffff, #f6f9fc) !important;
+}
+
+.assistant-panel h2,
+.assistant-panel h3 {
+  color: #102f52 !important;
+}
+
+.site-footer {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(82, 125, 134, .26), transparent 34%),
+    #091c32 !important;
+  border-top: 1px solid rgba(255,255,255,.09);
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer strong {
+  color: #fff !important;
+}
+
+.site-footer p,
+.site-footer small {
+  color: rgba(255,255,255,.66) !important;
+}
+
+.footer-contact-card {
+  border-color: rgba(255,255,255,.14) !important;
+  background: rgba(255,255,255,.055) !important;
+  border-radius: 13px !important;
+}
+
+.footer-contact-card a {
+  color: #dbe8f4 !important;
+}
+
+.footer-contact-card:hover {
+  background: rgba(255,255,255,.085) !important;
+  border-color: rgba(255,255,255,.25) !important;
+}
+
+@media (max-width: 980px) {
+  .container {
+    width: min(100% - 36px, var(--max));
+  }
+
+  .nav-wrap {
+    min-height: 70px !important;
+  }
+
+  .hero {
+    padding-top: 58px !important;
+  }
+
+  .hero-grid {
+    gap: 38px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    width: min(100% - 24px, var(--max));
+  }
+
+  .site-header {
+    backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .nav-actions .btn {
+    min-height: 40px !important;
+    padding: 10px 12px !important;
+  }
+
+  .nav-actions .btn-github span {
+    display: none;
+  }
+
+  .hero {
+    padding: 44px 0 52px !important;
+  }
+
+  .hero-main-heading {
+    font-size: clamp(33px, 10vw, 44px) !important;
+  }
+
+  .hero .lead {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .hero-actions {
+    align-items: stretch !important;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .section {
+    padding: 68px 0 !important;
+  }
+
+  .project-group,
+  .project-browser,
+  .project-browser-panel,
+  .assistant-panel {
+    border-radius: 16px !important;
+  }
+}
+</style>
+
+<style id="professional-contrast-fix">
+/* Contrast correction for legacy high-specificity colour rules. */
+.site-header .brand-title {
+  color: #102f52 !important;
+}
+
+.site-header .brand-role {
+  color: #66768a !important;
+}
+
+.site-header .nav-links a {
+  color: #526174 !important;
+}
+
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active {
+  color: #102f52 !important;
+}
+
+.hero .hero-main-heading {
+  color: #0d2949 !important;
+}
+
+.hero .ba-helix-title {
+  color: #102f52 !important;
+}
+
+.hero .ba-presenter-document strong {
+  color: #0f172a !important;
+}
+
+@media (max-width: 980px) {
+  .site-header .nav-links {
+    background: #ffffff !important;
+    border-color: #dbe3ec !important;
+    box-shadow: 0 18px 38px rgba(15, 34, 58, .14) !important;
+  }
+
+  .site-header .nav-links a {
+    color: #29445f !important;
+  }
+}
+</style>
+<style id="animation-background-blend-fix">
+/* Let the animated hero visual share the portfolio hero background. */
+.hero .hero-evidence-visual {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+
+.hero .stat-strip {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero .ba-helix-card {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero .ba-helix-stage {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+</style>
+<style id="professional-capability-matrix">
+/* Professional capability matrix with restrained colour and clearer typography. */
+#project-work .cyber-pipeline-panel[data-pipeline="deliverables"] {
+  --cap-accent: #6f5178;
+}
+
+#project-work .cyber-pipeline-panel[data-pipeline="tools"] {
+  --cap-accent: #39766f;
+}
+
+#project-work .cyber-pipeline-panel[data-pipeline="ai-tools"] {
+  --cap-accent: #42689a;
+}
+
+#project-work .cyber-pipeline-panel[data-pipeline="skills"] {
+  --cap-accent: #965a55;
+}
+
+body #project-work .cyber-pipeline-suite {
+  gap: 16px !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  position: relative !important;
+  overflow: visible !important;
+  padding: 18px 20px 17px !important;
+  border: 1px solid #d8e2eb !important;
+  border-left: 4px solid var(--cap-accent) !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+  color: #203a54 !important;
+  box-shadow: 0 12px 30px rgba(2, 17, 34, .13) !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel::after {
+  opacity: .18 !important;
+  background-image:
+    linear-gradient(rgba(18,52,91,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18,52,91,.055) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head {
+  position: relative !important;
+  z-index: 3 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-height: 44px !important;
+  margin: 0 0 14px !important;
+  padding: 0 0 13px !important;
+  border-bottom: 1px solid #e1e8ef !important;
+  background: transparent !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel .side-badge {
+  width: 42px !important;
+  height: 42px !important;
+  flex: 0 0 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  background: var(--cap-accent) !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .04em !important;
+  box-shadow: 0 7px 16px color-mix(in srgb, var(--cap-accent) 24%, transparent) !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head h4 {
+  margin: 0 !important;
+  color: #102f52 !important;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
+  font-weight: 760 !important;
+  letter-spacing: -.02em !important;
+}
+
+body #project-work .cyber-pipeline.snake-pipeline {
+  position: relative !important;
+  z-index: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  grid-template-rows: 58px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 58px !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body #project-work .cyber-pipeline-panel[data-pipeline="ai-tools"] .snake-pipeline {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+body #project-work .snake-pipeline .cyber-node,
+body #project-work .snake-pipeline .cyber-node:nth-of-type(n) {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 58px !important;
+  padding: 6px 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: #29445f !important;
+  box-shadow: none !important;
+}
+
+body #project-work .snake-pipeline .cyber-node strong {
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 42px !important;
+  padding: 7px 6px !important;
+  border: 1px solid color-mix(in srgb, var(--cap-accent) 34%, #dbe4ec) !important;
+  border-radius: 10px !important;
+  background: rgba(255,255,255,.96) !important;
+  color: #29445f !important;
+  box-shadow: 0 4px 10px rgba(15,34,58,.045) !important;
+  font-family: Inter, "Segoe UI", Arial, sans-serif !important;
+  font-size: clamp(8.7px, .66vw, 10.5px) !important;
+  line-height: 1.15 !important;
+  font-weight: 720 !important;
+  letter-spacing: 0 !important;
+  text-shadow: none !important;
+}
+
+body #project-work .cyber-pipeline-panel[data-pipeline="ai-tools"] .cyber-node strong {
+  font-size: 12px !important;
+}
+
+body #project-work .cyber-pipeline-panel .cyber-snake-line {
+  stroke: color-mix(in srgb, var(--cap-accent) 58%, #b9c6d3) !important;
+  stroke-width: 3 !important;
+  opacity: .58 !important;
+  filter: none !important;
+}
+
+body #project-work .cyber-pipeline-panel .cyber-snake-pulse {
+  fill: var(--cap-accent) !important;
+  stroke: #ffffff !important;
+  stroke-width: 2 !important;
+  filter: drop-shadow(0 2px 4px rgba(15,34,58,.24)) !important;
+}
+
+body #project-work .snake-pipeline .cyber-node:hover strong,
+body #project-work .snake-pipeline .cyber-node:focus-visible strong,
+body #project-work .snake-pipeline .cyber-node.is-active strong {
+  background: color-mix(in srgb, var(--cap-accent) 8%, #ffffff) !important;
+  border-color: var(--cap-accent) !important;
+  color: #102f52 !important;
+  box-shadow: 0 7px 16px rgba(15,34,58,.10) !important;
+  transform: translateY(-1px) !important;
+}
+
+body #project-work .snake-pipeline .cyber-node:hover,
+body #project-work .snake-pipeline .cyber-node:focus-visible,
+body #project-work .snake-pipeline .cyber-node.is-active {
+  outline: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body #project-work .snake-pipeline .cyber-node.is-pulse strong,
+body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
+  background: #ffffff !important;
+  border-color: var(--cap-accent) !important;
+  color: #102f52 !important;
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--cap-accent) 16%, transparent),
+    0 6px 14px rgba(15,34,58,.08) !important;
+  transform: translateY(-1px) !important;
+  animation: none !important;
+}
+
+@media (max-width: 1100px) {
+  body #project-work .cyber-pipeline.snake-pipeline,
+  body #project-work .cyber-pipeline-panel[data-pipeline="ai-tools"] .snake-pipeline {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-template-rows: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    gap: 8px !important;
+  }
+
+  body #project-work .cyber-pipeline-panel .cyber-snake-track {
+    display: none !important;
+  }
+
+  body #project-work .snake-pipeline .cyber-node,
+  body #project-work .snake-pipeline .cyber-node:nth-of-type(n) {
+    min-height: 50px !important;
+    padding: 3px 0 !important;
+  }
+
+  body #project-work .snake-pipeline .cyber-node strong {
+    min-height: 42px !important;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+    padding: 16px 14px !important;
+  }
+
+  body #project-work .cyber-pipeline.snake-pipeline,
+  body #project-work .cyber-pipeline-panel[data-pipeline="ai-tools"] .snake-pipeline {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  body #project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head h4 {
+    font-size: 16px !important;
+  }
 }
 </style>
