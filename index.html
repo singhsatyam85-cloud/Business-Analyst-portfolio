@@ -10323,6 +10323,7 @@
 </style>
 
 
+
 <style>
 /* Final fix: remove project summary cards and close the empty space in detailed project sections */
 #detailed-case-studies .detail-card > .evidence-panel {
@@ -18673,6 +18674,107 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
 
   body #project-work .simulation-side-capabilities .cyber-pipeline-panel .side-capability-head h4 {
     font-size: 16px !important;
+  }
+}
+</style>
+
+<style id="subtle-neumorphism-preview">
+/* Soft, neutral neumorphism: applied only to small interactive surfaces. */
+:root {
+  --neo-surface: #edf2f7;
+  --neo-light: rgba(255, 255, 255, .92);
+  --neo-dark: rgba(129, 145, 162, .30);
+}
+
+.keyword,
+.hero .btn-gold,
+.hero .btn-primary,
+.nav-actions .btn,
+.stat-mini,
+.hero .ba-presenter-document,
+.hero .ba-helix-step.ba-helix-statement,
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel,
+body #project-work .snake-pipeline .cyber-node strong {
+  box-shadow:
+    7px 7px 15px var(--neo-dark),
+    -7px -7px 15px var(--neo-light) !important;
+}
+
+.keyword,
+.hero .btn-gold,
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel,
+body #project-work .snake-pipeline .cyber-node strong {
+  background: var(--neo-surface) !important;
+}
+
+.keyword,
+.hero .btn-gold,
+body #project-work .snake-pipeline .cyber-node strong {
+  border-color: transparent !important;
+}
+
+.keyword {
+  color: #29445f !important;
+}
+
+.hero .btn-gold {
+  color: #12345b !important;
+}
+
+.hero .btn-primary,
+.nav-actions .btn-primary {
+  box-shadow:
+    7px 7px 15px rgba(9, 28, 50, .20),
+    -3px -3px 8px rgba(255, 255, 255, .18) !important;
+}
+
+.stat-mini {
+  border-color: rgba(255,255,255,.64) !important;
+}
+
+.hero .ba-presenter-document {
+  box-shadow:
+    8px 8px 18px rgba(15, 34, 58, .17),
+    -5px -5px 12px rgba(255,255,255,.88) !important;
+}
+
+.hero .ba-helix-step.ba-helix-statement {
+  border-radius: 14px !important;
+  background: rgba(237, 242, 247, .84) !important;
+  color: #3d536b !important;
+}
+
+body #project-work .simulation-side-capabilities .cyber-pipeline-panel {
+  border-color: transparent !important;
+}
+
+body #project-work .snake-pipeline .cyber-node strong {
+  color: #29445f !important;
+}
+
+body #project-work .snake-pipeline .cyber-node:hover strong,
+body #project-work .snake-pipeline .cyber-node:focus-visible strong,
+body #project-work .snake-pipeline .cyber-node.is-active strong,
+body #project-work .snake-pipeline .cyber-node.is-pulse strong,
+body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
+  background: #f5f8fb !important;
+  color: #102f52 !important;
+  box-shadow:
+    inset 2px 2px 5px rgba(129,145,162,.20),
+    inset -2px -2px 5px rgba(255,255,255,.90) !important;
+}
+
+@media (max-width: 680px) {
+  .keyword,
+  .hero .btn-gold,
+  .hero .btn-primary,
+  .nav-actions .btn,
+  .stat-mini,
+  body #project-work .simulation-side-capabilities .cyber-pipeline-panel,
+  body #project-work .snake-pipeline .cyber-node strong {
+    box-shadow:
+      4px 4px 10px var(--neo-dark),
+      -4px -4px 10px var(--neo-light) !important;
   }
 }
 </style>
