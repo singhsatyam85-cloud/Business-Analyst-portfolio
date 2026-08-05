@@ -18784,3 +18784,231 @@ body #project-work .snake-pipeline .cyber-node.is-active.is-pulse strong {
   }
 }
 </style>
+<style id="project-section-professional-refine">
+/* ===== Project section: unified professional palette =====
+   One navy, one brass, a neutral grey scale, and one dimensional/glossy
+   button treatment shared by every tab, category and action link. No
+   button is styled as pre-selected by default. Layout, animation and
+   JS behaviour untouched. */
+
+#project-work .project-browser,
+#project-work .project-browser-panel,
+#project-work .project-browser-panel[data-project] {
+  --project-accent: #17304A !important;
+  --project-bright: #B08D3F !important;
+}
+
+/* Outer shell */
+#project-work .project-browser {
+  background: #0E1D2C !important;
+  border: 1px solid rgba(255, 255, 255, .09) !important;
+  border-radius: 16px !important;
+  padding: 16px !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, .30) !important;
+}
+
+/* Sidebar */
+#project-work .project-browser-menu {
+  background: #EEF3F8 !important;
+  border: 1px solid #D2DCE6 !important;
+  border-radius: 12px !important;
+}
+#project-work .project-browser-menu h3 {
+  color: #17304A !important;
+  font-size: 11px !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+/* Sidebar buttons: dimensional, glossy, identical by default (no pre-selected look) */
+#project-work .project-browser-tab {
+  background: linear-gradient(180deg, #234669 0%, #17304A 55%, #0E2032 100%) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 10px !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 13.5px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -9px 14px rgba(0,0,0,.24),
+    0 5px 12px rgba(14,29,44,.28) !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease !important;
+}
+#project-work .project-browser-tab::after { color: rgba(255,255,255,.55) !important; font-weight: 700 !important; }
+#project-work .project-browser-tab:hover,
+#project-work .project-browser-tab:focus-visible {
+  background: linear-gradient(180deg, #2C557E 0%, #1D3E5C 55%, #112438 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -9px 14px rgba(0,0,0,.22),
+    0 7px 16px rgba(14,29,44,.34) !important;
+  transform: translateY(-1px) !important;
+}
+#project-work .project-browser-tab:active {
+  transform: translateY(1px) !important;
+  box-shadow: inset 0 3px 8px rgba(0,0,0,.38), 0 2px 5px rgba(14,29,44,.24) !important;
+}
+#project-work .project-browser-tab.is-active,
+#project-work .project-browser-tab[data-project].is-active {
+  background: linear-gradient(180deg, #33608A 0%, #1D3E5C 55%, #0E2032 100%) !important;
+  border-color: #C9A227 !important;
+  color: #FFFFFF !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.30),
+    inset 0 -9px 14px rgba(0,0,0,.20),
+    0 0 0 2px rgba(201,162,39,.55),
+    0 7px 18px rgba(14,29,44,.36) !important;
+  transform: none !important;
+}
+#project-work .project-browser-tab.is-active::after { color: #E4C766 !important; }
+
+/* Panel */
+#project-work .project-browser-panel {
+  background: #FFFFFF !important;
+  border: 1px solid #E3E8EE !important;
+  border-top: 3px solid #17304A !important;
+  border-radius: 12px !important;
+}
+#project-work .project-browser-kicker {
+  color: #64748B !important;
+  text-transform: uppercase !important;
+  letter-spacing: .09em !important;
+  font-weight: 700 !important;
+}
+#project-work .project-browser-panel > .project-info-column > h3 { color: #0E1D2C !important; }
+
+/* Content bullets */
+#project-work .project-browser-points li {
+  background: #F8FAFC !important;
+  border: 1px solid #E3E8EE !important;
+  border-radius: 8px !important;
+  color: #17304A !important;
+  box-shadow: inset 3px 0 0 #17304A !important;
+}
+#project-work .project-browser-points li::before,
+#project-work .project-browser-panel[data-project] .project-browser-points li::before {
+  background: #17304A !important;
+  color: #FFFFFF !important;
+}
+
+/* Section headings inside the panel */
+#project-work .project-panel-section-head h4 {
+  color: #3D5670 !important;
+  font-size: 11px !important;
+  letter-spacing: .11em !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+}
+
+/* Evidence category buttons: same dimensional family as the tabs */
+#project-work .project-evidence-tab,
+#project-work .project-evidence-tab:nth-child(1),
+#project-work .project-evidence-tab:nth-child(2),
+#project-work .project-evidence-tab:nth-child(3),
+#project-work .project-evidence-tab:nth-child(4) {
+  background: linear-gradient(180deg, #234669 0%, #17304A 55%, #0E2032 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -9px 14px rgba(0,0,0,.24),
+    0 5px 12px rgba(14,29,44,.28) !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease !important;
+}
+#project-work .project-evidence-tab:hover,
+#project-work .project-evidence-tab:focus-visible {
+  background: linear-gradient(180deg, #2C557E 0%, #1D3E5C 55%, #112438 100%) !important;
+  outline: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -9px 14px rgba(0,0,0,.22),
+    0 7px 16px rgba(14,29,44,.34) !important;
+  transform: translateY(-1px) !important;
+}
+#project-work .project-evidence-tab:active {
+  transform: translateY(1px) !important;
+  box-shadow: inset 0 3px 8px rgba(0,0,0,.38), 0 2px 5px rgba(14,29,44,.24) !important;
+}
+#project-work .project-evidence-tab.is-active {
+  background: linear-gradient(180deg, #33608A 0%, #1D3E5C 55%, #0E2032 100%) !important;
+  border-color: #C9A227 !important;
+  outline: none !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.30),
+    inset 0 -9px 14px rgba(0,0,0,.20),
+    0 0 0 2px rgba(201,162,39,.55),
+    0 7px 18px rgba(14,29,44,.36) !important;
+  transform: none !important;
+}
+
+/* Action links: every link identical by default, "primary" flag ignored on purpose */
+#project-work .project-resource-link,
+#project-work .project-resource-link.is-primary,
+#project-work .project-resource-link:nth-child(2),
+#project-work .project-resource-link:nth-child(3),
+#project-work .project-resource-link:nth-child(4) {
+  background: linear-gradient(180deg, #234669 0%, #17304A 55%, #0E2032 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.20),
+    inset 0 -9px 14px rgba(0,0,0,.24),
+    0 5px 12px rgba(14,29,44,.28) !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease !important;
+}
+#project-work .project-resource-link:hover,
+#project-work .project-resource-link:focus-visible {
+  background: linear-gradient(180deg, #2C557E 0%, #1D3E5C 55%, #112438 100%) !important;
+  outline: none !important;
+  transform: translateY(-1px) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.26),
+    inset 0 -9px 14px rgba(0,0,0,.22),
+    0 7px 16px rgba(14,29,44,.34) !important;
+}
+#project-work .project-resource-link:active {
+  transform: translateY(1px) !important;
+  box-shadow: inset 0 3px 8px rgba(0,0,0,.38), 0 2px 5px rgba(14,29,44,.24) !important;
+}
+
+/* Evidence modal */
+.evidence-modal,
+.evidence-modal[data-evidence-index="0"],
+.evidence-modal[data-evidence-index="1"],
+.evidence-modal[data-evidence-index="2"],
+.evidence-modal[data-evidence-index="3"] { --evidence-colour: #17304A; }
+.evidence-modal-dialog {
+  border: 1px solid #17304A !important;
+  border-top: 4px solid #17304A !important;
+  border-radius: 12px !important;
+}
+.evidence-modal-head { background: #0E1D2C !important; }
+#project-work .project-evidence-link,
+.project-evidence-link {
+  border: 1.5px solid #C3CEDA !important;
+  border-radius: 10px !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6F9FC 100%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.7), 0 1px 5px rgba(14,29,44,.10) !important;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease !important;
+}
+.project-evidence-link strong { color: #0E1D2C !important; font-weight: 700 !important; }
+.project-evidence-link small { color: #3D5670 !important; }
+.project-evidence-link span[aria-hidden] { color: #17304A !important; font-weight: 700 !important; }
+.project-evidence-link:hover,
+.project-evidence-link:focus-visible {
+  border-color: #C9A227 !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F4F8FC 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 4px 12px rgba(14,29,44,.16) !important;
+}
+.project-evidence-link:active {
+  transform: translateY(1px) !important;
+  box-shadow: inset 0 2px 5px rgba(14,29,44,.10) !important;
+}
+</style>
