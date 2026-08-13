@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cross-Border Exposure Index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9EDF2;
+    --paper-2:#DFE5EC;
+    --ink:#14233B;
+    --ink-soft:#5A6A82;
+    --rule:#BCC7D6;
+    --stamp:#B33A2B;
+    --clear:#1C6B52;
+    --lane:#14233B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    background:var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 26px, rgba(20,35,59,.035) 26px 27px),
+      repeating-linear-gradient(90deg, transparent 0 26px, rgba(20,35,59,.02) 26px 27px);
+    color:var(--ink);
+    font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+  }
+  .sheet{
+    width:100%;
+    max-width:1180px;
+    height:min(96vh,860px);
+    background:#F3F6F9;
+    border:1.5px solid var(--ink);
+    box-shadow:6px 6px 0 rgba(20,35,59,.14);
+    display:grid;
+    grid-template-rows:auto auto 1fr auto;
+    overflow:hidden;
+  }
+
+  /* header */
+  header{
+    display:flex;justify-content:space-between;align-items:flex-start;
+    gap:20px;padding:16px 22px 13px;border-bottom:1.5px solid var(--ink);
+  }
+  .eyebrow{
+    font-size:10px;letter-spacing:.19em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:5px;
+  }
+  h1{
+    font-family:"IBM Plex Sans Condensed",system-ui,sans-serif;
+    font-size:29px;font-weight:700;letter-spacing:-.012em;line-height:1;
+  }
+  .sub{margin-top:6px;font-size:11.5px;color:var(--ink-soft);max-width:62ch;line-height:1.5}
+
+  .stamp{
+    flex:none;text-align:center;color:var(--stamp);
+    border:2.5px solid var(--stamp);border-radius:3px;
+    padding:7px 12px;transform:rotate(-6deg);
+    opacity:0;transition:opacity .45s ease;
+  }
+  .stamp.on{opacity:.92}
+  .stamp .big{
+    font-family:"IBM Plex Sans Condensed",sans-serif;
+    font-size:17px;font-weight:700;letter-spacing:.13em;line-height:1;
+  }
+  .stamp .small{font-size:8.5px;letter-spacing:.13em;margin-top:4px}
+
+  /* kpi strip */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1.5px solid var(--ink)}
+  .kpi{padding:12px 22px;border-right:1px solid var(--rule)}
+  .kpi:last-child{border-right:none}
+  .kpi .lab{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft)}
+  .kpi .val{
+    font-family:"IBM Plex Sans Condensed",sans-serif;
+    font-size:27px;font-weight:700;line-height:1.15;margin-top:3px;
+    font-variant-numeric:tabular-nums;
+  }
+  .kpi .note{font-size:10px;color:var(--ink-soft);margin-top:1px}
+
+  /* lanes */
+  .body{padding:13px 22px 4px;overflow:hidden;display:flex;flex-direction:column}
+  .colhead{
+    display:grid;grid-template-columns:26px 1fr 62px;gap:12px;
+    font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+    padding-bottom:6px;border-bottom:1px solid var(--rule);
+  }
+  .colhead span:last-child{text-align:right}
+  .lanes{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;padding:4px 0}
+  .lane{display:grid;grid-template-columns:26px 1fr 62px;gap:12px;align-items:center}
+  .rank{font-size:10px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .track{position:relative;height:19px;background:var(--paper-2);border:1px solid var(--rule)}
+  .fill{
+    position:absolute;inset:1px auto 1px 1px;width:0;background:var(--lane);
+    transition:width .8s cubic-bezier(.2,.7,.25,1);
+  }
+  .fill.hi{background:var(--stamp)}
+  .name{
+    position:absolute;left:8px;top:50%;transform:translateY(-50%);
+    font-size:11px;letter-spacing:.04em;color:#F3F6F9;white-space:nowrap;
+  }
+  .name.out{left:auto;right:-8px;transform:translate(100%,-50%);color:var(--ink)}
+  .num{
+    text-align:right;font-size:13px;font-weight:600;
+    font-variant-numeric:tabular-nums;
+  }
+
+  footer{
+    border-top:1.5px solid var(--ink);padding:9px 22px;
+    display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-size:10px;color:var(--ink-soft);
+  }
+  footer code{font-size:9.5px;color:var(--ink)}
+  .err{padding:26px 22px;color:var(--stamp);font-size:12px;line-height:1.6}
+
+  @media (max-width:720px){
+    body{padding:8px}
+    .sheet{height:auto;min-height:96vh}
+    .kpis{grid-template-columns:repeat(2,1fr)}
+    .kpi{border-bottom:1px solid var(--rule)}
+    h1{font-size:23px}
+    .lanes{gap:9px;justify-content:flex-start}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .fill{transition:none}.stamp{transition:none}
+  }
+</style>
+</head>
+<body>
+<main class="sheet">
+  <header>
+    <div>
+      <div class="eyebrow">Live feed · World Bank Indicators API v2</div>
+      <h1>Cross-Border Exposure Index</h1>
+      <p class="sub">Merchandise trade as a share of GDP. The higher the figure, the more of a country's economy crosses a customs border, and the more tax, payments and customs liability sits between a merchant and the sale.</p>
+    </div>
+    <div class="stamp" id="stamp">
+      <div class="big">LIVE</div>
+      <div class="small" id="stampDate">FETCHING</div>
+    </div>
+  </header>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="body" id="body">
+    <div class="colhead"><span>#</span><span>Market · trade intensity</span><span>% GDP</span></div>
+    <div class="lanes" id="lanes"></div>
+  </section>
+
+  <footer>
+    <span>Source: World Bank, indicator <code>TG.VAL.TOTL.GD.ZS</code> · most recent non-empty value per market</span>
+    <span id="meta">—</span>
+  </footer>
+</main>
+
+<script>
+const MARKETS = ["GBR","USA","DEU","NLD","FRA","ESP","ITA","IRL","POL","SWE","CAN","AUS","SGP","ARE","JPN","IND","BRA","MEX"];
+const ENDPOINT = "https://api.worldbank.org/v2/country/" + MARKETS.join(";") +
+  "/indicator/TG.VAL.TOTL.GD.ZS?format=json&mrnev=1&per_page=200";
+
+const fmt = n => n.toFixed(1);
+
+function kpi(lab, val, note){
+  return `<div class="kpi"><div class="lab">${lab}</div><div class="val">${val}</div><div class="note">${note}</div></div>`;
+}
+
+function render(rows, meta){
+  rows.sort((a,b)=>b.value-a.value);
+  const top = rows[0];
+  const median = rows[Math.floor(rows.length/2)].value;
+  const uk = rows.find(r=>r.iso==="GBR");
+  const max = top.value;
+
+  document.getElementById("kpis").innerHTML =
+    kpi("Markets tracked", rows.length, "live from one API call") +
+    kpi("Most exposed", top.iso, `${fmt(top.value)}% of GDP · ${top.year}`) +
+    kpi("Median exposure", fmt(median) + "%", "half sit above this line") +
+    kpi("United Kingdom", uk ? fmt(uk.value)+"%" : "n/a", uk ? `rank ${rows.indexOf(uk)+1} of ${rows.length} · ${uk.year}` : "no value returned");
+
+  document.getElementById("lanes").innerHTML = rows.map((r,i)=>`
+    <div class="lane">
+      <span class="rank">${String(i+1).padStart(2,"0")}</span>
+      <div class="track"><div class="fill${r.value>=median?" hi":""}" data-w="${(r.value/max*100).toFixed(1)}"><span class="name${(r.value/max*100)<24?" out":""}">${r.name}</span></div></div>
+      <span class="num">${fmt(r.value)}</span>
+    </div>`).join("");
+
+  requestAnimationFrame(()=>{
+    document.querySelectorAll(".fill").forEach(el=>{ el.style.width = el.dataset.w + "%"; });
+  });
+
+  const s = document.getElementById("stamp");
+  document.getElementById("stampDate").textContent = "FETCHED " + new Date().toISOString().slice(0,10);
+  s.classList.add("on");
+  document.getElementById("meta").textContent =
+    `${meta.total} records returned · WB last updated ${meta.lastupdated}`;
+}
+
+fetch(ENDPOINT)
+  .then(r => { if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+  .then(([meta, data]) => {
+    if(!data) throw new Error("empty payload");
+    const rows = data
+      .filter(d => d.value !== null)
+      .map(d => ({ iso:d.countryiso3code, name:d.country.value, value:d.value, year:d.date }));
+    if(!rows.length) throw new Error("no values in payload");
+    render(rows, meta);
+  })
+  .catch(e => {
+    document.getElementById("body").innerHTML =
+      `<div class="err"><strong>Feed unavailable.</strong><br>${e.message}<br><br>
+       The dashboard reads live from the World Bank API and holds no cached copy, so this screen is empty by design rather than showing a stale number.</div>`;
+    document.getElementById("kpis").innerHTML = "";
+  });
+</script>
+</body>
+</html>
