@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scope → One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F7F4;
+  --panel:#FFFFFF;
+  --ink:#191A17;
+  --ink-2:#5E625C;
+  --line:#D9DBD4;
+  --duty:#0D6B4E;
+  --flag:#B0700B;
+  --paper:#FCFCFA;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:"Archivo",system-ui,sans-serif;font-size:14px;
+  min-height:100vh;padding:20px;
+}
+.wrap{max-width:1240px;margin:0 auto}
+
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:14px;flex-wrap:wrap}
+.kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+h1{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.timer{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-2);
+  border:1px solid var(--line);background:var(--panel);padding:7px 11px;border-radius:2px;
+}
+.timer b{color:var(--duty);font-weight:600}
+
+.grid{display:grid;grid-template-columns:365px 1fr;gap:18px;align-items:start}
+
+/* form */
+.form{background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:16px}
+.form h2{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2);font-family:"IBM Plex Mono",monospace;font-weight:500;margin-bottom:13px}
+label{display:block;font-size:11px;font-weight:600;letter-spacing:.02em;margin:13px 0 5px;color:var(--ink)}
+label:first-of-type{margin-top:0}
+input,select{
+  width:100%;padding:8px 9px;border:1px solid var(--line);border-radius:2px;
+  font-family:"Archivo",sans-serif;font-size:13px;color:var(--ink);background:var(--paper);
+}
+input:focus,select:focus{outline:2px solid var(--duty);outline-offset:-1px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.chip{
+  font-size:11.5px;padding:5px 9px;border:1px solid var(--line);border-radius:2px;
+  background:var(--paper);cursor:pointer;user-select:none;font-family:"IBM Plex Mono",monospace;
+}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip:focus-visible{outline:2px solid var(--duty);outline-offset:1px}
+.actions{display:flex;gap:7px;margin-top:17px}
+button.act{
+  flex:1;padding:9px;border:1px solid var(--ink);background:var(--ink);color:#fff;
+  font-family:"Archivo",sans-serif;font-size:12.5px;font-weight:600;border-radius:2px;cursor:pointer;
+}
+button.act.ghost{background:transparent;color:var(--ink)}
+button.act:hover{opacity:.86}
+
+/* document */
+.doc{
+  background:var(--paper);border:1px solid var(--line);border-radius:3px;
+  padding:32px 34px;box-shadow:0 1px 0 rgba(25,26,23,.05);
+}
+.dochead{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.dochead .who{font-size:22px;font-weight:700;letter-spacing:-.02em}
+.dochead .what{font-size:12px;color:var(--ink-2);margin-top:3px}
+.mark{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--duty);text-align:right;line-height:1.6}
+
+section.blk{margin-top:20px}
+.blk h3{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-2);margin-bottom:8px;font-weight:500;
+}
+.lead{font-size:14px;line-height:1.6;max-width:70ch}
+
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+th{
+  text-align:left;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-2);font-weight:500;
+  padding:0 10px 6px 0;border-bottom:1px solid var(--line);
+}
+td{padding:8px 10px 8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td.market{font-weight:600;white-space:nowrap}
+.tag{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  padding:2px 6px;border-radius:2px;background:rgba(13,107,78,.1);color:var(--duty);
+}
+.tag.flag{background:rgba(176,112,11,.12);color:var(--flag)}
+
+ol.steps{list-style:none;counter-reset:s;font-size:13px}
+ol.steps li{counter-increment:s;padding:6px 0 6px 26px;position:relative;line-height:1.55}
+ol.steps li::before{
+  content:counter(s);position:absolute;left:0;top:6px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--duty);
+  border:1px solid var(--duty);width:16px;height:16px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.foot{margin-top:22px;padding-top:11px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-2);line-height:1.7}
+.empty{color:var(--ink-2);font-size:13px;padding:14px 0}
+
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .doc{padding:22px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .form,.top{display:none}
+  .grid{display:block}
+  .doc{border:none;box-shadow:none;padding:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="kicker">Sales materials · scope in, document out</div>
+      <h1>Scope → One-Pager</h1>
+    </div>
+    <div class="timer">Assembled in <b id="ms">0</b> ms · last edit <span id="stamp">—</span></div>
+  </div>
+
+  <div class="grid">
+    <form class="form" id="form" onsubmit="return false">
+      <h2>Client scope</h2>
+
+      <label for="merchant">Merchant</label>
+      <input id="merchant" value="Halden Supply Co." autocomplete="off">
+
+      <label for="home">Selling from</label>
+      <select id="home">
+        <option>United Kingdom</option><option>United States</option>
+        <option>Germany</option><option>Netherlands</option><option>Singapore</option>
+      </select>
+
+      <label for="cat">Product category</label>
+      <select id="cat">
+        <option>Apparel &amp; accessories</option>
+        <option>Cosmetics &amp; personal care</option>
+        <option>Consumer electronics</option>
+        <option>Food &amp; supplements</option>
+        <option>Homeware</option>
+      </select>
+
+      <label>Target markets</label>
+      <div class="chips" id="chips"></div>
+
+      <label for="vol">Monthly cross-border orders</label>
+      <select id="vol">
+        <option>Under 500</option><option selected>500 – 5,000</option>
+        <option>5,000 – 50,000</option><option>50,000+</option>
+      </select>
+
+      <label for="setup">Current setup</label>
+      <select id="setup">
+        <option>Nothing in place</option>
+        <option selected>Patchwork of local agents</option>
+        <option>Incumbent provider, under review</option>
+      </select>
+
+      <div class="actions">
+        <button class="act" id="copy" type="button">Copy as text</button>
+        <button class="act ghost" type="button" onclick="window.print()">Export PDF</button>
+      </div>
+    </form>
+
+    <article class="doc" id="doc"></article>
+  </div>
+</div>
+
+<script>
+const MARKETS = {
+  "Germany":{r:"EU",c:"EU single clearance"},
+  "France":{r:"EU",c:"EU single clearance"},
+  "Spain":{r:"EU",c:"EU single clearance"},
+  "Netherlands":{r:"EU",c:"EU single clearance"},
+  "Italy":{r:"EU",c:"EU single clearance"},
+  "United States":{r:"NA",c:"State-by-state"},
+  "Canada":{r:"NA",c:"Federal + provincial"},
+  "Australia":{r:"APAC",c:"Single federal"},
+  "Japan":{r:"APAC",c:"Single federal"},
+  "Singapore":{r:"APAC",c:"Single federal"},
+  "United Arab Emirates":{r:"MEA",c:"Single federal"},
+  "Brazil":{r:"LATAM",c:"State-by-state"},
+  "Mexico":{r:"LATAM",c:"Single federal"}
+};
+const CAT_NOTE = {
+  "Apparel & accessories":"duty rates vary by fibre content and country of origin",
+  "Cosmetics & personal care":"ingredient and labelling rules differ by market",
+  "Consumer electronics":"conformity marking and e-waste registration apply",
+  "Food & supplements":"health certification and import licensing apply",
+  "Homeware":"safety marking and material declarations apply"
+};
+
+let picked = new Set(["Germany","United States","Australia"]);
+
+const chipWrap = document.getElementById("chips");
+chipWrap.innerHTML = Object.keys(MARKETS).map(m =>
+  `<button type="button" class="chip" role="button" aria-pressed="${picked.has(m)}" data-m="${m}">${m}</button>`).join("");
+chipWrap.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  const m = b.dataset.m;
+  picked.has(m) ? picked.delete(m) : picked.add(m);
+  b.setAttribute("aria-pressed", picked.has(m));
+  build();
+});
+
+document.getElementById("form").addEventListener("input", build);
+
+function build(){
+  const t0 = performance.now();
+  const merchant = document.getElementById("merchant").value.trim() || "the merchant";
+  const home = document.getElementById("home").value;
+  const cat = document.getElementById("cat").value;
+  const vol = document.getElementById("vol").value;
+  const setup = document.getElementById("setup").value;
+  const list = [...picked];
+
+  const regions = [...new Set(list.map(m => MARKETS[m].r))];
+  const complex = list.filter(m => MARKETS[m].c === "State-by-state");
+  const heavy = vol === "50,000+" || vol === "5,000 – 50,000";
+
+  const rows = list.length ? list.map(m => {
+    const d = MARKETS[m];
+    const hard = d.c === "State-by-state";
+    return `<tr>
+      <td class="market">${m}</td>
+      <td>${d.r}</td>
+      <td>${d.c}</td>
+      <td><span class="tag${hard?" flag":""}">${hard ? "Multi-jurisdiction" : "Single registration"}</span></td>
+    </tr>`;
+  }).join("") : "";
+
+  const openers = {
+    "Nothing in place":`${merchant} is selling from ${home} and has no cross-border tax or customs structure in place. Every new market is currently a blocker rather than a decision.`,
+    "Patchwork of local agents":`${merchant} is selling from ${home} through a patchwork of local agents. That works until it does not: liability is fragmented, filings sit with different parties, and no one owns the whole picture.`,
+    "Incumbent provider, under review":`${merchant} is selling from ${home} with an incumbent provider under review. The question is not whether the mechanics work, but who carries the liability when they don't.`
+  };
+
+  const steps = [
+    `Confirm the ${list.length || "target"} market list and the entity structure ${merchant} sells through today.`,
+    `Map current registrations, filings and customs arrangements per market, and identify who is legally liable for each.`,
+    complex.length ? `Scope the multi-jurisdiction markets (${complex.join(", ")}) separately, since obligations sit below national level.` : `Confirm product classification for ${cat.toLowerCase()}, where ${CAT_NOTE[cat]}.`,
+    heavy ? `Size the filing and clearance volume at ${vol} monthly orders to set the operating model.` : `Agree the go-live sequence, starting with the market closest to revenue.`,
+    `Move liability across, so ${merchant} sells and we carry tax, payments and customs.`
+  ];
+
+  document.getElementById("doc").innerHTML = `
+    <div class="dochead">
+      <div>
+        <div class="who">${merchant}</div>
+        <div class="what">Cross-border scope · ${cat} · selling from ${home}</div>
+      </div>
+      <div class="mark">Scoping<br>one-pager<br>${new Date().toISOString().slice(0,10)}</div>
+    </div>
+
+    <section class="blk">
+      <h3>Where they are</h3>
+      <p class="lead">${openers[setup]} At ${vol.toLowerCase()} cross-border orders a month across ${regions.length || 0} region${regions.length===1?"":"s"}, that fragmentation compounds.</p>
+    </section>
+
+    <section class="blk">
+      <h3>Markets in scope</h3>
+      ${list.length ? `<table>
+        <thead><tr><th>Market</th><th>Region</th><th>Clearance model</th><th>Registration shape</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>` : `<p class="empty">No markets selected. Pick at least one on the left and this section builds itself.</p>`}
+    </section>
+
+    <section class="blk">
+      <h3>What we take on</h3>
+      <p class="lead">Outpost becomes the legally liable entity for tax, payments and customs in each market above. ${merchant} keeps the customer relationship and the storefront. We carry the registrations, the filings, the clearance and the liability that comes with them.</p>
+    </section>
+
+    <section class="blk">
+      <h3>Proposed next steps</h3>
+      <ol class="steps">${steps.map(s => `<li>${s}</li>`).join("")}</ol>
+    </section>
+
+    <div class="foot">
+      Generated from structured scope inputs · no manual formatting, no logo swapping<br>
+      Commercial terms and market-specific obligations confirmed at scoping call
+    </div>`;
+
+  document.getElementById("ms").textContent = (performance.now() - t0).toFixed(1);
+  document.getElementById("stamp").textContent = new Date().toLocaleTimeString();
+}
+
+document.getElementById("copy").addEventListener("click", () => {
+  const txt = document.getElementById("doc").innerText;
+  navigator.clipboard.writeText(txt).then(() => {
+    const b = document.getElementById("copy");
+    b.textContent = "Copied"; setTimeout(()=>b.textContent="Copy as text", 1400);
+  });
+});
+
+build();
+</script>
+</body>
+</html>
