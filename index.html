@@ -180,10 +180,7 @@
           <i data-lucide="graduation-cap" class="h-4 w-4"></i>
           <span>Education</span>
         </button>
-        <button data-tab="certifications" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
-          <i data-lucide="shield-check" class="h-4 w-4"></i>
-          <span>Certifications</span>
-        </button>
+
         <button data-tab="deliverables" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="folder-open" class="h-4 w-4"></i>
           <span>BA Deliverables</span>
@@ -763,104 +760,7 @@
         </div>
       </section>
 
-      <!-- ================= CERTIFICATIONS PANEL ================= -->
-      <section id="panel-certifications" class="content-panel space-y-6 hidden">
-        <div class="flex items-center justify-between border-b border-slate-200 pb-4">
-          <div>
-            <h2 class="font-outfit text-2xl font-bold text-slate-800">Certifications & Simulation Work</h2>
-            <p class="text-xs text-slate-500">Professional credentials and real-world simulations</p>
-          </div>
-          <i data-lucide="shield-check" class="h-8 w-8 text-slate-400"></i>
-        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Cert 1 -->
-          <div class="bg-white rounded-xl border border-slate-205 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
-            <div class="p-4 space-y-3 flex-1 flex flex-col">
-              <div class="aspect-video w-full rounded-lg bg-slate-100 overflow-hidden border border-slate-200 flex items-center justify-center">
-                <img src="assets/images/udemy_ba_a2z.png" alt="Business Analysis A to Z" class="w-full h-full object-cover">
-              </div>
-              <div class="space-y-1 flex-1 flex flex-col justify-between pt-2">
-                <div>
-                  <h3 class="font-outfit font-semibold text-slate-800 text-xs line-clamp-2">Business Analysis "A to Z" Masterclass</h3>
-                  <p class="text-[10px] text-slate-500 mt-0.5">Udemy · June 2026</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 pt-0">
-              <a href="http://ude.my/UC-a6de09fd-0184-4cf2-82c2-d2dc6fbc0a25" target="_blank" rel="noopener" class="w-full flex items-center justify-center space-x-1 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 text-[10px] font-bold rounded-lg transition">
-                <i data-lucide="external-link" class="h-3 w-3"></i>
-                <span>View Certificate</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Cert 2 -->
-          <div class="bg-white rounded-xl border border-slate-205 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
-            <div class="p-4 space-y-3 flex-1 flex flex-col">
-              <div class="aspect-video w-full rounded-lg bg-slate-100 overflow-hidden border border-slate-200 flex items-center justify-center">
-                <img src="assets/images/pwc_consulting.jpg" alt="Technology Consulting" class="w-full h-full object-cover">
-              </div>
-              <div class="space-y-1 flex-1 flex flex-col justify-between pt-2">
-                <div>
-                  <h3 class="font-outfit font-semibold text-slate-800 text-xs line-clamp-2">Technology Consulting Virtual Case Experience</h3>
-                  <p class="text-[10px] text-slate-500 mt-0.5">PwC / Forage · June 2026</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 pt-0">
-              <span class="w-full flex items-center justify-center space-x-1 py-1.5 bg-slate-50 text-slate-500 text-[10px] font-semibold rounded-lg">
-                <i data-lucide="check-circle" class="h-3 w-3 text-emerald-500"></i>
-                <span>Simulation Completed</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Cert 3 -->
-          <div class="bg-white rounded-xl border border-slate-205 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
-            <div class="p-4 space-y-3 flex-1 flex flex-col">
-              <div class="aspect-video w-full rounded-lg bg-slate-100 overflow-hidden border border-slate-200 flex items-center justify-center">
-                <img src="assets/images/atlassian_agile.jpg" alt="Atlassian Agile Project Management" class="w-full h-full object-cover">
-              </div>
-              <div class="space-y-1 flex-1 flex flex-col justify-between pt-2">
-                <div>
-                  <h3 class="font-outfit font-semibold text-slate-800 text-xs line-clamp-2">Atlassian Agile Project Management Professional Certificate</h3>
-                  <p class="text-[10px] text-slate-500 mt-0.5">LinkedIn Learning · Feb 2025</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 pt-0">
-              <span class="w-full flex items-center justify-center space-x-1 py-1.5 bg-slate-50 text-slate-500 text-[10px] font-semibold rounded-lg">
-                <i data-lucide="award" class="h-3 w-3 text-emerald-500"></i>
-                <span>Credential Earned</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Cert 4 -->
-          <div class="bg-white rounded-xl border border-slate-205 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition">
-            <div class="p-4 space-y-3 flex-1 flex flex-col">
-              <div class="aspect-video w-full rounded-lg bg-slate-100 overflow-hidden border border-slate-200 flex items-center justify-center">
-                <div class="h-12 w-12 rounded-full bg-rose-50 text-rose-600 flex items-center justify-center">
-                  <i data-lucide="book-open" class="h-6 w-6"></i>
-                </div>
-              </div>
-              <div class="space-y-1 flex-1 flex flex-col justify-between pt-2">
-                <div>
-                  <h3 class="font-outfit font-semibold text-slate-800 text-xs line-clamp-2">Project Management Foundations</h3>
-                  <p class="text-[10px] text-slate-500 mt-0.5">LinkedIn Learning · Feb 2025</p>
-                </div>
-              </div>
-            </div>
-            <div class="p-4 pt-0">
-              <span class="w-full flex items-center justify-center space-x-1 py-1.5 bg-slate-50 text-slate-500 text-[10px] font-semibold rounded-lg">
-                <i data-lucide="award" class="h-3 w-3 text-emerald-500"></i>
-                <span>Credential Earned</span>
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <!-- ================= BA DELIVERABLES PANEL ================= -->
       <section id="panel-deliverables" class="content-panel space-y-6 hidden">
