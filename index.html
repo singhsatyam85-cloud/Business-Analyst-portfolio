@@ -248,12 +248,7 @@
               </span>
             </div>
           </div>
-          <div class="flex-shrink-0">
-            <button onclick="document.getElementById('jd-matcher-card').scrollIntoView({ behavior: 'smooth' })" class="w-full md:w-auto flex items-center justify-center space-x-2 px-5 py-3 bg-white text-rose-950 font-bold rounded-xl hover:bg-slate-100 transition shadow-lg text-sm">
-              <i data-lucide="zap" class="h-4 w-4 text-rose-600"></i>
-              <span>Match Job Description</span>
-            </button>
-          </div>
+
         </div>
 
         <!-- Quick Info Stats Grid -->
@@ -336,111 +331,7 @@
           </div>
         </div>
 
-        <!-- JD Matcher Widget -->
-        <div id="jd-matcher-card" class="bg-white rounded-xl border border-rose-200 shadow-sm overflow-hidden scroll-mt-6">
-          <div class="bg-rose-50/50 border-b border-rose-100 px-6 py-4 flex items-center space-x-3">
-            <div class="h-8 w-8 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center">
-              <i data-lucide="sparkles" class="h-4.5 w-4.5"></i>
-            </div>
-            <div>
-              <h3 class="font-outfit font-semibold text-slate-800 text-sm">Smart Job Description (JD) Fit Check</h3>
-              <p class="text-xs text-slate-500">Paste any Business Analyst or Digital transformation job description to evaluate the fit score</p>
-            </div>
-          </div>
-          
-          <div class="p-6 space-y-6">
-            <!-- Input Area -->
-            <div id="jd-input-panel" class="space-y-3">
-              <label for="jdText" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider">Job Description Details</label>
-              <textarea id="jdText" rows="6" class="w-full rounded-xl border border-slate-355 p-4 text-sm text-slate-705 placeholder-slate-400 focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500" placeholder="Paste the job requirements, responsibilities, or skills block here (minimum 80 characters)..."></textarea>
-              <div class="flex justify-end">
-                <button id="matchButton" class="flex items-center space-x-2 px-5 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl transition shadow-md shadow-rose-600/10 text-sm">
-                  <i data-lucide="calculator" class="h-4 w-4"></i>
-                  <span>Calculate Fit Score</span>
-                </button>
-              </div>
-            </div>
 
-            <!-- Loading Panel -->
-            <div id="jd-loading-panel" class="hidden flex-col items-center justify-center py-10 space-y-4">
-              <div class="spinner"></div>
-              <div class="text-center max-w-sm">
-                <h4 class="font-outfit font-semibold text-slate-800 text-sm">Analyzing Requirements...</h4>
-                <p class="text-xs text-slate-500 mt-1">Evaluating the job description against Shiv's project experience, tool matrix, and BA artifacts.</p>
-              </div>
-            </div>
-
-            <!-- Result Scorecard Panel -->
-            <div id="jd-result-panel" class="hidden space-y-6">
-              <!-- Scorecard header -->
-              <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-                <div class="flex items-center space-x-4">
-                  <!-- score ring -->
-                  <div id="score-ring" class="score-ring flex-shrink-0">
-                    <span id="score-percent-val">0%</span>
-                  </div>
-                  <div>
-                    <h4 id="match-label" class="font-outfit text-lg font-bold text-slate-800">Calculating...</h4>
-                    <p class="text-xs text-slate-500">Based on structured keywords, deliverables, and role filters.</p>
-                  </div>
-                </div>
-                <div>
-                  <span id="recommendation-chip" class="inline-block bg-rose-50 border border-rose-100 text-rose-700 text-xs font-semibold px-3 py-1.5 rounded-lg"></span>
-                </div>
-              </div>
-
-              <!-- strengths and gaps -->
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-4 space-y-2">
-                  <div class="flex items-center text-emerald-800 text-xs font-semibold uppercase tracking-wider">
-                    <i data-lucide="check-circle-2" class="h-4 w-4 mr-1.5 text-emerald-600"></i> Main Strengths
-                  </div>
-                  <p id="strengths-text" class="text-slate-600 text-xs leading-relaxed"></p>
-                </div>
-                <div class="bg-amber-50/60 border border-amber-100 rounded-xl p-4 space-y-2">
-                  <div class="flex items-center text-amber-800 text-xs font-semibold uppercase tracking-wider">
-                    <i data-lucide="alert-triangle" class="h-4 w-4 mr-1.5 text-amber-600"></i> Key Gaps
-                  </div>
-                  <p id="gaps-text" class="text-slate-600 text-xs leading-relaxed"></p>
-                </div>
-              </div>
-
-              <!-- Warning Box (Optional Capping) -->
-              <div id="accuracy-warning" class="hidden bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-start space-x-3">
-                <i data-lucide="info" class="h-4 w-4 text-slate-500 mt-0.5"></i>
-                <div class="text-xs text-slate-600">
-                  <strong>Role Capping Filter:</strong> <span id="warning-text"></span>
-                </div>
-              </div>
-
-              <!-- Top Areas Match Bars -->
-              <div class="space-y-3">
-                <h5 class="text-xs font-semibold text-slate-705 uppercase tracking-wider">Requirement Fit Breakdown</h5>
-                <div id="fit-bars-container" class="space-y-3">
-                  <!-- JS will inject matches here -->
-                </div>
-              </div>
-
-              <!-- Evidence toggle accordion -->
-              <details class="group border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50">
-                <summary class="flex items-center justify-between px-4 py-3 text-xs font-semibold text-slate-700 cursor-pointer hover:bg-slate-100 transition select-none">
-                  <span>VIEW DETAILED EVIDENCE DIRECTORY</span>
-                  <i data-lucide="chevron-down" class="h-4 w-4 transition-transform group-open:rotate-180 text-slate-500"></i>
-                </summary>
-                <div id="evidence-list" class="p-4 border-t border-slate-200 space-y-3 text-xs text-slate-600 max-h-[300px] overflow-y-auto bg-white">
-                  <!-- JS will inject matches here -->
-                </div>
-              </details>
-
-              <div class="flex justify-start">
-                <button id="resetJdButton" class="flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
-                  <i data-lucide="rotate-ccw" class="h-3.5 w-3.5"></i>
-                  <span>Test another Job Description</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- ================= EXPERIENCE PANEL ================= -->
@@ -2332,21 +2223,13 @@
       }
 
       // Event listener bindings for JD matches
-      document.getElementById('matchButton').addEventListener('click', () => {
-        const jdVal = document.getElementById('jdText').value;
-        executeMatch(jdVal, false);
-      });
-
-      document.getElementById('drawerMatchButton').addEventListener('click', () => {
-        const jdVal = document.getElementById('drawerJdText').value;
-        executeMatch(jdVal, true);
-      });
-
-      document.getElementById('resetJdButton').addEventListener('click', () => {
-        document.getElementById('jd-result-panel').classList.add('hidden');
-        document.getElementById('jd-input-panel').classList.remove('hidden');
-        document.getElementById('jdText').value = '';
-      });
+      const drawerMatchButton = document.getElementById('drawerMatchButton');
+      if (drawerMatchButton) {
+        drawerMatchButton.addEventListener('click', () => {
+          const jdVal = document.getElementById('drawerJdText').value;
+          executeMatch(jdVal, true);
+        });
+      }
 
     });
   </script>
