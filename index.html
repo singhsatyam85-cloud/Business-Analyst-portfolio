@@ -1613,7 +1613,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Initialize Lucide Icons
-      lucide.createIcons();
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
 
       // ================= SPA PANEL ROUTING =================
       const navButtons = document.querySelectorAll('nav button[data-tab]');
@@ -1623,56 +1625,66 @@
 
       function switchTab(tabId) {
         // Toggle Active Link highlight
-        navButtons.forEach(btn => {
-          if (btn.getAttribute('data-tab') === tabId) {
-            btn.classList.add('active');
-            btn.setAttribute('aria-selected', 'true');
-          } else {
-            btn.classList.remove('active');
-            btn.setAttribute('aria-selected', 'false');
-          }
-        });
+        if (navButtons) {
+          navButtons.forEach(btn => {
+            if (btn.getAttribute('data-tab') === tabId) {
+              btn.classList.add('active');
+              btn.setAttribute('aria-selected', 'true');
+            } else {
+              btn.classList.remove('active');
+              btn.setAttribute('aria-selected', 'false');
+            }
+          });
+        }
 
         // Toggle Right Panel views
-        contentPanels.forEach(panel => {
-          if (panel.id === `panel-${tabId}`) {
-            panel.classList.remove('hidden');
-          } else {
-            panel.classList.add('hidden');
-          }
-        });
+        if (contentPanels) {
+          contentPanels.forEach(panel => {
+            if (panel.id === `panel-${tabId}`) {
+              panel.classList.remove('hidden');
+            } else {
+              panel.classList.add('hidden');
+            }
+          });
+        }
 
         // Close sidebar on mobile after tab click
-        sidebar.classList.add('-translate-x-full');
-        overlay.classList.add('hidden');
+        if (sidebar) {
+          sidebar.classList.add('-translate-x-full');
+        }
+        if (overlay) {
+          overlay.classList.add('hidden');
+        }
       }
 
-      navButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          const tabId = btn.getAttribute('data-tab');
-          switchTab(tabId);
+      if (navButtons) {
+        navButtons.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tabId = btn.getAttribute('data-tab');
+            switchTab(tabId);
+          });
         });
-      });
+      }
 
       // ================= MOBILE SIDEBAR DRAWER TOGGLE =================
       const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
       const closeSidebarBtn = document.getElementById('close-sidebar-btn');
 
-      if (toggleSidebarBtn) {
+      if (toggleSidebarBtn && sidebar && overlay) {
         toggleSidebarBtn.addEventListener('click', () => {
           sidebar.classList.remove('-translate-x-full');
           overlay.classList.remove('hidden');
         });
       }
 
-      if (closeSidebarBtn) {
+      if (closeSidebarBtn && sidebar && overlay) {
         closeSidebarBtn.addEventListener('click', () => {
           sidebar.classList.add('-translate-x-full');
           overlay.classList.add('hidden');
         });
       }
 
-      if (overlay) {
+      if (overlay && sidebar) {
         overlay.addEventListener('click', () => {
           sidebar.classList.add('-translate-x-full');
           overlay.classList.add('hidden');
@@ -1683,31 +1695,34 @@
       const projectTabs = document.querySelectorAll('button[data-project-tab]');
       const projectPanels = document.querySelectorAll('.project-view-panel');
 
-      projectTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          const targetProj = tab.getAttribute('data-project-tab');
-          
-          // Toggle tab button classes
-          projectTabs.forEach(t => {
-            if (t.getAttribute('data-project-tab') === targetProj) {
-              t.classList.add('active');
-              t.setAttribute('aria-selected', 'true');
-            } else {
-              t.classList.remove('active');
-              t.setAttribute('aria-selected', 'false');
-            }
-          });
+      if (projectTabs) {
+        projectTabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            const targetProj = tab.getAttribute('data-project-tab');
+            
+            // Toggle tab button classes
+            projectTabs.forEach(t => {
+              if (t.getAttribute('data-project-tab') === targetProj) {
+                t.classList.add('active');
+                t.setAttribute('aria-selected', 'true');
+              } else {
+                t.classList.remove('active');
+                t.setAttribute('aria-selected', 'false');
+              }
+            });
 
-          // Toggle project panels visibility
-          projectPanels.forEach(panel => {
-            if (panel.id === `project-panel-${targetProj}`) {
-              panel.classList.remove('hidden');
-            } else {
-              panel.classList.add('hidden');
+            // Toggle project panels visibility
+            if (projectPanels) {
+              projectPanels.forEach(panel => {
+                if (panel.id === `project-panel-${targetProj}`) {
+                  panel.classList.remove('hidden');
+                } else {
+                  panel.classList.add('hidden');
+                }
+              });
             }
           });
         });
-     ;
       }
 
     });
