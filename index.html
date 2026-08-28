@@ -24,9 +24,9 @@
             outfit: ['Outfit', 'sans-serif'],
           },
           colors: {
-            brandDark: '#0F172A',
-            brandActive: '#6366F1',
-            brandActiveLight: '#EEF2F6',
+            brandDark: '#0A0A0A',
+            brandActive: '#F43F5E',
+            brandActiveLight: '#FFF1F2',
           }
         }
       }
@@ -62,19 +62,19 @@
 
     /* Glow animations */
     .glow-badge {
-      box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+      box-shadow: 0 0 12px rgba(244, 63, 94, 0.6);
       animation: pulseGlow 2s infinite alternate;
     }
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 4px rgba(99, 102, 241, 0.4); }
-      100% { box-shadow: 0 0 16px rgba(99, 102, 241, 0.8); }
+      0% { box-shadow: 0 0 4px rgba(244, 63, 94, 0.4); }
+      100% { box-shadow: 0 0 16px rgba(244, 63, 94, 0.8); }
     }
 
     /* Active nav links */
     .nav-link.active {
       background-color: #1E293B;
       color: #FFFFFF;
-      border-left: 4px solid #6366F1;
+      border-left: 4px solid #F43F5E;
     }
 
     /* Circular Progress Ring for JD Matcher */
@@ -83,7 +83,7 @@
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background: conic-gradient(var(--ring-color, #6366F1) var(--score-angle, 0deg), #E2E8F0 0deg);
+      background: conic-gradient(var(--ring-color, #F43F5E) var(--score-angle, 0deg), #E2E8F0 0deg);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -103,20 +103,20 @@
       font-size: 24px;
       font-weight: 700;
       font-family: 'Outfit', sans-serif;
-      color: #0F172A;
+      color: #0A0A0A;
     }
 
     /* Custom styles for tab controls in deliverables */
     .deliv-tab.active {
-      background-color: #6366F1;
+      background-color: #F43F5E;
       color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+      box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
     }
 
     /* Custom loading animation */
     .spinner {
       border: 3px solid #E2E8F0;
-      border-top: 3px solid #6366F1;
+      border-top: 3px solid #F43F5E;
       border-radius: 50%;
       width: 32px;
       height: 32px;
@@ -139,56 +139,56 @@
   <aside id="sidebar" class="sidebar-transition fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col justify-between bg-brandDark text-slate-300 md:relative md:translate-x-0 -translate-x-full">
     <div>
       <!-- Sidebar Header -->
-      <div class="p-6 border-b border-slate-800 flex items-center justify-between">
+      <div class="p-6 border-b border-neutral-800 flex items-center justify-between">
         <div class="flex items-center space-x-3">
-          <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-50 to-indigo-100 flex items-center justify-center text-indigo-950 font-bold text-lg font-outfit shadow-lg">
+          <div class="h-10 w-10 rounded-xl bg-gradient-to-tr from-rose-50 to-rose-100 flex items-center justify-center text-rose-950 font-bold text-lg font-outfit shadow-lg">
             SS
           </div>
           <div>
             <h1 class="font-outfit text-white font-semibold text-sm leading-tight">Shiv Satyam Singh</h1>
-            <p class="text-xs text-indigo-400 font-medium">Business Analyst</p>
+            <p class="text-xs text-rose-400 font-medium">Business Analyst</p>
           </div>
         </div>
         <!-- Close Mobile Menu Button -->
-        <button id="close-sidebar-btn" class="md:hidden text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800" aria-label="Close sidebar">
+        <button id="close-sidebar-btn" class="md:hidden text-slate-400 hover:text-white p-1 rounded-lg hover:bg-neutral-800" aria-label="Close sidebar">
           <i data-lucide="x" class="h-5 w-5"></i>
         </button>
       </div>
 
       <!-- Navigation Tabs -->
       <nav class="p-4 space-y-1" role="tablist">
-        <button data-tab="about" class="nav-link active w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="true">
+        <button data-tab="about" class="nav-link active w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="true">
           <i data-lucide="user" class="h-4 w-4"></i>
           <span>About</span>
         </button>
-        <button data-tab="experience" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="experience" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="briefcase" class="h-4 w-4"></i>
           <span>Experience</span>
         </button>
-        <button data-tab="projects" class="nav-link w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="projects" class="nav-link w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <div class="flex items-center space-x-3">
             <i data-lucide="rocket" class="h-4 w-4"></i>
             <span>Projects</span>
           </div>
-          <span class="glow-badge bg-indigo-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase leading-none">New</span>
+          <span class="glow-badge bg-rose-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full uppercase leading-none">New</span>
         </button>
-        <button data-tab="skills" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="skills" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="wrench" class="h-4 w-4"></i>
           <span>Skills</span>
         </button>
-        <button data-tab="education" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="education" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="graduation-cap" class="h-4 w-4"></i>
           <span>Education</span>
         </button>
-        <button data-tab="certifications" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="certifications" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="shield-check" class="h-4 w-4"></i>
           <span>Certifications</span>
         </button>
-        <button data-tab="deliverables" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="deliverables" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="folder-open" class="h-4 w-4"></i>
           <span>BA Deliverables</span>
         </button>
-        <button data-tab="contact" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-slate-800 hover:text-white" role="tab" aria-selected="false">
+        <button data-tab="contact" class="nav-link w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-sm font-medium transition hover:bg-neutral-800 hover:text-white" role="tab" aria-selected="false">
           <i data-lucide="mail" class="h-4 w-4"></i>
           <span>Contact</span>
         </button>
@@ -196,8 +196,8 @@
     </div>
 
     <!-- Sidebar Footer -->
-    <div class="p-4 border-t border-slate-800">
-      <a href="Document/Shiv_Satyam_Singh_BA_CV.pdf" download class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-semibold transition shadow-lg shadow-indigo-600/20" aria-label="Download Curriculum Vitae">
+    <div class="p-4 border-t border-neutral-800">
+      <a href="Document/Shiv_Satyam_Singh_BA_CV.pdf" download class="w-full flex items-center justify-center space-x-2 px-4 py-3 bg-rose-600 hover:bg-rose-700 text-white rounded-lg text-sm font-semibold transition shadow-lg shadow-rose-600/20" aria-label="Download Curriculum Vitae">
         <i data-lucide="download" class="h-4 w-4"></i>
         <span>Download CV</span>
       </a>
@@ -213,7 +213,7 @@
     <!-- Mobile Header -->
     <header class="md:hidden flex items-center justify-between px-6 py-4 bg-white border-b border-slate-200 z-10 flex-shrink-0">
       <div class="flex items-center space-x-3">
-        <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold font-outfit text-sm shadow">
+        <div class="h-8 w-8 rounded-lg bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center text-white font-bold font-outfit text-sm shadow">
           SS
         </div>
         <span class="font-outfit font-semibold text-slate-800 text-sm">Shiv Satyam Singh</span>
@@ -229,28 +229,28 @@
       <!-- ================= ABOUT PANEL ================= -->
       <section id="panel-about" class="content-panel space-y-6">
         <!-- Hero section banner -->
-        <div class="bg-gradient-to-r from-slate-900 to-indigo-950 rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xl shadow-slate-900/10">
+        <div class="bg-gradient-to-r from-slate-900 to-rose-950 rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xl shadow-slate-900/10">
           <div class="space-y-4 max-w-2xl">
-            <span class="inline-block bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Welcome Portfolio</span>
+            <span class="inline-block bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Welcome Portfolio</span>
             <h2 class="font-outfit text-3xl md:text-4xl font-bold tracking-tight">I Analyse. I Build. I Deliver.</h2>
             <p class="text-slate-300 text-sm md:text-base leading-relaxed">
               Business Analyst with hands-on experience in requirements gathering, process mapping, and digital transformation across web, mobile, and automated systems. Bridging the gap between business objectives and tech deployment.
             </p>
             <div class="flex flex-wrap gap-3 pt-2">
               <span class="flex items-center text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
-                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-indigo-400"></i> Agile & Scrum
+                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-rose-400"></i> Agile & Scrum
               </span>
               <span class="flex items-center text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
-                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-indigo-400"></i> Requirements BRD/FRD
+                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-rose-400"></i> Requirements BRD/FRD
               </span>
               <span class="flex items-center text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
-                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-indigo-400"></i> UAT Support & Signoff
+                <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-rose-400"></i> UAT Support & Signoff
               </span>
             </div>
           </div>
           <div class="flex-shrink-0">
-            <button onclick="document.getElementById('jd-matcher-card').scrollIntoView({ behavior: 'smooth' })" class="w-full md:w-auto flex items-center justify-center space-x-2 px-5 py-3 bg-white text-indigo-950 font-bold rounded-xl hover:bg-slate-100 transition shadow-lg text-sm">
-              <i data-lucide="zap" class="h-4 w-4 text-indigo-600"></i>
+            <button onclick="document.getElementById('jd-matcher-card').scrollIntoView({ behavior: 'smooth' })" class="w-full md:w-auto flex items-center justify-center space-x-2 px-5 py-3 bg-white text-rose-950 font-bold rounded-xl hover:bg-slate-100 transition shadow-lg text-sm">
+              <i data-lucide="zap" class="h-4 w-4 text-rose-600"></i>
               <span>Match Job Description</span>
             </button>
           </div>
@@ -259,7 +259,7 @@
         <!-- Quick Info Stats Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
           <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div class="h-12 w-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
+            <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="calendar" class="h-6 w-6"></i>
             </div>
             <div>
@@ -268,7 +268,7 @@
             </div>
           </div>
           <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div class="h-12 w-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
+            <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="file-check" class="h-6 w-6"></i>
             </div>
             <div>
@@ -277,7 +277,7 @@
             </div>
           </div>
           <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
-            <div class="h-12 w-12 bg-indigo-50 text-indigo-600 rounded-xl flex items-center justify-center">
+            <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="award" class="h-6 w-6"></i>
             </div>
             <div>
@@ -302,34 +302,34 @@
             <div class="pt-2">
               <h4 class="font-outfit text-sm font-semibold text-slate-800 mb-2">Core Competencies</h4>
               <div class="grid grid-cols-2 gap-2 text-xs text-slate-650">
-                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-indigo-500"></i> Requirements Engineering</div>
-                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-indigo-500"></i> Process Mapping (As-Is / To-Be)</div>
-                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-indigo-500"></i> User Acceptance Testing (UAT)</div>
-                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-indigo-500"></i> Backlog Grooming & Agile Flow</div>
+                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Requirements Engineering</div>
+                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Process Mapping (As-Is / To-Be)</div>
+                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> User Acceptance Testing (UAT)</div>
+                <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Backlog Grooming & Agile Flow</div>
               </div>
             </div>
           </div>
 
           <!-- Professional principles card -->
-          <div class="bg-indigo-600 rounded-xl p-6 text-white space-y-4 flex flex-col justify-between">
+          <div class="bg-rose-600 rounded-xl p-6 text-white space-y-4 flex flex-col justify-between">
             <div class="space-y-3">
               <h3 class="font-outfit text-lg font-semibold">Delivery Principles</h3>
-              <ul class="space-y-3 text-xs text-indigo-100">
+              <ul class="space-y-3 text-xs text-rose-100">
                 <li class="flex items-start">
-                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-indigo-550 text-[10px] font-bold text-white">1</span>
+                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-rose-600 text-[10px] font-bold text-white">1</span>
                   <span><strong>Requirements Honesty</strong>: Creating a shared, clear understanding of scope to prevent project surprises.</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-indigo-550 text-[10px] font-bold text-white">2</span>
+                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-rose-600 text-[10px] font-bold text-white">2</span>
                   <span><strong>Structured Flow</strong>: Building visual sitemaps, role-permission matrices, and process steps so everyone knows the path.</span>
                 </li>
                 <li class="flex items-start">
-                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-indigo-550 text-[10px] font-bold text-white">3</span>
+                  <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-rose-600 text-[10px] font-bold text-white">3</span>
                   <span><strong>Tested Outcomes</strong>: Designing testable acceptance criteria to make UAT execution straightforward and fast.</span>
                 </li>
               </ul>
             </div>
-            <div class="border-t border-indigo-500/50 pt-4 flex items-center justify-between text-xs text-indigo-200">
+            <div class="border-t border-rose-500/50 pt-4 flex items-center justify-between text-xs text-rose-200">
               <span>Located in UK</span>
               <span>Available for Hire</span>
             </div>
@@ -337,9 +337,9 @@
         </div>
 
         <!-- JD Matcher Widget -->
-        <div id="jd-matcher-card" class="bg-white rounded-xl border border-indigo-200 shadow-sm overflow-hidden scroll-mt-6">
-          <div class="bg-indigo-50/50 border-b border-indigo-100 px-6 py-4 flex items-center space-x-3">
-            <div class="h-8 w-8 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center">
+        <div id="jd-matcher-card" class="bg-white rounded-xl border border-rose-200 shadow-sm overflow-hidden scroll-mt-6">
+          <div class="bg-rose-50/50 border-b border-rose-100 px-6 py-4 flex items-center space-x-3">
+            <div class="h-8 w-8 bg-rose-100 text-rose-600 rounded-lg flex items-center justify-center">
               <i data-lucide="sparkles" class="h-4.5 w-4.5"></i>
             </div>
             <div>
@@ -352,9 +352,9 @@
             <!-- Input Area -->
             <div id="jd-input-panel" class="space-y-3">
               <label for="jdText" class="block text-xs font-semibold text-slate-700 uppercase tracking-wider">Job Description Details</label>
-              <textarea id="jdText" rows="6" class="w-full rounded-xl border border-slate-355 p-4 text-sm text-slate-705 placeholder-slate-400 focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500" placeholder="Paste the job requirements, responsibilities, or skills block here (minimum 80 characters)..."></textarea>
+              <textarea id="jdText" rows="6" class="w-full rounded-xl border border-slate-355 p-4 text-sm text-slate-705 placeholder-slate-400 focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500" placeholder="Paste the job requirements, responsibilities, or skills block here (minimum 80 characters)..."></textarea>
               <div class="flex justify-end">
-                <button id="matchButton" class="flex items-center space-x-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition shadow-md shadow-indigo-600/10 text-sm">
+                <button id="matchButton" class="flex items-center space-x-2 px-5 py-3 bg-rose-600 hover:bg-rose-700 text-white font-semibold rounded-xl transition shadow-md shadow-rose-600/10 text-sm">
                   <i data-lucide="calculator" class="h-4 w-4"></i>
                   <span>Calculate Fit Score</span>
                 </button>
@@ -385,7 +385,7 @@
                   </div>
                 </div>
                 <div>
-                  <span id="recommendation-chip" class="inline-block bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1.5 rounded-lg"></span>
+                  <span id="recommendation-chip" class="inline-block bg-rose-50 border border-rose-100 text-rose-700 text-xs font-semibold px-3 py-1.5 rounded-lg"></span>
                 </div>
               </div>
 
@@ -433,7 +433,7 @@
               </details>
 
               <div class="flex justify-start">
-                <button id="resetJdButton" class="flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+                <button id="resetJdButton" class="flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                   <i data-lucide="rotate-ccw" class="h-3.5 w-3.5"></i>
                   <span>Test another Job Description</span>
                 </button>
@@ -453,13 +453,13 @@
           <i data-lucide="briefcase" class="h-8 w-8 text-slate-400"></i>
         </div>
 
-        <div class="relative pl-6 border-l-2 border-indigo-100 space-y-8 py-2 ml-4">
+        <div class="relative pl-6 border-l-2 border-rose-100 space-y-8 py-2 ml-4">
           <!-- Role 1 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"></span>
+            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
-                <span class="bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
+                <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">May 2026 - Present</span>
               </div>
               <h3 class="font-outfit text-base font-bold text-slate-805">Ckay Solution Limited · United Kingdom</h3>
@@ -491,10 +491,10 @@
 
           <!-- Role 2 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"></span>
+            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
-                <span class="bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
+                <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Dec 2023 - Dec 2024</span>
               </div>
               <h3 class="font-outfit text-base font-bold text-slate-800">FeelTech Digiviation Pvt Ltd · Gujarat, India</h3>
@@ -511,10 +511,10 @@
 
           <!-- Role 3 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"></span>
+            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
-                <span class="bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded">Associate Manager - Operations Analyst</span>
+                <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Associate Manager - Operations Analyst</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Nov 2017 - Nov 2023</span>
               </div>
               <h3 class="font-outfit text-base font-bold text-slate-800">Jindal Stainless Ltd · Odisha, India</h3>
@@ -532,10 +532,10 @@
 
           <!-- Role 4 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-indigo-600 bg-white"></span>
+            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
-                <span class="bg-indigo-50 border border-indigo-100 text-indigo-700 font-bold px-2 py-0.5 rounded">Operation Executive</span>
+                <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Operation Executive</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Mar 2016 - Nov 2017</span>
               </div>
               <h3 class="font-outfit text-base font-bold text-slate-800">India Steel Works Ltd · Mumbai, India</h3>
@@ -560,10 +560,10 @@
         </div>
 
         <!-- Featured Project (Hero Card) -->
-        <div class="bg-white rounded-xl border border-indigo-200 overflow-hidden shadow-sm flex flex-col lg:flex-row">
+        <div class="bg-white rounded-xl border border-rose-200 overflow-hidden shadow-sm flex flex-col lg:flex-row">
           <div class="p-6 lg:p-8 flex-1 space-y-4">
             <div class="flex items-center space-x-2">
-              <span class="bg-indigo-550 border border-indigo-100 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Featured Hero Project</span>
+              <span class="bg-rose-600 border border-rose-100 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Featured Hero Project</span>
               <span class="bg-purple-50 text-purple-700 text-[10px] font-semibold px-2.5 py-1 rounded">SaaS Platform</span>
             </div>
             <h3 class="font-outfit text-2xl font-bold text-slate-800">AI Digital Analyst Officer</h3>
@@ -583,35 +583,35 @@
               </div>
             </div>
             <div class="flex flex-wrap gap-3 pt-2">
-              <a href="https://github.com/singhsatyam85-cloud/ai-digital-analyst-officer" target="_blank" rel="noopener" class="flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/ai-digital-analyst-officer" target="_blank" rel="noopener" class="flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
-              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                 <span>Live App</span>
               </a>
             </div>
           </div>
-          <div class="bg-gradient-to-br from-indigo-50 to-indigo-100/50 w-full lg:w-[280px] border-t lg:border-t-0 lg:border-l border-slate-200 p-6 flex flex-col justify-between">
+          <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 w-full lg:w-[280px] border-t lg:border-t-0 lg:border-l border-slate-200 p-6 flex flex-col justify-between">
             <div class="space-y-3">
-              <h4 class="font-outfit text-xs font-bold text-indigo-950 uppercase tracking-wider">Key BA Alignment</h4>
+              <h4 class="font-outfit text-xs font-bold text-rose-950 uppercase tracking-wider">Key BA Alignment</h4>
               <ul class="text-[11px] text-slate-600 space-y-2">
                 <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-indigo-600 mt-0.5"></i>
+                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
                   <span>Autonomous system workflows</span>
                 </li>
                 <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-indigo-600 mt-0.5"></i>
+                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
                   <span>Third-party API mappings</span>
                 </li>
                 <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-indigo-600 mt-0.5"></i>
+                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
                   <span>Multi-tenant SaaS metrics</span>
                 </li>
               </ul>
             </div>
-            <div class="bg-white/80 backdrop-blur rounded-lg p-3 border border-indigo-100 mt-4 text-[10px] text-slate-500">
+            <div class="bg-white/80 backdrop-blur rounded-lg p-3 border border-rose-100 mt-4 text-[10px] text-slate-500">
               Validated through live user UAT testing and deployed on Vercel infrastructure.
             </div>
           </div>
@@ -635,7 +635,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">API Integration</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Database</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/retumbot" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/retumbot" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -657,7 +657,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Speech Recognition</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">NLP</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/retail-voice-customer-service-assistant" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/retail-voice-customer-service-assistant" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -679,7 +679,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Pandas / Numpy</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Scikit-Learn</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/InsureScope" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/InsureScope" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -701,7 +701,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">SQL Server</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">DAX</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/uk-insurance-analytics-powerbi" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/uk-insurance-analytics-powerbi" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -722,7 +722,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">JavaScript</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">HTML5 / CSS3</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/bitebuddy-demo" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/bitebuddy-demo" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -744,7 +744,7 @@
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">TypeScript</span>
                 <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Tailwind CSS</span>
               </div>
-              <a href="https://github.com/singhsatyam85-cloud/chatpulse-lite" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-indigo-600 hover:text-indigo-800 font-semibold transition">
+              <a href="https://github.com/singhsatyam85-cloud/chatpulse-lite" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 text-xs text-rose-600 hover:text-rose-800 font-semibold transition">
                 <i data-lucide="github" class="h-3.5 w-3.5"></i>
                 <span>View Repo</span>
               </a>
@@ -767,88 +767,88 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Skill Category 1: Business Analysis -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-4">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="award" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Business Analysis</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Requirements Gathering</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Stakeholder Interviews</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">SME Collaboration</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Gap Analysis</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">User Stories Drafting</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Acceptance Criteria</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Business Rules</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">BRD/FRD writing</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Requirements Gathering</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Stakeholder Interviews</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">SME Collaboration</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Gap Analysis</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">User Stories Drafting</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Acceptance Criteria</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Business Rules</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">BRD/FRD writing</span>
             </div>
           </div>
 
           <!-- Skill Category 2: Technical BA -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-4">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="cpu" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Technical BA</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">SDLC Lifecycle</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">API Integration mapping</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">System Process design</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Data Flow Diagrams</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">BDD (Behavior-Driven Development)</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Postman Basics</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Basic SQL querying</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">SDLC Lifecycle</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">API Integration mapping</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">System Process design</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Data Flow Diagrams</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">BDD (Behavior-Driven Development)</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Postman Basics</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Basic SQL querying</span>
             </div>
           </div>
 
           <!-- Skill Category 3: Process Modelling -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-4">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="git-commit" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Process Modelling</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">As-Is Process Mapping</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">To-Be Business Flow</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">BPMN Standards</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Swimlane Diagrams</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Workflow Standardization</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Visio / Draw.io diagrams</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">As-Is Process Mapping</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">To-Be Business Flow</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">BPMN Standards</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Swimlane Diagrams</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Workflow Standardization</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Visio / Draw.io diagrams</span>
             </div>
           </div>
 
           <!-- Skill Category 4: Agile & Delivery -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-4">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="layers" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Agile & Delivery</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Agile Scrum</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Kanban Boards</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Backlog Refinement</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Sprint Planning</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">MVP definition</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Change Request triage</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Prioritization (MoSCoW)</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Agile Scrum</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Kanban Boards</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Backlog Refinement</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Sprint Planning</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">MVP definition</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Change Request triage</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Prioritization (MoSCoW)</span>
             </div>
           </div>
 
           <!-- Skill Category 5: Tools & Systems -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-4 md:col-span-2">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="terminal" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Tools & Systems</h3>
             </div>
             <div class="flex flex-wrap gap-2">
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Jira</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Confluence</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Microsoft PowerPoint</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-850 text-xs px-2.5 py-1.5 rounded-lg">Microsoft Visio</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Draw.io</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Figma</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Power BI (Basic)</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Grafana / Kibana logs</span>
-              <span class="bg-indigo-50 border border-indigo-100 text-indigo-855 text-xs px-2.5 py-1.5 rounded-lg">Splunk basics</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Jira</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Confluence</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Microsoft PowerPoint</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-850 text-xs px-2.5 py-1.5 rounded-lg">Microsoft Visio</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Draw.io</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Figma</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Power BI (Basic)</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Grafana / Kibana logs</span>
+              <span class="bg-rose-50 border border-rose-100 text-rose-855 text-xs px-2.5 py-1.5 rounded-lg">Splunk basics</span>
             </div>
           </div>
         </div>
@@ -868,7 +868,7 @@
           <!-- Degree 1 -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
             <div class="space-y-2">
-              <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded uppercase">Master's Degree</span>
+              <span class="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded uppercase">Master's Degree</span>
               <h3 class="font-outfit text-lg font-bold text-slate-800">Master of Business Administration (MBA)</h3>
               <p class="text-xs font-semibold text-slate-500">Middlesex University · London, United Kingdom</p>
               <p class="text-slate-600 text-xs leading-relaxed pt-2">
@@ -884,7 +884,7 @@
           <!-- Degree 2 -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
             <div class="space-y-2">
-              <span class="text-[10px] font-bold text-indigo-600 bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded uppercase">Bachelor's Degree</span>
+              <span class="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded uppercase">Bachelor's Degree</span>
               <h3 class="font-outfit text-lg font-bold text-slate-850">Bachelor of Technology (B.Tech)</h3>
               <p class="text-xs font-semibold text-slate-500">National Institute of Technology · Srinagar, India</p>
               <p class="text-slate-600 text-xs leading-relaxed pt-2">
@@ -912,8 +912,8 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <!-- Simulation -->
-          <div class="bg-gradient-to-br from-indigo-50/50 to-white rounded-xl p-6 border border-indigo-100 shadow-sm space-y-3">
-            <div class="flex items-center space-x-2 text-indigo-600">
+          <div class="bg-gradient-to-br from-rose-50/50 to-white rounded-xl p-6 border border-rose-100 shadow-sm space-y-3">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="globe" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">PwC Technology Consulting Simulation</h3>
             </div>
@@ -927,7 +927,7 @@
 
           <!-- Agile Project Management -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="layers" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Agile Project Management Certificate</h3>
             </div>
@@ -941,7 +941,7 @@
 
           <!-- Business Analysis Masterclass -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="award" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Business Analysis A to Z</h3>
             </div>
@@ -955,7 +955,7 @@
 
           <!-- IIBA BA for Project Managers -->
           <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center space-x-2 text-indigo-600">
+            <div class="flex items-center space-x-2 text-rose-600">
               <i data-lucide="file-text" class="h-5 w-5"></i>
               <h3 class="font-outfit font-semibold text-slate-800 text-sm">Business Analysis for Project Managers</h3>
             </div>
@@ -1002,12 +1002,12 @@
           <!-- PROJECT 1: EDTECH -->
           <div id="project-panel-1" class="project-view-panel space-y-6">
             <!-- Work Pack Banner -->
-            <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="bg-rose-50 border border-rose-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 class="font-outfit font-bold text-indigo-950 text-sm">Project 1: EdTech Attendance System Evidence Pack</h3>
-                <p class="text-xs text-indigo-700">Contains full project artifacts, specifications, workflows, and school matrices.</p>
+                <h3 class="font-outfit font-bold text-rose-950 text-sm">Project 1: EdTech Attendance System Evidence Pack</h3>
+                <p class="text-xs text-rose-700">Contains full project artifacts, specifications, workflows, and school matrices.</p>
               </div>
-              <a href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html" download class="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow">
+              <a href="assets/docs/Project_1_EdTech_Attendance_Work_Pack.html" download class="flex items-center space-x-1.5 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition shadow">
                 <i data-lucide="download" class="h-3.5 w-3.5"></i>
                 <span>Download HTML Work Pack</span>
               </a>
@@ -1022,19 +1022,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Project Intake Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Stakeholder Register</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Discovery Meeting Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1046,19 +1046,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Business Requirements Document (BRD)</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Business Rules Document</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1073,19 +1073,19 @@
                   <ul class="text-xs space-y-2 text-slate-655">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">As-Is Process Flow Map</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">To-Be Business Flow Map</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Role & Permission Matrix</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1097,19 +1097,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Test Scenario Review Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">UAT Plan Outline</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Project Timeline & Roadmap</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1123,19 +1123,19 @@
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
               <div class="flex flex-wrap gap-3">
                 <a href="assets/docs/edtech_product_screenshots.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="image" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="image" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Product Screenshots</span>
                 </a>
                 <a href="Document/wireframes_screen_flows.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Wireframes & Flows</span>
                 </a>
                 <a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-55 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Web App Prototype</span>
                 </a>
                 <a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-55 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="smartphone" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="smartphone" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Mobile App Prototype</span>
                 </a>
               </div>
@@ -1145,12 +1145,12 @@
           <!-- PROJECT 2: STEM CONTENT -->
           <div id="project-panel-2" class="project-view-panel space-y-6 hidden">
             <!-- Work Pack Banner -->
-            <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="bg-rose-50 border border-rose-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 class="font-outfit font-bold text-indigo-950 text-sm">Project 2: STEM Content Delivery Platform Pack</h3>
-                <p class="text-xs text-indigo-700">Contains discovery matrix files, business standards, user feedback loops, and roadmap documents.</p>
+                <h3 class="font-outfit font-bold text-rose-950 text-sm">Project 2: STEM Content Delivery Platform Pack</h3>
+                <p class="text-xs text-rose-700">Contains discovery matrix files, business standards, user feedback loops, and roadmap documents.</p>
               </div>
-              <a href="assets/docs/Project_2_Digital_STEM_Work_Pack.html" download class="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow">
+              <a href="assets/docs/Project_2_Digital_STEM_Work_Pack.html" download class="flex items-center space-x-1.5 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition shadow">
                 <i data-lucide="download" class="h-3.5 w-3.5"></i>
                 <span>Download HTML Work Pack</span>
               </a>
@@ -1165,19 +1165,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Project Intake Notes</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Discovery Meeting Notes</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Learning Objective Matrix</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1189,19 +1189,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Business Requirements Document (BRD)</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Content Requirements List</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1216,19 +1216,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">As-Is Process Flow Map</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">To-Be Process Flow Map</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Storyboard & Screen Flow Diagrams</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1240,19 +1240,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Test Scenario Timeline Plan</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Sprint 1 Backlog Items</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Project Delivery Roadmap</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1266,11 +1266,11 @@
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
               <div class="flex flex-wrap gap-3">
                 <a href="case-study-documents/02-digital-stem-content-delivery-platform/product-prototype/index.html" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>STEM Content Prototype</span>
                 </a>
                 <a href="Document/figma_screen_flows_project2.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Figma Wireframes & Flows</span>
                 </a>
               </div>
@@ -1280,12 +1280,12 @@
           <!-- PROJECT 3: AUTOPARTS -->
           <div id="project-panel-3" class="project-view-panel space-y-6 hidden">
             <!-- Work Pack Banner -->
-            <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="bg-rose-50 border border-rose-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 class="font-outfit font-bold text-indigo-950 text-sm">Project 3: Autoparts Website Document Pack</h3>
-                <p class="text-xs text-indigo-700">Contains the complete archive of RACI, timeline logs, BRD/FRD/NFR rules, and UAT signoff criteria.</p>
+                <h3 class="font-outfit font-bold text-rose-950 text-sm">Project 3: Autoparts Website Document Pack</h3>
+                <p class="text-xs text-rose-700">Contains the complete archive of RACI, timeline logs, BRD/FRD/NFR rules, and UAT signoff criteria.</p>
               </div>
-              <a href="case-study-documents/03-autoparts-company-website-development/Project_3_Autoparts_Document_Work_Pack.zip" download class="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow">
+              <a href="case-study-documents/03-autoparts-company-website-development/Project_3_Autoparts_Document_Work_Pack.zip" download class="flex items-center space-x-1.5 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition shadow">
                 <i data-lucide="download" class="h-3.5 w-3.5"></i>
                 <span>Download ZIP Evidence Pack</span>
               </a>
@@ -1300,27 +1300,27 @@
                   <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[160px] overflow-y-auto pr-2">
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Discovery Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Stakeholder Register</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">RACI Matrix</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Business Case Note</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Project Timeline</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Initial Product Backlog</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                   </div>
                 </div>
@@ -1330,59 +1330,59 @@
                   <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[180px] overflow-y-auto pr-2">
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Business Requirements (BRD)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Functional Requirements (FRD)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Non-Functional Requirements (NFR)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Business Rules Document</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">User Stories Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Acceptance Criteria</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Use Cases Document</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Data Field Matrix</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Product Category Requirements</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Request a Quote Form Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Contact & Feedback Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Homepage Nav & Legal Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">SEO Requirement Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Content Requirements Checklist</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                   </div>
                 </div>
@@ -1395,19 +1395,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">As-Is Process Map</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">To-Be Process Flow</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Website Sitemap Diagram</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Figma Wireframe Review</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </li>
                   </ul>
                 </div>
@@ -1417,31 +1417,31 @@
                   <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[160px] overflow-y-auto pr-2">
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Test Scenario Review</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">UAT Plan Outline</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">UAT Evidence Log</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">UAT Sign Off Log</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Release Readiness Checklist</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Go Live Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                     <div class="flex items-center justify-between py-0.5">
                       <span class="truncate pr-4">Project Closure Summary</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">PDF</a>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
                     </div>
                   </div>
                 </div>
@@ -1453,15 +1453,15 @@
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
               <div class="flex flex-wrap gap-3">
                 <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="map" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="map" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Website Sitemap</span>
                 </a>
                 <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Wireframe Review PDF</span>
                 </a>
                 <a href="case-study-documents/03-autoparts-company-website-development/product-prototype/index.html" target="_blank" rel="noopener" class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Product Prototype</span>
                 </a>
               </div>
@@ -1471,12 +1471,12 @@
           <!-- PROJECT 4: AUTOINSIGHT -->
           <div id="project-panel-4" class="project-view-panel space-y-6 hidden">
             <!-- Work Pack Banner -->
-            <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="bg-rose-50 border border-rose-100 rounded-xl p-5 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
               <div>
-                <h3 class="font-outfit font-bold text-indigo-950 text-sm">Project 4: AutoInsight Digital Enquiry & BI Pack</h3>
-                <p class="text-xs text-indigo-700">Contains the complete analytical requirements, logical database mappings, and validation procedures.</p>
+                <h3 class="font-outfit font-bold text-rose-950 text-sm">Project 4: AutoInsight Digital Enquiry & BI Pack</h3>
+                <p class="text-xs text-rose-700">Contains the complete analytical requirements, logical database mappings, and validation procedures.</p>
               </div>
-              <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" download class="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold rounded-lg transition shadow">
+              <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" download class="flex items-center space-x-1.5 px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold rounded-lg transition shadow">
                 <i data-lucide="download" class="h-3.5 w-3.5"></i>
                 <span>Download Complete Evidence Pack</span>
               </a>
@@ -1491,19 +1491,19 @@
                   <ul class="text-xs space-y-2 text-slate-655">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Phase 2 Approval Note</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Sprint 5 Planning Notes</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Sprint 6 Planning Notes</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1515,19 +1515,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">SQL Data Requirements specs</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Power BI Dashboard Requirements</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">SQL User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1542,19 +1542,19 @@
                   <ul class="text-xs space-y-2 text-slate-655">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Logical Data Relationship Diagram</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Power BI Dashboard Wireframe</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Dashboard Review (BI Compliance)</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1566,19 +1566,19 @@
                   <ul class="text-xs space-y-2 text-slate-650">
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">SQL Validation Plan</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" download class="text-indigo-650 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Dashboard UAT Plan Outline</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
                     <li class="flex items-center justify-between">
                       <span class="truncate pr-4">Phase 2 Closure Summary</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" download class="text-indigo-655 hover:underline flex items-center shrink-0">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
                         <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
                       </a>
                     </li>
@@ -1592,11 +1592,11 @@
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Evidence</h4>
               <div class="flex flex-wrap gap-3">
                 <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="file-text" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="file-text" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Complete Evidence Pack PDF</span>
                 </a>
                 <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="inline-flex items-center space-x-1.5 px-4.5 py-2.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-705 text-xs font-semibold rounded-lg transition shadow-sm">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-indigo-500"></i>
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
                   <span>Dashboard Wireframe PDF</span>
                 </a>
               </div>
@@ -1623,37 +1623,37 @@
             
             <div class="space-y-4">
               <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition">
-                <div class="h-10 w-10 bg-indigo-550 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <div class="h-10 w-10 bg-rose-600 text-white rounded-lg flex items-center justify-center flex-shrink-0">
                   <i data-lucide="mail" class="h-5 w-5"></i>
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">Email</span>
-                  <a href="mailto:shivsatyamsingh920@gmail.com" class="text-xs text-indigo-650 hover:underline font-medium">shivsatyamsingh920@gmail.com</a>
+                  <a href="mailto:shivsatyamsingh920@gmail.com" class="text-xs text-rose-700 hover:underline font-medium">shivsatyamsingh920@gmail.com</a>
                 </div>
               </div>
 
               <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition">
-                <div class="h-10 w-10 bg-indigo-550 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <div class="h-10 w-10 bg-rose-600 text-white rounded-lg flex items-center justify-center flex-shrink-0">
                   <i data-lucide="linkedin" class="h-5 w-5"></i>
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">LinkedIn</span>
-                  <a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener" class="text-xs text-indigo-655 hover:underline font-medium">LinkedIn Profile</a>
+                  <a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener" class="text-xs text-rose-655 hover:underline font-medium">LinkedIn Profile</a>
                 </div>
               </div>
 
               <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition">
-                <div class="h-10 w-10 bg-indigo-550 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <div class="h-10 w-10 bg-rose-600 text-white rounded-lg flex items-center justify-center flex-shrink-0">
                   <i data-lucide="phone" class="h-5 w-5"></i>
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">Phone</span>
-                  <a href="tel:+447393065593" class="text-xs text-indigo-655 hover:underline font-medium">+44 7393 065593</a>
+                  <a href="tel:+447393065593" class="text-xs text-rose-655 hover:underline font-medium">+44 7393 065593</a>
                 </div>
               </div>
 
               <div class="flex items-center space-x-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition">
-                <div class="h-10 w-10 bg-indigo-550 text-white rounded-lg flex items-center justify-center flex-shrink-0">
+                <div class="h-10 w-10 bg-rose-600 text-white rounded-lg flex items-center justify-center flex-shrink-0">
                   <i data-lucide="map-pin" class="h-5 w-5"></i>
                 </div>
                 <div>
@@ -1665,9 +1665,9 @@
           </div>
 
           <!-- Confidentiality & Info Card -->
-          <div class="bg-indigo-950 text-white rounded-xl p-6 shadow-sm flex flex-col justify-between space-y-4">
+          <div class="bg-rose-950 text-white rounded-xl p-6 shadow-sm flex flex-col justify-between space-y-4">
             <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-indigo-400">
+              <div class="flex items-center space-x-2 text-rose-400">
                 <i data-lucide="shield" class="h-5 w-5"></i>
                 <h3 class="font-outfit text-sm font-semibold uppercase tracking-wider">Confidentiality Clause</h3>
               </div>
@@ -1679,7 +1679,7 @@
               </p>
             </div>
 
-            <div class="border-t border-slate-800 pt-4 text-[10px] text-slate-400">
+            <div class="border-t border-neutral-800 pt-4 text-[10px] text-slate-400">
               © 2026 Shiv Satyam Singh. All rights reserved. Registered Business Analyst portfolio.
             </div>
           </div>
@@ -1691,43 +1691,43 @@
 
   <!-- ================= PORTFOLIO ASSISTANT (FLOATING DRAWER) ================= -->
   <!-- Floating launcher button -->
-  <button id="floatingAssistantButton" class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-600 hover:bg-indigo-755 text-white shadow-xl transition-all hover:scale-105" aria-label="Open JD Matcher panel">
+  <button id="floatingAssistantButton" class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-rose-600 hover:bg-rose-755 text-white shadow-xl transition-all hover:scale-105" aria-label="Open JD Matcher panel">
     <i data-lucide="message-square" class="h-6 w-6"></i>
   </button>
 
   <!-- Assistant Drawer Panel -->
   <div id="assistantPanel" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[450px] bg-white shadow-2xl border-l border-slate-200 transform translate-x-full sidebar-transition flex flex-col justify-between">
     <!-- Header -->
-    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-900 text-white">
+    <div class="p-5 border-b border-slate-100 flex items-center justify-between bg-neutral-950 text-white">
       <div class="flex items-center space-x-2.5">
-        <div class="h-8 w-8 rounded-lg bg-indigo-650 flex items-center justify-center text-white font-bold text-xs font-outfit">
+        <div class="h-8 w-8 rounded-lg bg-rose-700 flex items-center justify-center text-white font-bold text-xs font-outfit">
           AI
         </div>
         <div>
           <h3 class="font-outfit text-sm font-semibold">Portfolio Assistant</h3>
-          <p class="text-[10px] text-indigo-300">JD Fit Evaluation Tool</p>
+          <p class="text-[10px] text-rose-300">JD Fit Evaluation Tool</p>
         </div>
       </div>
-      <button id="assistantClose" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800" aria-label="Close drawer">
+      <button id="assistantClose" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-neutral-800" aria-label="Close drawer">
         <i data-lucide="x" class="h-5 w-5"></i>
       </button>
     </div>
 
     <!-- Body -->
     <div class="flex-1 overflow-y-auto p-5 space-y-5">
-      <button id="hireQuestion" class="w-full text-left bg-indigo-50/60 border border-indigo-100 hover:bg-indigo-50 p-4 rounded-xl transition flex justify-between items-center group">
+      <button id="hireQuestion" class="w-full text-left bg-rose-50/60 border border-rose-100 hover:bg-rose-50 p-4 rounded-xl transition flex justify-between items-center group">
         <div>
-          <strong class="block text-xs font-bold text-indigo-950 font-outfit">Compare a Job Description</strong>
+          <strong class="block text-xs font-bold text-rose-950 font-outfit">Compare a Job Description</strong>
           <span class="text-[11px] text-slate-500">Paste job requirements to run matching analysis</span>
         </div>
-        <i data-lucide="chevron-right" class="h-4 w-4 text-indigo-500 transition-transform group-hover:translate-x-1"></i>
+        <i data-lucide="chevron-right" class="h-4 w-4 text-rose-500 transition-transform group-hover:translate-x-1"></i>
       </button>
 
       <!-- Side JD panel inside drawer -->
       <div id="jdPanel" class="hidden space-y-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
         <label for="drawerJdText" class="block text-xs font-bold text-slate-700">PASTE JOB DESCRIPTION</label>
-        <textarea id="drawerJdText" rows="5" class="w-full rounded-lg border border-slate-350 p-3 text-xs text-slate-750 placeholder-slate-400 focus:border-indigo-500 focus:outline-none" placeholder="Paste requirements details here..."></textarea>
-        <button id="drawerMatchButton" class="w-full flex items-center justify-center space-x-1.5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg shadow">
+        <textarea id="drawerJdText" rows="5" class="w-full rounded-lg border border-slate-350 p-3 text-xs text-slate-750 placeholder-slate-400 focus:border-rose-500 focus:outline-none" placeholder="Paste requirements details here..."></textarea>
+        <button id="drawerMatchButton" class="w-full flex items-center justify-center space-x-1.5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold rounded-lg shadow">
           <i data-lucide="play" class="h-3.5 w-3.5"></i>
           <span>Check Role Fit</span>
         </button>
@@ -2259,7 +2259,7 @@
                 <span class="px-1.5 py-0.5 bg-slate-100 rounded text-[9px] uppercase font-semibold">${escapeHtml(row.level)}</span>
               </div>
               <p class="text-[10px] text-slate-500 mt-0.5">${escapeHtml(row.evidence)}</p>
-              <p class="text-[10px] text-indigo-600 mt-0.5 font-medium">Honest View: ${escapeHtml(row.honestView)}</p>
+              <p class="text-[10px] text-rose-600 mt-0.5 font-medium">Honest View: ${escapeHtml(row.honestView)}</p>
             </div>
           `).join('');
 
@@ -2282,7 +2282,7 @@
                 <div class="space-y-2.5 max-h-[220px] overflow-y-auto pr-1">${barsHtml}</div>
               </div>
 
-              <div class="bg-indigo-50/50 p-3 rounded-lg border border-indigo-100 text-[10px] text-slate-650">
+              <div class="bg-rose-50/50 p-3 rounded-lg border border-rose-100 text-[10px] text-slate-650">
                 <strong>Main Gaps:</strong> ${escapeHtml(gaps.length ? gaps.join(', ') : 'None detected.')}
               </div>
             </div>
