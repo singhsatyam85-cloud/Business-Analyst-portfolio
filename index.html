@@ -112,6 +112,42 @@
       color: #FFFFFF;
       box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
     }
+    .deliv-tab:not(.active) {
+      cursor: pointer;
+    }
+    .deliv-tab:not(.active):hover {
+      background-color: #FFE4E6;
+    }
+
+    /* Deliverable document rows: whole row is the clickable PDF link */
+    .deliv-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.35rem 0.5rem;
+      margin: 0 -0.5rem;
+      border-radius: 0.375rem;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    .deliv-row:hover {
+      background-color: #FFF1F2;
+    }
+    .deliv-row span.truncate {
+      color: #334155;
+    }
+    .deliv-row-pdf {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: #E11D48;
+      font-size: 0.75rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
 
     /* Custom loading animation */
     .spinner {
@@ -899,22 +935,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Project Intake Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Project Intake Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Stakeholder Register</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Stakeholder Register</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Discovery Meeting Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Discovery Meeting Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -923,22 +965,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Business Requirements Document (BRD)</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Business Requirements Document (BRD)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" download class="deliv-row">
+                        <span class="truncate">User Stories & Acceptance Criteria</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Business Rules Document</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Business Rules Document</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -950,22 +998,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
                   <ul class="text-xs space-y-2 text-slate-655">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">As-Is Process Flow Map</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" download class="deliv-row">
+                        <span class="truncate">As-Is Process Flow Map</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">To-Be Business Flow Map</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" download class="deliv-row">
+                        <span class="truncate">To-Be Business Flow Map</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Role & Permission Matrix</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Role & Permission Matrix</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -974,22 +1028,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Test Scenario Review Notes</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Test Scenario Review Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">UAT Plan Outline</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" download class="deliv-row">
+                        <span class="truncate">UAT Plan Outline</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Project Timeline & Roadmap</span>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" download class="deliv-row">
+                        <span class="truncate">Project Timeline & Roadmap</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1000,21 +1060,21 @@
             <!-- Action buttons / prototypes -->
             <div class="bg-slate-100 rounded-xl p-5 space-y-3">
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
-              <div class="inline-flex rounded-xl border border-slate-200 bg-slate-55 p-1 flex-wrap gap-1" role="group">
-                <a href="assets/docs/edtech_product_screenshots.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="image" class="h-3.5 w-3.5 text-rose-500"></i>
+              <div class="flex flex-wrap gap-2" role="group">
+                <a href="assets/docs/edtech_product_screenshots.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="image" class="h-3.5 w-3.5"></i>
                   <span>Product Screenshots</span>
                 </a>
-                <a href="Document/wireframes_screen_flows.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="Document/wireframes_screen_flows.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5"></i>
                   <span>Wireframes & Flows</span>
                 </a>
-                <a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener" class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="case-study-documents/01-edtech-attendance-management-system/product-prototype/index.html" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                  <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                   <span>Web App Prototype</span>
                 </a>
-                <a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener" class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="smartphone" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="case-study-documents/01-edtech-attendance-management-system/teacher-mobile-app/index.html" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                  <i data-lucide="smartphone" class="h-3.5 w-3.5"></i>
                   <span>Mobile App Prototype</span>
                 </a>
               </div>
@@ -1042,22 +1102,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Project Intake Notes</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Project Intake Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Discovery Meeting Notes</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Discovery Meeting Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Learning Objective Matrix</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" download class="deliv-row">
+                        <span class="truncate">Learning Objective Matrix</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1066,22 +1132,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Business Requirements Document (BRD)</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" download class="deliv-row">
+                        <span class="truncate">Business Requirements Document (BRD)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Content Requirements List</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" download class="deliv-row">
+                        <span class="truncate">Content Requirements List</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" download class="deliv-row">
+                        <span class="truncate">User Stories & Acceptance Criteria</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1093,22 +1165,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">As-Is Process Flow Map</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" download class="deliv-row">
+                        <span class="truncate">As-Is Process Flow Map</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">To-Be Process Flow Map</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" download class="deliv-row">
+                        <span class="truncate">To-Be Process Flow Map</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Storyboard & Screen Flow Diagrams</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" download class="deliv-row">
+                        <span class="truncate">Storyboard & Screen Flow Diagrams</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1117,22 +1195,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Test Scenario Timeline Plan</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" download class="deliv-row">
+                        <span class="truncate">Test Scenario Timeline Plan</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Sprint 1 Backlog Items</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" download class="deliv-row">
+                        <span class="truncate">Sprint 1 Backlog Items</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Project Delivery Roadmap</span>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" download class="deliv-row">
+                        <span class="truncate">Project Delivery Roadmap</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1143,13 +1227,13 @@
             <!-- Action buttons / prototypes -->
             <div class="bg-slate-100 rounded-xl p-5 space-y-3">
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
-              <div class="inline-flex rounded-xl border border-slate-200 bg-slate-55 p-1 flex-wrap gap-1" role="group">
-                <a href="case-study-documents/02-digital-stem-content-delivery-platform/product-prototype/index.html" target="_blank" rel="noopener" class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
+              <div class="flex flex-wrap gap-2" role="group">
+                <a href="case-study-documents/02-digital-stem-content-delivery-platform/product-prototype/index.html" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                  <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                   <span>STEM Content Prototype</span>
                 </a>
-                <a href="Document/figma_screen_flows_project2.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="Document/figma_screen_flows_project2.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5"></i>
                   <span>Figma Wireframes & Flows</span>
                 </a>
               </div>
@@ -1171,97 +1255,177 @@
             </div>
 
             <!-- Documents Stages Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
               <!-- Discovery & Requirements -->
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[160px] overflow-y-auto pr-2">
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Discovery Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Discovery Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Stakeholder Register</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" download class="deliv-row">
+                        <span class="truncate">Stakeholder Register</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">RACI Matrix</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" download class="deliv-row">
+                        <span class="truncate">RACI Matrix</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Business Case Note</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" download class="deliv-row">
+                        <span class="truncate">Business Case Note</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Project Timeline</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" download class="deliv-row">
+                        <span class="truncate">Project Timeline</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Initial Product Backlog</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" download class="deliv-row">
+                        <span class="truncate">Initial Product Backlog</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
 
                 <div class="space-y-3 pt-2 border-t border-slate-100">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements specifications</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[180px] overflow-y-auto pr-2">
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Business Requirements (BRD)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" download class="deliv-row">
+                        <span class="truncate">Business Requirements (BRD)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Functional Requirements (FRD)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" download class="deliv-row">
+                        <span class="truncate">Functional Requirements (FRD)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Non-Functional Requirements (NFR)</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" download class="deliv-row">
+                        <span class="truncate">Non-Functional Requirements (NFR)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Business Rules Document</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" download class="deliv-row">
+                        <span class="truncate">Business Rules Document</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">User Stories Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" download class="deliv-row">
+                        <span class="truncate">User Stories Specs</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Acceptance Criteria</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" download class="deliv-row">
+                        <span class="truncate">Acceptance Criteria</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Use Cases Document</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" download class="deliv-row">
+                        <span class="truncate">Use Cases Document</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Data Field Matrix</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" download class="deliv-row">
+                        <span class="truncate">Data Field Matrix</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Product Category Requirements</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Product Category Requirements</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Request a Quote Form Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Request a Quote Form Specs</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Contact & Feedback Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Contact & Feedback Specs</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Homepage Nav & Legal Specs</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Homepage Nav & Legal Specs</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">SEO Requirement Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" download class="deliv-row">
+                        <span class="truncate">SEO Requirement Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Content Requirements Checklist</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" download class="deliv-row">
+                        <span class="truncate">Content Requirements Checklist</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1272,55 +1436,99 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">As-Is Process Map</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <li>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" download class="deliv-row">
+                        <span class="truncate">As-Is Process Map</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">To-Be Process Flow</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <li>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" download class="deliv-row">
+                        <span class="truncate">To-Be Process Flow</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Website Sitemap Diagram</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <li>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="deliv-row">
+                        <span class="truncate">Website Sitemap Diagram</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Figma Wireframe Review</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <li>
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="deliv-row">
+                        <span class="truncate">Figma Wireframe Review</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </li>
                   </ul>
                 </div>
 
                 <div class="space-y-3 pt-2 border-t border-slate-100">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650 max-h-[160px] overflow-y-auto pr-2">
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Test Scenario Review</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">PDF</a>
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" download class="deliv-row">
+                        <span class="truncate">Test Scenario Review</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">UAT Plan Outline</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" download class="deliv-row">
+                        <span class="truncate">UAT Plan Outline</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">UAT Evidence Log</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" download class="deliv-row">
+                        <span class="truncate">UAT Evidence Log</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">UAT Sign Off Log</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" download class="deliv-row">
+                        <span class="truncate">UAT Sign Off Log</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Release Readiness Checklist</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" download class="deliv-row">
+                        <span class="truncate">Release Readiness Checklist</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Go Live Notes</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Go Live Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
-                    <div class="flex items-center justify-between py-0.5">
-                      <span class="truncate pr-4">Project Closure Summary</span>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">PDF</a>
+                    <div>
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" download class="deliv-row">
+                        <span class="truncate">Project Closure Summary</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -1330,17 +1538,17 @@
             <!-- Action buttons / prototypes -->
             <div class="bg-slate-100 rounded-xl p-5 space-y-3">
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Prototypes</h4>
-              <div class="inline-flex rounded-xl border border-slate-200 bg-slate-55 p-1 flex-wrap gap-1" role="group">
-                <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="map" class="h-3.5 w-3.5 text-rose-500"></i>
+              <div class="flex flex-wrap gap-2" role="group">
+                <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="map" class="h-3.5 w-3.5"></i>
                   <span>Website Sitemap</span>
                 </a>
-                <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5"></i>
                   <span>Wireframe Review PDF</span>
                 </a>
-                <a href="case-study-documents/03-autoparts-company-website-development/product-prototype/index.html" target="_blank" rel="noopener" class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="external-link" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="case-study-documents/03-autoparts-company-website-development/product-prototype/index.html" target="_blank" rel="noopener" class="project-btn project-btn-secondary">
+                  <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
                   <span>Product Prototype</span>
                 </a>
               </div>
@@ -1368,22 +1576,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
                   <ul class="text-xs space-y-2 text-slate-655">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Phase 2 Approval Note</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" download class="deliv-row">
+                        <span class="truncate">Phase 2 Approval Note</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Sprint 5 Planning Notes</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Sprint 5 Planning Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Sprint 6 Planning Notes</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" download class="deliv-row">
+                        <span class="truncate">Sprint 6 Planning Notes</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1392,22 +1606,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">SQL Data Requirements specs</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">SQL Data Requirements specs</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Power BI Dashboard Requirements</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Power BI Dashboard Requirements</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">SQL User Stories & Acceptance Criteria</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" download class="deliv-row">
+                        <span class="truncate">SQL User Stories & Acceptance Criteria</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1419,22 +1639,28 @@
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Data Model & Design</h4>
                   <ul class="text-xs space-y-2 text-slate-655">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Logical Data Relationship Diagram</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" download class="deliv-row">
+                        <span class="truncate">Logical Data Relationship Diagram</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Power BI Dashboard Wireframe</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="deliv-row">
+                        <span class="truncate">Power BI Dashboard Wireframe</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Dashboard Review (BI Compliance)</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" download class="deliv-row">
+                        <span class="truncate">Dashboard Review (BI Compliance)</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1443,22 +1669,28 @@
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
                   <ul class="text-xs space-y-2 text-slate-650">
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">SQL Validation Plan</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" download class="text-rose-700 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" download class="deliv-row">
+                        <span class="truncate">SQL Validation Plan</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Dashboard UAT Plan Outline</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" download class="deliv-row">
+                        <span class="truncate">Dashboard UAT Plan Outline</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
-                    <li class="flex items-center justify-between">
-                      <span class="truncate pr-4">Phase 2 Closure Summary</span>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" download class="text-rose-655 hover:underline flex items-center shrink-0">
-                        <i data-lucide="file-text" class="h-3.5 w-3.5 mr-1"></i> PDF
+                    <li>
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" download class="deliv-row">
+                        <span class="truncate">Phase 2 Closure Summary</span>
+                        <span class="deliv-row-pdf">
+                          <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
+                        </span>
                       </a>
                     </li>
                   </ul>
@@ -1469,13 +1701,13 @@
             <!-- Action buttons / prototypes -->
             <div class="bg-slate-100 rounded-xl p-5 space-y-3">
               <h4 class="font-outfit text-xs font-bold text-slate-700 uppercase tracking-wider">Product Visuals & Evidence</h4>
-              <div class="inline-flex rounded-xl border border-slate-200 bg-slate-55 p-1 flex-wrap gap-1" role="group">
-                <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="file-text" class="h-3.5 w-3.5 text-rose-500"></i>
+              <div class="flex flex-wrap gap-2" role="group">
+                <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/AutoInsight_Project_Evidence_Pack.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="file-text" class="h-3.5 w-3.5"></i>
                   <span>Complete Evidence Pack PDF</span>
                 </a>
-                <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="px-3.5 py-2 text-xs font-semibold rounded-lg text-slate-700 hover:bg-white flex items-center space-x-1.5 transition">
-                  <i data-lucide="layout-grid" class="h-3.5 w-3.5 text-rose-500"></i>
+                <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="project-btn project-btn-secondary">
+                  <i data-lucide="layout-grid" class="h-3.5 w-3.5"></i>
                   <span>Dashboard Wireframe PDF</span>
                 </a>
               </div>
