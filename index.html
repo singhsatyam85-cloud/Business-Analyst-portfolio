@@ -228,6 +228,295 @@
     .project-card:hover {
       transform: translateY(-4px);
     }
+
+    /* ============ About hero: animated delivery pipeline ============
+       Geometry: node dot 34px, 8px gap -> 42px pitch.
+       Node centres at y = 17 / 59 / 101 / 143; line spans 17 -> 143 (126px).
+       Loop is 7s: comet travels 0 -> 60%, pipeline holds lit, then resets.
+       Loop animations are offset by 0.9s so the entrance finishes first. */
+    /* Keeps the ambient glow inside the hero's rounded corners */
+    .ba-hero { overflow: hidden; }
+
+    .ba-pipeline-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      flex-shrink: 0;
+      padding-right: 0.5rem;
+    }
+
+    .ba-pipeline {
+      position: relative;
+      z-index: 0;
+    }
+
+    /* 6. Ambient glow behind the pipeline, on its own slow cycle */
+    .ba-pipeline-glow {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 280px;
+      height: 280px;
+      margin: -140px 0 0 -140px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(244, 63, 94, 0.20) 0%, rgba(244, 63, 94, 0.09) 45%, rgba(244, 63, 94, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      animation: baGlow 8s ease-in-out infinite;
+    }
+    @keyframes baGlow {
+      0%, 100% { transform: scale(0.85); opacity: 0.5; }
+      50%      { transform: scale(1.12); opacity: 1; }
+    }
+
+    /* Connecting line: dim track + three segments that light in sequence */
+    .ba-pipeline-track,
+    .ba-pipeline-seg,
+    .ba-comet {
+      position: absolute;
+      left: 16px;
+      width: 2px;
+      pointer-events: none;
+    }
+    .ba-pipeline-track {
+      top: 17px;
+      height: 126px;
+      background: rgba(244, 63, 94, 0.16);
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    /* 2. Line fill: each segment scales in as the comet passes, then holds lit */
+    .ba-pipeline-seg {
+      height: 42px;
+      border-radius: 2px;
+      background: linear-gradient(180deg, #fb7185, #e11d48);
+      box-shadow: 0 0 8px rgba(244, 63, 94, 0.55);
+      transform: scaleY(0);
+      transform-origin: top center;
+      z-index: 1;
+      animation-duration: 7s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 0.9s;
+    }
+    .ba-seg-1 { top: 17px;  animation-name: baSeg1; }
+    .ba-seg-2 { top: 59px;  animation-name: baSeg2; }
+    .ba-seg-3 { top: 101px; animation-name: baSeg3; }
+    @keyframes baSeg1 {
+      0%       { transform: scaleY(0); opacity: 1; }
+      20%      { transform: scaleY(1); opacity: 1; }
+      90%      { transform: scaleY(1); opacity: 1; }
+      100%     { transform: scaleY(1); opacity: 0; }
+    }
+    @keyframes baSeg2 {
+      0%, 20%  { transform: scaleY(0); opacity: 1; }
+      40%      { transform: scaleY(1); opacity: 1; }
+      90%      { transform: scaleY(1); opacity: 1; }
+      100%     { transform: scaleY(1); opacity: 0; }
+    }
+    @keyframes baSeg3 {
+      0%, 40%  { transform: scaleY(0); opacity: 1; }
+      60%      { transform: scaleY(1); opacity: 1; }
+      90%      { transform: scaleY(1); opacity: 1; }
+      100%     { transform: scaleY(1); opacity: 0; }
+    }
+
+    /* 1. Comet: bright core with a tapering gradient tail behind it */
+    .ba-comet {
+      top: 17px;
+      left: 14px;
+      width: 6px;
+      height: 6px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 10px 3px rgba(244, 63, 94, 0.85), 0 0 22px 7px rgba(244, 63, 94, 0.4);
+      z-index: 3;
+      animation: baComet 7s linear infinite 0.9s;
+    }
+    .ba-comet::after {
+      content: "";
+      position: absolute;
+      left: 2px;
+      bottom: 3px;
+      width: 2px;
+      height: 34px;
+      border-radius: 2px;
+      background: linear-gradient(to top, rgba(244, 63, 94, 0.9), rgba(244, 63, 94, 0));
+    }
+    @keyframes baComet {
+      0%        { transform: translateY(0);     opacity: 0; }
+      4%        { opacity: 1; }
+      55%       { opacity: 1; }
+      60%       { transform: translateY(126px); opacity: 0; }
+      100%      { transform: translateY(126px); opacity: 0; }
+    }
+
+    /* 7. Entrance: nodes fade in and slide up, staggered */
+    .ba-node {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      z-index: 2;
+      animation: baEnter 0.5s ease-out both;
+    }
+    .ba-node + .ba-node { margin-top: 8px; }
+    @keyframes baEnter {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 3. Node pulse: scales up and the border brightens to the accent */
+    .ba-node-dot {
+      position: relative;
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #14121c;
+      border: 1px solid rgba(244, 63, 94, 0.30);
+      color: #fda4af;
+      animation: baNodePulse 7s ease-in-out infinite;
+    }
+    @keyframes baNodePulse {
+      0%   { transform: scale(1);    border-color: rgba(244, 63, 94, 0.30); color: #fda4af; box-shadow: 0 0 0 rgba(244, 63, 94, 0); }
+      4%   { transform: scale(1.15); border-color: #f43f5e;                 color: #ffffff; box-shadow: 0 0 14px rgba(244, 63, 94, 0.6); }
+      12%  { transform: scale(1);    border-color: rgba(244, 63, 94, 0.75); color: #fecdd3; box-shadow: 0 0 8px rgba(244, 63, 94, 0.28); }
+      85%  {                         border-color: rgba(244, 63, 94, 0.75); color: #fecdd3; }
+      100% { transform: scale(1);    border-color: rgba(244, 63, 94, 0.30); color: #fda4af; box-shadow: 0 0 0 rgba(244, 63, 94, 0); }
+    }
+
+    /* 4. Ripple: ring expands out of the node and fades over ~1s */
+    .ba-node-dot::after {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(244, 63, 94, 0.8);
+      opacity: 0;
+      pointer-events: none;
+      animation: baRipple 7s ease-out infinite;
+    }
+    @keyframes baRipple {
+      0%        { transform: scale(1);   opacity: 0.85; }
+      14%       { transform: scale(2.1); opacity: 0; }
+      100%      { transform: scale(2.1); opacity: 0; }
+    }
+
+    /* 5. Label fade */
+    .ba-node-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      color: #cbd5e1;
+      opacity: 0.5;
+      animation: baLabel 7s ease-in-out infinite;
+    }
+    @keyframes baLabel {
+      0%   { opacity: 0.5;  color: #cbd5e1; }
+      4%   { opacity: 1;    color: #ffffff; }
+      20%  { opacity: 0.88; color: #e2e8f0; }
+      85%  { opacity: 0.88; color: #e2e8f0; }
+      100% { opacity: 0.5;  color: #cbd5e1; }
+    }
+
+    /* Stagger: entrance first, then loop events timed to the comet's travel */
+    .ba-node-1 { animation-delay: 0s; }
+    .ba-node-2 { animation-delay: 0.12s; }
+    .ba-node-3 { animation-delay: 0.24s; }
+    .ba-node-4 { animation-delay: 0.36s; }
+    .ba-node-1 .ba-node-dot,
+    .ba-node-1 .ba-node-dot::after,
+    .ba-node-1 .ba-node-label { animation-delay: 0.9s; }
+    .ba-node-2 .ba-node-dot,
+    .ba-node-2 .ba-node-dot::after,
+    .ba-node-2 .ba-node-label { animation-delay: 2.3s; }
+    .ba-node-3 .ba-node-dot,
+    .ba-node-3 .ba-node-dot::after,
+    .ba-node-3 .ba-node-label { animation-delay: 3.7s; }
+    .ba-node-4 .ba-node-dot,
+    .ba-node-4 .ba-node-dot::after,
+    .ba-node-4 .ba-node-label { animation-delay: 5.1s; }
+
+    /* Frosted availability pill */
+    .ba-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.10);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 11px;
+      font-weight: 600;
+      color: #e2e8f0;
+      white-space: nowrap;
+    }
+    .ba-dot {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: baDotPulse 2s ease-in-out infinite;
+    }
+    .ba-dot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1.5px solid #22c55e;
+      animation: baDotHalo 2s ease-out infinite;
+    }
+    @keyframes baDotPulse {
+      0%, 100% { box-shadow: 0 0 0 rgba(34, 197, 94, 0); }
+      50%      { box-shadow: 0 0 8px 2px rgba(34, 197, 94, 0.55); }
+    }
+    @keyframes baDotHalo {
+      0%        { transform: scale(1);   opacity: 0.9; }
+      70%, 100% { transform: scale(2.6); opacity: 0; }
+    }
+
+    /* Narrow screens: drop the pipeline, keep the pill below the tag pills */
+    @media (max-width: 899px) {
+      /* Doubled class beats Tailwind's md:flex-row, which is injected later */
+      .ba-hero.ba-hero { flex-direction: column; align-items: flex-start; }
+      .ba-pipeline { display: none; }
+      .ba-pipeline-wrap { padding-right: 0; }
+    }
+
+    /* Reduced motion: show the completed pipeline, hold everything still */
+    @media (prefers-reduced-motion: reduce) {
+      .ba-pipeline-glow,
+      .ba-pipeline-seg,
+      .ba-node,
+      .ba-node-dot,
+      .ba-node-dot::after,
+      .ba-node-label,
+      .ba-dot,
+      .ba-dot::after {
+        animation: none !important;
+      }
+      .ba-comet { display: none; }
+      .ba-pipeline-seg { transform: scaleY(1); }
+      .ba-node { opacity: 1; transform: none; }
+      .ba-node-dot { border-color: rgba(244, 63, 94, 0.75); color: #fecdd3; }
+      .ba-node-dot::after { opacity: 0; }
+      .ba-node-label { opacity: 1; color: #ffffff; }
+      .ba-pipeline-glow { opacity: 0.8; transform: scale(1); }
+    }
   </style>
 </head>
 <body class="flex flex-row">
@@ -323,7 +612,7 @@
       <!-- ================= ABOUT PANEL ================= -->
       <section id="panel-about" class="content-panel space-y-3">
         <!-- Hero section banner -->
-        <div class="bg-gradient-to-r from-slate-900 to-rose-950 rounded-2xl p-4 md:p-5 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-xl shadow-slate-900/10">
+        <div class="ba-hero bg-gradient-to-r from-slate-900 to-rose-950 rounded-2xl p-4 md:p-5 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-xl shadow-slate-900/10">
           <div class="space-y-3 max-w-2xl">
             <span class="inline-block bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Welcome Portfolio</span>
             <h2 class="font-outfit text-2xl md:text-3xl font-bold tracking-tight">I Analyse. I Build. I Deliver.</h2>
@@ -340,6 +629,40 @@
               <span class="flex items-center text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
                 <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-rose-400"></i> UAT Support & Signoff
               </span>
+            </div>
+          </div>
+
+          <!-- Delivery pipeline visual + availability -->
+          <div class="ba-pipeline-wrap">
+            <div class="ba-pipeline" aria-hidden="true">
+              <span class="ba-pipeline-glow"></span>
+              <span class="ba-pipeline-track"></span>
+              <span class="ba-pipeline-seg ba-seg-1"></span>
+              <span class="ba-pipeline-seg ba-seg-2"></span>
+              <span class="ba-pipeline-seg ba-seg-3"></span>
+              <span class="ba-comet"></span>
+
+              <div class="ba-node ba-node-1">
+                <span class="ba-node-dot"><i data-lucide="search" class="h-4 w-4"></i></span>
+                <span class="ba-node-label">Discover</span>
+              </div>
+              <div class="ba-node ba-node-2">
+                <span class="ba-node-dot"><i data-lucide="file-text" class="h-4 w-4"></i></span>
+                <span class="ba-node-label">Specify</span>
+              </div>
+              <div class="ba-node ba-node-3">
+                <span class="ba-node-dot"><i data-lucide="code" class="h-4 w-4"></i></span>
+                <span class="ba-node-label">Build</span>
+              </div>
+              <div class="ba-node ba-node-4">
+                <span class="ba-node-dot"><i data-lucide="rocket" class="h-4 w-4"></i></span>
+                <span class="ba-node-label">Launch</span>
+              </div>
+            </div>
+
+            <div class="ba-availability">
+              <span class="ba-dot"></span>
+              <span>Available from September</span>
             </div>
           </div>
 
