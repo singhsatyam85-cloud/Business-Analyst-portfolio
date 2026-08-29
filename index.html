@@ -517,6 +517,185 @@
       .ba-node-label { opacity: 1; color: #ffffff; }
       .ba-pipeline-glow { opacity: 0.8; transform: scale(1); }
     }
+
+    /* ============================================================
+       EXPERIENCE PANEL — Animated timeline pulse
+       5 entries: Ckay · Career Break · FeelTech · Jindal · India Steel
+       Cycle: 7 s, comet travels 0-55% of cycle then pauses.
+    ============================================================ */
+
+    /* Wrapper — needs position:relative for the overlays */
+    #exp-tl {
+      position: relative;
+      /* dim the static border-left line so the fill stands out */
+      border-left-color: rgba(244, 63, 94, 0.18) !important;
+    }
+
+    /* ── 2. LINE FILL ──────────────────────────────────────────
+       A full-height overlay strip that scales from top to bottom
+       then fades when the cycle resets.                          */
+    .exp-line-fill {
+      position: absolute;
+      left: -2px;          /* sit on top of the 2px border-left  */
+      top: 0;
+      width: 2px;
+      height: 100%;
+      border-radius: 2px;
+      transform-origin: top center;
+      transform: scaleY(0);
+      background: linear-gradient(180deg, #fb7185 0%, #e11d48 100%);
+      box-shadow: 0 0 6px 1px rgba(244, 63, 94, 0.35);
+      pointer-events: none;
+      z-index: 1;
+      animation: expLineFill 7s linear infinite;
+    }
+    @keyframes expLineFill {
+      0%   { transform: scaleY(0); opacity: 1; }
+      /* comet reaches the bottom at ~55% of the cycle */
+      55%  { transform: scaleY(1); opacity: 1; }
+      88%  { transform: scaleY(1); opacity: 1; }
+      /* short hold, then fade back */
+      100% { transform: scaleY(1); opacity: 0; }
+    }
+
+    /* ── 1. COMET PULSE ────────────────────────────────────────
+       Bright core + tapering gradient tail travels top→bottom.  */
+    .exp-comet {
+      position: absolute;
+      left: -4px;          /* centre on the 2px line */
+      top: 4px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow:
+        0 0 0   2px rgba(244, 63, 94, 0.9),
+        0 0 8px 3px rgba(244, 63, 94, 0.55),
+        0 0 18px 5px rgba(244, 63, 94, 0.25);
+      pointer-events: none;
+      z-index: 3;
+      animation: expComet 7s linear infinite;
+    }
+    /* Tapering tail — sits above the dot, bright near core, fading upward */
+    .exp-comet::after {
+      content: "";
+      position: absolute;
+      left: 3px;
+      bottom: 8px;    /* anchor to top of the dot */
+      width: 2px;
+      height: 40px;
+      border-radius: 2px;
+      /* gradient: bright at bottom (near core) fading to transparent at top */
+      background: linear-gradient(
+        to top,
+        rgba(244, 63, 94, 0.7),
+        rgba(244, 63, 94, 0)
+      );
+    }
+    /* Comet travels the full timeline height (safe 600px, fades before overflow) */
+    @keyframes expComet {
+      0%   { transform: translateY(0);     opacity: 0; }
+      3%   { transform: translateY(0);     opacity: 1; }
+      52%  { transform: translateY(600px); opacity: 0.9; }
+      55%  { transform: translateY(600px); opacity: 0; }
+      100% { transform: translateY(600px); opacity: 0; }
+    }
+
+    /* ── 3 & 4. MARKER ACTIVATION + RIPPLE ────────────────────
+       Each dot scales up → settles, brightens, and fires a ring. */
+    .exp-dot {
+      position: relative;
+      /* keep existing Tailwind styles; animation only changes transform/shadow */
+      animation: expDotActivate 7s ease-in-out infinite;
+    }
+    @keyframes expDotActivate {
+      0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(244,63,94,0);   border-color: #f43f5e; background: #fff; }
+      3%   { transform: scale(1.4);  box-shadow: 0 0 0 0 rgba(244,63,94,0.6); border-color: #e11d48; background: #fff1f2; }
+      10%  { transform: scale(1);    box-shadow: 0 0 0 0 rgba(244,63,94,0);   border-color: #f43f5e; background: #fff; }
+      100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(244,63,94,0);   border-color: #f43f5e; background: #fff; }
+    }
+
+    /* Ripple ring pseudo-element on each dot */
+    .exp-dot::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(244, 63, 94, 0.75);
+      opacity: 0;
+      pointer-events: none;
+      animation: expRipple 7s ease-out infinite;
+    }
+    @keyframes expRipple {
+      0%   { transform: scale(1);   opacity: 0; }
+      3%   { transform: scale(1);   opacity: 0.85; }
+      14%  { transform: scale(2.4); opacity: 0; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* ── STAGGER: animation-delay per dot ─────────────────────
+       Comet leaves top at t=0, reaches:
+         dot-1 (~0%  height) ≈ 0.2s
+         dot-2 (~22% height) ≈ 1.4s
+         dot-3 (~44% height) ≈ 2.5s
+         dot-4 (~66% height) ≈ 3.6s
+         dot-5 (~88% height) ≈ 4.5s               */
+    .exp-dot-1,
+    .exp-dot-1::after { animation-delay: 0.2s; }
+    .exp-dot-2,
+    .exp-dot-2::after { animation-delay: 1.4s; }
+    .exp-dot-3,
+    .exp-dot-3::after { animation-delay: 2.5s; }
+    .exp-dot-4,
+    .exp-dot-4::after { animation-delay: 3.6s; }
+    .exp-dot-5,
+    .exp-dot-5::after { animation-delay: 4.5s; }
+
+    /* ── RESPONSIVE: narrow screens — reduce glow radius ───── */
+    @media (max-width: 640px) {
+      .exp-comet {
+        box-shadow:
+          0 0 0   2px rgba(244, 63, 94, 0.9),
+          0 0 5px 2px rgba(244, 63, 94, 0.45);
+      }
+      .exp-comet::after {
+        height: 24px;
+      }
+      @keyframes expDotActivate {
+        0%   { transform: scale(1);   border-color: #f43f5e; background: #fff; }
+        3%   { transform: scale(1.3); border-color: #e11d48; background: #fff1f2; }
+        10%  { transform: scale(1);   border-color: #f43f5e; background: #fff; }
+        100% { transform: scale(1);   border-color: #f43f5e; background: #fff; }
+      }
+    }
+
+    /* ── ACCESSIBILITY: prefers-reduced-motion ──────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .exp-comet,
+      .exp-comet::after {
+        display: none !important;
+      }
+      .exp-line-fill {
+        animation: none !important;
+        transform: scaleY(1) !important;
+        opacity: 1 !important;
+      }
+      .exp-dot,
+      .exp-dot::after {
+        animation: none !important;
+        transform: scale(1) !important;
+        opacity: 1;
+        border-color: #e11d48 !important;
+        background: #fff !important;
+      }
+      .exp-dot::after {
+        opacity: 0 !important;
+      }
+      /* Keep the line visible and the border fully lit */
+      #exp-tl {
+        border-left-color: #f43f5e !important;
+      }
+    }
   </style>
 </head>
 <body class="flex flex-row">
@@ -766,10 +945,13 @@
           <i data-lucide="briefcase" class="h-8 w-8 text-slate-400"></i>
         </div>
 
-        <div class="relative pl-6 border-l-2 border-rose-100 space-y-8 py-2 ml-4">
+        <div id="exp-tl" class="relative pl-6 border-l-2 border-rose-100 space-y-8 py-2 ml-4">
+          <!-- Animated comet + line fill (CSS-only, no JS) -->
+          <span class="exp-line-fill" aria-hidden="true"></span>
+          <span class="exp-comet" aria-hidden="true"></span>
           <!-- Role 1 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
+            <span class="exp-dot exp-dot-1 absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst (Contract)</span>
@@ -786,7 +968,7 @@
 
           <!-- MBA Career Break -->
           <div class="relative bg-slate-50 border border-slate-200 rounded-xl p-4">
-            <span class="absolute -left-[31px] top-5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-slate-300 bg-white"></span>
+            <span class="exp-dot exp-dot-2 absolute -left-[31px] top-5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-400 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
                 <span class="text-slate-600 font-bold">Career break · Full-time MBA</span>
@@ -801,7 +983,7 @@
 
           <!-- Role 2 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
+            <span class="exp-dot exp-dot-3 absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
@@ -818,7 +1000,7 @@
 
           <!-- Role 3 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
+            <span class="exp-dot exp-dot-4 absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Associate Manager, Operations</span>
@@ -835,7 +1017,7 @@
 
           <!-- Role 4 -->
           <div class="relative">
-            <span class="absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
+            <span class="exp-dot exp-dot-5 absolute -left-[31px] top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-600 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Executive, Operations</span>
