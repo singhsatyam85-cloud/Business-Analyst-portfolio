@@ -137,6 +137,61 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
     }
+
+    /* Project card link buttons */
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .project-btn:hover {
+      transform: translateY(-2px);
+    }
+    .project-btn-primary {
+      background-color: #E11D48;
+      border-color: #E11D48;
+      color: #FFFFFF;
+    }
+    .project-btn-primary i {
+      color: #FFFFFF;
+    }
+    .project-btn-primary:hover {
+      background-color: #BE123C;
+      border-color: #BE123C;
+      box-shadow: 0 10px 20px -6px rgba(225, 29, 72, 0.45);
+    }
+    .project-btn-secondary {
+      background-color: #FFFFFF;
+      border-color: #E11D48;
+      color: #E11D48;
+    }
+    .project-btn-secondary i {
+      color: #E11D48;
+    }
+    .project-btn-secondary:hover {
+      background-color: #FFF1F2;
+      border-color: #BE123C;
+      color: #BE123C;
+      box-shadow: 0 10px 20px -6px rgba(225, 29, 72, 0.18);
+    }
+    .project-btn-secondary:hover i {
+      color: #BE123C;
+    }
+
+    /* Project cards */
+    .project-card {
+      transition: all 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
   </style>
 </head>
 <body class="flex flex-row">
@@ -447,8 +502,8 @@
         </div>
 
         <!-- Featured Project (Hero Card) -->
-        <div class="bg-white rounded-xl border border-rose-200 overflow-hidden shadow-sm flex flex-col lg:flex-row">
-          <div class="p-6 lg:p-8 flex-1 space-y-4">
+        <div class="project-card bg-white rounded-xl border border-rose-300 overflow-hidden shadow-md hover:shadow-xl flex flex-col lg:flex-row">
+          <div class="p-5 flex-1 space-y-4">
             <div class="flex items-center space-x-2">
               <span class="bg-rose-600 border border-rose-100 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Featured Hero Project</span>
               <span class="bg-purple-50 text-purple-700 text-[10px] font-semibold px-2.5 py-1 rounded">SaaS Platform</span>
@@ -469,183 +524,205 @@
                 <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-medium">Groq (LLaMA 3.3)</span>
               </div>
             </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-55 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/ai-digital-analyst-officer" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
+            <div class="flex gap-3 pt-2">
+              <a href="https://github.com/singhsatyam85-cloud/ai-digital-analyst-officer" target="_blank" rel="noopener" class="project-btn project-btn-secondary flex-1">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
                 <span>GitHub</span>
               </a>
-              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md bg-white border border-slate-200 text-rose-750 hover:bg-slate-100 flex items-center space-x-1.5 shadow-sm transition">
-                <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="project-btn project-btn-primary flex-1">
+                <i data-lucide="external-link" class="h-4 w-4"></i>
                 <span>Live App</span>
               </a>
             </div>
           </div>
-          <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 w-full lg:w-[280px] border-t lg:border-t-0 lg:border-l border-slate-200 p-6 flex flex-col justify-between">
-            <div class="space-y-3">
-              <h4 class="font-outfit text-xs font-bold text-rose-950 uppercase tracking-wider">Key BA Alignment</h4>
-              <ul class="text-[11px] text-slate-600 space-y-2">
-                <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
-                  <span>Autonomous system workflows</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
-                  <span>Third-party API mappings</span>
-                </li>
-                <li class="flex items-start">
-                  <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
-                  <span>Multi-tenant SaaS metrics</span>
-                </li>
-              </ul>
-            </div>
-            <div class="bg-white/80 backdrop-blur rounded-lg p-3 border border-rose-100 mt-4 text-[10px] text-slate-500">
+          <div class="bg-gradient-to-br from-rose-50 to-rose-100/50 w-full lg:w-[280px] border-t lg:border-t-0 lg:border-l border-slate-200 p-5 space-y-3">
+            <h4 class="font-outfit text-xs font-bold text-rose-950 uppercase tracking-wider">Key BA Alignment</h4>
+            <ul class="text-[11px] text-slate-600 space-y-2">
+              <li class="flex items-start">
+                <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
+                <span>Autonomous system workflows</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
+                <span>Third-party API mappings</span>
+              </li>
+              <li class="flex items-start">
+                <i data-lucide="check" class="h-3.5 w-3.5 mr-1.5 text-rose-600 mt-0.5"></i>
+                <span>Multi-tenant SaaS metrics</span>
+              </li>
+            </ul>
+            <div class="bg-white/80 backdrop-blur rounded-lg p-3 border border-rose-100 text-[10px] text-slate-500">
               Validated through live user UAT testing and deployed on Vercel infrastructure.
             </div>
           </div>
         </div>
 
         <!-- 2x3 Grid of Other 6 Projects -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+
           <!-- Project 2: ReturnBot -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">ReturnBot</h4>
-              <p class="text-[11px] text-slate-500">E-commerce AI Return Agent</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                An autonomous Python agent automating e-commerce returns, retail policy checks, database updates, and shipping label generation.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="bot" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">API Integration</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Database</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">AI Agent</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">ReturnBot</h4>
+                <p class="text-[11px] text-slate-500">E-commerce AI Return Agent</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  An autonomous Python agent automating e-commerce returns, retail policy checks, database updates, and shipping label generation.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/retumbot" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">API Integration</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Database</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/retumbot" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 3: Retail Voice Customer Service Assistant -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">Retail Voice Customer Assistant</h4>
-              <p class="text-[11px] text-slate-500">Voice-Enabled Customer Service AI</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                Voice assistant mapping handling order lookups, capturing complaints, automated customer ticket creation, and call transcript logging.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="mic" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Speech Recognition</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">NLP</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">AI Agent</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">Retail Voice Customer Assistant</h4>
+                <p class="text-[11px] text-slate-500">Voice-Enabled Customer Service AI</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  Voice assistant mapping handling order lookups, capturing complaints, automated customer ticket creation, and call transcript logging.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/retail-voice-customer-service-assistant" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Speech Recognition</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">NLP</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/retail-voice-customer-service-assistant" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 4: InsureScope -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">InsureScope</h4>
-              <p class="text-[11px] text-slate-500">Insurance Market Analytics Platform</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                Predictive analytics, claim trends, and customer segment mapping dashboard utilizing synthetic market datasets.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="line-chart" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Pandas / Numpy</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Scikit-Learn</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Analytics</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">InsureScope</h4>
+                <p class="text-[11px] text-slate-500">Insurance Market Analytics Platform</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  Predictive analytics, claim trends, and customer segment mapping dashboard utilizing synthetic market datasets.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/InsureScope" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Python</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Pandas / Numpy</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Scikit-Learn</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/InsureScope" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 5: UK Insurance Analytics Dashboard -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">UK Insurance Analytics Dashboard</h4>
-              <p class="text-[11px] text-slate-500">BI Claims Performance Dashboard</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                General insurance claim analytics dashboard displaying claim costs, SLA timelines, open/closed trends, and general insurance reporting requirements.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="bar-chart-3" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Power BI</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">SQL Server</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">BI Dashboard</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">UK Insurance Analytics Dashboard</h4>
+                <p class="text-[11px] text-slate-500">BI Claims Performance Dashboard</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  General insurance claim analytics dashboard displaying claim costs, SLA timelines, open/closed trends, and general insurance reporting requirements.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/uk-insurance-analytics-powerbi" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Power BI</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">SQL Server</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/uk-insurance-analytics-powerbi" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 6: BiteBuddy Demo -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">BiteBuddy Demo</h4>
-              <p class="text-[11px] text-slate-500">Interactive AI Food Delivery Prototype</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                Prototype featuring natural language meal search, allergy and dietary filters, and simulated delivery progress.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="soup" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">JavaScript</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">HTML5 / CSS3</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Prototype</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">BiteBuddy Demo</h4>
+                <p class="text-[11px] text-slate-500">Interactive AI Food Delivery Prototype</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  Prototype featuring natural language meal search, allergy and dietary filters, and simulated delivery progress.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/bitebuddy-demo" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">JavaScript</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">HTML5 / CSS3</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/bitebuddy-demo" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Project 7: ChatPulse Lite -->
-          <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4 shadow-sm flex flex-col justify-between">
-            <div class="space-y-2">
-              <h4 class="font-outfit text-sm font-bold text-slate-800">ChatPulse Lite</h4>
-              <p class="text-[11px] text-slate-500">Privacy-First WhatsApp Analytics</p>
-              <p class="text-slate-600 text-xs leading-relaxed">
-                WhatsApp activity metrics and messaging frequency visualizer using local metadata to protect security and compliance.
-              </p>
+          <div class="project-card bg-white rounded-xl border border-slate-300 shadow-md hover:shadow-xl overflow-hidden flex flex-col h-full">
+            <div class="h-[140px] w-full flex-shrink-0 bg-gradient-to-br from-rose-500 to-rose-800 flex items-center justify-center">
+              <i data-lucide="message-circle" class="h-10 w-10 text-white"></i>
             </div>
-            <div class="space-y-3 pt-2">
-              <div class="flex flex-wrap gap-1.5">
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">React</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">TypeScript</span>
-                <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Tailwind CSS</span>
+            <div class="p-5 flex flex-col flex-1 justify-between space-y-4">
+              <div class="space-y-2">
+                <span class="inline-block bg-rose-50 text-rose-600 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Analytics</span>
+                <h4 class="font-outfit text-sm font-bold text-slate-800">ChatPulse Lite</h4>
+                <p class="text-[11px] text-slate-500">Privacy-First WhatsApp Analytics</p>
+                <p class="text-slate-600 text-xs leading-relaxed">
+                  WhatsApp activity metrics and messaging frequency visualizer using local metadata to protect security and compliance.
+                </p>
               </div>
-            <div class="inline-flex rounded-lg border border-slate-200 bg-slate-50 p-0.5 mt-2" role="group">
-              <a href="https://github.com/singhsatyam85-cloud/chatpulse-lite" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold rounded-md text-rose-750 hover:bg-white flex items-center space-x-1.5 transition">
-                <i data-lucide="github" class="h-3.5 w-3.5"></i>
-                <span>View Repo</span>
-              </a>
-            </div>
+              <div class="space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">React</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">TypeScript</span>
+                  <span class="bg-slate-100 text-slate-600 text-[9px] px-2 py-0.5 rounded font-medium">Tailwind CSS</span>
+                </div>
+                <a href="https://github.com/singhsatyam85-cloud/chatpulse-lite" target="_blank" rel="noopener" class="project-btn project-btn-secondary w-full">
+                  <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                  <span>View Repo</span>
+                </a>
+              </div>
             </div>
           </div>
 
