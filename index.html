@@ -131,6 +131,12 @@
     .sidebar-transition {
       transition: transform 0.3s ease-in-out;
     }
+
+    /* Tighter content padding while the About panel is active, so it fits one screen without scrolling */
+    .flex-1.overflow-y-auto:has(> #panel-about:not(.hidden)) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
   </style>
 </head>
 <body class="flex flex-row">
@@ -224,16 +230,16 @@
     <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
 
       <!-- ================= ABOUT PANEL ================= -->
-      <section id="panel-about" class="content-panel space-y-6">
+      <section id="panel-about" class="content-panel space-y-3">
         <!-- Hero section banner -->
-        <div class="bg-gradient-to-r from-slate-900 to-rose-950 rounded-2xl p-6 md:p-8 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-xl shadow-slate-900/10">
-          <div class="space-y-4 max-w-2xl">
+        <div class="bg-gradient-to-r from-slate-900 to-rose-950 rounded-2xl p-4 md:p-5 text-white flex flex-col md:flex-row md:items-center md:justify-between gap-4 shadow-xl shadow-slate-900/10">
+          <div class="space-y-3 max-w-2xl">
             <span class="inline-block bg-rose-500/20 border border-rose-400/30 text-rose-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Welcome Portfolio</span>
-            <h2 class="font-outfit text-3xl md:text-4xl font-bold tracking-tight">I Analyse. I Build. I Deliver.</h2>
-            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+            <h2 class="font-outfit text-2xl md:text-3xl font-bold tracking-tight">I Analyse. I Build. I Deliver.</h2>
+            <p class="text-slate-300 text-sm md:text-base leading-snug">
               Business Analyst delivering digital products, BI reporting and live AI systems across the UK and India.
             </p>
-            <div class="flex flex-wrap gap-3 pt-2">
+            <div class="flex flex-wrap gap-2 pt-1">
               <span class="flex items-center text-xs text-slate-300 bg-slate-800/60 px-3 py-1.5 rounded-lg border border-slate-700/50">
                 <i data-lucide="check-circle-2" class="h-3.5 w-3.5 mr-1.5 text-rose-400"></i> Agile & Scrum
               </span>
@@ -249,8 +255,8 @@
         </div>
 
         <!-- Quick Info Stats Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center space-x-4">
             <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="calendar" class="h-6 w-6"></i>
             </div>
@@ -259,16 +265,16 @@
               <h3 class="font-outfit text-xl font-bold text-slate-800">7+ Years</h3>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
+          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center space-x-4">
             <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="file-check" class="h-6 w-6"></i>
             </div>
             <div>
-              <p class="text-xs text-slate-500 font-medium">Deliverables Cataloged</p>
-              <h3 class="font-outfit text-xl font-bold text-slate-800">65+ Documents</h3>
+              <p class="text-xs text-slate-500 font-medium">AI Agents, Automation, BI</p>
+              <h3 class="font-outfit text-xl font-bold text-slate-800">7 Live Projects</h3>
             </div>
           </div>
-          <div class="bg-white rounded-xl p-5 border border-slate-200 shadow-sm flex items-center space-x-4">
+          <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm flex items-center space-x-4">
             <div class="h-12 w-12 bg-rose-50 text-rose-600 rounded-xl flex items-center justify-center">
               <i data-lucide="award" class="h-6 w-6"></i>
             </div>
@@ -280,26 +286,26 @@
         </div>
 
         <!-- About details grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <!-- Narrative summary -->
-          <div class="bg-white rounded-xl p-6 border border-slate-200 shadow-sm lg:col-span-2 space-y-4">
+          <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm lg:col-span-2 space-y-1.5">
             <h3 class="font-outfit text-lg font-semibold text-slate-800">Professional Narrative</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">
+            <p class="text-slate-600 text-[15px] leading-tight">
               I take products from a vague idea to a live launch. I map customer journeys, write the functional specification, user stories and acceptance criteria the developers build from, and stay with it through UAT and sign off.
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed">
+            <p class="text-slate-600 text-[15px] leading-tight">
               I work with data as well as documents. I design SQL reporting frameworks and Power BI dashboards, including ones connected to SAP and Salesforce, and I check the numbers against source data before anyone reports on them.
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed">
+            <p class="text-slate-600 text-[15px] leading-tight">
               I build AI products, not just AI slide decks. I recently delivered a live AI marketing platform for a client with eight modules and an autonomous agent that takes a task in plain English, asks its own follow up questions, generates the content and posts it straight to LinkedIn and Twitter. Built and deployed using Antigravity, Claude Code and Codex.
             </p>
-            <p class="text-slate-600 text-sm leading-relaxed">
+            <p class="text-slate-600 text-[15px] leading-tight">
               I am based in the UK and open to Business Analyst roles, including ones where AI tools are part of the job.
             </p>
-            
-            <div class="pt-2">
-              <h4 class="font-outfit text-sm font-semibold text-slate-800 mb-2">Core Competencies</h4>
-              <div class="grid grid-cols-2 gap-2 text-xs text-slate-650">
+
+            <div class="pt-1">
+              <h4 class="font-outfit text-sm font-semibold text-slate-800 mb-1">Core Competencies</h4>
+              <div class="grid grid-cols-2 gap-1.5 text-xs text-slate-650">
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Requirements Engineering</div>
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Process Mapping (As-Is / To-Be)</div>
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> User Acceptance Testing (UAT)</div>
@@ -309,10 +315,10 @@
           </div>
 
           <!-- Professional principles card -->
-          <div class="bg-rose-600 rounded-xl p-6 text-white space-y-4 flex flex-col justify-between">
-            <div class="space-y-3">
+          <div class="bg-rose-600 rounded-xl p-4 text-white space-y-3 flex flex-col justify-between">
+            <div class="space-y-2">
               <h3 class="font-outfit text-lg font-semibold">Delivery Principles</h3>
-              <ul class="space-y-3 text-xs text-rose-100">
+              <ul class="space-y-2 text-xs text-rose-100">
                 <li class="flex items-start">
                   <span class="mr-2 mt-0.5 flex h-4 w-4 items-center justify-center rounded bg-rose-600 text-[10px] font-bold text-white">1</span>
                   <span><strong>Requirements Honesty</strong>: Creating a shared, clear understanding of scope to prevent project surprises.</span>
@@ -327,13 +333,12 @@
                 </li>
               </ul>
             </div>
-            <div class="border-t border-rose-500/50 pt-4 flex items-center justify-between text-xs text-rose-200">
+            <div class="border-t border-rose-500/50 pt-3 flex items-center justify-between text-xs text-rose-200">
               <span>Located in UK</span>
               <span>Available for Hire</span>
             </div>
           </div>
         </div>
-
 
       </section>
 
@@ -773,7 +778,7 @@
         <div class="flex items-center justify-between border-b border-slate-200 pb-4">
           <div>
             <h2 class="font-outfit text-2xl font-bold text-slate-800">BA Case Studies & Deliverables Explorer</h2>
-            <p class="text-xs text-slate-500">Access and download actual requirements documents, process flows, and evidence packs</p>
+            <p class="text-xs text-slate-500">65+ published deliverables. Access and download actual requirements documents, process flows, and evidence packs.</p>
           </div>
           <i data-lucide="folder-open" class="h-8 w-8 text-slate-400"></i>
         </div>
