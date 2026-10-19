@@ -519,19 +519,19 @@
     }
 
     /* ============================================================
-       EXPERIENCE PANEL — Animated timeline pulse
-       5 entries: Ckay · Career Break · FeelTech · Jindal · India Steel
+       EXPERIENCE PANEL - Animated timeline pulse
+       5 entries: Ckay / Career Break / FeelTech / Jindal / India Steel
        Cycle: 7 s, comet travels 0-55% of cycle then pauses.
     ============================================================ */
 
-    /* Wrapper — needs position:relative for the overlays */
+    /* Wrapper - needs position:relative for the overlays */
     #exp-tl {
       position: relative;
       /* dim the static border-left line so the fill stands out */
       border-left-color: rgba(244, 63, 94, 0.18) !important;
     }
 
-    /* ── 2. LINE FILL ──────────────────────────────────────────
+    /* -- 2. LINE FILL ------------------------------------------
        A full-height overlay strip that scales from top to bottom
        then fades when the cycle resets.                          */
     .exp-line-fill {
@@ -558,8 +558,8 @@
       100% { transform: scaleY(1); opacity: 0; }
     }
 
-    /* ── 1. COMET PULSE ────────────────────────────────────────
-       Bright core + tapering gradient tail travels top→bottom.  */
+    /* -- 1. COMET PULSE ----------------------------------------
+       Bright core + tapering gradient tail travels top->bottom.  */
     .exp-comet {
       position: absolute;
       left: -4px;          /* centre on the 2px line */
@@ -576,7 +576,7 @@
       z-index: 3;
       animation: expComet 7s linear infinite;
     }
-    /* Tapering tail — sits above the dot, bright near core, fading upward */
+    /* Tapering tail - sits above the dot, bright near core, fading upward */
     .exp-comet::after {
       content: "";
       position: absolute;
@@ -601,8 +601,8 @@
       100% { transform: translateY(600px); opacity: 0; }
     }
 
-    /* ── 3 & 4. MARKER ACTIVATION + RIPPLE ────────────────────
-       Each dot scales up → settles, brightens, and fires a ring. */
+    /* -- 3 & 4. MARKER ACTIVATION + RIPPLE --------------------
+       Each dot scales up -> settles, brightens, and fires a ring. */
     .exp-dot {
       position: relative;
       /* keep existing Tailwind styles; animation only changes transform/shadow */
@@ -633,13 +633,13 @@
       100% { transform: scale(2.4); opacity: 0; }
     }
 
-    /* ── STAGGER: animation-delay per dot ─────────────────────
+    /* -- STAGGER: animation-delay per dot ---------------------
        Comet leaves top at t=0, reaches:
-         dot-1 (~0%  height) ≈ 0.2s
-         dot-2 (~22% height) ≈ 1.4s
-         dot-3 (~44% height) ≈ 2.5s
-         dot-4 (~66% height) ≈ 3.6s
-         dot-5 (~88% height) ≈ 4.5s               */
+         dot-1 (~0%  height) ~ 0.2s
+         dot-2 (~22% height) ~ 1.4s
+         dot-3 (~44% height) ~ 2.5s
+         dot-4 (~66% height) ~ 3.6s
+         dot-5 (~88% height) ~ 4.5s               */
     .exp-dot-1,
     .exp-dot-1::after { animation-delay: 0.2s; }
     .exp-dot-2,
@@ -651,7 +651,7 @@
     .exp-dot-5,
     .exp-dot-5::after { animation-delay: 4.5s; }
 
-    /* ── RESPONSIVE: narrow screens — reduce glow radius ───── */
+    /* -- RESPONSIVE: narrow screens - reduce glow radius ----- */
     @media (max-width: 640px) {
       .exp-comet {
         box-shadow:
@@ -669,7 +669,7 @@
       }
     }
 
-    /* ── ACCESSIBILITY: prefers-reduced-motion ──────────────── */
+    /* -- ACCESSIBILITY: prefers-reduced-motion ---------------- */
     @media (prefers-reduced-motion: reduce) {
       .exp-comet,
       .exp-comet::after {
@@ -701,7 +701,7 @@
 <body class="flex flex-row">
 
   <!-- ================= SIDEBAR ================= -->
-  <aside id="sidebar" class="sidebar-transition fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col justify-between bg-brandDark text-slate-300 md:relative md:translate-x-0 -translate-x-full">
+  <aside id="sidebar" class="sidebar-transition fixed inset-y-0 left-0 z-40 flex w-[260px] flex-col justify-between overflow-y-auto bg-brandDark text-slate-300 md:relative md:translate-x-0 -translate-x-full">
     <div>
       <!-- Sidebar Header -->
       <div class="p-6 border-b border-neutral-800 flex items-center justify-between">
@@ -841,7 +841,7 @@
 
             <div class="ba-availability">
               <span class="ba-dot"></span>
-              <span>Available from September</span>
+              <span>Immediately Available in the UK</span>
             </div>
           </div>
 
@@ -898,7 +898,7 @@
 
             <div class="pt-1">
               <h4 class="font-outfit text-sm font-semibold text-slate-800 mb-1">Core Competencies</h4>
-              <div class="grid grid-cols-2 gap-1.5 text-xs text-slate-650">
+              <div class="grid grid-cols-2 gap-1.5 text-xs text-slate-600">
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Requirements Engineering</div>
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> Process Mapping (As-Is / To-Be)</div>
                 <div class="flex items-center"><i data-lucide="chevron-right" class="h-3.5 w-3.5 mr-1 text-rose-500"></i> User Acceptance Testing (UAT)</div>
@@ -957,7 +957,7 @@
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst (Contract)</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">May 2026 - August 2026</span>
               </div>
-              <h3 class="font-outfit text-base font-bold text-slate-800">Ckay Solution Limited · United Kingdom</h3>
+              <h3 class="font-outfit text-base font-bold text-slate-800">Ckay Solution Limited &bull; United Kingdom</h3>
               <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 pt-2">
                 <li>Fixed term contract delivering a customer facing digital product from requirements to launch, finished August 2026. Mapped end to end customer journeys and defined the functional specification, user stories and acceptance criteria the development team built from, working inside an Agile team with product, development and QA.</li>
                 <li>Designed a SQL reporting framework and Power BI dashboards, including one connected to SAP for an automotive components client and a churn analysis solution integrated with Salesforce for an insurance client, reconciling source data against reported figures.</li>
@@ -971,10 +971,10 @@
             <span class="exp-dot exp-dot-2 absolute -left-[31px] top-5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-rose-400 bg-white"></span>
             <div class="space-y-1">
               <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs">
-                <span class="text-slate-600 font-bold">Career break · Full-time MBA</span>
+                <span class="text-slate-600 font-bold">Career break &ndash; Full-time MBA</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Jan 2025 - Apr 2026</span>
               </div>
-              <h3 class="font-outfit text-sm font-semibold text-slate-700">Middlesex University · London, United Kingdom</h3>
+              <h3 class="font-outfit text-sm font-semibold text-slate-700">Middlesex University &bull; London, United Kingdom</h3>
               <p class="text-xs text-slate-600 leading-relaxed pt-1">
                 Completed a full-time Master of Business Administration (MBA) focusing on business leadership, corporate strategy, and digital operations.
               </p>
@@ -989,7 +989,7 @@
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Business Analyst</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Dec 2023 - Dec 2024</span>
               </div>
-              <h3 class="font-outfit text-base font-bold text-slate-800">FeelTech Digiviation Ltd · India</h3>
+              <h3 class="font-outfit text-base font-bold text-slate-800">FeelTech Digiviation Ltd &bull; India</h3>
               <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 pt-2">
                 <li>Led the replacement of a manual paper based process with a role based web and mobile platform across multiple educational institutions, from discovery to go live.</li>
                 <li>Ran elicitation workshops with academic, administrative and leadership stakeholders whose priorities did not align, authored the BRDs, FRDs and process documentation, and maintained traceability through to test.</li>
@@ -1006,11 +1006,11 @@
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Associate Manager, Operations</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Nov 2017 - Nov 2023</span>
               </div>
-              <h3 class="font-outfit text-base font-bold text-slate-800">Jindal Stainless Ltd · India</h3>
+              <h3 class="font-outfit text-base font-bold text-slate-800">Jindal Stainless Ltd &bull; India</h3>
               <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 pt-2">
                 <li>Business and process owner for a Level 2 process automation implementation, defining functional requirements, coordinating the external vendor through configuration and validating system logic against live operational data to 94 to 98% prediction accuracy.</li>
                 <li>Identified functional issues during simulation testing ahead of rollout, preventing downstream disruption, and authored the standard operating procedures and end user training that supported adoption.</li>
-                <li>Coordinated procurement, delay forecasting and budget and timeline impact analysis on a large capital programme, and delivered process improvements assessed at over £1.5M in combined annual operating cost savings. Recognised with the Star Award (2021) and the Idea Champ Award.</li>
+                <li>Coordinated procurement, delay forecasting and budget and timeline impact analysis on a large capital programme, and delivered process improvements assessed at over &pound;1.5M in combined annual operating cost savings. Recognised with the Star Award (2021) and the Idea Champ Award.</li>
               </ul>
             </div>
           </div>
@@ -1023,7 +1023,7 @@
                 <span class="bg-rose-50 border border-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded">Executive, Operations</span>
                 <span class="text-slate-500 font-medium mt-1 sm:mt-0">Mar 2016 - Nov 2017</span>
               </div>
-              <h3 class="font-outfit text-base font-bold text-slate-800">India Steel Works Ltd · India</h3>
+              <h3 class="font-outfit text-base font-bold text-slate-800">India Steel Works Ltd &bull; India</h3>
               <ul class="list-disc pl-4 text-xs text-slate-600 space-y-1 pt-2">
                 <li>Performed variance analysis against standard consumption, reported deviations to management, produced benchmarking reports and monitored supplier non conformance cases.</li>
               </ul>
@@ -1072,10 +1072,14 @@
                 <span class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded font-medium">Groq (LLaMA 3.3)</span>
               </div>
             </div>
-            <div class="pt-2">
-              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="project-btn project-btn-primary w-full">
+            <div class="pt-2 flex flex-col sm:flex-row gap-2">
+              <a href="https://ai-digital-analyst-officer.vercel.app" target="_blank" rel="noopener" class="project-btn project-btn-primary flex-1">
                 <i data-lucide="external-link" class="h-4 w-4"></i>
-                <span>Live App</span>
+                <span>Live Demo</span>
+              </a>
+              <a href="https://github.com/singhsatyam85-cloud/ai-digital-analyst-officer" target="_blank" rel="noopener" class="project-btn project-btn-secondary flex-1">
+                <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.4 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.14-.02-2.06-3.2.7-3.88-1.36-3.88-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.25.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.19 1.84 1.19 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5Z"/></svg>
+                <span>View GitHub Repo</span>
               </a>
             </div>
           </div>
@@ -1362,7 +1366,7 @@
             <div class="space-y-2">
               <span class="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded uppercase">Master's Degree (Awarded Merit)</span>
               <h3 class="font-outfit text-lg font-bold text-slate-800">Master of Business Administration (MBA)</h3>
-              <p class="text-xs font-semibold text-slate-505">Middlesex University · London, United Kingdom</p>
+              <p class="text-xs font-semibold text-slate-500">Middlesex University &bull; London, United Kingdom</p>
               <p class="text-slate-600 text-xs leading-relaxed pt-2">
                 Master of Business Administration, Middlesex University, London, United Kingdom, February 2026. Awarded Merit.
               </p>
@@ -1378,7 +1382,7 @@
             <div class="space-y-2">
               <span class="text-[10px] font-bold text-rose-600 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded uppercase">Bachelor's Degree</span>
               <h3 class="font-outfit text-lg font-bold text-slate-800">Bachelor of Technology (Engineering Graduate)</h3>
-              <p class="text-xs font-semibold text-slate-500">National Institute of Technology · Srinagar, India</p>
+              <p class="text-xs font-semibold text-slate-500">National Institute of Technology &bull; Srinagar, India</p>
               <p class="text-slate-600 text-xs leading-relaxed pt-2">
                 Bachelor of Technology (Engineering Graduate), Metallurgy and Material Engineering, National Institute of Technology Srinagar, India, 2015.
               </p>
@@ -1442,9 +1446,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/02-Project%20Intake%20Notes.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Intake Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1452,7 +1456,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/03-Discoery%20Questions%20and%20Stakeholder%20Register.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Stakeholder Register</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1460,7 +1464,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/01-discovery-planning/05-Discovery%20Meeting%20Notes.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Discovery Meeting Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1472,9 +1476,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/08-Business%20Requirements%20Document.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Requirements Document (BRD)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1482,7 +1486,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/13-User%20Stories%20and%20Acceptance%20Criteria.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">User Stories & Acceptance Criteria</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1490,7 +1494,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/02-requirements-documentation/11-Business%20Rules%20Document.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Rules Document</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1505,9 +1509,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
-                  <ul class="text-xs space-y-2 text-slate-655">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/06-As-Is%20Process%20School%20Project.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">As-Is Process Flow Map</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1515,7 +1519,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/07-To-be%20Business%20flow.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">To-Be Business Flow Map</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1523,7 +1527,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/03-process-design/17-Role%20and%20Permission%20Matrix.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Role & Permission Matrix</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1535,9 +1539,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/19-Test%20Scenario%20Review.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Test Scenario Review Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1545,7 +1549,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/20-User%20Acceptance%20Testing%20Plan.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">UAT Plan Outline</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1553,7 +1557,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" download class="deliv-row">
+                      <a href="case-study-documents/01-edtech-attendance-management-system/04-testing-delivery/22-Project%20Roadmap%20and%20Timeline.doc.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Timeline & Roadmap</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1609,9 +1613,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Intake%20Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Intake Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1619,7 +1623,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Discovery%20Meeting%20Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Discovery Meeting Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1627,7 +1631,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Learning%20Objective%20Matrix.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Learning Objective Matrix</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1639,9 +1643,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Business%20Requirements%20Document.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Requirements Document (BRD)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1649,7 +1653,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Content%20Requirement.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Content Requirements List</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1657,7 +1661,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/User%20Stories%20and%20Acceptance%20Criteria.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">User Stories & Acceptance Criteria</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1672,9 +1676,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/As-Is%20Process.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">As-Is Process Flow Map</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1682,7 +1686,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/To-Be%20Process%20Flow.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">To-Be Process Flow Map</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1690,7 +1694,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/03-process-design/Storyboard%20and%20Screen%20Flow.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Storyboard & Screen Flow Diagrams</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1702,9 +1706,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/04-testing-delivery/Test%20Scenario%20Timeline%20and%20Review%20Plan.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Test Scenario Timeline Plan</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1712,7 +1716,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/02-requirements-documentation/Sprint%201%20Backlog.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Sprint 1 Backlog Items</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1720,7 +1724,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" download class="deliv-row">
+                      <a href="case-study-documents/02-digital-stem-content-delivery-platform/01-discovery-planning/Project%20Delivery%20Roadmap.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Delivery Roadmap</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1768,9 +1772,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-600">
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Discovery%20Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Discovery Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1778,7 +1782,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Stakeholder%20Register.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Stakeholder Register</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1786,7 +1790,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/RACI%20matrix.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">RACI Matrix</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1794,7 +1798,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Business%20Case%20Note.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Case Note</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1802,7 +1806,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Project%20Timeline.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Timeline</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1810,7 +1814,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/01-discovery-planning/Initial%20Product%20Backlog.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Initial Product Backlog</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1822,9 +1826,9 @@
 
                 <div class="space-y-3 pt-2 border-t border-slate-100">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements specifications</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-600">
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/BRD.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Requirements (BRD)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1832,7 +1836,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/FRD.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Functional Requirements (FRD)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1840,7 +1844,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/NFR.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Non-Functional Requirements (NFR)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1848,7 +1852,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Business%20Rules.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Business Rules Document</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1856,7 +1860,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/User%20Stories.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">User Stories Specs</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1864,7 +1868,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Acceptance%20Criteria.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Acceptance Criteria</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1872,7 +1876,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Use%20Case.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Use Cases Document</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1880,7 +1884,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Data%20Field%20List.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Data Field Matrix</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1888,7 +1892,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Product%20Category%20Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Product Category Requirements</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1896,7 +1900,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Request%20a%20Quote%20Form%20Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Request a Quote Form Specs</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1904,7 +1908,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Contact%20Feedback%20Newsletter%20Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Contact & Feedback Specs</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1912,7 +1916,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Homepage%20Navigation%20Footer%20Legal%20Page%20Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Homepage Nav & Legal Specs</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1920,7 +1924,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/SEO%20Requirement%20Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">SEO Requirement Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1928,7 +1932,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/02-requirements-documentation/Content%20Requirement%20Checklist.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Content Requirements Checklist</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1943,9 +1947,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Process Mapping & Layouts</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/As-Is%20Process.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">As-Is Process Map</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1953,7 +1957,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/To-Be%20Process%20Flow.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">To-Be Process Flow</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1961,7 +1965,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Website%20Sitemap.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Website Sitemap Diagram</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1969,7 +1973,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/03-process-design/Figma%20Wireframe%20Review.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Figma Wireframe Review</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1981,9 +1985,9 @@
 
                 <div class="space-y-3 pt-2 border-t border-slate-100">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
-                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-650">
+                  <div class="grid grid-cols-1 gap-2 text-xs text-slate-600">
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Test%20Scenario%20Review.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Test Scenario Review</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1991,7 +1995,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Plan.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">UAT Plan Outline</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -1999,7 +2003,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Evidence%20Log.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">UAT Evidence Log</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2007,7 +2011,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/UAT%20Sign%20Off.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">UAT Sign Off Log</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2015,7 +2019,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Release%20Readiness%20Checklist.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Release Readiness Checklist</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2023,7 +2027,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Go%20Live%20Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Go Live Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2031,7 +2035,7 @@
                       </a>
                     </div>
                     <div>
-                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" download class="deliv-row">
+                      <a href="case-study-documents/03-autoparts-company-website-development/04-testing-delivery/Project%20Closure%20Summary.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Project Closure Summary</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2083,9 +2087,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">1. Discovery & Planning</h4>
-                  <ul class="text-xs space-y-2 text-slate-655">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/01_Phase_2_Approval_Note.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Phase 2 Approval Note</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2093,7 +2097,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/02_Sprint_5_Planning_Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Sprint 5 Planning Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2101,7 +2105,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/03_Sprint_6_Planning_Notes.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Sprint 6 Planning Notes</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2113,9 +2117,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">2. Requirements Specifications</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/04_SQL_Data_Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">SQL Data Requirements specs</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2123,7 +2127,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/05_Power_BI_Dashboard_Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Power BI Dashboard Requirements</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2131,7 +2135,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/06_SQL_User_Stories_and_Acceptance_Criteria.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">SQL User Stories & Acceptance Criteria</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2146,9 +2150,9 @@
               <div class="bg-white border border-slate-200 rounded-xl p-5 space-y-4 shadow-sm">
                 <div class="space-y-3">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">3. Data Model & Design</h4>
-                  <ul class="text-xs space-y-2 text-slate-655">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/07_Logical_Data_Relationship_Diagram.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Logical Data Relationship Diagram</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2156,7 +2160,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/08_Power_BI_Dashboard_Wireframe.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Power BI Dashboard Wireframe</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2164,7 +2168,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/09_Dashboard_Review_Against_Business_Requirements.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Dashboard Review (BI Compliance)</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2176,9 +2180,9 @@
 
                 <div class="space-y-3 pt-2">
                   <h4 class="font-outfit text-xs font-bold text-slate-800 uppercase tracking-wider border-b border-slate-100 pb-2">4. Testing & Delivery</h4>
-                  <ul class="text-xs space-y-2 text-slate-650">
+                  <ul class="text-xs space-y-2 text-slate-600">
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/10_SQL_Validation_Plan.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">SQL Validation Plan</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2186,7 +2190,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/11_Dashboard_UAT_Plan.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Dashboard UAT Plan Outline</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2194,7 +2198,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" download class="deliv-row">
+                      <a href="case-study-documents/04-autoinsight-digital-enquiry-bi-reporting-system/12_Phase_2_Closure_Summary.pdf" target="_blank" rel="noopener" class="deliv-row">
                         <span class="truncate">Phase 2 Closure Summary</span>
                         <span class="deliv-row-pdf">
                           <i data-lucide="file-text" class="h-3.5 w-3.5"></i> PDF
@@ -2257,7 +2261,7 @@
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">LinkedIn</span>
-                  <a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener" class="text-xs text-rose-655 hover:underline font-medium">LinkedIn Profile</a>
+                  <a href="https://www.linkedin.com/in/shiv-satyam-singh-67a845106" target="_blank" rel="noopener" class="text-xs text-rose-600 hover:underline font-medium">LinkedIn Profile</a>
                 </div>
               </div>
 
@@ -2267,7 +2271,7 @@
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">Business WhatsApp and Call</span>
-                  <a href="tel:+447393065593" class="text-xs text-rose-655 hover:underline font-medium">+44 7393 065593</a>
+                  <a href="tel:+447393065593" class="text-xs text-rose-600 hover:underline font-medium">+44 7393 065593</a>
                 </div>
               </div>
 
@@ -2277,7 +2281,7 @@
                 </div>
                 <div>
                   <span class="block text-[10px] uppercase font-bold text-slate-400">WhatsApp</span>
-                  <a href="tel:+917905748825" class="text-xs text-rose-655 hover:underline font-medium">+91 7905748825</a>
+                  <a href="tel:+917905748825" class="text-xs text-rose-600 hover:underline font-medium">+91 7905748825</a>
                 </div>
               </div>
 
@@ -2309,7 +2313,7 @@
             </div>
 
             <div class="border-t border-neutral-800 pt-4 text-[10px] text-slate-400">
-              © 2026 Shiv Satyam Singh. All rights reserved. Registered Business Analyst portfolio.
+              &copy; 2026 Shiv Satyam Singh. All rights reserved. Registered Business Analyst portfolio.
             </div>
           </div>
         </div>
@@ -2365,6 +2369,18 @@
         if (overlay) {
           overlay.classList.add('hidden');
         }
+
+        // Keep URL hash in sync so panels can be deep-linked (#about, #projects, ...)
+        if (window.location.hash !== `#${tabId}`) {
+          history.replaceState(null, '', `#${tabId}`);
+        }
+      }
+
+      const validTabIds = Array.from(navButtons).map(btn => btn.getAttribute('data-tab'));
+
+      function tabFromHash() {
+        const hash = window.location.hash.replace('#', '');
+        return validTabIds.includes(hash) ? hash : null;
       }
 
       if (navButtons) {
@@ -2375,6 +2391,18 @@
           });
         });
       }
+
+      // Activate panel from URL hash on initial load and on back/forward navigation
+      const initialTab = tabFromHash();
+      if (initialTab) {
+        switchTab(initialTab);
+      }
+      window.addEventListener('hashchange', () => {
+        const tabId = tabFromHash();
+        if (tabId) {
+          switchTab(tabId);
+        }
+      });
 
       // ================= MOBILE SIDEBAR DRAWER TOGGLE =================
       const toggleSidebarBtn = document.getElementById('toggle-sidebar-btn');
