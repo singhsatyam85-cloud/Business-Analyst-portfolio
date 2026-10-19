@@ -696,6 +696,142 @@
         border-left-color: #f43f5e !important;
       }
     }
+
+    /* ============ MOTION LAYER: panel transitions, scroll reveals, hover ============ */
+
+    /* Panel switch: fade + rise */
+    @keyframes panelIn {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .content-panel.panel-enter {
+      animation: panelIn 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    /* Staggered scroll reveal for cards and sections */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 0.61, 0.36, 1);
+      transition-delay: calc(var(--reveal-i, 0) * 70ms);
+    }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Sidebar nav entrance on first load */
+    @keyframes sideIn {
+      from { opacity: 0; transform: translateX(-12px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    .side-enter .nav-link {
+      animation: sideIn 0.4s ease both;
+      animation-delay: calc(var(--side-i, 0) * 60ms + 0.1s);
+    }
+
+    /* Nav link: icon nudge + active bar grows in */
+    .nav-link svg { transition: transform 0.2s ease; }
+    .nav-link:hover svg { transform: translateX(2px) scale(1.1); }
+    @keyframes navActive {
+      from { border-left-width: 0; }
+      to   { border-left-width: 4px; }
+    }
+    .nav-link.active { animation: navActive 0.3s ease both; }
+
+    /* "New" badge: soft pulse ring */
+    @keyframes badgePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.55); }
+      60%      { box-shadow: 0 0 0 6px rgba(244, 63, 94, 0); }
+    }
+    .glow-badge { animation: badgePulse 2.2s ease-out infinite; }
+
+    /* Card lift on hover (top-level cards only, project cards have their own) */
+    .content-panel > .bg-white.rounded-xl,
+    .content-panel > .grid > .bg-white.rounded-xl {
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .content-panel > .bg-white.rounded-xl:hover,
+    .content-panel > .grid > .bg-white.rounded-xl:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px -14px rgba(15, 23, 42, 0.28);
+      border-color: #FDA4AF;
+    }
+
+    /* Skill chips and tech tags */
+    #panel-skills .flex-wrap > span,
+    #panel-projects .flex-wrap > span,
+    #panel-about .flex-wrap > span {
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      will-change: transform;
+    }
+    #panel-skills .flex-wrap > span:hover,
+    #panel-projects .flex-wrap > span:hover,
+    #panel-about .flex-wrap > span:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 14px -8px rgba(225, 29, 72, 0.55);
+    }
+
+    /* Deliverable rows slide right on hover */
+    .deliv-row {
+      transition: background-color 0.15s ease, transform 0.2s ease;
+    }
+    .deliv-row:hover { transform: translateX(4px); }
+
+    /* Button sheen sweep */
+    .project-btn {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+      transform: translateX(-130%);
+      transition: transform 0.65s ease;
+      pointer-events: none;
+    }
+    .project-btn:hover::after { transform: translateX(130%); }
+
+    /* Stat icon tiles: gentle float on the About panel */
+    @keyframes tileFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-3px); }
+    }
+    #panel-about .h-12.w-12 {
+      animation: tileFloat 3.2s ease-in-out infinite;
+    }
+    #panel-about .grid > div:nth-child(2) .h-12.w-12 { animation-delay: 0.5s; }
+    #panel-about .grid > div:nth-child(3) .h-12.w-12 { animation-delay: 1s; }
+
+    /* Section header icons spin in */
+    @keyframes iconIn {
+      from { opacity: 0; transform: rotate(-20deg) scale(0.7); }
+      to   { opacity: 1; transform: rotate(0) scale(1); }
+    }
+    .content-panel.panel-enter > .border-b svg.h-8 {
+      animation: iconIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .content-panel.panel-enter,
+      .side-enter .nav-link,
+      .nav-link.active,
+      .glow-badge,
+      #panel-about .h-12.w-12,
+      .content-panel.panel-enter > .border-b svg.h-8 {
+        animation: none !important;
+      }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .content-panel > .bg-white.rounded-xl,
+      .content-panel > .grid > .bg-white.rounded-xl,
+      #panel-skills .flex-wrap > span,
+      #panel-projects .flex-wrap > span,
+      #panel-about .flex-wrap > span,
+      .deliv-row,
+      .project-btn::after { transition: none; }
+    }
   </style>
 </head>
 <body class="flex flex-row">
@@ -2337,6 +2473,81 @@
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('sidebar-overlay');
 
+      // ================= MOTION: panel transitions, scroll reveals, counters =================
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const revealObserver = ('IntersectionObserver' in window)
+        ? new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+        : null;
+
+      function prepareReveals(panel) {
+        if (reduceMotion || !revealObserver) return;
+        const targets = panel.querySelectorAll(':scope > *, :scope > .grid > *, .project-view-panel > *, .project-view-panel > .grid > *');
+        let i = 0;
+        let lastParent = null;
+        targets.forEach(el => {
+          if (el.parentElement !== lastParent) { i = 0; lastParent = el.parentElement; }
+          el.classList.remove('is-visible');
+          el.classList.add('reveal');
+          el.style.setProperty('--reveal-i', Math.min(i, 8));
+          i += 1;
+          revealObserver.observe(el);
+        });
+      }
+
+      function animateCounters(panel) {
+        if (reduceMotion) return;
+        panel.querySelectorAll('h3.text-xl').forEach(h => {
+          const original = h.dataset.countText || h.textContent.trim();
+          const match = original.match(/^(\d+)(.*)$/);
+          if (!match) return;
+          h.dataset.countText = original;
+          const target = parseInt(match[1], 10);
+          const suffix = match[2];
+          const duration = 900;
+          const start = performance.now();
+          function step(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            h.textContent = Math.round(eased * target) + suffix;
+            if (t < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        });
+      }
+
+      function animatePanel(panel) {
+        if (!panel) return;
+        panel.classList.remove('panel-enter');
+        void panel.offsetWidth; // restart the CSS animation
+        panel.classList.add('panel-enter');
+        prepareReveals(panel);
+        if (panel.id === 'panel-about') animateCounters(panel);
+      }
+
+      // Sidebar nav entrance on first load
+      const navEl = document.querySelector('nav[role="tablist"]');
+      if (navEl && !reduceMotion) {
+        navButtons.forEach((btn, i) => btn.style.setProperty('--side-i', i));
+        navEl.classList.add('side-enter');
+        setTimeout(() => navEl.classList.remove('side-enter'), 1200);
+      }
+
+      // Re-run reveals when a BA Deliverables sub-tab is opened
+      document.querySelectorAll('button[data-project-tab]').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const panel = document.getElementById('panel-deliverables');
+          if (panel) requestAnimationFrame(() => prepareReveals(panel));
+        });
+      });
+
       function switchTab(tabId) {
         // Toggle Active Link highlight
         if (navButtons) {
@@ -2356,6 +2567,7 @@
           contentPanels.forEach(panel => {
             if (panel.id === `panel-${tabId}`) {
               panel.classList.remove('hidden');
+              animatePanel(panel);
             } else {
               panel.classList.add('hidden');
             }
@@ -2396,6 +2608,8 @@
       const initialTab = tabFromHash();
       if (initialTab) {
         switchTab(initialTab);
+      } else {
+        animatePanel(document.querySelector('.content-panel:not(.hidden)'));
       }
       window.addEventListener('hashchange', () => {
         const tabId = tabFromHash();
